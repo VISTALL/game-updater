@@ -1,0 +1,667 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/f:IGamePanel.cs" caret="0" fromTop="0" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/d:enums/f:PictureName.cs" caret="191" fromTop="8" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:PropertyForm.cs" caret="2344" fromTop="27" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:gui/f:SimpleGamePanel.cs" caret="85" fromTop="0" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="16070" fromTop="33" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:Language.cs" caret="0" fromTop="0" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguageHolder.cs" caret="3614" fromTop="20" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:registry/f:RegistryProperty.cs" caret="3284" fromTop="38" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:assembly/f:AssemblyInfo.cs" caret="0" fromTop="0" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="2339" fromTop="38" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:propertyes/f:GameProperty.cs" caret="0" fromTop="0" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:propertyes/d:impl/f:Lineage2Property.cs" caret="0" fromTop="0" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:propertyes/d:impl/f:AionProperty.cs" caret="540" fromTop="1" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/f:Program.cs" caret="0" fromTop="0" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GFilesForm.cs" caret="0" fromTop="0" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:utiles/f:StringUtil.cs" caret="41" fromTop="1" />
+      <File id="622FF39E-D970-43F4-88F0-1143A2AE8684/d:classes/d:files/f:ListFile.cs" caret="104" fromTop="4" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:DTHasher.cs" caret="2955" fromTop="38" />
+      <File id="622FF39E-D970-43F4-88F0-1143A2AE8684/d:classes/d:files/f:DTHasher.cs" caret="0" fromTop="0" />
+      <File id="622FF39E-D970-43F4-88F0-1143A2AE8684/d:classes/d:forms/f:MainForm.cs" caret="2434" fromTop="8" />
+      <File id="0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD/d:Tar/f:TarInputStream.cs" caret="2172" fromTop="10" />
+      <File id="0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD/d:BZip2/f:BZip2OutputStream.cs" caret="14938" fromTop="11" />
+      <File id="0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD/d:Tar/f:TarHeader.cs" caret="8747" fromTop="12" />
+      <File id="0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD/d:Tar/f:TarArchive.cs" caret="22234" fromTop="6" />
+      <File id="0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD/d:Tar/f:TarEntry.cs" caret="10319" fromTop="7" />
+      <File id="622FF39E-D970-43F4-88F0-1143A2AE8684/d:classes/d:files/f:Maker.cs" caret="4773" fromTop="12" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="3236" fromTop="15" />
+      <File id="0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD/d:Tar/f:TarOutputStream.cs" caret="12555" fromTop="11" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:ListFile.cs" caret="1176" fromTop="9" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/f:LogService.cs" caret="218" fromTop="11" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="6016" fromTop="11" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="6256" fromTop="19" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="6175" fromTop="14" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="6160" fromTop="13" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="6003" fromTop="18" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="1045" fromTop="0" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="6354" fromTop="6" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="1418" fromTop="20" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="6293" fromTop="25" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="6342" fromTop="14" />
+      <File id="622FF39E-D970-43F4-88F0-1143A2AE8684/d:classes/d:files/f:ListFile.cs" caret="15" fromTop="0" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:DTHasher.cs" caret="2955" fromTop="82" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:ListFile.cs" caret="2169" fromTop="102" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="694" fromTop="2" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="439" fromTop="11" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="5287" fromTop="22" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="5084" fromTop="23" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="4757" fromTop="19" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="4426" fromTop="35" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="4534" fromTop="37" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="4402" fromTop="17" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:ListFile.cs" caret="840" fromTop="13" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="2504" fromTop="18" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="4384" fromTop="14" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="4205" fromTop="32" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="4310" fromTop="37" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="3964" fromTop="31" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="3539" fromTop="15" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="3236" fromTop="15" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/f:LogService.cs" caret="8434" fromTop="11" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="OutIsBusy" priority="1" />
+      <Item value="IsBusy" priority="1" />
+      <Item value="public" priority="37" />
+      <Item value="override" priority="6" />
+      <Item value="return" priority="26" />
+      <Item value="true" priority="13" />
+      <Item value="SHA1CryptoServiceProvider" priority="0" />
+      <Item value="task" priority="2" />
+      <Item value="void" priority="11" />
+      <Item value="AbstractTask`0" priority="2" />
+      <Item value="_activeTasks" priority="1" />
+      <Item value="TaskManager`0" priority="4" />
+      <Item value="this" priority="0" />
+      <Item value="MethodCodeType" priority="0" />
+      <Item value="MethodImplOptions`0" priority="1" />
+      <Item value="enum" priority="2" />
+      <Item value="string" priority="8" />
+      <Item value="WordEnum`0" priority="24" />
+      <Item value="wordEnum" priority="6" />
+      <Item value="switch" priority="0" />
+      <Item value="case" priority="1" />
+      <Item value="break" priority="1" />
+      <Item value="null" priority="9" />
+      <Item value="if" priority="55" />
+      <Item value="InvokeRequired" priority="2" />
+      <Item value="else" priority="4" />
+      <Item value="UpdateStatusLabelUnsafe`0" priority="1" />
+      <Item value="UpdateStatusLabel`0" priority="1" />
+      <Item value="Language" priority="1" />
+      <Item value="private" priority="14" />
+      <Item value="static" priority="3" />
+      <Item value="LanguageHolder`0" priority="14" />
+      <Item value="_instance" priority="6" />
+      <Item value="new" priority="24" />
+      <Item value="LanguageHolder" priority="0" />
+      <Item value="language" priority="5" />
+      <Item value="Dictionary" priority="1" />
+      <Item value="Dictionary&lt;Language,Dictionary&lt;WordEnum,string&gt;&gt;" priority="0" />
+      <Item value="object" priority="0" />
+      <Item value="typeof" priority="7" />
+      <Item value="Language`0" priority="7" />
+      <Item value="foreach" priority="7" />
+      <Item value="_words" priority="4" />
+      <Item value="String`0" priority="8" />
+      <Item value="as" priority="2" />
+      <Item value="v" priority="2" />
+      <Item value="data" priority="2" />
+      <Item value="var" priority="14" />
+      <Item value="client" priority="2" />
+      <Item value="virtual" priority="0" />
+      <Item value="bool" priority="9" />
+      <Item value="_thread" priority="0" />
+      <Item value="_property" priority="2" />
+      <Item value="try" priority="1" />
+      <Item value="catch" priority="1" />
+      <Item value="WebException`0" priority="0" />
+      <Item value="false" priority="10" />
+      <Item value="IsValid" priority="2" />
+      <Item value="GoEnd`0" priority="4" />
+      <Item value="MainForm`0" priority="4" />
+      <Item value="MainFormState`0" priority="0" />
+      <Item value="OnEnd`0" priority="3" />
+      <Item value="NullReferenceException`0" priority="0" />
+      <Item value="byte" priority="6" />
+      <Item value="array" priority="0" />
+      <Item value="Uri" priority="0" />
+      <Item value="e" priority="2" />
+      <Item value="CurrentProperty" priority="1" />
+      <Item value="protected" priority="3" />
+      <Item value="readonly" priority="2" />
+      <Item value="Statuses`0" priority="0" />
+      <Item value="_statuses" priority="3" />
+      <Item value="Statuses" priority="0" />
+      <Item value="ListLoaderTask`0" priority="0" />
+      <Item value="type" priority="5" />
+      <Item value="value" priority="7" />
+      <Item value="RichTextBoxWordPunctuations`0" priority="0" />
+      <Item value="_languages" priority="2" />
+      <Item value="in" priority="6" />
+      <Item value="lb" priority="0" />
+      <Item value="lang" priority="8" />
+      <Item value="UITypeEditorEditStyle`0" priority="0" />
+      <Item value="has" priority="3" />
+      <Item value="context" priority="1" />
+      <Item value="Console`0" priority="4" />
+      <Item value="CultureInfoConverter`0" priority="0" />
+      <Item value="PropertyValueUIItem`0" priority="0" />
+      <Item value="TypeConverter`0" priority="0" />
+      <Item value="is" priority="2" />
+      <Item value="l" priority="1" />
+      <Item value="hal" priority="0" />
+      <Item value="_forumLabel" priority="0" />
+      <Item value="_homePage" priority="2" />
+      <Item value="NameTable`0" priority="0" />
+      <Item value="node" priority="0" />
+      <Item value="UriFormat`0" priority="0" />
+      <Item value="nameLang" priority="1" />
+      <Item value="Name" priority="2" />
+      <Item value="xmlTextReader" priority="0" />
+      <Item value="xmlDocument" priority="0" />
+      <Item value="_faqLabel" priority="1" />
+      <Item value="_joinNowLabel" priority="1" />
+      <Item value="_separator1" priority="2" />
+      <Item value="Point" priority="3" />
+      <Item value="const" priority="0" />
+      <Item value="int" priority="4" />
+      <Item value="DIFF" priority="0" />
+      <Item value="_separator2" priority="0" />
+      <Item value="word" priority="0" />
+      <Item value="ListType" priority="0" />
+      <Item value="ProcessStartInfo`0" priority="2" />
+      <Item value="isEnable`0" priority="0" />
+      <Item value="info" priority="0" />
+      <Item value="_loader" priority="0" />
+      <Item value="_process" priority="1" />
+      <Item value="p" priority="4" />
+      <Item value="GameStartTask`0" priority="0" />
+      <Item value="MTAThread" priority="0" />
+      <Item value="_maxSize" priority="0" />
+      <Item value="_temp" priority="0" />
+      <Item value="Thread`0" priority="1" />
+      <Item value="thread" priority="2" />
+      <Item value="tryf" priority="0" />
+      <Item value="Exception`0" priority="0" />
+      <Item value="Message`0" priority="0" />
+      <Item value="TabbedPane" priority="2" />
+      <Item value="IsSelectionDisabled" priority="1" />
+      <Item value="s" priority="0" />
+      <Item value="GameProperty`0" priority="0" />
+      <Item value="CheckInstalled`0" priority="0" />
+      <Item value="_queue" priority="1" />
+      <Item value="_shutdown" priority="0" />
+      <Item value="AnalyzerTask`0" priority="1" />
+      <Item value="delegate" priority="2" />
+      <Item value="float" priority="2" />
+      <Item value="Opacity" priority="0" />
+      <Item value="IsDisposed" priority="2" />
+      <Item value="Invoke`0" priority="0" />
+      <Item value="setOpacityDeledate`0" priority="1" />
+      <Item value="setOpacityUnsafe`0" priority="1" />
+      <Item value="setOpacity`0" priority="0" />
+      <Item value="f" priority="0" />
+      <Item value="checkSum" priority="1" />
+      <Item value="Object`0" priority="0" />
+      <Item value="IsCanInvoke" priority="1" />
+      <Item value="Close`0" priority="0" />
+      <Item value="invoke" priority="0" />
+      <Item value="CloseDelegate`0" priority="0" />
+      <Item value="CloseUnsafe`0" priority="0" />
+      <Item value="LanguageDescription`0" priority="2" />
+      <Item value="Word" priority="0" />
+      <Item value="a" priority="1" />
+      <Item value="_gameProperty" priority="1" />
+      <Item value="Description" priority="0" />
+      <Item value="obj" priority="2" />
+      <Item value="property" priority="3" />
+      <Item value="Length" priority="1" />
+      <Item value="b" priority="0" />
+      <Item value="attribute" priority="0" />
+      <Item value="_nameWord" priority="1" />
+      <Item value="_basePropertyDescriptor" priority="0" />
+      <Item value="LanguageDisplayName" priority="0" />
+      <Item value="RConfig`0" priority="2" />
+      <Item value="STAThread" priority="0" />
+      <Item value="RegistryPropertyKey" priority="0" />
+      <Item value="ThreadContext`0" priority="0" />
+      <Item value="cultureInfo" priority="0" />
+      <Item value="langShort" priority="1" />
+      <Item value="set" priority="0" />
+      <Item value="ShortName" priority="0" />
+      <Item value="shortNameLang" priority="0" />
+      <Item value="OrdinalIgnoreCase" priority="0" />
+      <Item value="Enabled" priority="0" />
+      <Item value="gp" priority="0" />
+      <Item value="_startButton" priority="0" />
+      <Item value="_fullCheck" priority="0" />
+      <Item value="can" priority="0" />
+      <Item value="Disposing" priority="0" />
+      <Item value="ObfuscateAssemblyAttribute`0" priority="0" />
+      <Item value="AssemblyInfo`0" priority="1" />
+      <Item value="AssemblyInfo" priority="0" />
+      <Item value="uint" priority="0" />
+      <Item value="AssemblyVersion" priority="0" />
+      <Item value="MajorVersion" priority="2" />
+      <Item value="st" priority="0" />
+      <Item value="MinorVersion" priority="1" />
+      <Item value="BadImageFormatException`0" priority="0" />
+      <Item value="_images" priority="9" />
+      <Item value="zipInputStream" priority="3" />
+      <Item value="ZipInputStream" priority="0" />
+      <Item value="fileInfo" priority="0" />
+      <Item value="ZipEntry`0" priority="0" />
+      <Item value="while" priority="0" />
+      <Item value="entry" priority="8" />
+      <Item value="StartButtonImage`0" priority="0" />
+      <Item value="Enum`0" priority="2" />
+      <Item value="PictureName`0" priority="10" />
+      <Item value="name" priority="4" />
+      <Item value="ParseImage`0" priority="0" />
+      <Item value="PictureType`0" priority="3" />
+      <Item value="Image`0" priority="2" />
+      <Item value="MemoryStream`0" priority="0" />
+      <Item value="Dictionary&lt;PictureType,Image&gt;" priority="0" />
+      <Item value="img" priority="0" />
+      <Item value="Int16`0" priority="0" />
+      <Item value="NORMAL" priority="0" />
+      <Item value="ImageHolder`0" priority="4" />
+      <Item value="ImageHolder" priority="0" />
+      <Item value="Dictionary&lt;PictureName,Image&gt;" priority="0" />
+      <Item value="for" priority="1" />
+      <Item value="enu" priority="1" />
+      <Item value="ImageInfo" priority="0" />
+      <Item value="_closeBtn" priority="0" />
+      <Item value="_forlderBrowse" priority="1" />
+      <Item value="path" priority="2" />
+      <Item value="SelectedGridItemChangedEventArgs`0" priority="0" />
+      <Item value="_filesList" priority="5" />
+      <Item value="_allFiles" priority="1" />
+      <Item value="fileName" priority="0" />
+      <Item value="SelectedPath" priority="1" />
+      <Item value="label2" priority="0" />
+      <Item value="DialogResult" priority="0" />
+      <Item value="SavePath" priority="1" />
+      <Item value="_decsPathLabel" priority="0" />
+      <Item value="_startBtn" priority="0" />
+      <Item value="DescriptionPath" priority="0" />
+      <Item value="_files" priority="2" />
+      <Item value="tarInputStream" priority="2" />
+      <Item value="TarInputStream" priority="0" />
+      <Item value="list" priority="0" />
+      <Item value="File`0" priority="1" />
+      <Item value="listPath" priority="0" />
+      <Item value="TarEntry`0" priority="0" />
+      <Item value="tarEntry" priority="1" />
+      <Item value="TarEntry" priority="0" />
+      <Item value="TarHeader`0" priority="0" />
+      <Item value="ListFile`0" priority="0" />
+      <Item value="TarHeader" priority="2" />
+      <Item value="bZip2OutputStream" priority="4" />
+      <Item value="BZip2OutputStream" priority="1" />
+      <Item value="archive" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@client.forms.MainForm">
+      <Item value="Instance" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:client.forms.MainForm">
+      <Item value="updateAllRSS`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Add`0" priority="1" />
+      <Item value="Remove`0" priority="0" />
+      <Item value="Contains`0" priority="0" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.task_manager.TaskManager">
+      <Item value="Instance" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.GUpdater.classes.task_manager.TaskManager">
+      <Item value="OnTaskDone`0" priority="0" />
+      <Item value="ActiveTask" priority="0" />
+      <Item value="NextTask`0" priority="1" />
+      <Item value="AddTask`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Runtime.CompilerServices.MethodImplOptions">
+      <Item value="Synchronized" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.GUpdater.classes.forms.MainForm">
+      <Item value="SetMainFormState`0" priority="1" />
+      <Item value="UpdateStatusLabel`0" priority="0" />
+      <Item value="ChangeLanguage`0" priority="0" />
+      <Item value="CheckInstalled`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@GUpdater.classes.listloader.MainFormState">
+      <Item value="CHECKING" priority="0" />
+      <Item value="NONE" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.GUpdater.classes.language.LanguageHolder">
+      <Item value="getWord`0" priority="0" />
+      <Item value="Indexer" priority="0" />
+      <Item value="Languages" priority="4" />
+      <Item value="GetImage`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Enum">
+      <Item value="GetValues`0" priority="1" />
+      <Item value="IsDefined`0" priority="0" />
+      <Item value="Parse`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
+      <Item value="Add`0" priority="4" />
+      <Item value="ContainsKey`0" priority="5" />
+      <Item value="Keys" priority="0" />
+      <Item value="Values" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.language.Language">
+      <Item value="English" priority="0" />
+      <Item value="Russian" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.language.WordEnum">
+      <Item value="STARTING_DOWNLOAD_LIST" priority="2" />
+      <Item value="ENDING_DOWNLOAD_LIST" priority="2" />
+      <Item value="ERROR_DOWNLOAD_LIST" priority="2" />
+      <Item value="PROBLEM_WITH_INTERNET" priority="1" />
+      <Item value="PROBLEM_WITH_SERVER" priority="1" />
+      <Item value="NOT_INSTALLED" priority="0" />
+      <Item value="GAME_IS_DISABLED" priority="1" />
+      <Item value="CANCEL_BY_USER" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.config.RConfig">
+      <Item value="Instance" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.GUpdater.classes.config.RConfig">
+      <Item value="Language" priority="1" />
+      <Item value="CheckCriticalOnStart" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.GUpdater.classes.games.propertyes.GameProperty">
+      <Item value="isEnable`0" priority="4" />
+      <Item value="ListLoader" priority="1" />
+      <Item value="GetStartInfo`0" priority="0" />
+      <Item value="Installed" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.forms.MainForm">
+      <Item value="Instance" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.GUpdater.classes.task_manager.tasks.AbstractTask">
+      <Item value="canParale`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.WebClient">
+      <Item value="DownloadDataAsync`0" priority="0" />
+      <Item value="DownloadDataCompleted" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.DownloadDataCompletedEventArgs">
+      <Item value="Cancelled" priority="0" />
+      <Item value="Error" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.GUpdater.classes.task_manager.tasks.ListLoaderTask">
+      <Item value="IsValid" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.language.LanguageHolder">
+      <Item value="Instance" priority="11" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.language.enums.WordEnum">
+      <Item value="PROBLEM_WITH_INTERNET" priority="0" />
+      <Item value="CANCEL_BY_USER" priority="0" />
+      <Item value="PLEASE_WAIT" priority="0" />
+      <Item value="FORUM" priority="0" />
+      <Item value="HOMEPAGE" priority="0" />
+      <Item value="START_INFO" priority="0" />
+      <Item value="NOT_INSTALLED" priority="0" />
+      <Item value="SETTINGS" priority="0" />
+      <Item value="GENERAL" priority="0" />
+      <Item value="UPDATE_DONE" priority="0" />
+      <Item value="FILE_S1_IS_PROBLEMATIOC_UPDATE_CANCEL_PLEASE_RECHECK" priority="0" />
+      <Item value="PROBLEM_WITH_SERVER" priority="0" />
+      <Item value="LAST_NEWS" priority="2" />
+      <Item value="LANGUAGE_DESCRIPTION" priority="0" />
+      <Item value="LANGUAGE" priority="0" />
+      <Item value="INSTALLED" priority="0" />
+      <Item value="INSTALLED_DESCRIPTION" priority="0" />
+      <Item value="PATH_TO_GAME" priority="0" />
+      <Item value="PATH_TO_GAME_DESCRIPTION" priority="0" />
+      <Item value="CHECK_CRITICAL_ON_START" priority="0" />
+      <Item value="CHECK_CRITICAL_ON_START_DESCRIPTION" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ListBox+ObjectCollection">
+      <Item value="Add`0" priority="2" />
+      <Item value="Remove`0" priority="0" />
+      <Item value="Contains`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Equals`0" priority="4" />
+      <Item value="Split`0" priority="1" />
+      <Item value="EndsWith`0" priority="0" />
+      <Item value="Replace`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.ComponentModel.ITypeDescriptorContext">
+      <Item value="OnComponentChanged`0" priority="0" />
+      <Item value="OnComponentChanging`0" priority="0" />
+      <Item value="Instance" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="7" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Design.UITypeEditorEditStyle">
+      <Item value="Modal" priority="0" />
+      <Item value="DropDown" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Label">
+      <Item value="Text" priority="4" />
+      <Item value="Location" priority="7" />
+      <Item value="Width" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlNode">
+      <Item value="Attributes" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlAttribute">
+      <Item value="Value" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.GUpdater.classes.language.Language">
+      <Item value="Name" priority="2" />
+      <Item value="ShortName" priority="0" />
+      <Item value="GetImage`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlTextReader">
+      <Item value="Close`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Point">
+      <Item value="X" priority="1" />
+      <Item value="Y" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.LinkedList`1">
+      <Item value="Contains`0" priority="0" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.Thread">
+      <Item value="CurrentThread" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.Thread">
+      <Item value="Name" priority="0" />
+      <Item value="CurrentUICulture" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBox">
+      <Item value="Show`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.GUpdater.classes.gui.JTabbedPane">
+      <Item value="ChangeSelectedTabEvent" priority="0" />
+      <Item value="IsSelectionDisabled" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.listloader.enums.MainFormState">
+      <Item value="NONE" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Queue`1">
+      <Item value="Count" priority="0" />
+      <Item value="Peek`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.FileInfo">
+      <Item value="Exists" priority="0" />
+      <Item value="OpenRead`0" priority="0" />
+      <Item value="Create`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Format`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.AttributeTargets">
+      <Item value="Property" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="GetType`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Type">
+      <Item value="GetProperties`0" priority="0" />
+      <Item value="Name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.PropertyInfo">
+      <Item value="Attributes" priority="1" />
+      <Item value="GetCustomAttributes`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.ComponentModel.DescriptionAttribute">
+      <Item value="Description" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.PropertyGrid">
+      <Item value="PropertyTabs" priority="1" />
+      <Item value="ExpandAllGridItems`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.GUpdater.classes.language.properties.LanguageDisplayName">
+      <Item value="Word" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.ComponentModel.PropertyDescriptor">
+      <Item value="DisplayName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.config.gui.PropertyForm">
+      <Item value="Instance" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.GUpdater.classes.config.gui.PropertyForm">
+      <Item value="ChangeLanguage`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Globalization.CultureInfo">
+      <Item value="TwoLetterISOLanguageName" priority="1" />
+      <Item value="ThreeLetterWindowsLanguageName" priority="0" />
+      <Item value="ThreeLetterISOLanguageName" priority="0" />
+      <Item value="NativeName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.GUpdater.classes.gui.JImageButton">
+      <Item value="Enable" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.assembly.AssemblyInfo">
+      <Item value="Instance" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.CreateParams">
+      <Item value="ExStyle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.windows.WindowStyles">
+      <Item value="MinimizeBox" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.PaintEventArgs">
+      <Item value="ClipRectangle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Int32">
+      <Item value="Parse`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ICSharpCode.SharpZipLib.Zip.ZipInputStream">
+      <Item value="GetNextEntry`0" priority="0" />
+      <Item value="Read`0" priority="0" />
+      <Item value="Close`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ICSharpCode.SharpZipLib.Zip.ZipEntry">
+      <Item value="CompressedSize" priority="0" />
+      <Item value="IsFile" priority="0" />
+      <Item value="Size" priority="0" />
+      <Item value="Name" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Image">
+      <Item value="FromStream`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.language.enums.PictureName">
+      <Item value="START" priority="1" />
+      <Item value="CLOSE" priority="0" />
+      <Item value="SETTINGS" priority="0" />
+      <Item value="MINI" priority="0" />
+      <Item value="CANCEL" priority="0" />
+      <Item value="AION" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.language.enums.PictureType">
+      <Item value="FOCUS" priority="0" />
+      <Item value="DOWN" priority="0" />
+      <Item value="ACTIVE" priority="0" />
+      <Item value="DISABLE" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.images.ImageHolder">
+      <Item value="Instance" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.FolderBrowserDialog">
+      <Item value="SelectedPath" priority="2" />
+      <Item value="ShowDialog`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ListBox">
+      <Item value="Items" priority="5" />
+      <Item value="SelectedItem" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Button">
+      <Item value="Enabled" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.DialogResult">
+      <Item value="OK" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="Exists`0" priority="0" />
+      <Item value="Delete`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ICSharpCode.SharpZipLib.Tar.TarOutputStream">
+      <Item value="PutNextEntry`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@zlib.BZip2.BZip2">
+      <Item value="Compress`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ICSharpCode.SharpZipLib.BZip2.BZip2OutputStream">
+      <Item value="Close`0" priority="0" />
+      <Item value="Write`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ICSharpCode.SharpZipLib.Tar.TarArchive">
+      <Item value="Close`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ICSharpCode.SharpZipLib.Tar.TarEntry">
+      <Item value="CreateTarEntry`0" priority="1" />
+      <Item value="CreateEntryFromFile`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ICSharpCode.SharpZipLib.Tar.TarHeader">
+      <Item value="GetOctalBytes`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ICSharpCode.SharpZipLib.Tar.TarArchive">
+      <Item value="CreateOutputTarArchive`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ICSharpCode.SharpZipLib.Tar.TarEntry">
+      <Item value="GetFileTarHeader`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
