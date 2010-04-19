@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC55F2C3-A13E-447F-887B-7114C0F956A8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.jds.GUpdater</RootNamespace>
+    <AssemblyName>GUpdater</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ManifestCertificateThumbprint>21C17EB859B5C21CC36D4BA73C3F48C8E6837E93</ManifestCertificateThumbprint>
+    <ManifestKeyFile>GUpdater_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.2</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\exe\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\exe\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="classes\date\Rfc822DateTime.cs" />
+    <Compile Include="classes\events\EventHandlers.cs" />
+    <Compile Include="classes\gui\ColorProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\gui\RSSItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="classes\gui\RSSPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="classes\games\EnumPane.cs" />
+    <Compile Include="classes\games\GameDirectorySelect.cs" />
+    <Compile Include="classes\games\EnumProperty.cs" />
+    <Compile Include="classes\games\IGamePanel.cs" />
+    <Compile Include="classes\games\gui\SimpleGamePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="classes\games\gui\SimpleGamePanel.Designer.cs">
+      <DependentUpon>SimpleGamePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\gui\JButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="classes\gui\JButton.designer.cs">
+      <DependentUpon>JButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\gui\JImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\gui\IImageInfo.cs" />
+    <Compile Include="classes\gui\tabpane\JImageTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\gui\JTabbedPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="classes\gui\JTabbedPane.Designer.cs">
+      <DependentUpon>JTabbedPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\gui\tabpane\JPanelTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="classes\listloader\DTHasher.cs" />
+    <Compile Include="classes\listloader\enums\Status.cs" />
+    <Compile Include="classes\LogService.cs" />
+    <Compile Include="classes\registry\RegistryProperty.cs" />
+    <Compile Include="classes\games\Game.cs" />
+    <Compile Include="classes\games\GameInfo.cs" />
+    <Compile Include="classes\language\Language.cs" />
+    <Compile Include="classes\config\RConfig.cs" />
+    <Compile Include="classes\config\gui\PropertyPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="classes\config\gui\PropertyPage.Designer.cs">
+      <DependentUpon>PropertyPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\games\propertyes\impl\AionProperty.cs" />
+    <Compile Include="classes\games\propertyes\GameProperty.cs" />
+    <Compile Include="classes\games\propertyes\impl\Lineage2Property.cs" />
+    <Compile Include="classes\listloader\ListFile.cs" />
+    <Compile Include="classes\listloader\enums\ListFileType.cs" />
+    <Compile Include="classes\task_manager\tasks\ListLoaderTask.cs" />
+    <Compile Include="classes\registry\RegistryPropertyKey.cs" />
+    <Compile Include="classes\games\EnumName.cs" />
+    <Compile Include="classes\forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\forms\MainForm.lang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\forms\PropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\forms\PropertyForm.Designer.cs">
+      <DependentUpon>PropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\forms\PropertyForm.lang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="classes\config\gui\PropertyPage.resx">
+      <DependentUpon>PropertyPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\gui\RSSItem.resx">
+      <DependentUpon>RSSItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\gui\RSSPanel.resx">
+      <DependentUpon>RSSPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\games\gui\SimpleGamePanel.resx">
+      <DependentUpon>SimpleGamePanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\gui\JButton.resx">
+      <DependentUpon>JButton.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\gui\JTabbedPane.resx">
+      <DependentUpon>JTabbedPane.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\forms\PropertyForm.resx">
+      <DependentUpon>PropertyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\log4net\Log4 .NET.csproj">
+      <Project>{F6A02431-167E-4347-BC43-65532C31CDB7}</Project>
+      <Name>Log4 .NET</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zlib\Zlib.csproj">
+      <Project>{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}</Project>
+      <Name>Zlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="classes\assembly\AssemblyInfo.cs" />
+    <Compile Include="classes\games\gui\SimpleGamePanel.lang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="classes\images\ImageHolder.cs" />
+    <Compile Include="classes\images\ImageInfo.cs" />
+    <Compile Include="classes\language\enums\PictureName.cs" />
+    <Compile Include="classes\language\enums\PictureType.cs" />
+    <Compile Include="classes\language\properties\LanguageCustomTypeDescription.cs" />
+    <Compile Include="classes\language\properties\LanguageDescription.cs" />
+    <Compile Include="classes\language\LanguageHolder.cs" />
+    <Compile Include="classes\language\enums\WordEnum.cs" />
+    <Compile Include="classes\language\LanguagePropertyConventer.cs" />
+    <Compile Include="classes\language\LanguagePropertyEditor.cs" />
+    <Compile Include="classes\language\properties\LanguageDisplayName.cs" />
+    <Compile Include="classes\language\properties\LanguagePropertyDescription.cs" />
+    <Compile Include="classes\task_manager\tasks\AnalyzerTask.cs" />
+    <Compile Include="classes\listloader\enums\MainFormState.cs" />
+    <Compile Include="classes\listloader\Statuses.cs" />
+    <Compile Include="classes\task_manager\TaskManager.cs" />
+    <Compile Include="classes\task_manager\tasks\AbstractTask.cs" />
+    <Compile Include="classes\task_manager\tasks\GameStartTask.cs" />
+    <Compile Include="classes\transperent\Runnable.cs" />
+    <Compile Include="classes\transperent\TransrenetRunner.cs" />
+    <Compile Include="classes\utils\FileUtils.cs" />
+    <Compile Include="classes\windows\WindowStyles.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%24this.BackgroundImage.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
