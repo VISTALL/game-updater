@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing.Design;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
+using com.jds.GUpdater.classes.assembly.gui;
 using com.jds.GUpdater.classes.config;
 using com.jds.GUpdater.classes.forms;
 
@@ -57,6 +58,7 @@ namespace com.jds.GUpdater.classes.language
         private void lb_SelectedIndexChanged(object sender, EventArgs e)
         {
             PropertyForm.Instance.ChangeLanguage();
+            AssemblyPage.Instance.ChangeLanguage();
             fes.CloseDropDown();
         }
     }

@@ -42,6 +42,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -62,7 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\date\Rfc822DateTime.cs" />
+    <Compile Include="classes\config\date\Rfc822DateTime.cs" />
     <Compile Include="classes\events\EventHandlers.cs" />
     <Compile Include="classes\gui\ColorProgressBar.cs">
       <SubType>Component</SubType>
@@ -147,6 +148,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="classes\assembly\gui\AssemblyPage.resx">
+      <DependentUpon>AssemblyPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="classes\config\gui\PropertyPage.resx">
       <DependentUpon>PropertyPage.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -197,6 +202,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\assembly\AssemblyInfo.cs" />
+    <Compile Include="classes\assembly\gui\AssemblyPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="classes\assembly\gui\AssemblyPage.Designer.cs">
+      <DependentUpon>AssemblyPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\assembly\VersionType.cs" />
     <Compile Include="classes\games\gui\SimpleGamePanel.lang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -218,9 +230,14 @@
     <Compile Include="classes\task_manager\TaskManager.cs" />
     <Compile Include="classes\task_manager\tasks\AbstractTask.cs" />
     <Compile Include="classes\task_manager\tasks\GameStartTask.cs" />
+    <Compile Include="classes\task_manager\tasks\GUListLoaderTask.cs" />
+    <Compile Include="classes\task_manager\tasks\GUAnalyzerTask.cs" />
     <Compile Include="classes\transperent\Runnable.cs" />
     <Compile Include="classes\transperent\TransrenetRunner.cs" />
     <Compile Include="classes\utils\FileUtils.cs" />
+    <Compile Include="classes\windows\windows7\ITaskbarList3.cs" />
+    <Compile Include="classes\windows\windows7\ThumbnailProgressState.cs" />
+    <Compile Include="classes\windows\windows7\Windows7Taskbar.cs" />
     <Compile Include="classes\windows\WindowStyles.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -246,6 +263,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\assembly\gui\AssemblyPage.lang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <None Include="Resources\%24this.BackgroundImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

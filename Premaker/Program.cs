@@ -16,5 +16,13 @@ namespace com.jds.Premaker
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ChooseForm());
         }
+
+        public static String Version
+        {
+            get
+            {
+                return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            }
+        }
     }
 }

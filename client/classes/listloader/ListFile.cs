@@ -39,7 +39,15 @@ namespace com.jds.GUpdater.classes.listloader
             file._md5 = args[2];
             return file;
         }
-
+        
+        public static ListFile parseIgnoreCritical(String line)
+        {
+            var file = new ListFile();
+            String[] args = line.Split('\t');
+            file._fileName = args[0];
+            file._md5 = args[1];
+            return file;
+        }
         #endregion
 
         #region Overrides

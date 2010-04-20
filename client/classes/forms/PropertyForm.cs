@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using com.jds.GUpdater.classes.assembly;
+using com.jds.GUpdater.classes.assembly.gui;
 using com.jds.GUpdater.classes.config;
 using com.jds.GUpdater.classes.config.gui;
 using com.jds.GUpdater.classes.games;
@@ -14,6 +15,7 @@ namespace com.jds.GUpdater.classes.forms
     public partial class PropertyForm : Form
     {
         private static PropertyForm _instance;
+        private TabPage _versionControl;
 
         #region Instance
 
@@ -49,12 +51,12 @@ namespace com.jds.GUpdater.classes.forms
                 _tabs.TabPages.Add(gpage);
             }
 
+            _versionControl = new TabPage(LanguageHolder.Instance[WordEnum.VERSION_CONTROL]);
+            var ppage2 = AssemblyPage.Instance;
+            ppage2.Location = new Point(3, 3);
+            _versionControl.Controls.Add(ppage2);
 
-            page = new TabPage("Assembly");
-            ppage = new PropertyPage(AssemblyInfo.Instance) {Location = new Point(3, 3)};
-            page.Controls.Add(ppage);
-
-            _tabs.TabPages.Add(page);
+            _tabs.TabPages.Add(_versionControl);
         }
 
         private void PropertyForm_Load(object sender, EventArgs e)

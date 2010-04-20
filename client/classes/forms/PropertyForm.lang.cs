@@ -8,6 +8,9 @@ namespace com.jds.GUpdater.classes.forms
         public void ChangeLanguage()
         {
             Text = LanguageHolder.Instance[WordEnum.SETTINGS];
+            _versionControl.Text = LanguageHolder.Instance[WordEnum.VERSION_CONTROL];
+            _versionControl.Refresh();
+            Refresh();
         }
     }
 }

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using com.jds.Premaker.classes.files;
 using com.jds.Premaker.classes.utiles;
-using Microsoft.WindowsAPICodePack.Taskbar;
 using zlib.Zip;
 
 namespace com.jds.Premaker.classes.forms
@@ -27,30 +27,44 @@ namespace com.jds.Premaker.classes.forms
 
         public string DescriptionPath { get; set; }
 
+        public string Version { get; set; }
+
+        public string ServerVersion { get; set; }
+       
+        public void writeString(Stream stream, String text)
+        {
+            var bytes = Encoding.UTF8.GetBytes(text);
+            stream.Write(bytes, 0, bytes.Length);
+        }
+
+        #region Open
         private void _openFolder_Click(object sender, EventArgs e)
         {
             if (_forlderBrowse.ShowDialog() != DialogResult.OK)
             {
                 return;
             }
-            string path = _forlderBrowse.SelectedPath;
+            var path = _forlderBrowse.SelectedPath;
             StringUtil.slashes(path, out path);
             SelectedPath = path;
             read(SelectedPath);
             _makeTOBtn.Enabled = true;
             _pathBox.Text = path;
 
-            string gExe = SelectedPath + "/GUpdater.exe";
+            var gExe = SelectedPath + "/GUpdater.exe";
             if (!File.Exists(gExe))
             {
                 MessageBox.Show("Not GUpdater folder");
                 return;
             }
 
-            Assembly ass = Assembly.LoadFile(gExe);
+            var ass = Assembly.LoadFile(gExe);
             _versionLabel.Text = ass.GetName().Version.ToString();
+            Version = ass.GetName().Version.ToString();
         }
+        #endregion
 
+        #region Description Button
         private void _makeTOBtn_Click(object sender, EventArgs e)
         {
             if (_saveFolderChoose.ShowDialog() != DialogResult.OK)
@@ -66,7 +80,9 @@ namespace com.jds.Premaker.classes.forms
 
             _startBtn.Enabled = true;
         }
+        #endregion
 
+        #region Make Buttom
         private void _startBtn_Click(object sender, EventArgs e)
         {
             ThreadStart a = delegate
@@ -85,15 +101,16 @@ namespace com.jds.Premaker.classes.forms
                                     var list = new FileInfo(listFile);
                                     var listStream = new ZipOutputStream(list.Create());
 
-                                    var listEntry = new ZipEntry("list.lst");
-                                    listEntry.DateTime = DateTime.Now;
+                                    var listEntry = new ZipEntry("list.lst") {DateTime = DateTime.Now};
                                     listStream.PutNextEntry(listEntry);
 
                                     onStart();
 
-                                    for (int i = 0; i < _files.Count; i++) //листаем
+                                    writeString(listStream, "#Version: " + Version + "\n");
+
+                                    for (var i = 0; i < _files.Count; i++) //листаем
                                     {
-                                        ListFile item = _files[i];
+                                        var item = _files[i];
 
                                         item.validateDirectoryes();
 
@@ -105,8 +122,8 @@ namespace com.jds.Premaker.classes.forms
                                         zipDescriptionStream.SetLevel(9);
                                         // zipDescriptionStream.Password = PASSWORD;
 
-                                        var entry = new ZipEntry(item.EntryName.Replace(".zip", ""));
-                                        entry.DateTime = item.SourceTime();
+                                        var entry = new ZipEntry(item.EntryName.Replace(".zip", ""))
+                                                        {DateTime = item.SourceTime()};
                                         zipDescriptionStream.PutNextEntry(entry);
 
                                         var bytes = new byte[sourceStream.Length];
@@ -125,7 +142,7 @@ namespace com.jds.Premaker.classes.forms
 
                                         writeString(listStream, item.FileName + "\t" + item.MD5 + "\n");
 
-                                        int p = ((100*i)/_files.Count);
+                                        var p = ((100*i)/_files.Count);
                                         if (p > 100)
                                             p = 100;
 
@@ -141,6 +158,9 @@ namespace com.jds.Premaker.classes.forms
             new Thread(a).Start();
         }
 
+        #endregion
+               
+        #region Progress Bar
         public void onStart()
         {
             ThreadStart a = delegate
@@ -148,10 +168,10 @@ namespace com.jds.Premaker.classes.forms
                                     _progressBar.Visible = true;
                                     _progressBar.Value = 0;
 
-                                    if (TaskbarManager.IsPlatformSupported)
+                                 /*   if (TaskbarManager.IsPlatformSupported)
                                     {
                                         TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Normal);
-                                    }
+                                    }*/
                                 };
             Invoke(a);
         }
@@ -166,10 +186,10 @@ namespace com.jds.Premaker.classes.forms
 
                                     _progressBar.Visible = false;
 
-                                    if (TaskbarManager.IsPlatformSupported)
+                                /*    if (TaskbarManager.IsPlatformSupported)
                                     {
                                         TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.NoProgress);
-                                    }
+                                    }*/
                                 };
 
             Invoke(a);
@@ -181,20 +201,83 @@ namespace com.jds.Premaker.classes.forms
                                 {
                                     _progressBar.Value = v;
 
-                                    if (TaskbarManager.IsPlatformSupported)
+                                  /*  if (TaskbarManager.IsPlatformSupported)
                                     {
                                         TaskbarManager.Instance.SetProgressValue(v, 100);
-                                    }
+                                    }*/
                                 };
             Invoke(a);
-        }  
-
-        public void writeString(Stream stream, String text)
-        {
-            byte[] bytes = Encoding.UTF8.GetBytes(text);
-            stream.Write(bytes, 0, bytes.Length);
         }
 
+        #endregion
+
+        #region Get Version From Web
+        public void GetVersionFromWeb()
+        {
+            var webClient = new WebClient();
+            webClient.DownloadDataCompleted += webClient_DownloadDataCompleted;
+            webClient.DownloadDataAsync(new Uri("http://jdevelopstation.com/gupdater/list.zip"));
+        }
+
+        void webClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)
+        {
+            if(e.Cancelled || e.Error != null)
+            {
+                _serverVersion.Text = "Undefined";
+                Enabled = true;
+                return;
+            }
+
+            GoNexStep(e.Result);
+        }
+
+        public void GoNexStep(byte[] data)
+        {
+            var zipStream = new ZipInputStream(new MemoryStream(data));
+
+            byte[] array = null;
+
+            if ((zipStream.GetNextEntry()) != null)
+            {
+                array = new byte[zipStream.Length];
+                zipStream.Read(array, 0, array.Length);
+            }
+
+            zipStream.Close();
+
+            if (array == null)
+            {
+                _serverVersion.Text = "Undefined";
+                Enabled = true;
+                return;
+            }
+
+            string encodingBytes = Encoding.UTF8.GetString(array);
+            string[] lines = encodingBytes.Split('\n');
+
+            foreach (string line in lines)
+            {
+                if (line.Trim().Equals(""))
+                    continue;
+
+                if (line.StartsWith("#Version:"))
+                {
+                    ServerVersion = line.Replace("#Version:", "").Trim();
+                    _serverVersion.Text = ServerVersion;
+                }
+            }
+            Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _serverVersion.Text = "Loading...";
+            Enabled = false;
+            GetVersionFromWeb();
+        }
+        #endregion
+
+        #region List Actions
         public void putToList()
         {
             foreach (object obj in _filesList.Items)
@@ -230,7 +313,7 @@ namespace com.jds.Premaker.classes.forms
 
         private void _allFiles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!_filesList.Items.Contains(_allFiles.SelectedItem))
+            if (_allFiles.SelectedItem != null && !_filesList.Items.Contains(_allFiles.SelectedItem))
             {
                 _filesList.Items.Add(_allFiles.SelectedItem);
             }
@@ -238,7 +321,8 @@ namespace com.jds.Premaker.classes.forms
 
         private void _filesList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _filesList.Items.Remove(_filesList.SelectedItem);
+            if (_filesList.SelectedItem != null) _filesList.Items.Remove(_filesList.SelectedItem);
         }
+        #endregion
     }
 }

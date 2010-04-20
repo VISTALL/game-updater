@@ -7,8 +7,7 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
-using com.jds.GUpdater.classes.forms;
-using com.jds.GUpdater.classes.games.propertyes;
+using com.jds.GUpdater.classes.assembly.gui;
 using com.jds.GUpdater.classes.language.enums;
 using com.jds.GUpdater.classes.listloader;
 using com.jds.GUpdater.classes.listloader.enums;
@@ -19,28 +18,21 @@ using zlib.Zip;
 
 namespace com.jds.GUpdater.classes.task_manager.tasks
 {
-    public class ListLoaderTask : AbstractTask
+    public class GUListLoaderTask : AbstractTask
     {
         #region Constructor & Variables
 
-        private static readonly ILog _log = LogManager.GetLogger(typeof (ListLoaderTask));
+        private static readonly ILog _log = LogManager.GetLogger(typeof(GUListLoaderTask));
 
-        private readonly Dictionary<ListFileType, LinkedList<ListFile>> _list =
-            new Dictionary<ListFileType, LinkedList<ListFile>>();
+        private readonly LinkedList<ListFile> _items = new LinkedList<ListFile>();
 
-        private readonly GameProperty _property;
         private readonly WebClient _webClient = new WebClient();
         private Thread _thread;
 
-        public ListLoaderTask(GameProperty p)
+        public GUListLoaderTask()
         {
-            _property = p;
-
             IsValid = false;
             Status = Status.FREE;
-
-            _list.Add(ListFileType.CRITICAL, new LinkedList<ListFile>());
-            _list.Add(ListFileType.NORMAL, new LinkedList<ListFile>());
 
             _webClient.DownloadDataCompleted += client_DownloadDataCompleted;
         }
@@ -51,14 +43,9 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
 
         public override void Run()
         {
-            if (_property == null || _property.Panel == null)
-            {
-                throw new NullReferenceException("Panel or GProperty is null!!!!!!. WTF???");
-            }
-
             _thread = new Thread(ListDownloadThread)
                           {
-                              Name = "Get List Thread " + _property.GetType().Name
+                              Name = "Get List Thread for GUpdater"
                           };
 
             _thread.Start();
@@ -66,24 +53,18 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
 
         private void ListDownloadThread()
         {
-            if (!_property.isEnable())
-            {
-                GoEnd(WordEnum.GAME_IS_DISABLED);
-                return;
-            }
-
             if (Status != Status.FREE || _webClient.IsBusy)
             {
                 return;
             }
 
-            MainForm.Instance.UpdateStatusLabel(WordEnum.STARTING_DOWNLOAD_LIST);
-            MainForm.Instance.SetMainFormState(MainFormState.CHECKING);
+            AssemblyPage.Instance.UpdateStatusLabel(WordEnum.STARTING_DOWNLOAD_LIST);
+            AssemblyPage.Instance.SetState(MainFormState.CHECKING);
 
             Status = Status.DOWNLOAD;
             IsValid = false;
 
-            _webClient.DownloadDataAsync(new Uri(_property.listURL() + "/list.zip"));
+            _webClient.DownloadDataAsync(new Uri("http://jdevelopstation.com/gupdater/list.zip"));
         }
 
         private void client_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)
@@ -160,9 +141,9 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
                     return;
                 }
 
-                if (line.StartsWith("#Revision:"))
+                if (line.StartsWith("#Version:"))
                 {
-                    Revision = int.Parse(line.Replace("#Revision:", "").Trim());
+                    AssemblyPage.Instance.SetCurrentVersion(line.Replace("#Version:", "").Trim());
                     continue;
                 }
 
@@ -173,9 +154,9 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
 
                 try
                 {
-                    ListFile file = ListFile.parse(line);
+                    ListFile file = ListFile.parseIgnoreCritical((line));
 
-                    _list[file.Type].AddLast(file);
+                    _items.AddLast(file);
                 }
                 catch (Exception e)
                 {
@@ -193,11 +174,11 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
         {
             Status = Status.FREE;
 
-            MainForm.Instance.UpdateStatusLabel(word);
+            AssemblyPage.Instance.UpdateStatusLabel(word);
 
-            if (!(TaskManager.Instance.NextTask() is AnalyzerTask))
+           // if (!(TaskManager.Instance.NextTask() is AnalyzerTask))
             {
-                MainForm.Instance.SetMainFormState(MainFormState.NONE);
+                AssemblyPage.Instance.SetState(MainFormState.NONE);
             }
 
             OnEnd();
@@ -217,21 +198,14 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
 
         #region Properties & Getters
 
-        public Dictionary<ListFileType, LinkedList<ListFile>> Items
+        public LinkedList<ListFile> Items
         {
-            get { return _list; }
+            get { return _items; }
         }
 
         public bool IsValid { get; set; }
 
         public Status Status { get; set; }
-
-        public int Revision { get; set; }
-
-        public LinkedList<ListFile> Files(ListFileType t)
-        {
-            return _list[t];
-        }
 
         #endregion
     }

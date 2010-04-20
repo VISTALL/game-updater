@@ -6,6 +6,7 @@ using System.IO;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using com.jds.GUpdater.classes.assembly.gui;
 using com.jds.GUpdater.classes.forms;
 using com.jds.GUpdater.classes.games.propertyes;
 using com.jds.GUpdater.classes.language;
@@ -19,15 +20,13 @@ using zlib.Zip;
 
 namespace com.jds.GUpdater.classes.task_manager.tasks
 {
-    public class AnalyzerTask : AbstractTask
+    public class GUAnalyzerTask : AbstractTask
     {
         private readonly LinkedList<ListFile> _temp = new LinkedList<ListFile>();
         private int _maxSize;
 
-        public AnalyzerTask(GameProperty property, ListFileType type)
+        public GUAnalyzerTask()
         {
-            ListType = type;
-            CurrentProperty = property;
             Status = Status.FREE;
         }
 
@@ -35,7 +34,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
         {
             var mainThead = new Thread(AnalizeToThread)
                                 {
-                                    Name = "Analize " + ListType + ";Game: " + CurrentProperty.GameEnum(),
+                                    Name = "Analize GUpdater",
                                     Priority = ThreadPriority.Lowest
                                 };
 
@@ -44,26 +43,18 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
 
         private void AnalizeToThread()
         {
-            if (!CurrentProperty.ListLoader.IsValid)
+            if (!AssemblyPage.Instance.ListLoader.IsValid)
             {
                 return;
             }
 
-            MainForm.Instance.SetMainFormState(MainFormState.CHECKING);
-            MainForm.Instance.UpdateProgressBar(0, true);
-            MainForm.Instance.UpdateProgressBar(0, false);
+            AssemblyPage.Instance.SetState(MainFormState.CHECKING);
+            AssemblyPage.Instance.UpdateProgressBar(0, true);
+            AssemblyPage.Instance.UpdateProgressBar(0, false);
 
             Status = Status.DOWNLOAD;
 
-            if (ListType == ListFileType.NORMAL)
-            {
-                foreach (ListFile listFile in CurrentProperty.ListLoader.Items[ListFileType.CRITICAL])
-                {
-                    _temp.AddLast(listFile);
-                }
-            }
-
-            foreach (ListFile listFile in CurrentProperty.ListLoader.Items[ListType])
+            foreach (ListFile listFile in AssemblyPage.Instance.ListLoader.Items)
             {
                 _temp.AddLast(listFile);
             }
@@ -79,16 +70,19 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
             {
                 Status = Status.FREE;
             }
-
+            
             if (word == WordEnum.UPDATE_DONE)
             {
-                CurrentProperty[ListType] = true;
+                AssemblyPage.Instance.SetState(MainFormState.DONE);
+            }
+            else
+            {
+                AssemblyPage.Instance.SetState(MainFormState.NONE);
             }
 
-            MainForm.Instance.SetMainFormState(MainFormState.NONE);
-            MainForm.Instance.UpdateStatusLabel(String.Format(LanguageHolder.Instance[word], aa));
-            MainForm.Instance.UpdateProgressBar(0, false);
-            MainForm.Instance.UpdateProgressBar(0, true);
+            AssemblyPage.Instance.UpdateStatusLabel(String.Format(LanguageHolder.Instance[word], aa));
+            AssemblyPage.Instance.UpdateProgressBar(0, false);
+            AssemblyPage.Instance.UpdateProgressBar(0, true);
 
             OnEnd();
         }
@@ -100,9 +94,6 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
 
         public void CheckNextFile()
         {
-            if (CurrentProperty == null)
-                return;
-
             if (Status == Status.CANCEL)
             {
                 GoEnd(WordEnum.CANCEL_BY_USER, true);
@@ -120,62 +111,60 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
             int currentCount = _maxSize - _temp.Count;
             var persent = (int) ((100F*(currentCount))/_maxSize);
 
-            MainForm.Instance.UpdateProgressBar(persent, true);
+            AssemblyPage.Instance.UpdateProgressBar(persent, true);
 
-            string path = CurrentProperty.Path;
+            string path = Directory.GetCurrentDirectory();
             string fileName = path + file.FileName.Replace("/", "\\");
 
             var info = new FileInfo(fileName);
 
             string word = LanguageHolder.Instance[WordEnum.CHECKING_S1];
 
-            MainForm.Instance.UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
+            AssemblyPage.Instance.UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
+
+           /* if (FileUtils.IsFileOpen(info))
+            {
+                GoEnd(WordEnum.FILE_S1_IS_OPENED_UPDATE_CANCEL, true, info.Name.Replace(".zip", ""));
+                return;
+            }*/
+
+            String checkSum;
+            try
+            {
+                checkSum = DTHasher.GetMD5Hash(fileName);
+            }
+            catch (Exception)
+            {
+                try
+                {
+
+                    info.Delete();
+                }
+                catch
+                {}
+                GoEnd(WordEnum.FILE_S1_IS_PROBLEMATIC_UPDATE_CANCEL_PLEASE_RECHECK, true, info.Name.Replace(".zip", ""));
+                return;
+            }
+
+            if (checkSum == null)
+            {
+                GoEnd(WordEnum.PROBLEM_WITH_SERVER, true);
+                return;
+            }
 
             if (!info.Exists)
             {
                 DownloadFile(file); //грузим
             }
-            else if (FileUtils.IsFileOpen(info))
+            else if (!checkSum.Equals(file.md5Checksum)) //файл не совпадает
             {
-                GoEnd(WordEnum.FILE_S1_IS_OPENED_UPDATE_CANCEL, true, info.Name.Replace(".zip", ""));
-                return;
+                DownloadFile(file); //грузим
             }
             else
             {
-                String checkSum = null;
+                _temp.Remove(file);
 
-                try
-                {
-                    checkSum = DTHasher.GetMD5Hash(fileName);
-                }
-                catch (Exception)
-                {
-                    try
-                    {
-
-                        info.Delete();
-                    }
-                    catch
-                    {}
-                    
-                    GoEnd(WordEnum.FILE_S1_IS_PROBLEMATIC_UPDATE_CANCEL_PLEASE_RECHECK, true,info.Name.Replace(".zip", ""));
-                    return;
-                }
-
-                if (checkSum == null)
-                {
-                    DownloadFile(file); //грузим
-                }
-                else if(!checkSum.Equals(file.md5Checksum))//файл не совпадает
-                {
-                    DownloadFile(file); //грузим   
-                }
-                else
-                {
-                    _temp.Remove(file);
-
-                    CheckNextFile(); //идем дальше
-                }
+                CheckNextFile(); //идем дальше
             }
         }
 
@@ -193,9 +182,9 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
                 return;
             }
 
-            string path = CurrentProperty.Path;
-            string fileName = path + file.FileName.Replace("/", "\\") + ".zip";
-            var url = new Uri(CurrentProperty.listURL() + file.FileName + ".zip");
+            string path = Directory.GetCurrentDirectory();
+            string fileName = path + file.FileName.Replace("/", "\\") + ".new";
+            var url = new Uri("http://jdevelopstation.com/gupdater" + file.FileName + ".zip");
 
             var info = new FileInfo(fileName);
 
@@ -236,7 +225,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
             var byteBuffer = new byte[8192];
 
             string word = LanguageHolder.Instance[WordEnum.DOWNLOADING_S1];
-            MainForm.Instance.UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
+            AssemblyPage.Instance.UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
 
             bool exception = false;
             try
@@ -259,7 +248,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
                     if (persent != oldPersent)
                     {
                         oldPersent = persent;
-                        MainForm.Instance.UpdateProgressBar(persent, false);
+                        AssemblyPage.Instance.UpdateProgressBar(persent, false);
                     }
                 }
             }
@@ -291,44 +280,45 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
                 return;
             }
 
-            string path = CurrentProperty.Path;
+            string path = Directory.GetCurrentDirectory();
             string fileName = path + file.FileName.Replace("/", "\\");
 
-            var descFile = new FileInfo(fileName);
-            var zipFile = new FileInfo(fileName + ".zip");
+           // var descFile = new FileInfo(fileName);
+            var newFile = new FileInfo(fileName + ".new");
 
             string word = LanguageHolder.Instance[WordEnum.UNPACKING_S1];
-            MainForm.Instance.UpdateStatusLabel(String.Format(word, zipFile.Name.Replace(".zip", "")));
-            MainForm.Instance.UpdateProgressBar(0, false);
 
-            var zipStream = new ZipInputStream(zipFile.OpenRead()) {Password = "afsf325cf6y34g6a5frs4cf5"};
+            AssemblyPage.Instance.UpdateStatusLabel(String.Format(word, newFile.Name.Replace(".new", "")));
+            AssemblyPage.Instance.UpdateProgressBar(0, false);
+
+            var zipStream = new ZipInputStream(newFile.OpenRead());
 
             ZipEntry fileEntry;
-            byte[] listDate = null;
+            byte[] bytes = null;
 
             if ((fileEntry = zipStream.GetNextEntry()) != null)
             {
-                listDate = new byte[zipStream.Length];
-                zipStream.Read(listDate, 0, listDate.Length);
+                bytes = new byte[zipStream.Length];
+                zipStream.Read(bytes, 0, bytes.Length);
             }
 
             zipStream.Close();
-            zipFile.Delete(); //удаляем зип файл
+            newFile.Delete(); //удаляем зип файл
 
-            descFile.Delete(); //удаляем старый файл
+           // descFile.Delete(); //удаляем старый файл
 
-            if (listDate == null)
+            if (bytes == null)
             {
                 GoEnd(WordEnum.PROBLEM_WITH_SERVER, true);
                 return;
             }
 
-            Stream stream = descFile.Create();
-
-            int size = listDate.Length;
+            FileStream fileStream = newFile.Create(); 
+            
+            int size = bytes.Length;
             int oldPersent = 0;
 
-            for (int i = 0; i < listDate.Length; i++)
+            for (int i = 0; i < bytes.Length; i++)
             {
                 if (Status == Status.CANCEL)
                 {
@@ -336,22 +326,22 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
                     break;
                 }
 
-                stream.WriteByte(listDate[i]);
+                fileStream.WriteByte(bytes[i]);
 
                 var persent = (int) ((100F*i)/size);
 
                 if (persent != oldPersent)
                 {
                     oldPersent = persent;
-                    MainForm.Instance.UpdateProgressBar(persent, false);
+                    AssemblyPage.Instance.UpdateProgressBar(persent, false);
                 }
             }
 
-            MainForm.Instance.UpdateProgressBar(100, false);
+            AssemblyPage.Instance.UpdateProgressBar(100, false);
 
-            stream.Close();
+            fileStream.Close();
 
-            descFile.LastWriteTime = fileEntry.DateTime;
+            newFile.LastWriteTime = fileEntry.DateTime;
 
             _temp.Remove(file);
 
@@ -361,11 +351,6 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
         #region Propertyes
 
         public Status Status { get; set; }
-
-        public GameProperty CurrentProperty { get; set; }
-
-        public ListFileType ListType { get; set; }
-
         #endregion
     }
 }

@@ -18,11 +18,7 @@ using com.jds.GUpdater.classes.listloader.enums;
 using com.jds.GUpdater.classes.task_manager;
 using com.jds.GUpdater.classes.task_manager.tasks;
 using com.jds.GUpdater.classes.windows;
-
-#if NET_3_5
-using Microsoft.WindowsAPICodePack.Taskbar;
-#endif
-
+using com.jds.GUpdater.classes.windows.windows7;
 #endregion
 
 namespace com.jds.GUpdater.classes.forms
@@ -32,6 +28,30 @@ namespace com.jds.GUpdater.classes.forms
         #region Nested type: CloseDelegate
 
         private delegate void CloseDelegate();
+
+        #endregion
+      
+        #region Nested type: SetFormStateDelegate
+
+        public delegate void SetFormStateDelegate(MainFormState a);
+
+        #endregion
+
+        #region Nested type: SetOpacityDeledate
+
+        public delegate void SetOpacityDeledate(float d);
+
+        #endregion
+
+        #region Nested type: UpdateProgressBarDelegate
+
+        public delegate void UpdateProgressBarDelegate(int persent, bool t);
+
+        #endregion
+
+        #region Nested type: UpdateStatusLabelDelegate
+
+        public delegate void UpdateStatusLabelDelegate(String a);
 
         #endregion
 
@@ -394,19 +414,14 @@ namespace com.jds.GUpdater.classes.forms
         {
             if (total)
             {
-#if NET_3_5
-                if (TaskbarManager.IsPlatformSupported)
+                if (pe == 0)
                 {
-                    if (pe == 0)
-                    {
-                        TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.NoProgress);
-                    }
-                    else
-                    {
-                        TaskbarManager.Instance.SetProgressValue(pe, 100);
-                    }
+                    Windows7Taskbar.SetProgressState(Handle, ThumbnailProgressState.NoProgress);
                 }
-#endif
+                else
+                {
+                    Windows7Taskbar.SetProgressValue(Handle, pe, 100);
+                }
 
                 _totalProgress.Value = pe;
                 _totalProgress.Refresh();
@@ -456,7 +471,7 @@ namespace com.jds.GUpdater.classes.forms
                 {
                     if (InvokeRequired)
                     {
-                        Invoke(new SetMainFormDelegate(SetMainFormUnsafe), type);
+                        Invoke(new SetFormStateDelegate(SetMainFormUnsafe), type);
                     }
                     else
                     {
@@ -558,28 +573,6 @@ namespace com.jds.GUpdater.classes.forms
 
         #endregion
 
-        #region Nested type: SetMainFormDelegate
 
-        private delegate void SetMainFormDelegate(MainFormState a);
-
-        #endregion
-
-        #region Nested type: SetOpacityDeledate
-
-        private delegate void SetOpacityDeledate(float d);
-
-        #endregion
-
-        #region Nested type: UpdateProgressBarDelegate
-
-        private delegate void UpdateProgressBarDelegate(int persent, bool t);
-
-        #endregion
-
-        #region Nested type: UpdateStatusLabelDelegate
-
-        private delegate void UpdateStatusLabelDelegate(String a);
-
-        #endregion
     }
 }

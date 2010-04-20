@@ -1,24 +1,29 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Reflection;
+using com.jds.GUpdater.classes.listloader;
 
 namespace com.jds.GUpdater.classes.assembly
 {
     public class AssemblyInfo
     {
+        #region Instance & Variables
         private static AssemblyInfo _instance;
-
-        private AssemblyInfo()
-        {
-            var st = AssemblyVersion.Split('.');
-            MajorVersion = int.Parse(st[0]);
-            MinorVersion = int.Parse(st[1]);
-        }
-
+        
+       
         public static AssemblyInfo Instance
         {
             get { return _instance ?? (_instance = new AssemblyInfo()); }
         }
+
+        private AssemblyInfo()
+        {
+
+        }
+        #endregion
+
+        #region Assembly Info
 
         [Browsable(false)]
         public string AssemblyTitle
@@ -102,10 +107,6 @@ namespace com.jds.GUpdater.classes.assembly
             }
         }
 
-        [Browsable(false)]
-        public int MajorVersion { get; private set; }
-
-        [Browsable(false)]
-        public int MinorVersion { get; private set; }
+        #endregion
     }
 }
