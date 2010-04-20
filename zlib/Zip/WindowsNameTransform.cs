@@ -36,10 +36,9 @@
 using System;
 using System.IO;
 using System.Text;
+using zlib.Core;
 
-using ICSharpCode.SharpZipLib.Core;
-
-namespace ICSharpCode.SharpZipLib.Zip
+namespace zlib.Zip
 {
 	/// <summary>
 	/// WindowsNameTransform transforms ZipFile names to windows compatible ones.

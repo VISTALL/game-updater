@@ -35,10 +35,9 @@
 // exception statement from your version.
 
 using System;
-using System.Collections;
 using System.IO;
 
-namespace ICSharpCode.SharpZipLib.Zip
+namespace zlib.Zip
 {
 	// TODO: Sort out wether tagged data is useful and what a good implementation might look like.
 	// Its just a sketch of an idea at the moment.

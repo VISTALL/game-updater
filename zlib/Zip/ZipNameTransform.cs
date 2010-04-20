@@ -37,10 +37,9 @@
 using System;
 using System.IO;
 using System.Text;
+using zlib.Core;
 
-using ICSharpCode.SharpZipLib.Core;
-
-namespace ICSharpCode.SharpZipLib.Zip
+namespace zlib.Zip
 {
 	/// <summary>
 	/// ZipNameTransform transforms names as per the Zip file naming convention.

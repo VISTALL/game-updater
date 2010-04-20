@@ -34,14 +34,11 @@
 // exception statement from your version.
 
 using System;
-
-#if !NETCF_1_0 && !NETCF_2_0
 using System.Runtime.Serialization;
+#if !NETCF_1_0 && !NETCF_2_0
 #endif
 
-using ICSharpCode.SharpZipLib;
-
-namespace ICSharpCode.SharpZipLib.BZip2
+namespace zlib.BZip2
 {
 	/// <summary>
 	/// BZip2Exception represents exceptions specific to Bzip2 algorithm

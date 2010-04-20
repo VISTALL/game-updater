@@ -40,13 +40,11 @@
 using System;
 using System.IO;
 using System.Collections;
-using System.Text;
+using zlib.Checksums;
+using zlib.Zip.Compression;
+using zlib.Zip.Compression.Streams;
 
-using ICSharpCode.SharpZipLib.Checksums;
-using ICSharpCode.SharpZipLib.Zip.Compression;
-using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
-
-namespace ICSharpCode.SharpZipLib.Zip
+namespace zlib.Zip
 {
 	/// <summary>
 	/// This is a DeflaterOutputStream that writes the files into a zip
@@ -144,7 +142,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// <exception cref="ArgumentOutOfRangeException">
 		/// Level specified is not supported.
 		/// </exception>
-		/// <see cref="ICSharpCode.SharpZipLib.Zip.Compression.Deflater"/>
+		/// <see cref="Deflater"/>
 		public void SetLevel(int level)
 		{
 			deflater_.SetLevel(level);

@@ -37,11 +37,9 @@
 
 using System;
 using System.IO;
-using System.Text;
+using zlib.Core;
 
-using ICSharpCode.SharpZipLib.Core;
-
-namespace ICSharpCode.SharpZipLib.Zip
+namespace zlib.Zip
 {
 	/// <summary>
 	/// Basic implementation of <see cref="IEntryFactory"></see>

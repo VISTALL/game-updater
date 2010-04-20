@@ -35,9 +35,9 @@
 
 using System;
 using System.IO;
-using ICSharpCode.SharpZipLib.Core;
+using zlib.Core;
 
-namespace ICSharpCode.SharpZipLib.Zip
+namespace zlib.Zip
 {
 	/// <summary>
 	/// FastZipEvents supports all events applicable to <see cref="FastZip">FastZip</see> operations.

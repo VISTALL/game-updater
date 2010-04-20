@@ -39,15 +39,12 @@
 
 using System;
 using System.IO;
-
-#if !NETCF_1_0
 using System.Security.Cryptography;
+using zlib.GZip;
+#if !NETCF_1_0
 #endif
 
-using ICSharpCode.SharpZipLib.Zip.Compression;
-using ICSharpCode.SharpZipLib.Checksums;
-
-namespace ICSharpCode.SharpZipLib.Zip.Compression.Streams 
+namespace zlib.Zip.Compression.Streams 
 {
 
 	/// <summary>
@@ -350,7 +347,7 @@ namespace ICSharpCode.SharpZipLib.Zip.Compression.Streams
 	/// format. The "deflate" format is described in RFC 1951.
 	///
 	/// This stream may form the basis for other decompression filters, such
-	/// as the <see cref="ICSharpCode.SharpZipLib.GZip.GZipInputStream">GZipInputStream</see>.
+	/// as the <see cref="GZipInputStream">GZipInputStream</see>.
 	///
 	/// Author of the original java version : John Leuner.
 	/// </summary>

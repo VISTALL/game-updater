@@ -35,8 +35,7 @@
 
 using System;
 using System.IO;
-using ICSharpCode.SharpZipLib.BZip2;
-using ICSharpCode.SharpZipLib.Checksums;
+using zlib.Checksums;
 
 namespace zlib.BZip2 
 {

@@ -38,11 +38,10 @@
 // exception statement from your version.
 
 using System;
+using zlib.Checksums;
+using zlib.Zip.Compression.Streams;
 
-using ICSharpCode.SharpZipLib.Checksums;
-using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
-
-namespace ICSharpCode.SharpZipLib.Zip.Compression 
+namespace zlib.Zip.Compression 
 {
 	/// <summary>
 	/// Inflater is used to decompress data that has been compressed according

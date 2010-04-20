@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows 7 Support", "window
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Premaker", "Premaker\Premaker.csproj", "{4BC86361-ACDC-4C85-82D6-8C655CA3388F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{52B1BF39-4359-463E-9141-2ECA6E260286}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CodeAnalysisDebug|Any CPU = CodeAnalysisDebug|Any CPU
@@ -76,6 +78,15 @@ Global
 		{4BC86361-ACDC-4C85-82D6-8C655CA3388F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BC86361-ACDC-4C85-82D6-8C655CA3388F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4BC86361-ACDC-4C85-82D6-8C655CA3388F}.Release|x64.ActiveCfg = Release|Any CPU
+		{52B1BF39-4359-463E-9141-2ECA6E260286}.CodeAnalysisDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52B1BF39-4359-463E-9141-2ECA6E260286}.CodeAnalysisDebug|Any CPU.Build.0 = Debug|Any CPU
+		{52B1BF39-4359-463E-9141-2ECA6E260286}.CodeAnalysisDebug|x64.ActiveCfg = Debug|Any CPU
+		{52B1BF39-4359-463E-9141-2ECA6E260286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52B1BF39-4359-463E-9141-2ECA6E260286}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52B1BF39-4359-463E-9141-2ECA6E260286}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{52B1BF39-4359-463E-9141-2ECA6E260286}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52B1BF39-4359-463E-9141-2ECA6E260286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52B1BF39-4359-463E-9141-2ECA6E260286}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -31,7 +31,7 @@ namespace com.jds.Premaker.classes.files
 
         public FileStream CreateDescription()
         {
-            String file = DescriptionDirectoryName + FileName + ".tar.bz2";
+            String file = DescriptionDirectoryName + FileName + ".zip";
             FileInfo f = new FileInfo(file);
 
             if (f.Exists)

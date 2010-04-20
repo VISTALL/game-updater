@@ -38,10 +38,9 @@
 // exception statement from your version.
 
 using System;
+using zlib.Checksums;
 
-using ICSharpCode.SharpZipLib.Checksums;
-
-namespace ICSharpCode.SharpZipLib.Zip.Compression 
+namespace zlib.Zip.Compression 
 {
 	
 	/// <summary>

@@ -40,9 +40,9 @@
 
 using System;
 using System.Security.Cryptography;
-using ICSharpCode.SharpZipLib.Checksums;
+using zlib.Checksums;
 
-namespace ICSharpCode.SharpZipLib.Encryption
+namespace zlib.Encryption
 {
 	/// <summary>
 	/// PkzipClassic embodies the classic or original encryption facilities used in Pkzip archives.

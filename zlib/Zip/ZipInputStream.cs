@@ -38,18 +38,16 @@
 // exception statement from your version.
 
 using System;
-using System.Text;
 using System.IO;
-
-using ICSharpCode.SharpZipLib.Checksums;
-using ICSharpCode.SharpZipLib.Zip.Compression;
-using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
-
+using zlib.Checksums;
+using zlib.Encryption;
+using zlib.Zip.Compression;
+using zlib.Zip.Compression.Streams;
 #if !NETCF_1_0
-using ICSharpCode.SharpZipLib.Encryption;
+
 #endif
 
-namespace ICSharpCode.SharpZipLib.Zip
+namespace zlib.Zip
 {
 	/// <summary>
 	/// This is an InflaterInputStream that reads the files baseInputStream an zip archive

@@ -36,14 +36,12 @@
 // obligated to do so.  If you do not wish to do so, delete this
 // exception statement from your version.
 
-using System;
 using System.IO;
+using zlib.Checksums;
+using zlib.Zip.Compression;
+using zlib.Zip.Compression.Streams;
 
-using ICSharpCode.SharpZipLib.Checksums;
-using ICSharpCode.SharpZipLib.Zip.Compression;
-using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
-
-namespace ICSharpCode.SharpZipLib.GZip 
+namespace zlib.GZip 
 {
 	
 	/// <summary>

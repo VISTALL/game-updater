@@ -38,15 +38,13 @@
 
 using System;
 using System.IO;
-using ICSharpCode.SharpZipLib.Checksums;
-using ICSharpCode.SharpZipLib.Zip.Compression;
-
-#if !NETCF_1_0
 using System.Security.Cryptography;
-using ICSharpCode.SharpZipLib.Encryption;
+using zlib.Encryption;
+#if !NETCF_1_0
+
 #endif
 
-namespace ICSharpCode.SharpZipLib.Zip.Compression.Streams 
+namespace zlib.Zip.Compression.Streams 
 {
 	/// <summary>
 	/// A special stream deflating or compressing the bytes that are

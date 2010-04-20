@@ -36,8 +36,9 @@
 // exception statement from your version.
 
 using System;
+using zlib.Zip.Compression.Streams;
 
-namespace ICSharpCode.SharpZipLib.Checksums 
+namespace zlib.Checksums 
 {
 	
 	/// <summary>
@@ -84,8 +85,8 @@ namespace ICSharpCode.SharpZipLib.Checksums
 	///    checked separately. (Any sequence of zeroes has a Fletcher
 	///    checksum of zero.)"
 	/// </summary>
-	/// <see cref="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream"/>
-	/// <see cref="ICSharpCode.SharpZipLib.Zip.Compression.Streams.DeflaterOutputStream"/>
+	/// <see cref="InflaterInputStream"/>
+	/// <see cref="DeflaterOutputStream"/>
 	public sealed class Adler32 : IChecksum
 	{
 		/// <summary>

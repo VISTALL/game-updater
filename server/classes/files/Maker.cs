@@ -1,10 +1,11 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Text;
 using log4net;
 using System.IO;
-using ICSharpCode.SharpZipLib.Zip;
 using com.jds.Builder.classes.forms;
+using zlib.Zip;
 
 namespace com.jds.Builder.classes.files
 {

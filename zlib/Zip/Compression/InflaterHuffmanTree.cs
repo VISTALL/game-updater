@@ -36,10 +36,9 @@
 // exception statement from your version.
 
 using System;
+using zlib.Zip.Compression.Streams;
 
-using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
-
-namespace ICSharpCode.SharpZipLib.Zip.Compression 
+namespace zlib.Zip.Compression 
 {
 	
 	/// <summary>

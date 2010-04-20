@@ -42,18 +42,16 @@ using System.Collections;
 using System.IO;
 using System.Text;
 using System.Globalization;
-
-#if !NETCF_1_0
 using System.Security.Cryptography;
-using ICSharpCode.SharpZipLib.Encryption;
+using zlib.Checksums;
+using zlib.Core;
+using zlib.Encryption;
+using zlib.Zip.Compression;
+using zlib.Zip.Compression.Streams;
+#if !NETCF_1_0
 #endif
 
-using ICSharpCode.SharpZipLib.Core;
-using ICSharpCode.SharpZipLib.Checksums;
-using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
-using ICSharpCode.SharpZipLib.Zip.Compression;
-
-namespace ICSharpCode.SharpZipLib.Zip 
+namespace zlib.Zip 
 {
 	#region Keys Required Event Args
 	/// <summary>
@@ -755,7 +753,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// <exception cref="ObjectDisposedException">
 		/// The ZipFile has already been closed
 		/// </exception>
-		/// <exception cref="ICSharpCode.SharpZipLib.Zip.ZipException">
+		/// <exception cref="ZipException">
 		/// The compression method for the entry is unknown
 		/// </exception>
 		/// <exception cref="IndexOutOfRangeException">
@@ -791,7 +789,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// <exception cref="ObjectDisposedException">
 		/// The ZipFile has already been closed
 		/// </exception>
-		/// <exception cref="ICSharpCode.SharpZipLib.Zip.ZipException">
+		/// <exception cref="ZipException">
 		/// The compression method for the entry is unknown
 		/// </exception>
 		/// <exception cref="IndexOutOfRangeException">
@@ -3070,7 +3068,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// <exception cref="System.IO.IOException">
 		/// An i/o error occurs.
 		/// </exception>
-		/// <exception cref="ICSharpCode.SharpZipLib.Zip.ZipException">
+		/// <exception cref="ZipException">
 		/// The central directory is malformed or cannot be found
 		/// </exception>
 		void ReadEntries()
@@ -3246,7 +3244,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// <exception cref="System.IO.EndOfStreamException">
 		/// The stream ends prematurely
 		/// </exception>
-		/// <exception cref="ICSharpCode.SharpZipLib.Zip.ZipException">
+		/// <exception cref="ZipException">
 		/// The local header signature is invalid, the entry and central header file name lengths are different
 		/// or the local and entry compression methods dont match
 		/// </exception>

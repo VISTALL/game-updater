@@ -40,7 +40,7 @@
 using System;
 using System.IO;
 
-namespace ICSharpCode.SharpZipLib.Zip
+namespace zlib.Zip
 {
 
 	/// <summary>
@@ -809,8 +809,8 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// <returns>
 		/// The compression method for this entry
 		/// </returns>
-		/// <see cref="ICSharpCode.SharpZipLib.Zip.CompressionMethod.Deflated"/>
-		/// <see cref="ICSharpCode.SharpZipLib.Zip.CompressionMethod.Stored"/>
+		/// <see cref="Zip.CompressionMethod.Deflated"/>
+		/// <see cref="Zip.CompressionMethod.Stored"/>
 		public CompressionMethod CompressionMethod {
 			get {
 				return method;

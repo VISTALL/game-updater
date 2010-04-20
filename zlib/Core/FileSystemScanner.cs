@@ -35,9 +35,8 @@
 
 
 using System;
-using System.IO;
 
-namespace ICSharpCode.SharpZipLib.Core
+namespace zlib.Core
 {
 	#region EventArgs
 	/// <summary>

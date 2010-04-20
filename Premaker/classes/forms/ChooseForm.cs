@@ -7,6 +7,7 @@ namespace com.jds.Premaker.classes.forms
         public ChooseForm()
         {
             InitializeComponent();
+
         }
 
         private void _goButton_Click(object sender, System.EventArgs e)

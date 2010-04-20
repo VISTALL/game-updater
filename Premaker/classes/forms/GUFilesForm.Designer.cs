@@ -41,6 +41,9 @@
             this._saveFolderChoose = new System.Windows.Forms.FolderBrowserDialog();
             this._decsPath = new System.Windows.Forms.TextBox();
             this._decsPathLabel = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this._progressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // _filesList
@@ -145,11 +148,29 @@
             this._decsPathLabel.TabIndex = 9;
             this._decsPathLabel.Text = "Dsc Path:";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._progressBar});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 514);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(474, 22);
+            this.statusStrip1.TabIndex = 11;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // _progressBar
+            // 
+            this._progressBar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this._progressBar.Name = "_progressBar";
+            this._progressBar.Size = new System.Drawing.Size(100, 16);
+            this._progressBar.Visible = false;
+            // 
             // GUFilesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 510);
+            this.ClientSize = new System.Drawing.Size(474, 536);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this._decsPath);
             this.Controls.Add(this._decsPathLabel);
             this.Controls.Add(this._startBtn);
@@ -165,6 +186,8 @@
             this.Name = "GUFilesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GUpdater files";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +208,7 @@
         private System.Windows.Forms.FolderBrowserDialog _saveFolderChoose;
         private System.Windows.Forms.TextBox _decsPath;
         private System.Windows.Forms.Label _decsPathLabel;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripProgressBar _progressBar;
     }
 }

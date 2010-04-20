@@ -69,7 +69,7 @@ struct header
 using System;
 using System.Text;
 
-namespace ICSharpCode.SharpZipLib.Tar 
+namespace zlib.Tar 
 {
 	
 	

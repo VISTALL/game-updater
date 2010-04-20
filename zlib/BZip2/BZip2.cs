@@ -35,7 +35,6 @@
 
 using System;
 using System.IO;
-using ICSharpCode.SharpZipLib.BZip2;
 
 namespace zlib.BZip2
 {

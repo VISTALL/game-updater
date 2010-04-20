@@ -33,9 +33,7 @@
 // obligated to do so.  If you do not wish to do so, delete this
 // exception statement from your version.
 
-using System;
-
-namespace ICSharpCode.SharpZipLib.Core
+namespace zlib.Core
 {
 	/// <summary>
 	/// WindowsPathUtils provides simple utilities for handling windows paths.

@@ -36,9 +36,8 @@
 
 using System;
 using System.IO;
-using System.Text;
 
-namespace ICSharpCode.SharpZipLib.Tar 
+namespace zlib.Tar 
 {
 	
 	/// <summary>

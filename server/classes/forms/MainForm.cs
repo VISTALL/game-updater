@@ -11,7 +11,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
-using ICSharpCode.SharpZipLib.Zip;
 #if NET_3_5
 using Microsoft.WindowsAPICodePack.Taskbar;
 #endif

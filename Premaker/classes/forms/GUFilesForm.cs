@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using com.jds.Premaker.classes.files;
 using com.jds.Premaker.classes.utiles;
-using ICSharpCode.SharpZipLib.BZip2;
-using ICSharpCode.SharpZipLib.Tar;
-using zlib.BZip2;
+using Microsoft.WindowsAPICodePack.Taskbar;
+using zlib.Zip;
 
 namespace com.jds.Premaker.classes.forms
 {
@@ -19,30 +19,35 @@ namespace com.jds.Premaker.classes.forms
         public GUFilesForm()
         {
             InitializeComponent();
-            _forlderBrowse.SelectedPath = ".";              
+
+            _forlderBrowse.SelectedPath = ".";
         }
+
+        public string SelectedPath { get; set; }
+
+        public string DescriptionPath { get; set; }
 
         private void _openFolder_Click(object sender, EventArgs e)
         {
-            if(_forlderBrowse.ShowDialog() != DialogResult.OK)
+            if (_forlderBrowse.ShowDialog() != DialogResult.OK)
             {
                 return;
             }
-            var path = _forlderBrowse.SelectedPath;
+            string path = _forlderBrowse.SelectedPath;
             StringUtil.slashes(path, out path);
             SelectedPath = path;
             read(SelectedPath);
             _makeTOBtn.Enabled = true;
             _pathBox.Text = path;
 
-            var gExe = SelectedPath + "/GUpdater.exe";
+            string gExe = SelectedPath + "/GUpdater.exe";
             if (!File.Exists(gExe))
             {
                 MessageBox.Show("Not GUpdater folder");
                 return;
             }
 
-            var ass = Assembly.LoadFile(gExe);
+            Assembly ass = Assembly.LoadFile(gExe);
             _versionLabel.Text = ass.GetName().Version.ToString();
         }
 
@@ -53,79 +58,136 @@ namespace com.jds.Premaker.classes.forms
                 return;
             }
 
-            var path = _saveFolderChoose.SelectedPath;
+            string path = _saveFolderChoose.SelectedPath;
             StringUtil.slashes(path, out path);
 
             DescriptionPath = path;
-            _decsPathLabel.Text = DescriptionPath;
+            _decsPath.Text = DescriptionPath;
 
             _startBtn.Enabled = true;
         }
 
         private void _startBtn_Click(object sender, EventArgs e)
         {
-            putToList();
+            ThreadStart a = delegate
+                                {
+                                    putToList();
 
-            if (!Directory.Exists(SelectedPath))
-            {
-                Directory.CreateDirectory(SelectedPath);
-            }
-            var listFile = DescriptionPath + "/list.tar.bz2";
-            if(File.Exists(listFile))
-            {
-                File.Delete(listFile);
-            }
-            var list = new FileInfo(listFile);
+                                    if (!Directory.Exists(SelectedPath))
+                                    {
+                                        Directory.CreateDirectory(SelectedPath);
+                                    }
+                                    string listFile = DescriptionPath + "/list.zip";
+                                    if (File.Exists(listFile))
+                                    {
+                                        File.Delete(listFile);
+                                    }
+                                    var list = new FileInfo(listFile);
+                                    var listStream = new ZipOutputStream(list.Create());
 
-          //  var tarOutputStream = new TarOutputStream(list.Create());
+                                    var listEntry = new ZipEntry("list.lst");
+                                    listEntry.DateTime = DateTime.Now;
+                                    listStream.PutNextEntry(listEntry);
 
-         //   var tarEntry = new TarEntry(new TarHeader() {Name =  "list.lst"});
-       //     tarOutputStream.PutNextEntry(tarEntry);
+                                    onStart();
 
-             for (var i = 0; i < _files.Count; i++) //листаем
-             {
-                 var item = _files[i];
+                                    for (int i = 0; i < _files.Count; i++) //листаем
+                                    {
+                                        ListFile item = _files[i];
 
-                 item.validateDirectoryes();
+                                        item.validateDirectoryes();
 
-                 var sourceStream = item.CreateSource();
-                 var descriptionStream = item.CreateDescription();
+                                        FileStream sourceStream = item.CreateSource();
+                                        FileStream descriptionStream = item.CreateDescription();
 
-                 BZip2OutputStream bZip2OutputStream = new BZip2OutputStream(descriptionStream, 9);
-                 TarArchive archive = TarArchive.CreateOutputTarArchive(bZip2OutputStream);
+                                        var zipDescriptionStream = new ZipOutputStream(descriptionStream);
+                                        //открываем стрим
+                                        zipDescriptionStream.SetLevel(9);
+                                        // zipDescriptionStream.Password = PASSWORD;
 
-                 TarEntry entry = TarEntry.CreateTarEntry(item.EntryName.Replace(".tar.bz2", ""));
+                                        var entry = new ZipEntry(item.EntryName.Replace(".zip", ""));
+                                        entry.DateTime = item.SourceTime();
+                                        zipDescriptionStream.PutNextEntry(entry);
 
-                 entry.GetFileTarHeader(new TarHeader(), item.SourceDirectoryName + item.FileName);
-                 archive.WriteEntry(entry, true);
+                                        var bytes = new byte[sourceStream.Length];
+                                        int readLen = sourceStream.Read(bytes, 0, bytes.Length);
+                                        sourceStream.Close();
 
-                 var bytes = new byte[sourceStream.Length];
-                 var readLen = sourceStream.Read(bytes, 0, bytes.Length);
-                 sourceStream.Close();
+                                        if (readLen != bytes.Length)
+                                        {
+                                            continue;
+                                        }
 
-                 bZip2OutputStream.Write(bytes, 0, readLen);
-                 
-                // var tarDescriptionStream = new TarOutputStream(descriptionStream); //открываем стрим
-                // var bZip2OutputStream = new BZip2OutputStream(tarDescriptionStream);
-                 
-               //  var entry = new TarEntry(new TarHeader { Name = item.EntryName.Replace(".tar.bz2", "") });
-                // tarDescriptionStream.PutNextEntry(entry);
+                                        zipDescriptionStream.Write(bytes, 0, readLen);
 
-                
+                                        zipDescriptionStream.Finish();
+                                        zipDescriptionStream.Close();
 
-                 //tarDescriptionStream.Write(bytes, 0, readLen);
+                                        writeString(listStream, item.FileName + "\t" + item.MD5 + "\n");
 
-                // tarDescriptionStream.Finish();
-                 //tarDescriptionStream.Close();
-                 //bZip2OutputStream.Close();
+                                        int p = ((100*i)/_files.Count);
+                                        if (p > 100)
+                                            p = 100;
 
-                // writeString(tarOutputStream, item.FileName + "\t" + item.MD5 + "\n");
-                 archive.Close();
-             }
+                                        setValue(p);
+                                    }
 
-           //  tarOutputStream.Finish();
-          //   tarOutputStream.Close();
+                                    listStream.Finish();
+                                    listStream.Close();
+
+                                    onEnd();
+                                };
+
+            new Thread(a).Start();
         }
+
+        public void onStart()
+        {
+            ThreadStart a = delegate
+                                {
+                                    _progressBar.Visible = true;
+                                    _progressBar.Value = 0;
+
+                                    if (TaskbarManager.IsPlatformSupported)
+                                    {
+                                        TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Normal);
+                                    }
+                                };
+            Invoke(a);
+        }
+
+        public void onEnd()
+        {
+            ThreadStart a = delegate
+                                {
+                                    setValue(100);
+
+                                    MessageBox.Show("Finish");
+
+                                    _progressBar.Visible = false;
+
+                                    if (TaskbarManager.IsPlatformSupported)
+                                    {
+                                        TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.NoProgress);
+                                    }
+                                };
+
+            Invoke(a);
+        }
+
+        public void setValue(int v)
+        {
+            ThreadStart a = delegate
+                                {
+                                    _progressBar.Value = v;
+
+                                    if (TaskbarManager.IsPlatformSupported)
+                                    {
+                                        TaskbarManager.Instance.SetProgressValue(v, 100);
+                                    }
+                                };
+            Invoke(a);
+        }  
 
         public void writeString(Stream stream, String text)
         {
@@ -135,7 +197,7 @@ namespace com.jds.Premaker.classes.forms
 
         public void putToList()
         {
-            foreach(var obj in _filesList.Items)
+            foreach (object obj in _filesList.Items)
             {
                 var file = new ListFile
                                {
@@ -149,18 +211,18 @@ namespace com.jds.Premaker.classes.forms
 
         public void read(String path)
         {
-            var files = Directory.GetFiles(path); //берет список файлов
+            string[] files = Directory.GetFiles(path); //берет список файлов
 
-            foreach (var file in files) //листаем файлы
+            foreach (string file in files) //листаем файлы
             {
                 //убираем родительский адресс + меняеш хеши
-                var fileName = file.Replace("\\", "/").Replace(SelectedPath, "");
+                string fileName = file.Replace("\\", "/").Replace(SelectedPath, "");
 
                 _allFiles.Items.Add(fileName);
             }
 
-            var directories = Directory.GetDirectories(path); //берет список папок      
-            foreach (var dir in directories) //листаем
+            string[] directories = Directory.GetDirectories(path); //берет список папок      
+            foreach (string dir in directories) //листаем
             {
                 read(dir);
             }
@@ -177,16 +239,6 @@ namespace com.jds.Premaker.classes.forms
         private void _filesList_SelectedIndexChanged(object sender, EventArgs e)
         {
             _filesList.Items.Remove(_filesList.SelectedItem);
-        }
-
-        public string SelectedPath
-        {
-            get; set;
-        }
-
-        public string DescriptionPath
-        {
-            get; set;
         }
     }
 }

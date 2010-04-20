@@ -45,7 +45,7 @@ using System.Threading;
 using System.Globalization;
 #endif
 
-namespace ICSharpCode.SharpZipLib.Zip 
+namespace zlib.Zip 
 {
 
 	#region Enumerations

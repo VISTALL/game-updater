@@ -38,8 +38,7 @@
 
 using System;
 
-
-namespace ICSharpCode.SharpZipLib.Zip.Compression.Streams 
+namespace zlib.Zip.Compression.Streams 
 {
 	
 	/// <summary>

@@ -13,7 +13,7 @@ using com.jds.GUpdater.classes.language.enums;
 using com.jds.GUpdater.classes.listloader;
 using com.jds.GUpdater.classes.listloader.enums;
 using com.jds.GUpdater.classes.utils;
-using ICSharpCode.SharpZipLib.Zip;
+using zlib.Zip;
 
 #endregion
 
