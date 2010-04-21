@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Drawing.Design;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
-using com.jds.GUpdater.classes.assembly.gui;
 using com.jds.GUpdater.classes.config;
 using com.jds.GUpdater.classes.forms;
 
@@ -33,7 +32,7 @@ namespace com.jds.GUpdater.classes.language
 
             var lb = new ListBox {Sorted = true, SelectionMode = SelectionMode.One, HorizontalScrollbar = true};
 
-            foreach (string lang in LanguageHolder.Instance.Languages)
+            foreach (string lang in LanguageHolder.Instance().Languages)
             {
                 lb.Items.Add(lang);
             }

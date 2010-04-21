@@ -80,9 +80,9 @@ namespace com.jds.GUpdater.classes.language
             _log.Info("Load " + _languages.Count + " languages");
         }
 
-        public static LanguageHolder Instance
+        public static LanguageHolder Instance()
         {
-            get { return _instance ?? (_instance = new LanguageHolder()); }
+            return _instance ?? (_instance = new LanguageHolder()); 
         }
 
         public Dictionary<string, Language>.KeyCollection Languages

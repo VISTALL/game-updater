@@ -42,8 +42,7 @@ namespace com.jds.GUpdater
                 _log.Info("Program started.");
 
                 TaskManager.Instance.Start();
-                var a = AssemblyInfo.Instance;
-
+                
                 try
                 {
                     RConfig.Instance.init();
@@ -55,17 +54,21 @@ namespace com.jds.GUpdater
 
                 try
                 {
-                    var languageHolder = LanguageHolder.Instance;
-                    var h = ImageHolder.Instance;
+                    LanguageHolder.Instance();
+                    ImageHolder.Instance();
                 }
                 catch (Exception e)
                 {
                     _log.Info("Exception[50]: " + e, e);
                 }
 
+                var mainForm = MainForm.Instance;
+                AssemblyInfo.Instance();
+                PropertyForm.Instance();
+
                 try
                 {
-                    Application.Run(MainForm.Instance);
+                    Application.Run(mainForm);
 
                     _log.Info("Program exit.");
                 }

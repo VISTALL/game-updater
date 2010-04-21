@@ -37,7 +37,7 @@ namespace com.jds.GUpdater.classes.gui
 
         public void RefreshNews(Label l)
         {
-            l.Text = LanguageHolder.Instance[WordEnum.PLEASE_WAIT];
+            l.Text = LanguageHolder.Instance()[WordEnum.PLEASE_WAIT];
             l.ForeColor = Color.FromArgb(157, 138, 113);
             l.Visible = true;
 
@@ -54,7 +54,7 @@ namespace com.jds.GUpdater.classes.gui
             {
                 if (lab != null)
                 {
-                    lab.Text = LanguageHolder.Instance[WordEnum.CANCEL_BY_USER];
+                    lab.Text = LanguageHolder.Instance()[WordEnum.CANCEL_BY_USER];
                 }
                 return;
             }
@@ -63,7 +63,7 @@ namespace com.jds.GUpdater.classes.gui
             {
                 if (lab != null)
                 {
-                    lab.Text = LanguageHolder.Instance[WordEnum.PROBLEM_WITH_INTERNET];
+                    lab.Text = LanguageHolder.Instance()[WordEnum.PROBLEM_WITH_INTERNET];
                 }
                 return;
             }
@@ -132,7 +132,7 @@ namespace com.jds.GUpdater.classes.gui
                 i.Visible = true;
             }
 
-            l.Text = LanguageHolder.Instance[WordEnum.PLEASE_WAIT];
+            l.Text = LanguageHolder.Instance()[WordEnum.PLEASE_WAIT];
             l.Visible = false;
         }
 

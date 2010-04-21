@@ -7,10 +7,10 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
-using com.jds.GUpdater.classes.assembly.gui;
 using com.jds.GUpdater.classes.language.enums;
 using com.jds.GUpdater.classes.listloader;
 using com.jds.GUpdater.classes.listloader.enums;
+using com.jds.GUpdater.classes.version_control.gui;
 using com.jds.GUpdater.classes.zip;
 using log4net;
 
@@ -58,8 +58,8 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
                 return;
             }
 
-            AssemblyPage.Instance.UpdateStatusLabel(WordEnum.STARTING_DOWNLOAD_LIST);
-            AssemblyPage.Instance.SetState(MainFormState.CHECKING);
+            AssemblyPage.Instance().UpdateStatusLabel(WordEnum.STARTING_DOWNLOAD_LIST);
+            AssemblyPage.Instance().SetState(MainFormState.CHECKING);
 
             Status = Status.DOWNLOAD;
             IsValid = false;
@@ -143,7 +143,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
 
                 if (line.StartsWith("#Version:"))
                 {
-                    AssemblyPage.Instance.SetCurrentVersion(line.Replace("#Version:", "").Trim());
+                    AssemblyPage.Instance().SetCurrentVersion(line.Replace("#Version:", "").Trim());
                     continue;
                 }
 
@@ -174,11 +174,11 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
         {
             Status = Status.FREE;
 
-            AssemblyPage.Instance.UpdateStatusLabel(word);
+            AssemblyPage.Instance().UpdateStatusLabel(word);
 
            // if (!(TaskManager.Instance.NextTask() is AnalyzerTask))
             {
-                AssemblyPage.Instance.SetState(MainFormState.NONE);
+                AssemblyPage.Instance().SetState(MainFormState.NONE);
             }
 
             OnEnd();

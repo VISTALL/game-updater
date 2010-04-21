@@ -10,6 +10,6 @@
         SETTINGS,
 
         AION,
-        LINEAGE2
+        LINEAGE2,
     }
 }

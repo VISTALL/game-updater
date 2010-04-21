@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
+using com.jds.GUpdater.classes.forms;
 
 namespace com.jds.GUpdater.classes.events
 {
@@ -47,7 +48,7 @@ namespace com.jds.GUpdater.classes.events
                 var label = sender as Label;
                 var target = label.Tag as String;
 
-                if (target != null)
+                if (target != null && !target.Equals("ASSEMBLY"))
                 {
                     try
                     {
@@ -56,6 +57,11 @@ namespace com.jds.GUpdater.classes.events
                     catch
                     {
                     }
+                }
+                else if(target != null && target.Equals("ASSEMBLY"))
+                {
+                    if (!MainForm.Instance.TabbedPane.IsSelectionDisabled)
+                        PropertyForm.Instance().ShowDialog(MainForm.Instance);
                 }
             }
         }

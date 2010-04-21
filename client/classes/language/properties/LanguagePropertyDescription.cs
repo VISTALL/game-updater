@@ -34,7 +34,7 @@ namespace com.jds.GUpdater.classes.language.properties
 
                 return _nameWord == null
                            ? _basePropertyDescriptor.DisplayName
-                           : LanguageHolder.Instance[(WordEnum) _nameWord];
+                           : LanguageHolder.Instance()[(WordEnum)_nameWord];
             }
         }
 
@@ -52,7 +52,7 @@ namespace com.jds.GUpdater.classes.language.properties
 
                 return _descriptionWord == null
                            ? _basePropertyDescriptor.DisplayName
-                           : LanguageHolder.Instance[(WordEnum) _descriptionWord];
+                           : LanguageHolder.Instance()[(WordEnum)_descriptionWord];
             }
         }
 

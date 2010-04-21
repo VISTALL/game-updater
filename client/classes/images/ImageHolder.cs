@@ -7,6 +7,7 @@ namespace com.jds.GUpdater.classes.images
     public class ImageHolder
     {
         private static ImageHolder _instance;
+
         private readonly Dictionary<PictureName, ImageInfo> _images = new Dictionary<PictureName, ImageInfo>();
 
         private ImageHolder()
@@ -17,9 +18,9 @@ namespace com.jds.GUpdater.classes.images
             }
         }
 
-        public static ImageHolder Instance
+        public static ImageHolder Instance()
         {
-            get { return _instance ?? (_instance = new ImageHolder()); }
+            return _instance ?? (_instance = new ImageHolder());
         }
 
         public ImageInfo this[PictureName name]

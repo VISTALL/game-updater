@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.Reflection;
-using com.jds.GUpdater.classes.assembly.gui;
 using com.jds.GUpdater.classes.forms;
 using com.jds.GUpdater.classes.games;
 using com.jds.GUpdater.classes.games.propertyes;
@@ -13,6 +12,7 @@ using com.jds.GUpdater.classes.language;
 using com.jds.GUpdater.classes.language.enums;
 using com.jds.GUpdater.classes.language.properties;
 using com.jds.GUpdater.classes.registry;
+using com.jds.GUpdater.classes.version_control.gui;
 using log4net;
 
 #endregion
@@ -105,8 +105,8 @@ namespace com.jds.GUpdater.classes.config
             {
                 _language = value;
 
-                PropertyForm.Instance.ChangeLanguage();
-                AssemblyPage.Instance.ChangeLanguage();
+                PropertyForm.Instance().ChangeLanguage();
+                AssemblyPage.Instance().ChangeLanguage();
                 //MainForm.Instance.ChangeLanguage();
             }
         }
@@ -115,6 +115,11 @@ namespace com.jds.GUpdater.classes.config
         [LanguageDisplayName(WordEnum.CHECK_CRITICAL_ON_START)]
         [LanguageDescription(WordEnum.CHECK_CRITICAL_ON_START_DESCRIPTION)]
         public bool CheckCriticalOnStart { get; set; }
+
+        [RegistryPropertyKey("CheckVersionOnStart", false)]
+        [LanguageDisplayName(WordEnum.CHECK_VERSION_ON_START)]
+        [LanguageDescription(WordEnum.CHECK_VERSION_ON_START_DESCRIPTION)]
+        public bool CheckVersionOnStart { get; set; }
 
         [Browsable(false)]
         [RegistryPropertyKey("ActiveGame", Game.LINEAGE2)]

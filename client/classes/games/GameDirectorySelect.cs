@@ -16,12 +16,12 @@ namespace com.jds.GUpdater.classes.games
 
         public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
         {
-            PropertyForm.Instance.FolderDialog.SelectedPath = value.ToString();
+            PropertyForm.Instance().FolderDialog.SelectedPath = value.ToString();
             var p = (GameProperty) context.Instance;
-            if (PropertyForm.Instance.FolderDialog.ShowDialog() == DialogResult.OK)
+            if (PropertyForm.Instance().FolderDialog.ShowDialog() == DialogResult.OK)
             {
-                PropertyForm.Instance.FolderDialog.Dispose();
-                String v = PropertyForm.Instance.FolderDialog.SelectedPath;
+                PropertyForm.Instance().FolderDialog.Dispose();
+                String v = PropertyForm.Instance().FolderDialog.SelectedPath;
                 p.Path = v;
                 return v;
             }

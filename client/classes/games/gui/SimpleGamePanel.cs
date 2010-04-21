@@ -44,9 +44,9 @@ namespace com.jds.GUpdater.classes.games.gui
             switch (getGame())
             {
                 case Game.AION:
-                    return ImageHolder.Instance[PictureName.AION];
+                    return ImageHolder.Instance()[PictureName.AION];
                 case Game.LINEAGE2:
-                    return ImageHolder.Instance[PictureName.LINEAGE2];
+                    return ImageHolder.Instance()[PictureName.LINEAGE2];
             }
             return null;
         }

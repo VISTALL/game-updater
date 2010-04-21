@@ -148,7 +148,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="classes\assembly\gui\AssemblyPage.resx">
+    <EmbeddedResource Include="classes\version_control\gui\AssemblyPage.resx">
       <DependentUpon>AssemblyPage.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -197,14 +197,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\assembly\AssemblyInfo.cs" />
-    <Compile Include="classes\assembly\gui\AssemblyPage.cs">
+    <Compile Include="classes\version_control\AssemblyInfo.cs" />
+    <Compile Include="classes\version_control\gui\AssemblyPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="classes\assembly\gui\AssemblyPage.Designer.cs">
+    <Compile Include="classes\version_control\gui\AssemblyPage.Designer.cs">
       <DependentUpon>AssemblyPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="classes\assembly\VersionType.cs" />
+    <Compile Include="classes\version_control\VersionType.cs" />
     <Compile Include="classes\games\gui\SimpleGamePanel.lang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -259,25 +259,26 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\assembly\gui\AssemblyPage.lang.cs">
+    <Compile Include="classes\utils\SyncQueue.cs" />
+    <Compile Include="classes\version_control\gui\AssemblyPage.lang.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="classes\utils\DelegateCall.cs" />
     <Compile Include="classes\zip\checksum\Adler32.cs" />
     <Compile Include="classes\zip\checksum\CRC32.cs" />
-    <Compile Include="classes\zip\Compression\Deflater.cs" />
-    <Compile Include="classes\zip\Compression\DeflaterConstants.cs" />
-    <Compile Include="classes\zip\Compression\DeflaterEngine.cs" />
-    <Compile Include="classes\zip\Compression\DeflaterHuffman.cs" />
-    <Compile Include="classes\zip\Compression\DeflaterPending.cs" />
-    <Compile Include="classes\zip\Compression\Inflater.cs" />
-    <Compile Include="classes\zip\Compression\InflaterDynHeader.cs" />
-    <Compile Include="classes\zip\Compression\InflaterHuffmanTree.cs" />
-    <Compile Include="classes\zip\Compression\PendingBuffer.cs" />
-    <Compile Include="classes\zip\Compression\Streams\DeflaterOutputStream.cs" />
-    <Compile Include="classes\zip\Compression\Streams\InflaterInputStream.cs" />
-    <Compile Include="classes\zip\Compression\Streams\OutputWindow.cs" />
-    <Compile Include="classes\zip\Compression\Streams\StreamManipulator.cs" />
+    <Compile Include="classes\zip\compression\Deflater.cs" />
+    <Compile Include="classes\zip\compression\DeflaterConstants.cs" />
+    <Compile Include="classes\zip\compression\DeflaterEngine.cs" />
+    <Compile Include="classes\zip\compression\DeflaterHuffman.cs" />
+    <Compile Include="classes\zip\compression\DeflaterPending.cs" />
+    <Compile Include="classes\zip\compression\Inflater.cs" />
+    <Compile Include="classes\zip\compression\InflaterDynHeader.cs" />
+    <Compile Include="classes\zip\compression\InflaterHuffmanTree.cs" />
+    <Compile Include="classes\zip\compression\PendingBuffer.cs" />
+    <Compile Include="classes\zip\compression\Streams\DeflaterOutputStream.cs" />
+    <Compile Include="classes\zip\compression\Streams\InflaterInputStream.cs" />
+    <Compile Include="classes\zip\compression\Streams\OutputWindow.cs" />
+    <Compile Include="classes\zip\compression\Streams\StreamManipulator.cs" />
     <Compile Include="classes\zip\PkzipClassic.cs" />
     <Compile Include="classes\zip\ZipConstants.cs" />
     <Compile Include="classes\zip\ZipEntry.cs" />

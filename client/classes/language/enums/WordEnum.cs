@@ -55,6 +55,17 @@
         BIGGER_VERSION,
         SAME_VERSION,
         LOWER_VERSION,
-        UNKNOWN_VERSION
+        UNKNOWN_VERSION,
+
+        INFO,
+        WARNING,
+        ATTENTION,
+
+        VERSION_IS_OK,
+        VERSION_IS_NOT_CHECK,
+        VERSION_IS_BAD,
+
+        CHECK_VERSION_ON_START,
+        CHECK_VERSION_ON_START_DESCRIPTION
     }
 }

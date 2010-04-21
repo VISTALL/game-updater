@@ -13,7 +13,7 @@ namespace com.jds.GUpdater.classes.language
             {
                 var lang = value as string;
                 bool has = false;
-                foreach (string l in LanguageHolder.Instance.Languages)
+                foreach (string l in LanguageHolder.Instance().Languages)
                 {
                     if (l.Equals(lang))
                     {

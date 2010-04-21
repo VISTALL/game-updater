@@ -86,7 +86,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
             }
 
             MainForm.Instance.SetMainFormState(MainFormState.NONE);
-            MainForm.Instance.UpdateStatusLabel(String.Format(LanguageHolder.Instance[word], aa));
+            MainForm.Instance.UpdateStatusLabel(String.Format(LanguageHolder.Instance()[word], aa));
             MainForm.Instance.UpdateProgressBar(0, false);
             MainForm.Instance.UpdateProgressBar(0, true);
 
@@ -127,7 +127,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
 
             var info = new FileInfo(fileName);
 
-            string word = LanguageHolder.Instance[WordEnum.CHECKING_S1];
+            string word = LanguageHolder.Instance()[WordEnum.CHECKING_S1];
 
             MainForm.Instance.UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
 
@@ -235,7 +235,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
             var fileStream = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None);
             var byteBuffer = new byte[8192];
 
-            string word = LanguageHolder.Instance[WordEnum.DOWNLOADING_S1];
+            string word = LanguageHolder.Instance()[WordEnum.DOWNLOADING_S1];
             MainForm.Instance.UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
 
             bool exception = false;
@@ -297,7 +297,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
             var descFile = new FileInfo(fileName);
             var zipFile = new FileInfo(fileName + ".zip");
 
-            string word = LanguageHolder.Instance[WordEnum.UNPACKING_S1];
+            string word = LanguageHolder.Instance()[WordEnum.UNPACKING_S1];
             MainForm.Instance.UpdateStatusLabel(String.Format(word, zipFile.Name.Replace(".zip", "")));
             MainForm.Instance.UpdateProgressBar(0, false);
 

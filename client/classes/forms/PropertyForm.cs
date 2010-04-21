@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using com.jds.GUpdater.classes.assembly.gui;
 using com.jds.GUpdater.classes.config;
 using com.jds.GUpdater.classes.config.gui;
 using com.jds.GUpdater.classes.games;
 using com.jds.GUpdater.classes.games.propertyes;
 using com.jds.GUpdater.classes.language;
 using com.jds.GUpdater.classes.language.enums;
+using com.jds.GUpdater.classes.version_control.gui;
 
 namespace com.jds.GUpdater.classes.forms
 {
@@ -20,9 +20,9 @@ namespace com.jds.GUpdater.classes.forms
 
         #region Instance
 
-        public static PropertyForm Instance
+        public static PropertyForm Instance()
         {
-            get { return _instance ?? (_instance = new PropertyForm()); }
+           return _instance ?? (_instance = new PropertyForm()); 
         }
 
         #endregion
@@ -34,7 +34,7 @@ namespace com.jds.GUpdater.classes.forms
             InitializeComponent();
 
             //1 вкладка главные настройки
-            _generalPage = new TabPage(LanguageHolder.Instance[WordEnum.GENERAL]);
+            _generalPage = new TabPage(LanguageHolder.Instance()[WordEnum.GENERAL]);
             PropertyPage ppage = new PropertyPage(RConfig.Instance) { Location = new Point(3, 3) };
             _generalPage.Controls.Add(ppage);
 
@@ -52,8 +52,8 @@ namespace com.jds.GUpdater.classes.forms
                 _tabs.TabPages.Add(gpage);
             }
 
-            _versionControlPage = new TabPage(LanguageHolder.Instance[WordEnum.VERSION_CONTROL]);
-            AssemblyPage assemblyPage = AssemblyPage.Instance;
+            _versionControlPage = new TabPage(LanguageHolder.Instance()[WordEnum.VERSION_CONTROL]);
+            AssemblyPage assemblyPage = AssemblyPage.Instance();
             assemblyPage.Location = new Point(3, 3);
             _versionControlPage.Controls.Add(assemblyPage);
 

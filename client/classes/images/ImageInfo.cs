@@ -18,27 +18,27 @@ namespace com.jds.GUpdater.classes.images
 
         public Image NormalImage()
         {
-            return LanguageHolder.Instance.GetImage(_name, PictureType.NORMAL);
+            return LanguageHolder.Instance().GetImage(_name, PictureType.NORMAL);
         }
 
         public Image EnterImage()
         {
-            return LanguageHolder.Instance.GetImage(_name, PictureType.FOCUS);
+            return LanguageHolder.Instance().GetImage(_name, PictureType.FOCUS);
         }
 
         public Image PressedImage()
         {
-            return LanguageHolder.Instance.GetImage(_name, PictureType.DOWN);
+            return LanguageHolder.Instance().GetImage(_name, PictureType.DOWN);
         }
 
         public Image ActiveImage()
         {
-            return LanguageHolder.Instance.GetImage(_name, PictureType.ACTIVE);
+            return LanguageHolder.Instance().GetImage(_name, PictureType.ACTIVE);
         }
 
         public Image DisableImage()
         {
-            return LanguageHolder.Instance.GetImage(_name, PictureType.DISABLE);
+            return LanguageHolder.Instance().GetImage(_name, PictureType.DISABLE);
         }
 
         #endregion

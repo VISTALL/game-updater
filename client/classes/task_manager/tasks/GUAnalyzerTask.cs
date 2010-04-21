@@ -6,7 +6,6 @@ using System.IO;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using com.jds.GUpdater.classes.assembly.gui;
 using com.jds.GUpdater.classes.forms;
 using com.jds.GUpdater.classes.games.propertyes;
 using com.jds.GUpdater.classes.language;
@@ -14,6 +13,7 @@ using com.jds.GUpdater.classes.language.enums;
 using com.jds.GUpdater.classes.listloader;
 using com.jds.GUpdater.classes.listloader.enums;
 using com.jds.GUpdater.classes.utils;
+using com.jds.GUpdater.classes.version_control.gui;
 using com.jds.GUpdater.classes.zip;
 
 #endregion
@@ -43,18 +43,18 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
 
         private void AnalizeToThread()
         {
-            if (!AssemblyPage.Instance.ListLoader.IsValid)
+            if (!AssemblyPage.Instance().ListLoader.IsValid)
             {
                 return;
             }
 
-            AssemblyPage.Instance.SetState(MainFormState.CHECKING);
-            AssemblyPage.Instance.UpdateProgressBar(0, true);
-            AssemblyPage.Instance.UpdateProgressBar(0, false);
+            AssemblyPage.Instance().SetState(MainFormState.CHECKING);
+            AssemblyPage.Instance().UpdateProgressBar(0, true);
+            AssemblyPage.Instance().UpdateProgressBar(0, false);
 
             Status = Status.DOWNLOAD;
 
-            foreach (ListFile listFile in AssemblyPage.Instance.ListLoader.Items)
+            foreach (ListFile listFile in AssemblyPage.Instance().ListLoader.Items)
             {
                 _temp.AddLast(listFile);
             }
@@ -73,16 +73,16 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
             
             if (word == WordEnum.UPDATE_DONE)
             {
-                AssemblyPage.Instance.SetState(MainFormState.DONE);
+                AssemblyPage.Instance().SetState(MainFormState.DONE);
             }
             else
             {
-                AssemblyPage.Instance.SetState(MainFormState.NONE);
+                AssemblyPage.Instance().SetState(MainFormState.NONE);
             }
 
-            AssemblyPage.Instance.UpdateStatusLabel(String.Format(LanguageHolder.Instance[word], aa));
-            AssemblyPage.Instance.UpdateProgressBar(0, false);
-            AssemblyPage.Instance.UpdateProgressBar(0, true);
+            AssemblyPage.Instance().UpdateStatusLabel(String.Format(LanguageHolder.Instance()[word], aa));
+            AssemblyPage.Instance().UpdateProgressBar(0, false);
+            AssemblyPage.Instance().UpdateProgressBar(0, true);
 
             OnEnd();
         }
@@ -111,16 +111,16 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
             int currentCount = _maxSize - _temp.Count;
             var persent = (int) ((100F*(currentCount))/_maxSize);
 
-            AssemblyPage.Instance.UpdateProgressBar(persent, true);
+            AssemblyPage.Instance().UpdateProgressBar(persent, true);
 
             string path = Directory.GetCurrentDirectory();
             string fileName = path + file.FileName.Replace("/", "\\");
 
             var info = new FileInfo(fileName);
 
-            string word = LanguageHolder.Instance[WordEnum.CHECKING_S1];
+            string word = LanguageHolder.Instance()[WordEnum.CHECKING_S1];
 
-            AssemblyPage.Instance.UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
+            AssemblyPage.Instance().UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
 
            /* if (FileUtils.IsFileOpen(info))
             {
@@ -224,8 +224,8 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
             var fileStream = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None);
             var byteBuffer = new byte[8192];
 
-            string word = LanguageHolder.Instance[WordEnum.DOWNLOADING_S1];
-            AssemblyPage.Instance.UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
+            string word = LanguageHolder.Instance()[WordEnum.DOWNLOADING_S1];
+            AssemblyPage.Instance().UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
 
             bool exception = false;
             try
@@ -248,7 +248,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
                     if (persent != oldPersent)
                     {
                         oldPersent = persent;
-                        AssemblyPage.Instance.UpdateProgressBar(persent, false);
+                        AssemblyPage.Instance().UpdateProgressBar(persent, false);
                     }
                 }
             }
@@ -286,10 +286,10 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
            // var descFile = new FileInfo(fileName);
             var newFile = new FileInfo(fileName + ".new");
 
-            string word = LanguageHolder.Instance[WordEnum.UNPACKING_S1];
+            string word = LanguageHolder.Instance()[WordEnum.UNPACKING_S1];
 
-            AssemblyPage.Instance.UpdateStatusLabel(String.Format(word, newFile.Name.Replace(".new", "")));
-            AssemblyPage.Instance.UpdateProgressBar(0, false);
+            AssemblyPage.Instance().UpdateStatusLabel(String.Format(word, newFile.Name.Replace(".new", "")));
+            AssemblyPage.Instance().UpdateProgressBar(0, false);
 
             var zipStream = new ZipInputStream(newFile.OpenRead());
 
@@ -333,11 +333,11 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
                 if (persent != oldPersent)
                 {
                     oldPersent = persent;
-                    AssemblyPage.Instance.UpdateProgressBar(persent, false);
+                    AssemblyPage.Instance().UpdateProgressBar(persent, false);
                 }
             }
 
-            AssemblyPage.Instance.UpdateProgressBar(100, false);
+            AssemblyPage.Instance().UpdateProgressBar(100, false);
 
             fileStream.Close();
 

@@ -1,6 +1,7 @@
 ﻿#region Usage
 
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Reflection;
 using System.Threading;
@@ -17,8 +18,11 @@ using com.jds.GUpdater.classes.language.enums;
 using com.jds.GUpdater.classes.listloader.enums;
 using com.jds.GUpdater.classes.task_manager;
 using com.jds.GUpdater.classes.task_manager.tasks;
+using com.jds.GUpdater.classes.version_control;
+using com.jds.GUpdater.classes.version_control.gui;
 using com.jds.GUpdater.classes.windows;
 using com.jds.GUpdater.classes.windows.windows7;
+using com.jds.GUpdater.classes.utils;
 #endregion
 
 namespace com.jds.GUpdater.classes.forms
@@ -60,6 +64,7 @@ namespace com.jds.GUpdater.classes.forms
         private static MainForm _instance;
 
         private bool _notTransperty;
+        private readonly SyncQueue<DelegateCall> _notifyes = new SyncQueue<DelegateCall>();
 
         public static MainForm Instance
         {
@@ -75,7 +80,7 @@ namespace com.jds.GUpdater.classes.forms
             InitializeComponent();
             ChangeLanguage();
 
-            setOpacity(0F);
+            Opacity = 0F;
 
             //CheckForIllegalCrossThreadCalls = false;
 
@@ -88,8 +93,11 @@ namespace com.jds.GUpdater.classes.forms
             MouseMove += JPanelTab_MouseMove;
 
             EventHandlers.Register(_homePage);
+            EventHandlers.Register(_versionInfo);
 
             TabbedPane.ChangeSelectedTabEvent += jTabbedPane1_ChangeSelectedTabEvent;
+
+            SetVersionType(VersionType.UNKNOWN);
 
             //добавляем все игры в вкладки
             foreach (object enu in Enum.GetValues(typeof (Game)))
@@ -145,6 +153,22 @@ namespace com.jds.GUpdater.classes.forms
                 }
 
                 TaskManager.Instance.AddTask(new AnalyzerTask(p, ListFileType.CRITICAL));
+            }
+
+            if(RConfig.Instance.CheckVersionOnStart)
+            {
+                TaskManager.Instance.AddTask(AssemblyPage.Instance().ListLoader);
+            }
+
+           /* DelegateCall[] items = _notifyes.ToArray;
+            foreach (DelegateCall dle in items)
+               Invoke(dle); */
+
+            DelegateCall[] items = _notifyes.ToArray;
+            for (int i = 0; i < items.Length; i++)
+            {
+                Invoke(items[i]);
+                _notifyes.Remove(items[i]);
             }
         }
 
@@ -272,7 +296,7 @@ namespace com.jds.GUpdater.classes.forms
         private void _settingButton_Click(object sender, EventArgs e)
         {
             if (!TabbedPane.IsSelectionDisabled)
-                PropertyForm.Instance.ShowDialog(this);
+                PropertyForm.Instance().ShowDialog(this);
         }
 
         private void _closeBtn_Click(object sender, EventArgs e)
@@ -369,22 +393,15 @@ namespace com.jds.GUpdater.classes.forms
 
         public void UpdateStatusLabel(WordEnum wordEnum)
         {
-            UpdateStatusLabel(LanguageHolder.Instance[wordEnum]);
+            UpdateStatusLabel(LanguageHolder.Instance()[wordEnum]);
         }
 
         public void UpdateStatusLabel(String a)
         {
-            if (IsCanInvoke)
-            {
-                if (InvokeRequired)
-                {
-                    Invoke(new UpdateStatusLabelDelegate(UpdateStatusLabelUnsafe), a);
-                }
-                else
-                {
-                    UpdateStatusLabelUnsafe(a);
-                }
-            }
+            DelegateCall cal = new DelegateCall();
+            cal.DELEGATE = new UpdateStatusLabelDelegate(UpdateStatusLabelUnsafe);
+            cal.OBJECTS = new object[] {a};
+            Invoke(cal);
         }
 
         private void UpdateStatusLabelUnsafe(String s)
@@ -394,20 +411,51 @@ namespace com.jds.GUpdater.classes.forms
 
         #endregion
 
+        #region Version Control
+
+        private static readonly Color COLOR = Color.FromArgb(155, 137, 113);
+
+        public void SetVersionType(VersionType a)
+        {
+            ThreadStart del = delegate
+                                  {
+                                      switch (a)
+                                      {
+                                          case VersionType.UNKNOWN:
+                                              _infoVersion.Text = LanguageHolder.Instance()[WordEnum.WARNING];
+                                              _infoVersion.ForeColor = Color.Coral;
+                                              _versionInfo.Text = LanguageHolder.Instance()[WordEnum.VERSION_IS_NOT_CHECK];
+                                              _versionInfo.ForeColor = Color.Coral;
+                                              break;
+                                          case VersionType.SAME:
+                                          case VersionType.LOWER:
+                                              _infoVersion.Text = LanguageHolder.Instance()[WordEnum.INFO];
+                                              _infoVersion.ForeColor = COLOR;
+                                              _versionInfo.Text = LanguageHolder.Instance()[WordEnum.VERSION_IS_OK];
+                                              _versionInfo.ForeColor = COLOR;
+                                              break;
+                                          case VersionType.BIGGER:
+                                              _infoVersion.Text = LanguageHolder.Instance()[WordEnum.ATTENTION];
+                                              _infoVersion.ForeColor = Color.Red;
+                                              _versionInfo.Text = LanguageHolder.Instance()[WordEnum.VERSION_IS_BAD];
+                                              _versionInfo.ForeColor = Color.Red;
+                                              break;
+                                      }
+                                  };
+
+            var cal = new DelegateCall {DELEGATE = del};
+            Invoke(cal);
+        }
+        #endregion
+
         #region Progress Bar's
 
         public void UpdateProgressBar(int persent, bool total)
         {
-            if (IsCanInvoke)
-            {
-                try
-                {
-                    Invoke(new UpdateProgressBarDelegate(updateProgressBarUnsafe), new object[] {persent, total});
-                }
-                catch
-                {
-                }
-            }
+            DelegateCall cal = new DelegateCall();
+            cal.DELEGATE = new UpdateProgressBarDelegate(updateProgressBarUnsafe);
+            cal.OBJECTS = new object[] {persent, total};
+            Invoke(cal);
         }
 
         private void updateProgressBarUnsafe(int pe, bool total)
@@ -439,17 +487,11 @@ namespace com.jds.GUpdater.classes.forms
 
         public void setOpacity(float d)
         {
-            if (IsCanInvoke)
-            {
-                if (InvokeRequired)
-                {
-                    Invoke(new SetOpacityDeledate(setOpacityUnsafe), d);
-                }
-                else
-                {
-                    setOpacityUnsafe(d);
-                }
-            }
+            DelegateCall cal = new DelegateCall();
+            cal.DELEGATE = new SetOpacityDeledate(setOpacityUnsafe);
+            cal.OBJECTS = new object[] {d};
+
+            Invoke(cal);
         }
 
         private void setOpacityUnsafe(float d)
@@ -465,23 +507,10 @@ namespace com.jds.GUpdater.classes.forms
 
         public void SetMainFormState(MainFormState type)
         {
-            if (IsCanInvoke)
-            {
-                try
-                {
-                    if (InvokeRequired)
-                    {
-                        Invoke(new SetFormStateDelegate(SetMainFormUnsafe), type);
-                    }
-                    else
-                    {
-                        SetMainFormUnsafe(type);
-                    }
-                }
-                catch
-                {
-                }
-            }
+            DelegateCall cal = new DelegateCall();
+            cal.DELEGATE = new SetFormStateDelegate(SetMainFormUnsafe);
+            cal.OBJECTS = new object[] {type};
+            Invoke(cal);
         }
 
         /**
@@ -494,12 +523,12 @@ namespace com.jds.GUpdater.classes.forms
             switch (s)
             {
                 case MainFormState.NONE:
-                    _fullCheck.Info = ImageHolder.Instance[PictureName.FULLCHECK];
+                    _fullCheck.Info = ImageHolder.Instance()[PictureName.FULLCHECK];
                     _fullCheck.Enable = true;
                     _startButton.Enable = true;
                     break;
                 case MainFormState.CHECKING:
-                    _fullCheck.Info = ImageHolder.Instance[PictureName.CANCEL];
+                    _fullCheck.Info = ImageHolder.Instance()[PictureName.CANCEL];
                     _startButton.Enable = false;
                     _fullCheck.Enable = true;
                     break;
@@ -537,10 +566,6 @@ namespace com.jds.GUpdater.classes.forms
 
         #region Helper Methods
 
-        public bool IsCanInvoke
-        {
-            get { return !IsDisposed && !Disposing; }
-        }
 
         public bool CheckInstalled(bool btm)
         {
@@ -573,6 +598,25 @@ namespace com.jds.GUpdater.classes.forms
 
         #endregion
 
+        #region Invoke Helpers 
+        
+        public bool IsCanInvoke
+        {
+            get { return !IsDisposed && !Disposing && Visible; }
+        }
+
+        public void Invoke(DelegateCall delegateCall)
+        {
+            if(IsCanInvoke)
+            {
+                Invoke(delegateCall.DELEGATE, delegateCall.OBJECTS);
+            }
+            else
+            {
+               _notifyes.AddLast(delegateCall);     
+            }
+        }
+        #endregion
 
     }
 }
