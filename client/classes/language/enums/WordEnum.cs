@@ -50,6 +50,11 @@
         CHECK,
         UPDATE,
         RESTART,
-        CANCEL
+        CANCEL,
+
+        BIGGER_VERSION,
+        SAME_VERSION,
+        LOWER_VERSION,
+        UNKNOWN_VERSION
     }
 }

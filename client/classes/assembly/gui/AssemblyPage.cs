@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using com.jds.GUpdater.classes.forms;
@@ -8,6 +9,7 @@ using com.jds.GUpdater.classes.listloader;
 using com.jds.GUpdater.classes.listloader.enums;
 using com.jds.GUpdater.classes.task_manager;
 using com.jds.GUpdater.classes.task_manager.tasks;
+using com.jds.GUpdater.classes.utils;
 using com.jds.GUpdater.classes.windows.windows7;
 using log4net;
 
@@ -15,10 +17,12 @@ namespace com.jds.GUpdater.classes.assembly.gui
 {
     public partial class AssemblyPage : UserControl
     {
-        #region Instance
+        #region Instance & Constructor & Variables
 
         private readonly GUListLoaderTask _listLoaderTask = new GUListLoaderTask();
         private readonly ILog _log = LogManager.GetLogger(typeof (AssemblyPage));
+        private readonly LinkedList<DelegateCall> _notifys = new LinkedList<DelegateCall>();
+
         private static AssemblyPage _instance;
        
         public  static  AssemblyPage Instance
@@ -28,7 +32,6 @@ namespace com.jds.GUpdater.classes.assembly.gui
                 return _instance ?? (_instance = new AssemblyPage());
             }
         }
-        #endregion
 
         private AssemblyPage()
         {
@@ -36,7 +39,21 @@ namespace com.jds.GUpdater.classes.assembly.gui
             ChangeLanguage();
             VersionType = VersionType.UNKNOWN;
             _version.Text = AssemblyInfo.Instance.AssemblyVersion;
+           // 
         }
+
+        public void Instance_Shown(object sender, EventArgs e)
+        {
+            lock(_notifys)
+            {
+                foreach (DelegateCall call in _notifys)
+                {
+                    Invoke(call);   
+                }   
+            }
+        }
+        #endregion
+       
 
         #region Check Method
         private void _checkButton_Click(object sender, EventArgs e)
@@ -99,14 +116,6 @@ namespace com.jds.GUpdater.classes.assembly.gui
         }
         #endregion
 
-        public GUListLoaderTask ListLoader
-        {
-            get
-            {
-                return _listLoaderTask;
-            }
-        }
-
         #region Update Current Version
         private void SetCurrentVersionUnsafe(String v)
         {
@@ -116,10 +125,13 @@ namespace com.jds.GUpdater.classes.assembly.gui
 
         public void SetCurrentVersion(String a)
         {
-            if (MainForm.Instance.IsCanInvoke)
-            {
-                Invoke(new MainForm.UpdateStatusLabelDelegate(SetCurrentVersionUnsafe), a);
-            }
+            var d = new DelegateCall
+                        {
+                            DELEGATE = new MainForm.UpdateStatusLabelDelegate(SetCurrentVersionUnsafe),
+                            OBJECTS = new object[] {a}
+                        };
+
+            Invoke(d);
         }
 
         #endregion
@@ -138,10 +150,14 @@ namespace com.jds.GUpdater.classes.assembly.gui
 
         public void UpdateStatusLabel(String a)
         {
-            if (MainForm.Instance.IsCanInvoke)
-            {
-                Invoke(new MainForm.UpdateStatusLabelDelegate(UpdateStatusLabelUnsafe), a);
-            }
+            var delegateCall = new DelegateCall
+                                            {
+                                                DELEGATE =
+                                                    new MainForm.UpdateStatusLabelDelegate(UpdateStatusLabelUnsafe),
+                                                OBJECTS = new object[] {a}
+                                            };
+
+            Invoke(delegateCall);    
         }
         #endregion
 
@@ -150,23 +166,13 @@ namespace com.jds.GUpdater.classes.assembly.gui
 
         public void SetState(MainFormState type)
         {
-            if (MainForm.Instance.IsCanInvoke)
+            var d = new DelegateCall
             {
-                try
-                {
-                    if (InvokeRequired)
-                    {
-                        Invoke(new MainForm.SetFormStateDelegate(SetStateUnsafe), type);
-                    }
-                    else
-                    {
-                        SetStateUnsafe(type);
-                    }
-                }
-                catch
-                {
-                }
-            }
+                DELEGATE = new MainForm.SetFormStateDelegate(SetStateUnsafe),
+                OBJECTS = new object[] { type}
+            };
+
+            Invoke(d);
         }
 
         private void SetStateUnsafe(MainFormState s)
@@ -205,7 +211,8 @@ namespace com.jds.GUpdater.classes.assembly.gui
             {
                 _versionType = value;
 
-                _versionTypeLabel.Text = _versionType.ToString();
+                //_versionTypeLabel.Text = _versionType.ToString();
+                _versionTypeLabel.Text = LanguageHolder.Instance[(WordEnum)Enum.Parse(typeof(WordEnum), string.Format("{0}_VERSION", _versionType))];
 
                 switch (value)
                 {
@@ -282,16 +289,13 @@ namespace com.jds.GUpdater.classes.assembly.gui
 
         public void UpdateProgressBar(int persent, bool total)
         {
-            if (MainForm.Instance.IsCanInvoke)
+            var d = new DelegateCall
             {
-                try
-                {
-                    Invoke(new MainForm.UpdateProgressBarDelegate(updateProgressBarUnsafe), new object[] { persent, total });
-                }
-                catch
-                {
-                }
-            }
+                DELEGATE = new MainForm.UpdateProgressBarDelegate(updateProgressBarUnsafe),
+                OBJECTS = new object[] { persent, total }
+            };
+
+            Invoke(d);
         }
 
         private void updateProgressBarUnsafe(int pe, bool total)
@@ -319,5 +323,36 @@ namespace com.jds.GUpdater.classes.assembly.gui
         }
 
         #endregion
+
+        public bool IsCanInvoke
+        {
+            get
+            {
+                return MainForm.Instance.IsCanInvoke && !IsDisposed && !Disposing && Visible;
+            }
+        }
+
+        private void Invoke(DelegateCall a)
+        {
+            lock (_notifys)
+            {
+                if (IsCanInvoke)
+                {
+                    Invoke(a.DELEGATE, a.OBJECTS);
+                }
+                else
+                {
+                    _notifys.AddLast(a);
+                }
+            }
+        }
+
+        public GUListLoaderTask ListLoader
+        {
+            get
+            {
+                return _listLoaderTask;
+            }
+        }
     }
 }

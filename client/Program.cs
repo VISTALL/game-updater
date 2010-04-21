@@ -10,6 +10,8 @@ using com.jds.GUpdater.classes.task_manager;
 using com.jds.GUpdater.classes.language;
 using System.Threading;
 
+//[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+
 namespace com.jds.GUpdater
 {
 	public static class Program
@@ -33,8 +35,8 @@ namespace com.jds.GUpdater
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Log4net config is not found");
-                   // _log.Info("Exception[28]: " + e, e);
+                   // MessageBox.Show("Log4net config is not found");
+                   //_log.Info("Exception[28]: " + e, e);
                 }
 
                 _log.Info("Program started.");

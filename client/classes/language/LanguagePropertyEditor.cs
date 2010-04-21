@@ -52,13 +52,13 @@ namespace com.jds.GUpdater.classes.language
             lb.SelectedIndexChanged += lb_SelectedIndexChanged;
             fes.DropDownControl(lb);
 
+            
+
             return lb.SelectedItem.ToString();
         }
 
         private void lb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PropertyForm.Instance.ChangeLanguage();
-            AssemblyPage.Instance.ChangeLanguage();
             fes.CloseDropDown();
         }
     }

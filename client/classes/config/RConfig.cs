@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.Reflection;
+using com.jds.GUpdater.classes.assembly.gui;
+using com.jds.GUpdater.classes.forms;
 using com.jds.GUpdater.classes.games;
 using com.jds.GUpdater.classes.games.propertyes;
 using com.jds.GUpdater.classes.language;
@@ -23,7 +25,9 @@ namespace com.jds.GUpdater.classes.config
 
         private const String KEY = "Software\\J Develop Station\\GUpdater";
         private static readonly ILog _log = LogManager.GetLogger(typeof (RConfig));
+
         private readonly Dictionary<Game, GameProperty> _games = new Dictionary<Game, GameProperty>();
+        private String _language;
 
         #endregion
 
@@ -91,7 +95,21 @@ namespace com.jds.GUpdater.classes.config
         [LanguageDescription(WordEnum.LANGUAGE_DESCRIPTION)]
         [TypeConverter(typeof (LanguagePropertyConventer))]
         [Editor(typeof (LanguagePropertyEditor), typeof (UITypeEditor))]
-        public String Language { get; set; }
+        public String Language
+        {
+            get
+            {
+                return _language;
+            }
+            set
+            {
+                _language = value;
+
+                PropertyForm.Instance.ChangeLanguage();
+                AssemblyPage.Instance.ChangeLanguage();
+                //MainForm.Instance.ChangeLanguage();
+            }
+        }
 
         [RegistryPropertyKey("CheckCriticalOnStart", false)]
         [LanguageDisplayName(WordEnum.CHECK_CRITICAL_ON_START)]

@@ -11,8 +11,8 @@ using com.jds.GUpdater.classes.assembly.gui;
 using com.jds.GUpdater.classes.language.enums;
 using com.jds.GUpdater.classes.listloader;
 using com.jds.GUpdater.classes.listloader.enums;
+using com.jds.GUpdater.classes.zip;
 using log4net;
-using zlib.Zip;
 
 #endregion
 

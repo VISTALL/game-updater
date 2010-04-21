@@ -14,7 +14,7 @@ using com.jds.GUpdater.classes.language.enums;
 using com.jds.GUpdater.classes.listloader;
 using com.jds.GUpdater.classes.listloader.enums;
 using com.jds.GUpdater.classes.utils;
-using zlib.Zip;
+using com.jds.GUpdater.classes.zip;
 
 #endregion
 

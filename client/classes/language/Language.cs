@@ -4,7 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Xml;
 using com.jds.GUpdater.classes.language.enums;
-using zlib.Zip;
+using com.jds.GUpdater.classes.zip;
 
 namespace com.jds.GUpdater.classes.language
 {

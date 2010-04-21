@@ -63,7 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\config\date\Rfc822DateTime.cs" />
+    <Compile Include="classes\date\Rfc822DateTime.cs" />
     <Compile Include="classes\events\EventHandlers.cs" />
     <Compile Include="classes\gui\ColorProgressBar.cs">
       <SubType>Component</SubType>
@@ -195,10 +195,6 @@
       <Project>{F6A02431-167E-4347-BC43-65532C31CDB7}</Project>
       <Name>Log4 .NET</Name>
     </ProjectReference>
-    <ProjectReference Include="..\zlib\Zlib.csproj">
-      <Project>{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}</Project>
-      <Name>Zlib</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\assembly\AssemblyInfo.cs" />
@@ -266,6 +262,30 @@
     <Compile Include="classes\assembly\gui\AssemblyPage.lang.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="classes\utils\DelegateCall.cs" />
+    <Compile Include="classes\zip\checksum\Adler32.cs" />
+    <Compile Include="classes\zip\checksum\CRC32.cs" />
+    <Compile Include="classes\zip\Compression\Deflater.cs" />
+    <Compile Include="classes\zip\Compression\DeflaterConstants.cs" />
+    <Compile Include="classes\zip\Compression\DeflaterEngine.cs" />
+    <Compile Include="classes\zip\Compression\DeflaterHuffman.cs" />
+    <Compile Include="classes\zip\Compression\DeflaterPending.cs" />
+    <Compile Include="classes\zip\Compression\Inflater.cs" />
+    <Compile Include="classes\zip\Compression\InflaterDynHeader.cs" />
+    <Compile Include="classes\zip\Compression\InflaterHuffmanTree.cs" />
+    <Compile Include="classes\zip\Compression\PendingBuffer.cs" />
+    <Compile Include="classes\zip\Compression\Streams\DeflaterOutputStream.cs" />
+    <Compile Include="classes\zip\Compression\Streams\InflaterInputStream.cs" />
+    <Compile Include="classes\zip\Compression\Streams\OutputWindow.cs" />
+    <Compile Include="classes\zip\Compression\Streams\StreamManipulator.cs" />
+    <Compile Include="classes\zip\PkzipClassic.cs" />
+    <Compile Include="classes\zip\ZipConstants.cs" />
+    <Compile Include="classes\zip\ZipEntry.cs" />
+    <Compile Include="classes\zip\ZipException.cs" />
+    <Compile Include="classes\zip\ZipExtraData.cs" />
+    <Compile Include="classes\zip\ZipHelperStream.cs" />
+    <Compile Include="classes\zip\ZipInputStream.cs" />
+    <Compile Include="classes\zip\ZipOutputStream.cs" />
     <None Include="Resources\%24this.BackgroundImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

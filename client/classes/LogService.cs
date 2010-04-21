@@ -1,5 +1,6 @@
-﻿using System;
+﻿using System.Diagnostics;
 using System.IO;
+using System.Windows.Forms;
 using log4net.Config;
 
 namespace com.jds.GUpdater.classes
@@ -15,8 +16,9 @@ namespace com.jds.GUpdater.classes
         public static void Init()
         {
             if (!File.Exists("log4net.xml"))
-            {
-                throw new Exception("Log4net config is not found");
+           {
+                MessageBox.Show("Log4net config is not found");
+                Process.GetCurrentProcess().Kill();
             }
             XmlConfigurator.Configure(new FileInfo("log4net.xml"));
         }

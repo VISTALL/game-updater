@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using com.jds.GUpdater.classes.assembly;
 using com.jds.GUpdater.classes.assembly.gui;
 using com.jds.GUpdater.classes.config;
 using com.jds.GUpdater.classes.config.gui;
@@ -15,7 +14,9 @@ namespace com.jds.GUpdater.classes.forms
     public partial class PropertyForm : Form
     {
         private static PropertyForm _instance;
-        private TabPage _versionControl;
+
+        private readonly TabPage _generalPage;
+        private readonly TabPage _versionControlPage;
 
         #region Instance
 
@@ -33,11 +34,11 @@ namespace com.jds.GUpdater.classes.forms
             InitializeComponent();
 
             //1 вкладка главные настройки
-            var page = new TabPage(LanguageHolder.Instance[WordEnum.GENERAL]);
-            var ppage = new PropertyPage(RConfig.Instance) {Location = new Point(3, 3)};
-            page.Controls.Add(ppage);
+            _generalPage = new TabPage(LanguageHolder.Instance[WordEnum.GENERAL]);
+            PropertyPage ppage = new PropertyPage(RConfig.Instance) { Location = new Point(3, 3) };
+            _generalPage.Controls.Add(ppage);
 
-            _tabs.TabPages.Add(page);
+            _tabs.TabPages.Add(_generalPage);
 
             foreach (object enu in Enum.GetValues(typeof (Game)))
             {
@@ -51,12 +52,14 @@ namespace com.jds.GUpdater.classes.forms
                 _tabs.TabPages.Add(gpage);
             }
 
-            _versionControl = new TabPage(LanguageHolder.Instance[WordEnum.VERSION_CONTROL]);
-            var ppage2 = AssemblyPage.Instance;
-            ppage2.Location = new Point(3, 3);
-            _versionControl.Controls.Add(ppage2);
+            _versionControlPage = new TabPage(LanguageHolder.Instance[WordEnum.VERSION_CONTROL]);
+            AssemblyPage assemblyPage = AssemblyPage.Instance;
+            assemblyPage.Location = new Point(3, 3);
+            _versionControlPage.Controls.Add(assemblyPage);
 
-            _tabs.TabPages.Add(_versionControl);
+            _tabs.TabPages.Add(_versionControlPage);
+
+            Shown += assemblyPage.Instance_Shown;
         }
 
         private void PropertyForm_Load(object sender, EventArgs e)

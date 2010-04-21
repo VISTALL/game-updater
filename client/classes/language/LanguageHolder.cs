@@ -34,7 +34,7 @@ namespace com.jds.GUpdater.classes.language
                 {
                     var language = new Language(f);
 
-                    if (language.Name != null)
+                    if (language.Name != null && !_languages.ContainsKey(language.Name))
                     {
                         _languages.Add(language.Name, language);
                     }
