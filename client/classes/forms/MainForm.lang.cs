@@ -23,8 +23,8 @@ namespace com.jds.GUpdater.classes.forms
             _settingsButton.Info = ImageHolder.Instance()[PictureName.SETTINGS];
             _minimizedButton.Info = ImageHolder.Instance()[PictureName.MINI];
 
-            int Y = _homePage.Location.Y;
-            int sepDiff = _separator1.Width/2;
+            var Y = _homePage.Location.Y;
+            var sepDiff = _separator1.Width / 2;
 
             _homePage.Text = LanguageHolder.Instance()[WordEnum.HOMEPAGE];
 
@@ -43,7 +43,7 @@ namespace com.jds.GUpdater.classes.forms
             _joinNowLabel.Location = new Point(sepDiff + _separator3.Location.X + DIFF, Y);
             _joinNowLabel.Text = LanguageHolder.Instance()[WordEnum.JOIN_NOW];
 
-            SetVersionType(AssemblyPage.Instance().VersionType);
+            SetVersionType(Version, VersionType);
         }
     }
 }

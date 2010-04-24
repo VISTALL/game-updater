@@ -7,6 +7,7 @@ using com.jds.GUpdater.classes.games;
 using com.jds.GUpdater.classes.games.propertyes;
 using com.jds.GUpdater.classes.language;
 using com.jds.GUpdater.classes.language.enums;
+using com.jds.GUpdater.classes.listloader.enums;
 using com.jds.GUpdater.classes.version_control.gui;
 
 namespace com.jds.GUpdater.classes.forms
@@ -35,15 +36,15 @@ namespace com.jds.GUpdater.classes.forms
 
             //1 вкладка главные настройки
             _generalPage = new TabPage(LanguageHolder.Instance()[WordEnum.GENERAL]);
-            PropertyPage ppage = new PropertyPage(RConfig.Instance) { Location = new Point(3, 3) };
+            var ppage = new PropertyPage(RConfig.Instance) { Location = new Point(3, 3) };
             _generalPage.Controls.Add(ppage);
 
             _tabs.TabPages.Add(_generalPage);
 
-            foreach (object enu in Enum.GetValues(typeof (Game)))
+            foreach (var enu in Enum.GetValues(typeof (Game)))
             {
                 var gpage = new TabPage(GameInfo.getNameOf(enu));
-                GameProperty gp = RConfig.Instance.getGameProperty((Game) enu);
+                var gp = RConfig.Instance.getGameProperty((Game)enu);
                 var gppage = new PropertyPage(gp) {Location = new Point(3, 3), Enabled = gp.isEnable()};
 
 
@@ -53,13 +54,13 @@ namespace com.jds.GUpdater.classes.forms
             }
 
             _versionControlPage = new TabPage(LanguageHolder.Instance()[WordEnum.VERSION_CONTROL]);
-            AssemblyPage assemblyPage = AssemblyPage.Instance();
+            var assemblyPage = AssemblyPage.Instance();
             assemblyPage.Location = new Point(3, 3);
             _versionControlPage.Controls.Add(assemblyPage);
 
             _tabs.TabPages.Add(_versionControlPage);
 
-            Shown += assemblyPage.Instance_Shown;
+            Shown += PropertyForm_Shown;            
         }
 
         private void PropertyForm_Load(object sender, EventArgs e)
@@ -67,10 +68,18 @@ namespace com.jds.GUpdater.classes.forms
             ChangeLanguage();
         }
 
+        static void PropertyForm_Shown(object sender, EventArgs e)
+        {
+            AssemblyPage.Instance().SetVersionTypeU(MainForm.Instance.Version, MainForm.Instance.VersionType);
+        }
+
         private void PropertyForm_Closing(object sender, FormClosingEventArgs e)
         {
             MainForm.Instance.ChangeLanguage();
-            MainForm.Instance.CheckInstalled(true);
+            if (MainForm.Instance.FormState == MainFormState.NONE)
+            {
+                MainForm.Instance.CheckInstalled(true);
+            }
         }
 
         #endregion

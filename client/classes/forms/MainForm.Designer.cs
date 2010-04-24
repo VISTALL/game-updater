@@ -42,7 +42,6 @@ namespace com.jds.GUpdater.classes.forms
             this._separator3 = new System.Windows.Forms.Label();
             this._joinNowLabel = new System.Windows.Forms.Label();
             this._statusLabel = new System.Windows.Forms.Label();
-            this._infoVersion = new System.Windows.Forms.Label();
             this._versionInfo = new System.Windows.Forms.Label();
             this._minimizedButton = new com.jds.GUpdater.classes.gui.JImageButton();
             this._settingsButton = new com.jds.GUpdater.classes.gui.JImageButton();
@@ -171,6 +170,7 @@ namespace com.jds.GUpdater.classes.forms
             this._forumLabel.Name = "_forumLabel";
             this._forumLabel.Size = new System.Drawing.Size(45, 16);
             this._forumLabel.TabIndex = 17;
+            this._forumLabel.Tag = "http://forum.aionwars.com";
             this._forumLabel.Text = "Forum";
             this._forumLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this._forumLabel.Visible = false;
@@ -218,26 +218,14 @@ namespace com.jds.GUpdater.classes.forms
             this._statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this._statusLabel.Visible = false;
             // 
-            // _infoVersion
-            // 
-            this._infoVersion.BackColor = System.Drawing.Color.Transparent;
-            this._infoVersion.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._infoVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(137)))), ((int)(((byte)(113)))));
-            this._infoVersion.Location = new System.Drawing.Point(67, 194);
-            this._infoVersion.Name = "_infoVersion";
-            this._infoVersion.Size = new System.Drawing.Size(73, 17);
-            this._infoVersion.TabIndex = 24;
-            this._infoVersion.Text = "Test:";
-            this._infoVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // _versionInfo
             // 
             this._versionInfo.BackColor = System.Drawing.Color.Transparent;
             this._versionInfo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this._versionInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(137)))), ((int)(((byte)(113)))));
-            this._versionInfo.Location = new System.Drawing.Point(139, 194);
+            this._versionInfo.Location = new System.Drawing.Point(63, 194);
             this._versionInfo.Name = "_versionInfo";
-            this._versionInfo.Size = new System.Drawing.Size(406, 15);
+            this._versionInfo.Size = new System.Drawing.Size(480, 15);
             this._versionInfo.TabIndex = 25;
             this._versionInfo.Tag = "ASSEMBLY";
             this._versionInfo.Text = "Test info label";
@@ -365,7 +353,6 @@ namespace com.jds.GUpdater.classes.forms
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(600, 578);
             this.Controls.Add(this._versionInfo);
-            this.Controls.Add(this._infoVersion);
             this.Controls.Add(this._separator3);
             this.Controls.Add(this._separator2);
             this.Controls.Add(this._separator1);
@@ -424,7 +411,6 @@ namespace com.jds.GUpdater.classes.forms
         private JImageButton _settingsButton;
         private System.Windows.Forms.Label _statusLabel;
         private JImageButton _minimizedButton;
-        private System.Windows.Forms.Label _infoVersion;
         private System.Windows.Forms.Label _versionInfo;
         
 	}

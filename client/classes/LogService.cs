@@ -10,7 +10,6 @@ namespace com.jds.GUpdater.classes
      * Company: J Develop Station
      * Time: 16:37 /1.03.2010
      */
-
     public class LogService
     {
         public static void Init()

@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Reflection;
 using com.jds.GUpdater.classes.language.properties;
+using com.jds.GUpdater.classes.registry.attributes;
 using log4net;
 using Microsoft.Win32;
 
@@ -12,13 +12,13 @@ namespace com.jds.GUpdater.classes.registry
 
         public void select()
         {
-            RegistryKey key = Registry.CurrentUser;
+            var key = Registry.CurrentUser;
             key = key.OpenSubKey(getKey());
 
             if (key != null)
             {
-                PropertyInfo[] pps = GetType().GetProperties();
-                foreach (PropertyInfo property in pps)
+                var pps = GetType().GetProperties();
+                foreach (var property in pps)
                 {
                     foreach (Attribute a in property.GetCustomAttributes(true))
                     {
@@ -27,7 +27,7 @@ namespace com.jds.GUpdater.classes.registry
                             if (a is RegistryPropertyKey)
                             {
                                 var attribute = a as RegistryPropertyKey;
-                                object val = key.GetValue(attribute.Root, attribute.Default.ToString());
+                                var val = key.GetValue(attribute.Root, attribute.Default == null ? null : attribute.Default.ToString());
 
                                 if (attribute.Default is Boolean)
                                 {
@@ -58,11 +58,11 @@ namespace com.jds.GUpdater.classes.registry
 
         public void insert()
         {
-            RegistryKey key = Registry.CurrentUser;
+            var key = Registry.CurrentUser;
             key = key.CreateSubKey(getKey());
 
-            PropertyInfo[] pps = GetType().GetProperties();
-            foreach (PropertyInfo property in pps)
+            var pps = GetType().GetProperties();
+            foreach (var property in pps)
             {
                 foreach (Attribute a in property.GetCustomAttributes(true))
                 {
@@ -71,7 +71,7 @@ namespace com.jds.GUpdater.classes.registry
                         if (a is RegistryPropertyKey)
                         {
                             var attribute = a as RegistryPropertyKey;
-                            key.SetValue(attribute.Root, property.GetValue(this, null).ToString());
+                            if (key != null) key.SetValue(attribute.Root, property.GetValue(this, null).ToString());
                         }
                     }
                     catch (Exception e)

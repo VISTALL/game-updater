@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using com.jds.GUpdater.classes.language.attributes;
 using com.jds.GUpdater.classes.language.enums;
 
 namespace com.jds.GUpdater.classes.language.properties

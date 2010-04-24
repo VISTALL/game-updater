@@ -17,7 +17,7 @@ namespace com.jds.GUpdater.classes.games.propertyes.impl
                 return null;
             }
 
-            string path = Path + "\\system\\l2.exe";
+            string path = Path + "\\system_my\\l2.exe";
 
             if (!File.Exists(path))
                 return null;

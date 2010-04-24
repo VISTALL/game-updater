@@ -1,4 +1,5 @@
 ﻿using System;
+using com.jds.GUpdater.classes.games.attributes;
 
 namespace com.jds.GUpdater.classes.games
 {

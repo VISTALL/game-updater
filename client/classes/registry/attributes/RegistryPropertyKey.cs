@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace com.jds.GUpdater.classes.registry
+namespace com.jds.GUpdater.classes.registry.attributes
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class RegistryPropertyKey : Attribute

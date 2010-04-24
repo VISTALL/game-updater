@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace com.jds.GUpdater.classes.games
+namespace com.jds.GUpdater.classes.games.attributes
 {
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
     public class EnumPane : Attribute

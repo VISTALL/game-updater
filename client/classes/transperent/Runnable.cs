@@ -15,7 +15,10 @@ namespace com.jds.GUpdater.classes.transperent
         {
             try
             {
-                Process.Start(_run);
+                if (_run != null)
+                {
+                    Process.Start(_run);
+                }
             }
             catch
             {

@@ -57,9 +57,9 @@
         LOWER_VERSION,
         UNKNOWN_VERSION,
 
-        INFO,
-        WARNING,
-        ATTENTION,
+        //INFO,
+       // WARNING,
+       // ATTENTION,
 
         VERSION_IS_OK,
         VERSION_IS_NOT_CHECK,

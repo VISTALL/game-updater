@@ -90,6 +90,21 @@ namespace com.jds.GUpdater.classes.language
             get { return _languages.Keys; }
         }
 
+        public Language Language
+        {
+            get
+            {
+                string lang = RConfig.Instance.Language;
+
+                if (!_languages.ContainsKey(lang))
+                {
+                    return null;
+                }
+
+                return _languages[lang];
+            }   
+        }
+
         public string this[WordEnum wordEnum]
         {
             get

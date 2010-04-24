@@ -12,7 +12,7 @@ namespace com.jds.GUpdater.classes.images
 
         private ImageHolder()
         {
-            foreach (object enu in Enum.GetValues(typeof (PictureName)))
+            foreach (var enu in Enum.GetValues(typeof (PictureName)))
             {
                 _images.Add((PictureName) enu, new ImageInfo((PictureName) enu));
             }

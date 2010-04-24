@@ -33,11 +33,12 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <NoWin32Manifest>true</NoWin32Manifest>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>..\exe\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -74,9 +75,9 @@
     <Compile Include="classes\gui\RSSPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="classes\games\EnumPane.cs" />
+    <Compile Include="classes\games\attributes\EnumPane.cs" />
     <Compile Include="classes\games\GameDirectorySelect.cs" />
-    <Compile Include="classes\games\EnumProperty.cs" />
+    <Compile Include="classes\games\attributes\EnumProperty.cs" />
     <Compile Include="classes\games\IGamePanel.cs" />
     <Compile Include="classes\games\gui\SimpleGamePanel.cs">
       <SubType>UserControl</SubType>
@@ -126,8 +127,8 @@
     <Compile Include="classes\listloader\ListFile.cs" />
     <Compile Include="classes\listloader\enums\ListFileType.cs" />
     <Compile Include="classes\task_manager\tasks\ListLoaderTask.cs" />
-    <Compile Include="classes\registry\RegistryPropertyKey.cs" />
-    <Compile Include="classes\games\EnumName.cs" />
+    <Compile Include="classes\registry\attributes\RegistryPropertyKey.cs" />
+    <Compile Include="classes\games\attributes\EnumName.cs" />
     <Compile Include="classes\forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,12 +214,12 @@
     <Compile Include="classes\language\enums\PictureName.cs" />
     <Compile Include="classes\language\enums\PictureType.cs" />
     <Compile Include="classes\language\properties\LanguageCustomTypeDescription.cs" />
-    <Compile Include="classes\language\properties\LanguageDescription.cs" />
+    <Compile Include="classes\language\attributes\LanguageDescription.cs" />
     <Compile Include="classes\language\LanguageHolder.cs" />
     <Compile Include="classes\language\enums\WordEnum.cs" />
     <Compile Include="classes\language\LanguagePropertyConventer.cs" />
     <Compile Include="classes\language\LanguagePropertyEditor.cs" />
-    <Compile Include="classes\language\properties\LanguageDisplayName.cs" />
+    <Compile Include="classes\language\attributes\LanguageDisplayName.cs" />
     <Compile Include="classes\language\properties\LanguagePropertyDescription.cs" />
     <Compile Include="classes\task_manager\tasks\AnalyzerTask.cs" />
     <Compile Include="classes\listloader\enums\MainFormState.cs" />
@@ -259,11 +260,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\utils\SyncQueue.cs" />
+    <Compile Include="classes\invoke\InvokeManager.cs" />
     <Compile Include="classes\version_control\gui\AssemblyPage.lang.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="classes\utils\DelegateCall.cs" />
+    <Compile Include="classes\invoke\DelegateCall.cs" />
     <Compile Include="classes\zip\checksum\Adler32.cs" />
     <Compile Include="classes\zip\checksum\CRC32.cs" />
     <Compile Include="classes\zip\compression\Deflater.cs" />
@@ -288,6 +289,9 @@
     <Compile Include="classes\zip\ZipInputStream.cs" />
     <Compile Include="classes\zip\ZipOutputStream.cs" />
     <None Include="Resources\%24this.BackgroundImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

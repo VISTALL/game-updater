@@ -4,15 +4,18 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
 using com.jds.GUpdater.classes.config;
 using com.jds.GUpdater.classes.events;
 using com.jds.GUpdater.classes.games;
+using com.jds.GUpdater.classes.games.attributes;
 using com.jds.GUpdater.classes.games.propertyes;
 using com.jds.GUpdater.classes.gui;
 using com.jds.GUpdater.classes.gui.tabpane;
 using com.jds.GUpdater.classes.images;
+using com.jds.GUpdater.classes.invoke;
 using com.jds.GUpdater.classes.language;
 using com.jds.GUpdater.classes.language.enums;
 using com.jds.GUpdater.classes.listloader.enums;
@@ -29,6 +32,8 @@ namespace com.jds.GUpdater.classes.forms
 {
     public sealed partial class MainForm : Form
     {
+        private readonly InvokeManager InvokeManager = new InvokeManager(typeof(MainForm));
+
         #region Nested type: CloseDelegate
 
         private delegate void CloseDelegate();
@@ -59,12 +64,17 @@ namespace com.jds.GUpdater.classes.forms
 
         #endregion
 
+        #region Nested type: SetVersionTypeDelegate
+
+        public delegate void SetVersionTypeDelegate(String va, VersionType a);
+
+        #endregion
+
         #region Instance & Consts & Variables
 
         private static MainForm _instance;
 
         private bool _notTransperty;
-        private readonly SyncQueue<DelegateCall> _notifyes = new SyncQueue<DelegateCall>();
 
         public static MainForm Instance
         {
@@ -81,23 +91,18 @@ namespace com.jds.GUpdater.classes.forms
             ChangeLanguage();
 
             Opacity = 0F;
-
-            //CheckForIllegalCrossThreadCalls = false;
+            SetVersionTypeUnsafe("0.0.0.0", VersionType.UNKNOWN);
 
             Shown += MainForm_Shown;
             _closeBtn.Click += _closeBtn_Click;
-
-
             MouseDown += JPanelTab_MouseDown;
             MouseUp += JPanelTab_MouseUp;
             MouseMove += JPanelTab_MouseMove;
+            TabbedPane.ChangeSelectedTabEvent += jTabbedPane1_ChangeSelectedTabEvent;
+
 
             EventHandlers.Register(_homePage);
             EventHandlers.Register(_versionInfo);
-
-            TabbedPane.ChangeSelectedTabEvent += jTabbedPane1_ChangeSelectedTabEvent;
-
-            SetVersionType(VersionType.UNKNOWN);
 
             //добавляем все игры в вкладки
             foreach (object enu in Enum.GetValues(typeof (Game)))
@@ -132,17 +137,36 @@ namespace com.jds.GUpdater.classes.forms
             }
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (RConfig.Instance.X > 0 && RConfig.Instance.Y > 0)
+            {
+                Location = new Point(RConfig.Instance.X, RConfig.Instance.Y);
+            }
+        }
+
         private void MainForm_Shown(object sender, EventArgs e)
         {
-            ShowAllItems(true, true);
+            ShowAllItems(true, true, false);
 
             UpdateAllRSS();
+
+            UpdateStatusLabel("");
+
+            CheckInstalled(true);
+
+            ShowAllItems(false, false, true);
+           
+            if (RConfig.Instance.CheckVersionOnStart)
+            {
+                TaskManager.Instance.AddTask(AssemblyPage.Instance().ListLoader);
+            }
 
             if (RConfig.Instance.CheckCriticalOnStart)
             {
                 GameProperty p = RConfig.Instance.getGameProperty(RConfig.Instance.ActiveGame);
 
-                if (!CheckInstalled(true))
+                if (!CheckInstalled(false))
                 {
                     return;
                 }
@@ -154,81 +178,23 @@ namespace com.jds.GUpdater.classes.forms
 
                 TaskManager.Instance.AddTask(new AnalyzerTask(p, ListFileType.CRITICAL));
             }
-
-            if(RConfig.Instance.CheckVersionOnStart)
-            {
-                TaskManager.Instance.AddTask(AssemblyPage.Instance().ListLoader);
-            }
-
-           /* DelegateCall[] items = _notifyes.ToArray;
-            foreach (DelegateCall dle in items)
-               Invoke(dle); */
-
-            DelegateCall[] items = _notifyes.ToArray;
-            for (int i = 0; i < items.Length; i++)
-            {
-                Invoke(items[i]);
-                _notifyes.Remove(items[i]);
-            }
         }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            if (RConfig.Instance.X > 0 && RConfig.Instance.Y > 0)
-            {
-                Location = new Point(RConfig.Instance.X, RConfig.Instance.Y);
-            }
-
-            UpdateStatusLabel("");
-
-            CheckInstalled(true);
-        }
-
-        public void ShowAllItems(bool visible, bool trans)
-        {
-            _lastNews.Visible = visible;
-            _selectGameLabel.Visible = visible;
-            _homePage.Visible = visible;
-            _startButton.Visible = visible;
-            _fullCheck.Visible = visible;
-            _fileProgressBar.Visible = visible;
-            _totalProgress.Visible = visible;
-            _statusLabel.Visible = visible;
-            _infoStart.Visible = visible;
-            TabbedPane.Visible = visible;
-            _faqLabel.Visible = visible;
-            _forumLabel.Visible = visible;
-            _joinNowLabel.Visible = visible;
-            _settingsButton.Visible = visible;
-            _minimizedButton.Visible = visible;
-            _closeBtn.Visible = visible;
-            _separator1.Visible = visible;
-            _separator2.Visible = visible;
-            _separator3.Visible = visible;
-
-            if (trans)
-            {
-                for (int i = 1; i <= 100; i += 1)
-                {
-                    setOpacity(i/100F);
-                    Thread.Sleep(10);
-                }
-                Opacity = 1F;
-            }
-        }
-
+       
         private void MainForm_Closing(object sender, FormClosingEventArgs e)
         {
             if (!_notTransperty)
             {
                 for (int i = 1; i <= 100; i += 1)
                 {
-                    setOpacity((100 - i)/100F);
+                    setOpacity((100 - i) / 100F);
                     Thread.Sleep(10);
                 }
             }
 
             TaskManager.Instance.Close(true);
+            InvokeManager.Shutdown = true;
+            AssemblyPage.Instance().InvokeManager.Shutdown = true;
+
 
             RConfig.Instance.X = Location.X;
             RConfig.Instance.Y = Location.Y;
@@ -239,8 +205,44 @@ namespace com.jds.GUpdater.classes.forms
             {
                 if (pane is IGamePanel)
                 {
-                    ((IGamePanel) pane).close();
+                    ((IGamePanel)pane).close();
                 }
+            }
+        }
+
+        public void ShowAllItems(bool items, bool visible, bool trans)
+        {
+            if (items)
+            {
+                _lastNews.Visible = visible;
+                _selectGameLabel.Visible = visible;
+                _homePage.Visible = visible;
+                _startButton.Visible = visible;
+                _fullCheck.Visible = visible;
+                _fileProgressBar.Visible = visible;
+                _totalProgress.Visible = visible;
+                _statusLabel.Visible = visible;
+                _infoStart.Visible = visible;
+                TabbedPane.Visible = visible;
+                _faqLabel.Visible = visible;
+                _forumLabel.Visible = visible;
+                _joinNowLabel.Visible = visible;
+                _settingsButton.Visible = visible;
+                _minimizedButton.Visible = visible;
+                _closeBtn.Visible = visible;
+                _separator1.Visible = visible;
+                _separator2.Visible = visible;
+                _separator3.Visible = visible;
+            }
+
+            if (trans)
+            {
+                for (int i = 1; i <= 100; i += 1)
+                {
+                    setOpacity(i/100F);
+                    Thread.Sleep(10);
+                }
+                Opacity = 1F;
             }
         }
 
@@ -291,7 +293,7 @@ namespace com.jds.GUpdater.classes.forms
 
         #endregion
 
-        #region Евенты кнопок
+        #region Button Events
 
         private void _settingButton_Click(object sender, EventArgs e)
         {
@@ -398,10 +400,7 @@ namespace com.jds.GUpdater.classes.forms
 
         public void UpdateStatusLabel(String a)
         {
-            DelegateCall cal = new DelegateCall();
-            cal.DELEGATE = new UpdateStatusLabelDelegate(UpdateStatusLabelUnsafe);
-            cal.OBJECTS = new object[] {a};
-            Invoke(cal);
+            Invoke(new DelegateCall(this, new UpdateStatusLabelDelegate(UpdateStatusLabelUnsafe), a));
         }
 
         private void UpdateStatusLabelUnsafe(String s)
@@ -414,37 +413,44 @@ namespace com.jds.GUpdater.classes.forms
         #region Version Control
 
         private static readonly Color COLOR = Color.FromArgb(155, 137, 113);
+        private static readonly Color COLOR2= Color.FromArgb(187, 157, 167);
 
-        public void SetVersionType(VersionType a)
+        public void SetVersionType(String av, VersionType a)
         {
-            ThreadStart del = delegate
-                                  {
-                                      switch (a)
-                                      {
-                                          case VersionType.UNKNOWN:
-                                              _infoVersion.Text = LanguageHolder.Instance()[WordEnum.WARNING];
-                                              _infoVersion.ForeColor = Color.Coral;
-                                              _versionInfo.Text = LanguageHolder.Instance()[WordEnum.VERSION_IS_NOT_CHECK];
-                                              _versionInfo.ForeColor = Color.Coral;
-                                              break;
-                                          case VersionType.SAME:
-                                          case VersionType.LOWER:
-                                              _infoVersion.Text = LanguageHolder.Instance()[WordEnum.INFO];
-                                              _infoVersion.ForeColor = COLOR;
-                                              _versionInfo.Text = LanguageHolder.Instance()[WordEnum.VERSION_IS_OK];
-                                              _versionInfo.ForeColor = COLOR;
-                                              break;
-                                          case VersionType.BIGGER:
-                                              _infoVersion.Text = LanguageHolder.Instance()[WordEnum.ATTENTION];
-                                              _infoVersion.ForeColor = Color.Red;
-                                              _versionInfo.Text = LanguageHolder.Instance()[WordEnum.VERSION_IS_BAD];
-                                              _versionInfo.ForeColor = Color.Red;
-                                              break;
-                                      }
-                                  };
+            Invoke(new DelegateCall(this, new SetVersionTypeDelegate(SetVersionTypeUnsafe), av, a));
+        }
 
-            var cal = new DelegateCall {DELEGATE = del};
-            Invoke(cal);
+        private void SetVersionTypeUnsafe(String av, VersionType a)
+        {
+            VersionType = a;
+            Version = av;
+
+            switch (a)
+            {
+                case VersionType.UNKNOWN:
+                    _versionInfo.Text = LanguageHolder.Instance()[WordEnum.VERSION_IS_NOT_CHECK];
+                    _versionInfo.ForeColor = COLOR2;
+                    break;
+                case VersionType.SAME:
+                case VersionType.LOWER:
+                    _versionInfo.Text = LanguageHolder.Instance()[WordEnum.VERSION_IS_OK];
+                    _versionInfo.ForeColor = COLOR;
+                    break;
+                case VersionType.BIGGER:
+                    _versionInfo.Text = LanguageHolder.Instance()[WordEnum.VERSION_IS_BAD];
+                    _versionInfo.ForeColor = Color.Red;
+                    break;
+            }
+        }
+
+        public String Version
+        {
+            get; set;
+        }
+
+        public VersionType VersionType
+        {
+            get; set;
         }
         #endregion
 
@@ -452,10 +458,7 @@ namespace com.jds.GUpdater.classes.forms
 
         public void UpdateProgressBar(int persent, bool total)
         {
-            DelegateCall cal = new DelegateCall();
-            cal.DELEGATE = new UpdateProgressBarDelegate(updateProgressBarUnsafe);
-            cal.OBJECTS = new object[] {persent, total};
-            Invoke(cal);
+            Invoke(new DelegateCall(this, new UpdateProgressBarDelegate(updateProgressBarUnsafe), persent, total));
         }
 
         private void updateProgressBarUnsafe(int pe, bool total)
@@ -487,11 +490,7 @@ namespace com.jds.GUpdater.classes.forms
 
         public void setOpacity(float d)
         {
-            DelegateCall cal = new DelegateCall();
-            cal.DELEGATE = new SetOpacityDeledate(setOpacityUnsafe);
-            cal.OBJECTS = new object[] {d};
-
-            Invoke(cal);
+            Invoke( new DelegateCall(this, new SetOpacityDeledate(setOpacityUnsafe), d));
         }
 
         private void setOpacityUnsafe(float d)
@@ -507,10 +506,7 @@ namespace com.jds.GUpdater.classes.forms
 
         public void SetMainFormState(MainFormState type)
         {
-            DelegateCall cal = new DelegateCall();
-            cal.DELEGATE = new SetFormStateDelegate(SetMainFormUnsafe);
-            cal.OBJECTS = new object[] {type};
-            Invoke(cal);
+            Invoke(new DelegateCall(this, new SetFormStateDelegate(SetMainFormUnsafe), type));
         }
 
         /**
@@ -602,18 +598,14 @@ namespace com.jds.GUpdater.classes.forms
         
         public bool IsCanInvoke
         {
-            get { return !IsDisposed && !Disposing && Visible; }
+            get { return !IsDisposed && !Disposing; }
         }
 
         public void Invoke(DelegateCall delegateCall)
         {
             if(IsCanInvoke)
             {
-                Invoke(delegateCall.DELEGATE, delegateCall.OBJECTS);
-            }
-            else
-            {
-               _notifyes.AddLast(delegateCall);     
+                InvokeManager.AddInvoke(delegateCall);
             }
         }
         #endregion

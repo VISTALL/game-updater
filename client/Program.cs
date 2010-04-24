@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
-using com.jds.GUpdater.classes.assembly;
 using com.jds.GUpdater.classes.config;
 using com.jds.GUpdater.classes.forms;
 using com.jds.GUpdater.classes.images;
+using com.jds.GUpdater.classes.invoke;
+using com.jds.GUpdater.classes.version_control;
 using log4net;
 using com.jds.GUpdater.classes;
 using com.jds.GUpdater.classes.task_manager;
@@ -16,12 +17,12 @@ namespace com.jds.GUpdater
 {
 	public static class Program
 	{
-		private static readonly ILog _log = LogManager.GetLogger(typeof(Program)); 
+		private static readonly ILog _log = LogManager.GetLogger(typeof(Program));
 
 		[STAThread]
 		public static void Main()
 		{
-            try
+           try
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
@@ -37,6 +38,7 @@ namespace com.jds.GUpdater
                 {
                    // MessageBox.Show("Log4net config is not found");
                    //_log.Info("Exception[28]: " + e, e);
+                    return; 
                 }
 
                 _log.Info("Program started.");
@@ -63,6 +65,7 @@ namespace com.jds.GUpdater
                 }
 
                 var mainForm = MainForm.Instance;
+
                 AssemblyInfo.Instance();
                 PropertyForm.Instance();
 

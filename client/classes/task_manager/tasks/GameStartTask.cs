@@ -6,6 +6,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
     public class GameStartTask : AbstractTask
     {
         private readonly GameProperty _property;
+        private string _toString;
 
         public GameStartTask(GameProperty p)
         {
@@ -14,19 +15,26 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
 
         public override void Run()
         {
-            if (_property.GetStartInfo() == null)
+            _toString = "Game Start " + _property.GameEnum() + ":" + GetHashCode(); 
+            
+            OnEnd(); //FIX ME надо ли?
+
+            if (_property  == null || _property.GetStartInfo() == null)
             {
-                OnEnd();
                 return;
             }
 
             TransrenetRunner.Run(new Runnable(_property.GetStartInfo()));
-            OnEnd();
         }
 
         public override void Cancel()
         {
             //FIX ME надо ли?)
+        }
+
+        public override string ToString()
+        {
+            return _toString;
         }
     }
 }

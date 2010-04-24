@@ -2,11 +2,12 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing.Design;
+using com.jds.GUpdater.classes.language.attributes;
 using com.jds.GUpdater.classes.language.enums;
-using com.jds.GUpdater.classes.language.properties;
 using com.jds.GUpdater.classes.listloader;
 using com.jds.GUpdater.classes.listloader.enums;
 using com.jds.GUpdater.classes.registry;
+using com.jds.GUpdater.classes.registry.attributes;
 using com.jds.GUpdater.classes.task_manager.tasks;
 
 namespace com.jds.GUpdater.classes.games.propertyes

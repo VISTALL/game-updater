@@ -47,21 +47,26 @@ namespace com.jds.GUpdater.classes.events
             {
                 var label = sender as Label;
                 var target = label.Tag as String;
-
-                if (target != null && !target.Equals("ASSEMBLY"))
+                if(target != null)
                 {
-                    try
+                    switch(target)
                     {
-                        Process.Start(target);
+                        case "ASSEMBLY":
+                            if (!MainForm.Instance.TabbedPane.IsSelectionDisabled)
+                            {
+                                PropertyForm.Instance().ShowDialog(MainForm.Instance);
+                            }
+                            break;
+                        default:
+                            try
+                            {
+                                Process.Start(target);
+                            }
+                            catch
+                            {
+                            }
+                            break;
                     }
-                    catch
-                    {
-                    }
-                }
-                else if(target != null && target.Equals("ASSEMBLY"))
-                {
-                    if (!MainForm.Instance.TabbedPane.IsSelectionDisabled)
-                        PropertyForm.Instance().ShowDialog(MainForm.Instance);
                 }
             }
         }

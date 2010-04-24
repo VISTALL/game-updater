@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using com.jds.GUpdater.classes.language;
+using com.jds.GUpdater.classes.listloader.enums;
 
 namespace com.jds.GUpdater.classes.games.propertyes.impl
 {
@@ -17,7 +19,7 @@ namespace com.jds.GUpdater.classes.games.propertyes.impl
 
         public override ProcessStartInfo GetStartInfo()
         {
-            if (!Installed || !isEnable() || !_loader.IsValid)
+            if (!Installed || !isEnable() || !_loader.IsValid || !this[ListFileType.CRITICAL])
             {
                 return null;
             }
@@ -37,7 +39,12 @@ namespace com.jds.GUpdater.classes.games.propertyes.impl
 
         public override string listURL()
         {
-            return "http://ru.aionwars.com/aion/";
+            var lang = "en";
+            if(LanguageHolder.Instance().Language != null)
+            {
+                lang = LanguageHolder.Instance().Language.ShortName;
+            }
+            return "http://ru.aionwars.com/aion/" + lang + "/";
         }
 
         public override string getKey()

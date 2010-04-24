@@ -22,7 +22,9 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
     public class AnalyzerTask : AbstractTask
     {
         private readonly LinkedList<ListFile> _temp = new LinkedList<ListFile>();
+        private String _toString;
         private int _maxSize;
+        private const int BUFFER_SIZE = 8192;
 
         public AnalyzerTask(GameProperty property, ListFileType type)
         {
@@ -33,9 +35,10 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
 
         public override void Run()
         {
+            _toString = "Analize " + ListType + ";Game: " + CurrentProperty.GameEnum() + ":" + GetHashCode();
             var mainThead = new Thread(AnalizeToThread)
                                 {
-                                    Name = "Analize " + ListType + ";Game: " + CurrentProperty.GameEnum(),
+                                    Name = _toString,
                                     Priority = ThreadPriority.Lowest
                                 };
 
@@ -46,6 +49,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
         {
             if (!CurrentProperty.ListLoader.IsValid)
             {
+                GoEnd(null, true);
                 return;
             }
 
@@ -73,20 +77,25 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
             CheckNextFile();
         }
 
-        private void GoEnd(WordEnum word, bool free, params Object[] aa)
+        private void GoEnd(WordEnum? word, bool free, params Object[] aa)
         {
             if (free)
             {
                 Status = Status.FREE;
             }
 
-            if (word == WordEnum.UPDATE_DONE)
+            if (word != null && word == WordEnum.UPDATE_DONE)
             {
                 CurrentProperty[ListType] = true;
             }
 
             MainForm.Instance.SetMainFormState(MainFormState.NONE);
-            MainForm.Instance.UpdateStatusLabel(String.Format(LanguageHolder.Instance()[word], aa));
+           
+            if (word != null)
+            {
+                MainForm.Instance.UpdateStatusLabel(String.Format(LanguageHolder.Instance()[(WordEnum)word], aa));
+            }
+
             MainForm.Instance.UpdateProgressBar(0, false);
             MainForm.Instance.UpdateProgressBar(0, true);
 
@@ -101,7 +110,10 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
         public void CheckNextFile()
         {
             if (CurrentProperty == null)
+            {
+                //what the facker?
                 return;
+            }
 
             if (Status == Status.CANCEL)
             {
@@ -152,7 +164,6 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
                 {
                     try
                     {
-
                         info.Delete();
                     }
                     catch
@@ -233,7 +244,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
             }
 
             var fileStream = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None);
-            var byteBuffer = new byte[8192];
+            var byteBuffer = new byte[BUFFER_SIZE];
 
             string word = LanguageHolder.Instance()[WordEnum.DOWNLOADING_S1];
             MainForm.Instance.UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
@@ -367,5 +378,10 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
         public ListFileType ListType { get; set; }
 
         #endregion
+
+        public override string ToString()
+        {
+            return _toString;
+        }
     }
 }

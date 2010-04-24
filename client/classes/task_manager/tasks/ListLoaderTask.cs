@@ -30,13 +30,13 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
 
         private readonly GameProperty _property;
         private readonly WebClient _webClient = new WebClient();
+        private String _toString;
         private Thread _thread;
 
         public ListLoaderTask(GameProperty p)
         {
             _property = p;
 
-            IsValid = false;
             Status = Status.FREE;
 
             _list.Add(ListFileType.CRITICAL, new LinkedList<ListFile>());
@@ -55,10 +55,10 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
             {
                 throw new NullReferenceException("Panel or GProperty is null!!!!!!. WTF???");
             }
-
+            _toString = "Get List Thread " + _property.GetType().Name + ":" + GetHashCode();
             _thread = new Thread(ListDownloadThread)
                           {
-                              Name = "Get List Thread " + _property.GetType().Name
+                              Name = _toString
                           };
 
             _thread.Start();
@@ -81,7 +81,6 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
             MainForm.Instance.SetMainFormState(MainFormState.CHECKING);
 
             Status = Status.DOWNLOAD;
-            IsValid = false;
 
             _webClient.DownloadDataAsync(new Uri(_property.listURL() + "/list.zip"));
         }
@@ -125,67 +124,74 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
         /// <param name="zipArray"></param>
         private void GoNextStep(byte[] zipArray)
         {
-            var zipStream = new ZipInputStream(new MemoryStream(zipArray))
-                                {
-                                    Password = "afsf325cf6y34g6a5frs4cf5"
-                                };
-
-            byte[] array = null;
-
-            if ((zipStream.GetNextEntry()) != null)
+            try
             {
-                array = new byte[zipStream.Length];
-                zipStream.Read(array, 0, array.Length);
-            }
+                var zipStream = new ZipInputStream(new MemoryStream(zipArray))
+                                    {
+                                        Password = "afsf325cf6y34g6a5frs4cf5"
+                                    };
 
-            zipStream.Close();
+                byte[] array = null;
 
-            if (array == null)
-            {
-                GoEnd(WordEnum.PROBLEM_WITH_SERVER);
-                return;
-            }
-
-            string encodingBytes = Encoding.UTF8.GetString(array);
-            string[] lines = encodingBytes.Split('\n');
-
-            foreach (string line in lines)
-            {
-                if (line.Trim().Equals(""))
-                    continue;
-
-                if (Status == Status.CANCEL)
+                if ((zipStream.GetNextEntry()) != null)
                 {
-                    GoEnd(WordEnum.CANCEL_BY_USER);
+                    array = new byte[zipStream.Length];
+                    zipStream.Read(array, 0, array.Length);
+                }
+
+                zipStream.Close();
+
+                if (array == null)
+                {
+                    GoEnd(WordEnum.PROBLEM_WITH_SERVER);
                     return;
                 }
 
-                if (line.StartsWith("#Revision:"))
+                string encodingBytes = Encoding.UTF8.GetString(array);
+                string[] lines = encodingBytes.Split('\n');
+
+                foreach (string line in lines)
                 {
-                    Revision = int.Parse(line.Replace("#Revision:", "").Trim());
-                    continue;
+                    if (line.Trim().Equals(""))
+                        continue;
+
+                    if (Status == Status.CANCEL)
+                    {
+                        GoEnd(WordEnum.CANCEL_BY_USER);
+                        return;
+                    }
+
+                    if (line.StartsWith("#Revision:"))
+                    {
+                        Revision = int.Parse(line.Replace("#Revision:", "").Trim());
+                        continue;
+                    }
+
+                    if (line.StartsWith("#"))
+                    {
+                        continue;
+                    }
+
+                    try
+                    {
+                        ListFile file = ListFile.parse(line);
+
+                        _list[file.Type].AddLast(file);
+                    }
+                    catch (Exception e)
+                    {
+                        _log.Info("Exception for line " + line + " " + e, e);
+                    }
                 }
 
-                if (line.StartsWith("#"))
-                {
-                    continue;
-                }
-
-                try
-                {
-                    ListFile file = ListFile.parse(line);
-
-                    _list[file.Type].AddLast(file);
-                }
-                catch (Exception e)
-                {
-                    _log.Info("Exception for line " + line + " " + e, e);
-                }
+                GoEnd(WordEnum.ENDING_DOWNLOAD_LIST);
             }
-
-            IsValid = true;
-
-            GoEnd(WordEnum.ENDING_DOWNLOAD_LIST);
+            catch(Exception e)
+            {
+                GoEnd(WordEnum.PROBLEM_WITH_SERVER);
+                
+                _log.Info("Exception: " + e, e);
+            }
         }
 
         [MethodImpl(MethodImplOptions.Synchronized)]
@@ -195,7 +201,12 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
 
             MainForm.Instance.UpdateStatusLabel(word);
 
-            if (!(TaskManager.Instance.NextTask() is AnalyzerTask))
+            if(word  == WordEnum.ENDING_DOWNLOAD_LIST)
+            {
+                IsValid = true;    
+            }
+
+            if (!(TaskManager.Instance.NextTask is AnalyzerTask))
             {
                 MainForm.Instance.SetMainFormState(MainFormState.NONE);
             }
@@ -234,5 +245,10 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
         }
 
         #endregion
+
+        public override string ToString()
+        {
+            return _toString;
+        }
     }
 }
