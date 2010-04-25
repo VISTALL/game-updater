@@ -430,15 +430,21 @@ namespace com.jds.GUpdater.classes.forms
                 case VersionType.UNKNOWN:
                     _versionInfo.Text = LanguageHolder.Instance()[WordEnum.VERSION_IS_NOT_CHECK];
                     _versionInfo.ForeColor = COLOR2;
+                    _versionInfo.Tag = "ASSEMBLY";
+                    _versionInfo.Cursor = Cursors.Hand;
                     break;
                 case VersionType.SAME:
                 case VersionType.LOWER:
                     _versionInfo.Text = LanguageHolder.Instance()[WordEnum.VERSION_IS_OK];
                     _versionInfo.ForeColor = COLOR;
+                    _versionInfo.Cursor = Cursors.Default;
+                    _versionInfo.Tag = null;
                     break;
                 case VersionType.BIGGER:
                     _versionInfo.Text = LanguageHolder.Instance()[WordEnum.VERSION_IS_BAD];
                     _versionInfo.ForeColor = Color.Red;
+                    _versionInfo.Tag = "ASSEMBLY";
+                    _versionInfo.Cursor = Cursors.Hand;
                     break;
             }
         }

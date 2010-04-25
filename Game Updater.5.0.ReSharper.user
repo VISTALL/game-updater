@@ -9,7 +9,6 @@
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:gui/d:tabpane/f:JImageTab.cs" caret="0" fromTop="0" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:images/f:ImageHolder.cs" caret="413" fromTop="13" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:images/f:ImageInfo.cs" caret="30" fromTop="0" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:gui/f:IImageInfo.cs" caret="122" fromTop="5" />
@@ -38,17 +37,10 @@
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyEditor.cs" caret="656" fromTop="6" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyConventer.cs" caret="0" fromTop="0" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:PropertyForm.cs" caret="1960" fromTop="10" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="16598" fromTop="38" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:events/f:EventHandlers.cs" caret="411" fromTop="12" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="12953" fromTop="17" />
     </RecentFiles>
     <RecentEdits>
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyConventer.cs" caret="918" fromTop="20" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyConventer.cs" caret="522" fromTop="8" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyConventer.cs" caret="871" fromTop="19" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyConventer.cs" caret="764" fromTop="9" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyConventer.cs" caret="1810" fromTop="32" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyConventer.cs" caret="961" fromTop="13" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyConventer.cs" caret="1039" fromTop="20" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyConventer.cs" caret="1810" fromTop="17" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:Language.cs" caret="5402" fromTop="21" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="3104" fromTop="20" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguageHolder.cs" caret="1332" fromTop="4" />
@@ -70,7 +62,15 @@
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/f:Program.cs" caret="1470" fromTop="16" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="2695" fromTop="3" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:PropertyForm.cs" caret="2784" fromTop="23" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="17757" fromTop="38" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="18081" fromTop="38" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="2622" fromTop="28" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:events/f:EventHandlers.cs" caret="962" fromTop="23" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:events/f:EventHandlers.cs" caret="658" fromTop="18" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:events/f:EventHandlers.cs" caret="1273" fromTop="25" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:events/f:EventHandlers.cs" caret="1496" fromTop="30" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="13020" fromTop="18" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="13709" fromTop="31" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="13333" fromTop="24" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -109,7 +109,7 @@
       <Item value="case" priority="8" />
       <Item value="break" priority="10" />
       <Item value="null" priority="27" />
-      <Item value="if" priority="83" />
+      <Item value="if" priority="84" />
       <Item value="InvokeRequired" priority="2" />
       <Item value="else" priority="11" />
       <Item value="UpdateStatusLabelUnsafe`0" priority="1" />
@@ -529,6 +529,7 @@
       <Item value="StandardValuesCollection" priority="0" />
       <Item value="_language" priority="0" />
       <Item value="NONE" priority="0" />
+      <Item value="label" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@client.forms.MainForm">
       <Item value="Instance" priority="0" />
@@ -705,6 +706,7 @@
       <Item value="Width" priority="1" />
       <Item value="Layout" priority="0" />
       <Item value="ForeColor" priority="3" />
+      <Item value="Tag" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Xml.XmlNode">
       <Item value="Attributes" priority="0" />
@@ -1152,6 +1154,9 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Drawing.Design.UITypeEditor">
       <Item value="PaintValue`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.Cursors">
+      <Item value="Default" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

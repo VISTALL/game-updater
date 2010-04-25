@@ -22,10 +22,14 @@ namespace com.jds.GUpdater.classes.events
             if (sender is Label)
             {
                 var label = sender as Label;
-                string name = label.Font.Name;
-                float size = label.Font.Size;
-                GraphicsUnit unit = label.Font.Unit;
-                label.Font = new Font(name, size, FontStyle.Underline, unit);
+                
+                if (label.Tag != null)
+                {
+                    string name = label.Font.Name;
+                    float size = label.Font.Size;
+                    GraphicsUnit unit = label.Font.Unit;
+                    label.Font = new Font(name, size, FontStyle.Underline, unit);
+                }
             }
         }
 
@@ -34,10 +38,13 @@ namespace com.jds.GUpdater.classes.events
             if (sender is Label)
             {
                 var label = sender as Label;
-                string name = label.Font.Name;
-                float size = label.Font.Size;
-                GraphicsUnit unit = label.Font.Unit;
-                label.Font = new Font(name, size, FontStyle.Regular, unit);
+                if (label.Tag != null)
+                {
+                    string name = label.Font.Name;
+                    float size = label.Font.Size;
+                    GraphicsUnit unit = label.Font.Unit;
+                    label.Font = new Font(name, size, FontStyle.Regular, unit);
+                }
             }
         }
 
