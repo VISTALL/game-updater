@@ -37,11 +37,10 @@
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguageHolder.cs" caret="3140" fromTop="20" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyEditor.cs" caret="656" fromTop="6" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyConventer.cs" caret="0" fromTop="0" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="16598" fromTop="5" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:PropertyForm.cs" caret="1762" fromTop="7" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:PropertyForm.cs" caret="1960" fromTop="10" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="16598" fromTop="38" />
     </RecentFiles>
     <RecentEdits>
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyConventer.cs" caret="1265" fromTop="11" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyConventer.cs" caret="918" fromTop="20" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyConventer.cs" caret="522" fromTop="8" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/f:LanguagePropertyConventer.cs" caret="871" fromTop="19" />
@@ -71,6 +70,7 @@
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/f:Program.cs" caret="1470" fromTop="16" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="2695" fromTop="3" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:PropertyForm.cs" caret="2784" fromTop="23" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="17757" fromTop="38" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>

@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PropertyForm));
             this._okButton = new System.Windows.Forms.Button();
             this._tabs = new System.Windows.Forms.TabControl();
             this.FolderDialog = new System.Windows.Forms.FolderBrowserDialog();
@@ -63,6 +64,7 @@
             this.Controls.Add(this._tabs);
             this.Controls.Add(this._okButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PropertyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Settings";
