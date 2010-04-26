@@ -8,8 +8,8 @@
     <ProjectGuid>{AC55F2C3-A13E-447F-887B-7114C0F956A8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>com.jds.GUpdater</RootNamespace>
-    <AssemblyName>GUpdater</AssemblyName>
+    <RootNamespace>com.jds.AWLauncher</RootNamespace>
+    <AssemblyName>AWLauncher</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ManifestCertificateThumbprint>21C17EB859B5C21CC36D4BA73C3F48C8E6837E93</ManifestCertificateThumbprint>
