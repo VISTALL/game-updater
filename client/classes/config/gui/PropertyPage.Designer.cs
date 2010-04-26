@@ -1,4 +1,4 @@
-﻿namespace com.jds.GUpdater.classes.config.gui
+﻿namespace com.jds.AWLauncher.classes.config.gui
 {
 	partial class PropertyPage
 	{

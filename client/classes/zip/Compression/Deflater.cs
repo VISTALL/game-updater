@@ -39,7 +39,7 @@
 
 using System;
 
-namespace com.jds.GUpdater.classes.zip.Compression
+namespace com.jds.AWLauncher.classes.zip.compression
 {
 	
 	/// <summary>

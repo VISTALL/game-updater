@@ -1,10 +1,10 @@
 ﻿using System;
-using com.jds.GUpdater.classes.language.properties;
-using com.jds.GUpdater.classes.registry.attributes;
+using com.jds.AWLauncher.classes.language.properties;
+using com.jds.AWLauncher.classes.registry.attributes;
 using log4net;
 using Microsoft.Win32;
 
-namespace com.jds.GUpdater.classes.registry
+namespace com.jds.AWLauncher.classes.registry
 {
     public abstract class RegistryProperty : LanguageCustomTypeDescription
     {

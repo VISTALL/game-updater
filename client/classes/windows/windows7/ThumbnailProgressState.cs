@@ -1,4 +1,4 @@
-namespace com.jds.GUpdater.classes.windows.windows7
+namespace com.jds.AWLauncher.classes.windows.windows7
 {
     /// <summary>
     /// Represents the thumbnail progress bar state.

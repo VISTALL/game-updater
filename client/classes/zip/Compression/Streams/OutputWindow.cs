@@ -38,7 +38,7 @@
 
 using System;
 
-namespace com.jds.GUpdater.classes.zip.Compression.Streams 
+namespace com.jds.AWLauncher.classes.zip.compression.Streams 
 {
 	
 	/// <summary>

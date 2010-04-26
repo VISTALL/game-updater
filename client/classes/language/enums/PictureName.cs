@@ -1,4 +1,4 @@
-﻿namespace com.jds.GUpdater.classes.language.enums
+﻿namespace com.jds.AWLauncher.classes.language.enums
 {
     public enum PictureName
     {

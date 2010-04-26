@@ -1,4 +1,4 @@
-﻿namespace com.jds.GUpdater.classes.games.gui
+﻿namespace com.jds.AWLauncher.classes.games.gui
 {
     public partial class SimpleGamePanel
     {

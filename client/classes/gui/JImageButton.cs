@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace com.jds.GUpdater.classes.gui
+namespace com.jds.AWLauncher.classes.gui
 {
     public class JImageButton : PictureBox
     {

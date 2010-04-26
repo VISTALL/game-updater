@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace com.jds.GUpdater.classes.gui.tabpane
+namespace com.jds.AWLauncher.classes.gui.tabpane
 {
     public class JImageTab : PictureBox
     {

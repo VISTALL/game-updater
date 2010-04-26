@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace com.jds.GUpdater.classes.version_control
+namespace com.jds.AWLauncher.classes.version_control
 {
     public class AssemblyInfo
     {

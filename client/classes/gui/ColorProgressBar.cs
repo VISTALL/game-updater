@@ -6,7 +6,7 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace com.jds.GUpdater.classes.gui
+namespace com.jds.AWLauncher.classes.gui
 {
     [Description("Color Progress Bar")]
     [ToolboxBitmap(typeof (ProgressBar))]

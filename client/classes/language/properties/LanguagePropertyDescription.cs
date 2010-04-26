@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
-using com.jds.GUpdater.classes.language.attributes;
-using com.jds.GUpdater.classes.language.enums;
+using com.jds.AWLauncher.classes.language.attributes;
+using com.jds.AWLauncher.classes.language.enums;
 
-namespace com.jds.GUpdater.classes.language.properties
+namespace com.jds.AWLauncher.classes.language.properties
 {
     public class LanguagePropertyDescription : PropertyDescriptor
     {

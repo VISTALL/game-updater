@@ -6,7 +6,7 @@ using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.Windows.Forms;
 
-namespace com.jds.GUpdater.classes.gui
+namespace com.jds.AWLauncher.classes.gui
 {
     [DefaultEvent("Click")] //Already built-in
     public partial class JButton : UserControl

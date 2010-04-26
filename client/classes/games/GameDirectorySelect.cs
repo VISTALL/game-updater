@@ -2,10 +2,10 @@
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.Windows.Forms;
-using com.jds.GUpdater.classes.forms;
-using com.jds.GUpdater.classes.games.propertyes;
+using com.jds.AWLauncher.classes.forms;
+using com.jds.AWLauncher.classes.games.propertyes;
 
-namespace com.jds.GUpdater.classes.games
+namespace com.jds.AWLauncher.classes.games
 {
     public class GameDirectorySelect : UITypeEditor
     {

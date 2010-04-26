@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace com.jds.GUpdater.classes.transperent
+namespace com.jds.AWLauncher.classes.transperent
 {
     public class Runnable
     {

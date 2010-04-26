@@ -5,10 +5,10 @@ using System.IO;
 using System.Net;
 using System.Windows.Forms;
 using System.Xml;
-using com.jds.GUpdater.classes.language;
-using com.jds.GUpdater.classes.language.enums;
+using com.jds.AWLauncher.classes.language;
+using com.jds.AWLauncher.classes.language.enums;
 
-namespace com.jds.GUpdater.classes.gui
+namespace com.jds.AWLauncher.classes.gui
 {
     public class RSSPanel : UserControl
     {

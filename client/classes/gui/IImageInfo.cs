@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace com.jds.GUpdater.classes.gui
+namespace com.jds.AWLauncher.classes.gui
 {
     public interface IImageInfo
     {

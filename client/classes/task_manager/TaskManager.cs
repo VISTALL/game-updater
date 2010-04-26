@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using com.jds.GUpdater.classes.task_manager.tasks;
+using com.jds.AWLauncher.classes.task_manager.tasks;
 using log4net;
 
-namespace com.jds.GUpdater.classes.task_manager
+namespace com.jds.AWLauncher.classes.task_manager
 {
     public class TaskManager
     {

@@ -6,11 +6,11 @@ using System.Globalization;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
-using com.jds.GUpdater.classes.config;
-using com.jds.GUpdater.classes.language.enums;
+using com.jds.AWLauncher.classes.config;
+using com.jds.AWLauncher.classes.language.enums;
 using log4net;
 
-namespace com.jds.GUpdater.classes.language
+namespace com.jds.AWLauncher.classes.language
 {
     public class LanguageHolder
     {

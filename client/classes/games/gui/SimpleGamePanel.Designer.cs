@@ -1,6 +1,6 @@
-﻿using com.jds.GUpdater.classes.gui;
+﻿using com.jds.AWLauncher.classes.gui;
 
-namespace com.jds.GUpdater.classes.games.gui
+namespace com.jds.AWLauncher.classes.games.gui
 {
 	partial class SimpleGamePanel
 	{

@@ -51,10 +51,10 @@ namespace com.jds.Premaker.classes.forms
             _makeTOBtn.Enabled = true;
             _pathBox.Text = path;
 
-            var gExe = SelectedPath + "/GUpdater.exe";
+            var gExe = SelectedPath + "/AWLauncher.exe";
             if (!File.Exists(gExe))
             {
-                MessageBox.Show("Not GUpdater folder");
+                MessageBox.Show("Not AWLauncher folder");
                 return;
             }
 

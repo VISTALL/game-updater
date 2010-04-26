@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
-namespace com.jds.GUpdater.classes.listloader
+namespace com.jds.AWLauncher.classes.listloader
 {
     public static class DTHasher
     {

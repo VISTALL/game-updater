@@ -1,9 +1,9 @@
 using System.Drawing;
-using com.jds.GUpdater.classes.gui;
-using com.jds.GUpdater.classes.language;
-using com.jds.GUpdater.classes.language.enums;
+using com.jds.AWLauncher.classes.gui;
+using com.jds.AWLauncher.classes.language;
+using com.jds.AWLauncher.classes.language.enums;
 
-namespace com.jds.GUpdater.classes.images
+namespace com.jds.AWLauncher.classes.images
 {
     public class ImageInfo : IImageInfo
     {

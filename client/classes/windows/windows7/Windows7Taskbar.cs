@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace com.jds.GUpdater.classes.windows.windows7
+namespace com.jds.AWLauncher.classes.windows.windows7
 {
     public static class Windows7Taskbar
     {

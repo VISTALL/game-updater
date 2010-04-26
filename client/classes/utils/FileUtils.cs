@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace com.jds.GUpdater.classes.utils
+namespace com.jds.AWLauncher.classes.utils
 {
     public class FileUtils
     {

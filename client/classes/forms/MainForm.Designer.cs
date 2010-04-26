@@ -1,6 +1,6 @@
-﻿using com.jds.GUpdater.classes.gui;
+﻿using com.jds.AWLauncher.classes.gui;
 
-namespace com.jds.GUpdater.classes.forms
+namespace com.jds.AWLauncher.classes.forms
 {
     sealed partial class MainForm
 	{
@@ -43,14 +43,14 @@ namespace com.jds.GUpdater.classes.forms
             this._joinNowLabel = new System.Windows.Forms.Label();
             this._statusLabel = new System.Windows.Forms.Label();
             this._versionInfo = new System.Windows.Forms.Label();
-            this._minimizedButton = new com.jds.GUpdater.classes.gui.JImageButton();
-            this._settingsButton = new com.jds.GUpdater.classes.gui.JImageButton();
-            this._fullCheck = new com.jds.GUpdater.classes.gui.JImageButton();
-            this._startButton = new com.jds.GUpdater.classes.gui.JImageButton();
-            this._fileProgressBar = new com.jds.GUpdater.classes.gui.ColorProgressBar();
-            this._totalProgress = new com.jds.GUpdater.classes.gui.ColorProgressBar();
-            this._closeBtn = new com.jds.GUpdater.classes.gui.JImageButton();
-            this.TabbedPane = new com.jds.GUpdater.classes.gui.JTabbedPane();
+            this._minimizedButton = new JImageButton();
+            this._settingsButton = new JImageButton();
+            this._fullCheck = new JImageButton();
+            this._startButton = new JImageButton();
+            this._fileProgressBar = new ColorProgressBar();
+            this._totalProgress = new ColorProgressBar();
+            this._closeBtn = new JImageButton();
+            this.TabbedPane = new JTabbedPane();
             ((System.ComponentModel.ISupportInitialize)(this._minimizedButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._settingsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._fullCheck)).BeginInit();
@@ -140,6 +140,7 @@ namespace com.jds.GUpdater.classes.forms
             this._faqLabel.Name = "_faqLabel";
             this._faqLabel.Size = new System.Drawing.Size(32, 16);
             this._faqLabel.TabIndex = 15;
+            this._faqLabel.Tag = "http://forum.aionwars.com/showthread.php?t=1173";
             this._faqLabel.Text = "FAQ";
             this._faqLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this._faqLabel.Visible = false;
@@ -292,7 +293,7 @@ namespace com.jds.GUpdater.classes.forms
             // 
             this._fileProgressBar.BarColor = System.Drawing.Color.RoyalBlue;
             this._fileProgressBar.BorderColor = System.Drawing.Color.Transparent;
-            this._fileProgressBar.FillStyle = com.jds.GUpdater.classes.gui.ColorProgressBar.FillStyles.Solid;
+            this._fileProgressBar.FillStyle = ColorProgressBar.FillStyles.Solid;
             this._fileProgressBar.Location = new System.Drawing.Point(80, 489);
             this._fileProgressBar.Maximum = 100;
             this._fileProgressBar.Minimum = 0;
@@ -308,7 +309,7 @@ namespace com.jds.GUpdater.classes.forms
             this._totalProgress.BackColor = System.Drawing.Color.White;
             this._totalProgress.BarColor = System.Drawing.Color.Red;
             this._totalProgress.BorderColor = System.Drawing.Color.Transparent;
-            this._totalProgress.FillStyle = com.jds.GUpdater.classes.gui.ColorProgressBar.FillStyles.Solid;
+            this._totalProgress.FillStyle = ColorProgressBar.FillStyles.Solid;
             this._totalProgress.Location = new System.Drawing.Point(80, 496);
             this._totalProgress.Maximum = 100;
             this._totalProgress.Minimum = 0;

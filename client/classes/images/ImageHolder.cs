@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using com.jds.GUpdater.classes.language.enums;
+using com.jds.AWLauncher.classes.language.enums;
 
-namespace com.jds.GUpdater.classes.images
+namespace com.jds.AWLauncher.classes.images
 {
     public class ImageHolder
     {

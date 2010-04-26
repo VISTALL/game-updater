@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.IO;
 
-namespace com.jds.GUpdater.classes.games.propertyes.impl
+namespace com.jds.AWLauncher.classes.games.propertyes.impl
 {
     public class Lineage2Property : GameProperty
     {

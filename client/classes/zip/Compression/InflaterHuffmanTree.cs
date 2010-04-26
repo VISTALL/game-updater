@@ -36,9 +36,9 @@
 // exception statement from your version.
 
 using System;
-using com.jds.GUpdater.classes.zip.Compression.Streams;
+using com.jds.AWLauncher.classes.zip.compression.Streams;
 
-namespace com.jds.GUpdater.classes.zip.Compression 
+namespace com.jds.AWLauncher.classes.zip.compression 
 {
 	
 	/// <summary>

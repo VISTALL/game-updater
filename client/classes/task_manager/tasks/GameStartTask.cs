@@ -1,7 +1,7 @@
-﻿using com.jds.GUpdater.classes.games.propertyes;
-using com.jds.GUpdater.classes.transperent;
+﻿using com.jds.AWLauncher.classes.games.propertyes;
+using com.jds.AWLauncher.classes.transperent;
 
-namespace com.jds.GUpdater.classes.task_manager.tasks
+namespace com.jds.AWLauncher.classes.task_manager.tasks
 {
     public class GameStartTask : AbstractTask
     {

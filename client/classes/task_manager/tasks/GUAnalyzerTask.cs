@@ -6,19 +6,16 @@ using System.IO;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using com.jds.GUpdater.classes.forms;
-using com.jds.GUpdater.classes.games.propertyes;
-using com.jds.GUpdater.classes.language;
-using com.jds.GUpdater.classes.language.enums;
-using com.jds.GUpdater.classes.listloader;
-using com.jds.GUpdater.classes.listloader.enums;
-using com.jds.GUpdater.classes.utils;
-using com.jds.GUpdater.classes.version_control.gui;
-using com.jds.GUpdater.classes.zip;
+using com.jds.AWLauncher.classes.language;
+using com.jds.AWLauncher.classes.language.enums;
+using com.jds.AWLauncher.classes.listloader;
+using com.jds.AWLauncher.classes.listloader.enums;
+using com.jds.AWLauncher.classes.version_control.gui;
+using com.jds.AWLauncher.classes.zip;
 
 #endregion
 
-namespace com.jds.GUpdater.classes.task_manager.tasks
+namespace com.jds.AWLauncher.classes.task_manager.tasks
 {
     public class GUAnalyzerTask : AbstractTask
     {
@@ -34,7 +31,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
         {
             var mainThead = new Thread(AnalizeToThread)
                                 {
-                                    Name = "Analize GUpdater",
+                                    Name = "Analize AWLauncher",
                                     Priority = ThreadPriority.Lowest
                                 };
 
@@ -184,7 +181,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
 
             string path = Directory.GetCurrentDirectory();
             string fileName = path + file.FileName.Replace("/", "\\") + ".new";
-            var url = new Uri("http://jdevelopstation.com/gupdater" + file.FileName + ".zip");
+            var url = new Uri("http://jdevelopstation.com/awlauncher" + file.FileName + ".zip");
 
             var info = new FileInfo(fileName);
 

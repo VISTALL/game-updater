@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace com.jds.GUpdater.classes.task_manager.tasks
+﻿namespace com.jds.AWLauncher.classes.task_manager.tasks
 {
     public abstract class AbstractTask
     {

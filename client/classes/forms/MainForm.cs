@@ -1,34 +1,32 @@
 ﻿#region Usage
 
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
-using com.jds.GUpdater.classes.config;
-using com.jds.GUpdater.classes.events;
-using com.jds.GUpdater.classes.games;
-using com.jds.GUpdater.classes.games.attributes;
-using com.jds.GUpdater.classes.games.propertyes;
-using com.jds.GUpdater.classes.gui;
-using com.jds.GUpdater.classes.gui.tabpane;
-using com.jds.GUpdater.classes.images;
-using com.jds.GUpdater.classes.invoke;
-using com.jds.GUpdater.classes.language;
-using com.jds.GUpdater.classes.language.enums;
-using com.jds.GUpdater.classes.listloader.enums;
-using com.jds.GUpdater.classes.task_manager;
-using com.jds.GUpdater.classes.task_manager.tasks;
-using com.jds.GUpdater.classes.version_control;
-using com.jds.GUpdater.classes.version_control.gui;
-using com.jds.GUpdater.classes.windows;
-using com.jds.GUpdater.classes.windows.windows7;
-using com.jds.GUpdater.classes.utils;
+using com.jds.AWLauncher.classes.config;
+using com.jds.AWLauncher.classes.events;
+using com.jds.AWLauncher.classes.games;
+using com.jds.AWLauncher.classes.games.attributes;
+using com.jds.AWLauncher.classes.games.propertyes;
+using com.jds.AWLauncher.classes.gui;
+using com.jds.AWLauncher.classes.gui.tabpane;
+using com.jds.AWLauncher.classes.images;
+using com.jds.AWLauncher.classes.invoke;
+using com.jds.AWLauncher.classes.language;
+using com.jds.AWLauncher.classes.language.enums;
+using com.jds.AWLauncher.classes.listloader.enums;
+using com.jds.AWLauncher.classes.task_manager;
+using com.jds.AWLauncher.classes.task_manager.tasks;
+using com.jds.AWLauncher.classes.version_control;
+using com.jds.AWLauncher.classes.version_control.gui;
+using com.jds.AWLauncher.classes.windows;
+using com.jds.AWLauncher.classes.windows.windows7;
+
 #endregion
 
-namespace com.jds.GUpdater.classes.forms
+namespace com.jds.AWLauncher.classes.forms
 {
     public sealed partial class MainForm : Form
     {
@@ -103,6 +101,8 @@ namespace com.jds.GUpdater.classes.forms
 
             EventHandlers.Register(_homePage);
             EventHandlers.Register(_versionInfo);
+            EventHandlers.Register(_faqLabel);
+            EventHandlers.Register(_forumLabel);
 
             //добавляем все игры в вкладки
             foreach (object enu in Enum.GetValues(typeof (Game)))

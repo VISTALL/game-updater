@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
-using com.jds.GUpdater.classes.forms;
+using com.jds.AWLauncher.classes.forms;
 
-namespace com.jds.GUpdater.classes.events
+namespace com.jds.AWLauncher.classes.events
 {
     public class EventHandlers
     {

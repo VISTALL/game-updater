@@ -3,7 +3,7 @@ using System.IO;
 using System.Windows.Forms;
 using log4net.Config;
 
-namespace com.jds.GUpdater.classes
+namespace com.jds.AWLauncher.classes
 {
     /**
      * Author: VISTALL

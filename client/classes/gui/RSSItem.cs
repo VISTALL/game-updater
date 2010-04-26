@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using com.jds.GUpdater.classes.date;
-using com.jds.GUpdater.classes.events;
+using com.jds.AWLauncher.classes.date;
+using com.jds.AWLauncher.classes.events;
 
-namespace com.jds.GUpdater.classes.gui
+namespace com.jds.AWLauncher.classes.gui
 {
     public class RSSItem : UserControl
     {

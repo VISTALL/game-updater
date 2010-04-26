@@ -50,10 +50,10 @@
             this._gupdateFiles.AutoSize = true;
             this._gupdateFiles.Location = new System.Drawing.Point(12, 35);
             this._gupdateFiles.Name = "_gupdateFiles";
-            this._gupdateFiles.Size = new System.Drawing.Size(138, 17);
+            this._gupdateFiles.Size = new System.Drawing.Size(155, 17);
             this._gupdateFiles.TabIndex = 1;
             this._gupdateFiles.TabStop = true;
-            this._gupdateFiles.Text = "Create files of GUpdater";
+            this._gupdateFiles.Text = "Create files of AWLauncher";
             this._gupdateFiles.UseVisualStyleBackColor = true;
             // 
             // _goButton

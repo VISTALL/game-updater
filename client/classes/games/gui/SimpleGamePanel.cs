@@ -1,10 +1,10 @@
-﻿using com.jds.GUpdater.classes.games.propertyes;
-using com.jds.GUpdater.classes.gui;
-using com.jds.GUpdater.classes.gui.tabpane;
-using com.jds.GUpdater.classes.images;
-using com.jds.GUpdater.classes.language.enums;
+﻿using com.jds.AWLauncher.classes.games.propertyes;
+using com.jds.AWLauncher.classes.gui;
+using com.jds.AWLauncher.classes.gui.tabpane;
+using com.jds.AWLauncher.classes.images;
+using com.jds.AWLauncher.classes.language.enums;
 
-namespace com.jds.GUpdater.classes.games.gui
+namespace com.jds.AWLauncher.classes.games.gui
 {
     public partial class SimpleGamePanel : JPanelTab, IGamePanel
     {

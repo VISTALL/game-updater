@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace com.jds.GUpdater.classes.config.gui
+namespace com.jds.AWLauncher.classes.config.gui
 {
     public partial class PropertyPage : UserControl
     {

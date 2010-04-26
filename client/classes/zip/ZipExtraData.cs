@@ -37,7 +37,7 @@
 using System;
 using System.IO;
 
-namespace com.jds.GUpdater.classes.zip
+namespace com.jds.AWLauncher.classes.zip
 {
 	// TODO: Sort out wether tagged data is useful and what a good implementation might look like.
 	// Its just a sketch of an idea at the moment.

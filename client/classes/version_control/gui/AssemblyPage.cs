@@ -1,21 +1,22 @@
 ﻿#region Usage
+
 using System;
 using System.IO;
 using System.Windows.Forms;
-using com.jds.GUpdater.classes.forms;
-using com.jds.GUpdater.classes.invoke;
-using com.jds.GUpdater.classes.language;
-using com.jds.GUpdater.classes.language.enums;
-using com.jds.GUpdater.classes.listloader;
-using com.jds.GUpdater.classes.listloader.enums;
-using com.jds.GUpdater.classes.task_manager;
-using com.jds.GUpdater.classes.task_manager.tasks;
-using com.jds.GUpdater.classes.utils;
-using com.jds.GUpdater.classes.windows.windows7;
+using com.jds.AWLauncher.classes.forms;
+using com.jds.AWLauncher.classes.invoke;
+using com.jds.AWLauncher.classes.language;
+using com.jds.AWLauncher.classes.language.enums;
+using com.jds.AWLauncher.classes.listloader;
+using com.jds.AWLauncher.classes.listloader.enums;
+using com.jds.AWLauncher.classes.task_manager;
+using com.jds.AWLauncher.classes.task_manager.tasks;
+using com.jds.AWLauncher.classes.windows.windows7;
 using log4net;
+
 #endregion
 
-namespace com.jds.GUpdater.classes.version_control.gui
+namespace com.jds.AWLauncher.classes.version_control.gui
 {
     public partial class AssemblyPage : UserControl
     {

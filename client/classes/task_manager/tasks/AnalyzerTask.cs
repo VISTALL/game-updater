@@ -6,18 +6,18 @@ using System.IO;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using com.jds.GUpdater.classes.forms;
-using com.jds.GUpdater.classes.games.propertyes;
-using com.jds.GUpdater.classes.language;
-using com.jds.GUpdater.classes.language.enums;
-using com.jds.GUpdater.classes.listloader;
-using com.jds.GUpdater.classes.listloader.enums;
-using com.jds.GUpdater.classes.utils;
-using com.jds.GUpdater.classes.zip;
+using com.jds.AWLauncher.classes.forms;
+using com.jds.AWLauncher.classes.games.propertyes;
+using com.jds.AWLauncher.classes.language;
+using com.jds.AWLauncher.classes.language.enums;
+using com.jds.AWLauncher.classes.listloader;
+using com.jds.AWLauncher.classes.listloader.enums;
+using com.jds.AWLauncher.classes.utils;
+using com.jds.AWLauncher.classes.zip;
 
 #endregion
 
-namespace com.jds.GUpdater.classes.task_manager.tasks
+namespace com.jds.AWLauncher.classes.task_manager.tasks
 {
     public class AnalyzerTask : AbstractTask
     {

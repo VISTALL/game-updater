@@ -1,4 +1,4 @@
-﻿namespace com.jds.GUpdater.classes.version_control.gui
+﻿namespace com.jds.AWLauncher.classes.version_control.gui
 {
     partial class AssemblyPage
 	{

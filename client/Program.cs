@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Windows.Forms;
-using com.jds.GUpdater.classes.config;
-using com.jds.GUpdater.classes.forms;
-using com.jds.GUpdater.classes.images;
-using com.jds.GUpdater.classes.invoke;
-using com.jds.GUpdater.classes.version_control;
+using com.jds.AWLauncher.classes;
+using com.jds.AWLauncher.classes.config;
+using com.jds.AWLauncher.classes.forms;
+using com.jds.AWLauncher.classes.images;
+using com.jds.AWLauncher.classes.language;
+using com.jds.AWLauncher.classes.task_manager;
+using com.jds.AWLauncher.classes.version_control;
 using log4net;
-using com.jds.GUpdater.classes;
-using com.jds.GUpdater.classes.task_manager;
-using com.jds.GUpdater.classes.language;
 using System.Threading;
 
 //[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
-namespace com.jds.GUpdater
+namespace com.jds.AWLauncher
 {
 	public static class Program
 	{

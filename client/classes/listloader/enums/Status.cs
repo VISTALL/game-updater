@@ -1,4 +1,4 @@
-﻿namespace com.jds.GUpdater.classes.listloader.enums
+﻿namespace com.jds.AWLauncher.classes.listloader.enums
 {
     public enum Status
     {

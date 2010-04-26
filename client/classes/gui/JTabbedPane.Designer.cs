@@ -1,4 +1,4 @@
-﻿namespace com.jds.GUpdater.classes.gui
+﻿namespace com.jds.AWLauncher.classes.gui
 {
 	partial class JTabbedPane
 	{

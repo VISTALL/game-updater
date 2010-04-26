@@ -1,4 +1,4 @@
-﻿namespace com.jds.GUpdater.classes.games
+﻿namespace com.jds.AWLauncher.classes.games
 {
     public interface IGamePanel
     {

@@ -5,22 +5,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.Reflection;
-using com.jds.GUpdater.classes.forms;
-using com.jds.GUpdater.classes.games;
-using com.jds.GUpdater.classes.games.attributes;
-using com.jds.GUpdater.classes.games.propertyes;
-using com.jds.GUpdater.classes.language;
-using com.jds.GUpdater.classes.language.attributes;
-using com.jds.GUpdater.classes.language.enums;
-using com.jds.GUpdater.classes.language.properties;
-using com.jds.GUpdater.classes.registry;
-using com.jds.GUpdater.classes.registry.attributes;
-using com.jds.GUpdater.classes.version_control.gui;
+using com.jds.AWLauncher.classes.forms;
+using com.jds.AWLauncher.classes.games;
+using com.jds.AWLauncher.classes.games.attributes;
+using com.jds.AWLauncher.classes.games.propertyes;
+using com.jds.AWLauncher.classes.language;
+using com.jds.AWLauncher.classes.language.attributes;
+using com.jds.AWLauncher.classes.language.enums;
+using com.jds.AWLauncher.classes.registry;
+using com.jds.AWLauncher.classes.registry.attributes;
+using com.jds.AWLauncher.classes.version_control.gui;
 using log4net;
 
 #endregion
 
-namespace com.jds.GUpdater.classes.config
+namespace com.jds.AWLauncher.classes.config
 {
     public class RConfig : RegistryProperty
     {

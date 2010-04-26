@@ -36,7 +36,7 @@
 using System;
 using System.IO;
 
-namespace com.jds.GUpdater.classes.zip
+namespace com.jds.AWLauncher.classes.zip
 {
 
 	/// <summary>

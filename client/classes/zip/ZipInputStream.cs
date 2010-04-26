@@ -39,15 +39,15 @@
 
 using System;
 using System.IO;
-using com.jds.GUpdater.classes.zip.checksum;
-using com.jds.GUpdater.classes.zip.Compression;
-using com.jds.GUpdater.classes.zip.Compression.Streams;
+using com.jds.AWLauncher.classes.zip.checksum;
+using com.jds.AWLauncher.classes.zip.compression;
+using com.jds.AWLauncher.classes.zip.compression.Streams;
 
 #if !NETCF_1_0
 
 #endif
 
-namespace com.jds.GUpdater.classes.zip
+namespace com.jds.AWLauncher.classes.zip
 {
 	/// <summary>
 	/// This is an InflaterInputStream that reads the files baseInputStream an zip archive

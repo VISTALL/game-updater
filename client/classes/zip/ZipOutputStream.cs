@@ -40,11 +40,11 @@
 using System;
 using System.IO;
 using System.Collections;
-using com.jds.GUpdater.classes.zip.checksum;
-using com.jds.GUpdater.classes.zip.Compression;
-using com.jds.GUpdater.classes.zip.Compression.Streams;
+using com.jds.AWLauncher.classes.zip.checksum;
+using com.jds.AWLauncher.classes.zip.compression;
+using com.jds.AWLauncher.classes.zip.compression.Streams;
 
-namespace com.jds.GUpdater.classes.zip
+namespace com.jds.AWLauncher.classes.zip
 {
 	/// <summary>
 	/// This is a DeflaterOutputStream that writes the files into a zip

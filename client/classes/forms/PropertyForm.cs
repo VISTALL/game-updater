@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using com.jds.GUpdater.classes.config;
-using com.jds.GUpdater.classes.config.gui;
-using com.jds.GUpdater.classes.games;
-using com.jds.GUpdater.classes.games.propertyes;
-using com.jds.GUpdater.classes.language;
-using com.jds.GUpdater.classes.language.enums;
-using com.jds.GUpdater.classes.listloader.enums;
-using com.jds.GUpdater.classes.version_control.gui;
+using com.jds.AWLauncher.classes.config;
+using com.jds.AWLauncher.classes.config.gui;
+using com.jds.AWLauncher.classes.games;
+using com.jds.AWLauncher.classes.language;
+using com.jds.AWLauncher.classes.language.enums;
+using com.jds.AWLauncher.classes.listloader.enums;
+using com.jds.AWLauncher.classes.version_control.gui;
 
-namespace com.jds.GUpdater.classes.forms
+namespace com.jds.AWLauncher.classes.forms
 {
     public partial class PropertyForm : Form
     {

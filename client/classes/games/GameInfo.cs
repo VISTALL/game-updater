@@ -1,7 +1,7 @@
 ﻿using System;
-using com.jds.GUpdater.classes.games.attributes;
+using com.jds.AWLauncher.classes.games.attributes;
 
-namespace com.jds.GUpdater.classes.games
+namespace com.jds.AWLauncher.classes.games
 {
     public class GameInfo
     {

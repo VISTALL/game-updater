@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace com.jds.GUpdater.classes.invoke
+namespace com.jds.AWLauncher.classes.invoke
 {
     public class DelegateCall
     {

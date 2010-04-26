@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using com.jds.GUpdater.classes.gui.tabpane;
+using com.jds.AWLauncher.classes.gui.tabpane;
 
-namespace com.jds.GUpdater.classes.gui
+namespace com.jds.AWLauncher.classes.gui
 {
     public partial class JTabbedPane : UserControl
     {

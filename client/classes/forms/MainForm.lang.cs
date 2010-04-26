@@ -1,10 +1,9 @@
 ﻿using System.Drawing;
-using com.jds.GUpdater.classes.images;
-using com.jds.GUpdater.classes.language;
-using com.jds.GUpdater.classes.language.enums;
-using com.jds.GUpdater.classes.version_control.gui;
+using com.jds.AWLauncher.classes.images;
+using com.jds.AWLauncher.classes.language;
+using com.jds.AWLauncher.classes.language.enums;
 
-namespace com.jds.GUpdater.classes.forms
+namespace com.jds.AWLauncher.classes.forms
 {
     public sealed partial class MainForm
     {

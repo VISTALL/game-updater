@@ -7,18 +7,18 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
-using com.jds.GUpdater.classes.forms;
-using com.jds.GUpdater.classes.language.enums;
-using com.jds.GUpdater.classes.listloader;
-using com.jds.GUpdater.classes.listloader.enums;
-using com.jds.GUpdater.classes.version_control;
-using com.jds.GUpdater.classes.version_control.gui;
-using com.jds.GUpdater.classes.zip;
+using com.jds.AWLauncher.classes.forms;
+using com.jds.AWLauncher.classes.language.enums;
+using com.jds.AWLauncher.classes.listloader;
+using com.jds.AWLauncher.classes.listloader.enums;
+using com.jds.AWLauncher.classes.version_control;
+using com.jds.AWLauncher.classes.version_control.gui;
+using com.jds.AWLauncher.classes.zip;
 using log4net;
 
 #endregion
 
-namespace com.jds.GUpdater.classes.task_manager.tasks
+namespace com.jds.AWLauncher.classes.task_manager.tasks
 {
     public class GUListLoaderTask : AbstractTask
     {
@@ -47,7 +47,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
         {
             _thread = new Thread(ListDownloadThread)
                           {
-                              Name = "Get List Thread for GUpdater"
+                              Name = "Get List Thread for AWLauncher"
                           };
 
             _thread.Start();
@@ -68,7 +68,7 @@ namespace com.jds.GUpdater.classes.task_manager.tasks
             Status = Status.DOWNLOAD;
             IsValid = false;
 
-            _webClient.DownloadDataAsync(new Uri("http://jdevelopstation.com/gupdater/list.zip"));
+            _webClient.DownloadDataAsync(new Uri("http://jdevelopstation.com/awlauncher/list.zip"));
         }
 
         private void client_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)

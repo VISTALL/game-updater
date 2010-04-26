@@ -37,7 +37,7 @@
 
 using System;
 
-namespace com.jds.GUpdater.classes.zip.checksum 
+namespace com.jds.AWLauncher.classes.zip.checksum 
 {
 	
 	/// <summary>

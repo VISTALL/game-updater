@@ -1,7 +1,7 @@
 ﻿using System;
-using com.jds.GUpdater.classes.language.enums;
+using com.jds.AWLauncher.classes.language.enums;
 
-namespace com.jds.GUpdater.classes.language.attributes
+namespace com.jds.AWLauncher.classes.language.attributes
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class LanguageDescription : Attribute

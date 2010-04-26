@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using com.jds.GUpdater.classes.utils;
 
-namespace com.jds.GUpdater.classes.invoke
+namespace com.jds.AWLauncher.classes.invoke
 {
     public class InvokeManager
     {

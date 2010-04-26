@@ -1,8 +1,8 @@
-﻿using com.jds.GUpdater.classes.games.attributes;
-using com.jds.GUpdater.classes.games.gui;
-using com.jds.GUpdater.classes.games.propertyes.impl;
+﻿using com.jds.AWLauncher.classes.games.attributes;
+using com.jds.AWLauncher.classes.games.gui;
+using com.jds.AWLauncher.classes.games.propertyes.impl;
 
-namespace com.jds.GUpdater.classes.games
+namespace com.jds.AWLauncher.classes.games
 {
     public enum Game
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace com.jds.GUpdater.classes.windows
+namespace com.jds.AWLauncher.classes.windows
 {
     [Flags]
     public enum WindowStyles : uint

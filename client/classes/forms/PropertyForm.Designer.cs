@@ -1,4 +1,4 @@
-﻿namespace com.jds.GUpdater.classes.forms
+﻿namespace com.jds.AWLauncher.classes.forms
 {
 	partial class PropertyForm
 	{

@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Globalization;
 
-namespace com.jds.GUpdater.classes.language
+namespace com.jds.AWLauncher.classes.language
 {
     public class LanguagePropertyConventer : ExpandableObjectConverter
     {

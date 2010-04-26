@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
 using System.IO;
-using com.jds.GUpdater.classes.language;
-using com.jds.GUpdater.classes.listloader.enums;
+using com.jds.AWLauncher.classes.language;
+using com.jds.AWLauncher.classes.listloader.enums;
 
-namespace com.jds.GUpdater.classes.games.propertyes.impl
+namespace com.jds.AWLauncher.classes.games.propertyes.impl
 {
     /**
      * Author: VISTALL

@@ -3,10 +3,9 @@ using System.ComponentModel;
 using System.Drawing.Design;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
-using com.jds.GUpdater.classes.config;
-using com.jds.GUpdater.classes.forms;
+using com.jds.AWLauncher.classes.config;
 
-namespace com.jds.GUpdater.classes.language
+namespace com.jds.AWLauncher.classes.language
 {
     public class LanguagePropertyEditor : UITypeEditor
     {

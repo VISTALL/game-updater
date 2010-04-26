@@ -1,7 +1,7 @@
-﻿using com.jds.GUpdater.classes.language;
-using com.jds.GUpdater.classes.language.enums;
+﻿using com.jds.AWLauncher.classes.language;
+using com.jds.AWLauncher.classes.language.enums;
 
-namespace com.jds.GUpdater.classes.forms
+namespace com.jds.AWLauncher.classes.forms
 {
     public partial class PropertyForm
     {

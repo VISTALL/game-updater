@@ -40,9 +40,9 @@
 
 using System;
 using System.Security.Cryptography;
-using com.jds.GUpdater.classes.zip.checksum;
+using com.jds.AWLauncher.classes.zip.checksum;
 
-namespace com.jds.GUpdater.classes.zip
+namespace com.jds.AWLauncher.classes.zip
 {
 	/// <summary>
 	/// PkzipClassic embodies the classic or original encryption facilities used in Pkzip archives.

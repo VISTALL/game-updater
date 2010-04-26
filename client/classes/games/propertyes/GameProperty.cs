@@ -2,15 +2,15 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing.Design;
-using com.jds.GUpdater.classes.language.attributes;
-using com.jds.GUpdater.classes.language.enums;
-using com.jds.GUpdater.classes.listloader;
-using com.jds.GUpdater.classes.listloader.enums;
-using com.jds.GUpdater.classes.registry;
-using com.jds.GUpdater.classes.registry.attributes;
-using com.jds.GUpdater.classes.task_manager.tasks;
+using com.jds.AWLauncher.classes.language.attributes;
+using com.jds.AWLauncher.classes.language.enums;
+using com.jds.AWLauncher.classes.listloader;
+using com.jds.AWLauncher.classes.listloader.enums;
+using com.jds.AWLauncher.classes.registry;
+using com.jds.AWLauncher.classes.registry.attributes;
+using com.jds.AWLauncher.classes.task_manager.tasks;
 
-namespace com.jds.GUpdater.classes.games.propertyes
+namespace com.jds.AWLauncher.classes.games.propertyes
 {
     /// <summary>
     ///   Класс, это абстрактные настройки, для игр, что б добавить игру нада наследовать етот класс

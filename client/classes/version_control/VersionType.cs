@@ -1,4 +1,4 @@
-namespace com.jds.GUpdater.classes.version_control
+namespace com.jds.AWLauncher.classes.version_control
 {
     public enum VersionType
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using com.jds.GUpdater.classes.listloader.enums;
+using com.jds.AWLauncher.classes.listloader.enums;
 
-namespace com.jds.GUpdater.classes.listloader
+namespace com.jds.AWLauncher.classes.listloader
 {
     public class ListFile
     {

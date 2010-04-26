@@ -44,7 +44,7 @@ using System.Security.Cryptography;
 
 #endif
 
-namespace com.jds.GUpdater.classes.zip.Compression.Streams 
+namespace com.jds.AWLauncher.classes.zip.compression.Streams 
 {
 	/// <summary>
 	/// A special stream deflating or compressing the bytes that are

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace com.jds.GUpdater.classes.language.properties
+namespace com.jds.AWLauncher.classes.language.properties
 {
     public class LanguageCustomTypeDescription : ICustomTypeDescriptor
     {

@@ -1,7 +1,7 @@
 ﻿using System.Threading;
-using com.jds.GUpdater.classes.forms;
+using com.jds.AWLauncher.classes.forms;
 
-namespace com.jds.GUpdater.classes.transperent
+namespace com.jds.AWLauncher.classes.transperent
 {
     public class TransrenetRunner
     {

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Xml;
-using com.jds.GUpdater.classes.language.enums;
-using com.jds.GUpdater.classes.zip;
+using com.jds.AWLauncher.classes.language.enums;
+using com.jds.AWLauncher.classes.zip;
 
-namespace com.jds.GUpdater.classes.language
+namespace com.jds.AWLauncher.classes.language
 {
     public class Language
     {
