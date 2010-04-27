@@ -3,6 +3,9 @@
 		.NET application configuration file     
 	-->
 <configuration>
+    <appSettings>
+		<add key="log4net.Internal.Debug" value="true"/>
+    </appSettings>
 	<!-- Register a section handler for the log4net section -->
 	<configSections>
 		<section name="log4net" type="System.Configuration.IgnoreSectionHandler" />
@@ -21,19 +24,10 @@
 				<conversionPattern value="%date [%thread] %-5level %logger [%ndc] &lt;%property{auth}&gt; - %message%newline" />
 			</layout>
 		</appender>
-		<appender name="NetSendAppender" type="log4net.Appender.NetSendAppender">
-			<threshold value="ERROR" />
-			<server value="SQUARE" />
-			<recipient value="nicko" />
-			<layout type="log4net.Layout.PatternLayout">
-				<conversionPattern value="%date [%thread] %-5level %logger [%ndc] - %message%newline" />
-			</layout>
-		</appender>
 		<!-- Setup the root category, add the appenders and set the default level -->
 		<root>
 			<appender-ref ref="LogFileAppender" />
 			<appender-ref ref="ConsoleAppender" />
-			<appender-ref ref="NetSendAppender" />
 		</root>
 	</log4net>
 </configuration>

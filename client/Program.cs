@@ -50,7 +50,7 @@ namespace com.jds.AWLauncher
                 }
                 catch (Exception e)
                 {
-                    _log.Info("Exception[41]: " + e, e);
+                    _log.Info("Exception[53]: " + e, e);
                 }
 
                 try
@@ -60,7 +60,7 @@ namespace com.jds.AWLauncher
                 }
                 catch (Exception e)
                 {
-                    _log.Info("Exception[50]: " + e, e);
+                    _log.Info("Exception[63]: " + e, e);
                 }
 
                 var mainForm = MainForm.Instance;
@@ -76,12 +76,12 @@ namespace com.jds.AWLauncher
                 }
                 catch (Exception e)
                 {
-                    _log.Info("Exception[61]: " + e, e);
+                    _log.Info("Exception[79]: " + e, e);
                 }
             }
             catch(Exception e)
             {
-                _log.Info("Exception[72]: " + e, e);  
+                _log.Info("Exception[84]: " + e, e);  
             }
 		}
 	}

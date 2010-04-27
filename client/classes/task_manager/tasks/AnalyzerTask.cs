@@ -14,6 +14,7 @@ using com.jds.AWLauncher.classes.listloader;
 using com.jds.AWLauncher.classes.listloader.enums;
 using com.jds.AWLauncher.classes.utils;
 using com.jds.AWLauncher.classes.zip;
+using log4net;
 
 #endregion
 
@@ -21,6 +22,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
 {
     public class AnalyzerTask : AbstractTask
     {
+        private static readonly ILog _log = LogManager.GetLogger(typeof (AnalyzerTask));
         private readonly LinkedList<ListFile> _temp = new LinkedList<ListFile>();
         private String _toString;
         private int _maxSize;
@@ -142,51 +144,62 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
             string word = LanguageHolder.Instance()[WordEnum.CHECKING_S1];
 
             MainForm.Instance.UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
-
-            if (!info.Exists)
+            try
             {
-                DownloadFile(file); //грузим
-            }
-            else if (FileUtils.IsFileOpen(info))
-            {
-                GoEnd(WordEnum.FILE_S1_IS_OPENED_UPDATE_CANCEL, true, info.Name.Replace(".zip", ""));
-                return;
-            }
-            else
-            {
-                String checkSum = null;
 
-                try
-                {
-                    checkSum = DTHasher.GetMD5Hash(fileName);
-                }
-                catch (Exception)
-                {
-                    try
-                    {
-                        info.Delete();
-                    }
-                    catch
-                    {}
-                    
-                    GoEnd(WordEnum.FILE_S1_IS_PROBLEMATIC_UPDATE_CANCEL_PLEASE_RECHECK, true,info.Name.Replace(".zip", ""));
-                    return;
-                }
-
-                if (checkSum == null)
+                if (!info.Exists)
                 {
                     DownloadFile(file); //грузим
                 }
-                else if(!checkSum.Equals(file.md5Checksum))//файл не совпадает
+                else if (FileUtils.IsFileOpen(info))
                 {
-                    DownloadFile(file); //грузим   
+                    GoEnd(WordEnum.FILE_S1_IS_OPENED_UPDATE_CANCEL, true, info.Name.Replace(".zip", ""));
+                    return;
                 }
                 else
                 {
-                    _temp.Remove(file);
+                    String checkSum = null;
 
-                    CheckNextFile(); //идем дальше
+                    try
+                    {
+                        checkSum = DTHasher.GetMD5Hash(fileName);
+                    }
+                    catch (Exception)
+                    {
+                        try
+                        {
+                            info.Delete();
+                        }
+                        catch
+                        {
+                        }
+
+                        GoEnd(WordEnum.FILE_S1_IS_PROBLEMATIC_UPDATE_CANCEL_PLEASE_RECHECK, true,
+                              info.Name.Replace(".zip", ""));
+                        return;
+                    }
+
+                    if (checkSum == null)
+                    {
+                        DownloadFile(file); //грузим
+                    }
+                    else if (!checkSum.Equals(file.md5Checksum)) //файл не совпадает
+                    {
+                        DownloadFile(file); //грузим   
+                    }
+                    else
+                    {
+                        _temp.Remove(file);
+
+                        CheckNextFile(); //идем дальше
+                    }
                 }
+            }
+            catch(Exception e)
+            {
+                _log.Info("Exception: " +e , e);
+
+                DownloadFile(file); //грузим   
             }
         }
 
@@ -232,13 +245,21 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
             {
                 remoteStream = client.OpenRead(url);
             }
-            catch (WebException)
+            catch (WebException e)
             {
+                if (_log.IsDebugEnabled)
+                {
+                    _log.Info("Exception[241]: " + e, e);
+                }
                 GoEnd(WordEnum.PROBLEM_WITH_INTERNET, true);
                 return;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                if (_log.IsDebugEnabled)
+                {
+                    _log.Info("Exception[251]: " + e, e);
+                }
                 GoEnd(WordEnum.PROBLEM_WITH_SERVER, true);
                 return;
             }
@@ -274,13 +295,21 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
                     }
                 }
             }
-            catch (WebException)
+            catch (WebException e)
             {
+                if (_log.IsDebugEnabled)
+                {
+                    _log.Info("Exception[302]: " + e, e);
+                }
                 exception = true;
                 GoEnd(WordEnum.PROBLEM_WITH_INTERNET, true);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                if (_log.IsDebugEnabled)
+                {
+                    _log.Info("Exception[311]: " + e, e);
+                } 
                 exception = true;
                 GoEnd(WordEnum.PROBLEM_WITH_SERVER, true);
             }

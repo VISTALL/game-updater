@@ -1,8 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- 
 		.NET application configuration file     
 	-->
 <configuration>
+    <appSettings>
+		<add key="log4net.Internal.Debug" value="true"/>
+    </appSettings>
 	<!-- Register a section handler for the log4net section -->
 	<configSections>
 		<section name="log4net" type="System.Configuration.IgnoreSectionHandler" />

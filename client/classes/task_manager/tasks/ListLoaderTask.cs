@@ -143,6 +143,10 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
 
                 if (array == null)
                 {
+                    if (_log.IsDebugEnabled)
+                    {
+                        _log.Info("Error: array is null");
+                    } 
                     GoEnd(WordEnum.PROBLEM_WITH_SERVER);
                     return;
                 }

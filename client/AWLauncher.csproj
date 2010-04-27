@@ -32,7 +32,6 @@
     <ApplicationVersion>1.0.0.2</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NoWin32Manifest>true</NoWin32Manifest>
     <ApplicationIcon>iconpsc.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -229,8 +228,7 @@
     <Compile Include="classes\task_manager\tasks\GameStartTask.cs" />
     <Compile Include="classes\task_manager\tasks\GUListLoaderTask.cs" />
     <Compile Include="classes\task_manager\tasks\GUAnalyzerTask.cs" />
-    <Compile Include="classes\transperent\Runnable.cs" />
-    <Compile Include="classes\transperent\TransrenetRunner.cs" />
+    <Compile Include="classes\utils\TransrenetRunner.cs" />
     <Compile Include="classes\utils\FileUtils.cs" />
     <Compile Include="classes\windows\windows7\ITaskbarList3.cs" />
     <Compile Include="classes\windows\windows7\ThumbnailProgressState.cs" />
@@ -261,6 +259,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\invoke\InvokeManager.cs" />
+    <Compile Include="classes\utils\ProcessR.cs" />
     <Compile Include="classes\version_control\gui\AssemblyPage.lang.cs">
       <SubType>UserControl</SubType>
     </Compile>

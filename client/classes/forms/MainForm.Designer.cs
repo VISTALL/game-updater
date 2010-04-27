@@ -43,14 +43,14 @@ namespace com.jds.AWLauncher.classes.forms
             this._joinNowLabel = new System.Windows.Forms.Label();
             this._statusLabel = new System.Windows.Forms.Label();
             this._versionInfo = new System.Windows.Forms.Label();
-            this._minimizedButton = new JImageButton();
-            this._settingsButton = new JImageButton();
-            this._fullCheck = new JImageButton();
-            this._startButton = new JImageButton();
-            this._fileProgressBar = new ColorProgressBar();
-            this._totalProgress = new ColorProgressBar();
-            this._closeBtn = new JImageButton();
-            this.TabbedPane = new JTabbedPane();
+            this._minimizedButton = new com.jds.AWLauncher.classes.gui.JImageButton();
+            this._settingsButton = new com.jds.AWLauncher.classes.gui.JImageButton();
+            this._fullCheck = new com.jds.AWLauncher.classes.gui.JImageButton();
+            this._startButton = new com.jds.AWLauncher.classes.gui.JImageButton();
+            this._fileProgressBar = new com.jds.AWLauncher.classes.gui.ColorProgressBar();
+            this._totalProgress = new com.jds.AWLauncher.classes.gui.ColorProgressBar();
+            this._closeBtn = new com.jds.AWLauncher.classes.gui.JImageButton();
+            this.TabbedPane = new com.jds.AWLauncher.classes.gui.JTabbedPane();
             ((System.ComponentModel.ISupportInitialize)(this._minimizedButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._settingsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._fullCheck)).BeginInit();
@@ -293,7 +293,7 @@ namespace com.jds.AWLauncher.classes.forms
             // 
             this._fileProgressBar.BarColor = System.Drawing.Color.RoyalBlue;
             this._fileProgressBar.BorderColor = System.Drawing.Color.Transparent;
-            this._fileProgressBar.FillStyle = ColorProgressBar.FillStyles.Solid;
+            this._fileProgressBar.FillStyle = com.jds.AWLauncher.classes.gui.ColorProgressBar.FillStyles.Solid;
             this._fileProgressBar.Location = new System.Drawing.Point(80, 489);
             this._fileProgressBar.Maximum = 100;
             this._fileProgressBar.Minimum = 0;
@@ -309,7 +309,7 @@ namespace com.jds.AWLauncher.classes.forms
             this._totalProgress.BackColor = System.Drawing.Color.White;
             this._totalProgress.BarColor = System.Drawing.Color.Red;
             this._totalProgress.BorderColor = System.Drawing.Color.Transparent;
-            this._totalProgress.FillStyle = ColorProgressBar.FillStyles.Solid;
+            this._totalProgress.FillStyle = com.jds.AWLauncher.classes.gui.ColorProgressBar.FillStyles.Solid;
             this._totalProgress.Location = new System.Drawing.Point(80, 496);
             this._totalProgress.Maximum = 100;
             this._totalProgress.Minimum = 0;
@@ -377,7 +377,7 @@ namespace com.jds.AWLauncher.classes.forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GUpdater";
+            this.Text = "AWLauncher";
             this.TransparencyKey = System.Drawing.Color.Lime;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.SizeChanged += new System.EventHandler(this.Form_SizeChanged);

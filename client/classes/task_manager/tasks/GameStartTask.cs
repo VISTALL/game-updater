@@ -1,5 +1,5 @@
 ﻿using com.jds.AWLauncher.classes.games.propertyes;
-using com.jds.AWLauncher.classes.transperent;
+using com.jds.AWLauncher.classes.utils;
 
 namespace com.jds.AWLauncher.classes.task_manager.tasks
 {
@@ -24,7 +24,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
                 return;
             }
 
-            TransrenetRunner.Run(new Runnable(_property.GetStartInfo()));
+            TransrenetRunner.Run(_property.GetStartInfo());
         }
 
         public override void Cancel()

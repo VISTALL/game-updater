@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using com.jds.AWLauncher.classes.forms;
+using com.jds.AWLauncher.classes.utils;
 
 namespace com.jds.AWLauncher.classes.events
 {
@@ -65,13 +65,7 @@ namespace com.jds.AWLauncher.classes.events
                             }
                             break;
                         default:
-                            try
-                            {
-                                Process.Start(target);
-                            }
-                            catch
-                            {
-                            }
+                            ProcessR.Start(target);
                             break;
                     }
                 }
