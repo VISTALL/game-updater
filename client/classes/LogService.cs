@@ -19,6 +19,7 @@ namespace com.jds.AWLauncher.classes
                 MessageBox.Show("Log4net config is not found");
                 Process.GetCurrentProcess().Kill();
             }
+
             XmlConfigurator.Configure(new FileInfo("log4net.xml"));
         }
     }

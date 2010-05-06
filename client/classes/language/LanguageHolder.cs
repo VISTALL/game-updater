@@ -16,6 +16,7 @@ namespace com.jds.AWLauncher.classes.language
     {
         private static readonly ILog _log = LogManager.GetLogger(typeof (LanguageHolder));
         private static LanguageHolder _instance;
+
         private readonly Dictionary<String, Language> _languages = new Dictionary<String, Language>();
 
         private LanguageHolder()
@@ -78,6 +79,8 @@ namespace com.jds.AWLauncher.classes.language
             }
 
             _log.Info("Load " + _languages.Count + " languages");
+
+            IsLoaded = true;
         }
 
         public static LanguageHolder Instance()
@@ -109,7 +112,7 @@ namespace com.jds.AWLauncher.classes.language
         {
             get
             {
-                string lang = RConfig.Instance.Language;
+                var lang = RConfig.Instance.Language;
 
                 if (!_languages.ContainsKey(lang))
                 {
@@ -122,7 +125,7 @@ namespace com.jds.AWLauncher.classes.language
 
         public Image GetImage(PictureName name, PictureType type)
         {
-            string lang = RConfig.Instance.Language;
+            var lang = RConfig.Instance.Language;
 
             return !_languages.ContainsKey(lang) ? null : _languages[lang].GetImage(name, type);
         }
@@ -131,6 +134,11 @@ namespace com.jds.AWLauncher.classes.language
         {
             MessageBox.Show("Problem with languages. Please update.");
             Process.GetCurrentProcess().Kill();
+        }
+
+        public bool IsLoaded
+        {
+            get; set;
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Threading;
+
 using com.jds.AWLauncher.classes;
 using com.jds.AWLauncher.classes.config;
 using com.jds.AWLauncher.classes.forms;
@@ -7,10 +9,8 @@ using com.jds.AWLauncher.classes.images;
 using com.jds.AWLauncher.classes.language;
 using com.jds.AWLauncher.classes.task_manager;
 using com.jds.AWLauncher.classes.version_control;
-using log4net;
-using System.Threading;
 
-//[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+using log4net;
 
 namespace com.jds.AWLauncher
 {
@@ -21,67 +21,39 @@ namespace com.jds.AWLauncher
 		[STAThread]
 		public static void Main()
 		{
-           try
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false); 
+            
+            try
             {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-
                 var thread = Thread.CurrentThread;
                 thread.Name = "GUpdater - MainThread";
 
-                try
-                {
-                    LogService.Init();
-                }
-                catch (Exception)
-                {
-                   // MessageBox.Show("Log4net config is not found");
-                   //_log.Info("Exception[28]: " + e, e);
-                    return; 
-                }
+                LogService.Init();
 
                 _log.Info("Program started.");
 
                 TaskManager.Instance.Start();
                 
-                try
-                {
-                    RConfig.Instance.init();
-                }
-                catch (Exception e)
-                {
-                    _log.Info("Exception[53]: " + e, e);
-                }
+                RConfig.Instance.init();
+               
 
-                try
-                {
-                    LanguageHolder.Instance();
-                    ImageHolder.Instance();
-                }
-                catch (Exception e)
-                {
-                    _log.Info("Exception[63]: " + e, e);
-                }
+                LanguageHolder.Instance();
+                ImageHolder.Instance();
 
                 var mainForm = MainForm.Instance;
 
                 AssemblyInfo.Instance();
                 PropertyForm.Instance();
 
-                try
-                {
-                    Application.Run(mainForm);
+               Application.Run(mainForm);
 
-                    _log.Info("Program exit.");
-                }
-                catch (Exception e)
-                {
-                    _log.Info("Exception[79]: " + e, e);
-                }
+               _log.Info("Program exit.");
             }
             catch(Exception e)
             {
-                _log.Info("Exception[84]: " + e, e);  
+                new ExceptionForm(e);
+                //_log.Info("Exception[84]: " + e, e);  
             }
 		}
 	}

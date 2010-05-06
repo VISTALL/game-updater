@@ -148,6 +148,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="classes\forms\ExceptionForm.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="classes\version_control\gui\AssemblyPage.resx">
       <DependentUpon>AssemblyPage.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -258,6 +262,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\forms\ExceptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\forms\ExceptionForm.Designer.cs">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="classes\invoke\InvokeManager.cs" />
     <Compile Include="classes\utils\ProcessR.cs" />
     <Compile Include="classes\version_control\gui\AssemblyPage.lang.cs">
