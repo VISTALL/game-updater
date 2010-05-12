@@ -86,7 +86,7 @@ namespace com.jds.AWLauncher.classes.forms
         public MainForm()
         {
             InitializeComponent();
-            ChangeLanguage();
+            ChangeLanguage(true);
 
             Opacity = 0F;
             SetVersionTypeUnsafe("0.0.0.0", VersionType.UNKNOWN);
@@ -96,7 +96,7 @@ namespace com.jds.AWLauncher.classes.forms
             MouseDown += JPanelTab_MouseDown;
             MouseUp += JPanelTab_MouseUp;
             MouseMove += JPanelTab_MouseMove;
-            TabbedPane.ChangeSelectedTabEvent += jTabbedPane1_ChangeSelectedTabEvent;
+            _tabbedPane.ChangeSelectedTabEvent += jTabbedPane1_ChangeSelectedTabEvent;
 
 
             EventHandlers.Register(_homePage);
@@ -115,11 +115,11 @@ namespace com.jds.AWLauncher.classes.forms
                      game.GetType().GetField(game.ToString()).GetCustomAttributes(typeof (EnumPane), false).GetValue(0))
                         .Type.InvokeMember(null, BindingFlags.CreateInstance, null, null, new Object[] {prop});
 
-                TabbedPane.addTab(pane);
+                _tabbedPane.addTab(pane);
 
                 if (game == RConfig.Instance.ActiveGame)
                 {
-                    TabbedPane.SelectedTab = pane;
+                    _tabbedPane.SelectedTab = pane;
                 }
             }
         }
@@ -201,7 +201,7 @@ namespace com.jds.AWLauncher.classes.forms
 
             RConfig.Instance.save();
 
-            foreach (JPanelTab pane in TabbedPane.Values)
+            foreach (JPanelTab pane in _tabbedPane.Values)
             {
                 if (pane is IGamePanel)
                 {
@@ -223,7 +223,7 @@ namespace com.jds.AWLauncher.classes.forms
                 _totalProgress.Visible = visible;
                 _statusLabel.Visible = visible;
                 _infoStart.Visible = visible;
-                TabbedPane.Visible = visible;
+                _tabbedPane.Visible = visible;
                 _faqLabel.Visible = visible;
                 _forumLabel.Visible = visible;
                 _joinNowLabel.Visible = visible;
@@ -260,7 +260,7 @@ namespace com.jds.AWLauncher.classes.forms
 
         public void UpdateAllRSS()
         {
-            foreach (JPanelTab pane in TabbedPane.Values)
+            foreach (JPanelTab pane in _tabbedPane.Values)
             {
                 if (pane is IGamePanel)
                 {
@@ -275,7 +275,7 @@ namespace com.jds.AWLauncher.classes.forms
 
         public bool isSelected(JPanelTab p)
         {
-            return TabbedPane.SelectedTab == p;
+            return _tabbedPane.SelectedTab == p;
         }
 
         private void jTabbedPane1_ChangeSelectedTabEvent(JTabbedPane parent, JPanelTab tab)
@@ -297,7 +297,7 @@ namespace com.jds.AWLauncher.classes.forms
 
         private void _settingButton_Click(object sender, EventArgs e)
         {
-            if (!TabbedPane.IsSelectionDisabled)
+            if (!_tabbedPane.IsSelectionDisabled)
                 PropertyForm.Instance().ShowDialog(this);
         }
 
@@ -481,12 +481,12 @@ namespace com.jds.AWLauncher.classes.forms
                 }
 
                 _totalProgress.Value = pe;
-                _totalProgress.Refresh();
+                //_totalProgress.Refresh();
             }
             else
             {
                 _fileProgressBar.Value = pe;
-                _fileProgressBar.Refresh();
+               //_fileProgressBar.Refresh();
             }
         }
 
@@ -536,7 +536,7 @@ namespace com.jds.AWLauncher.classes.forms
                     break;
             }
 
-            TabbedPane.IsSelectionDisabled = (s != MainFormState.NONE);
+            _tabbedPane.IsSelectionDisabled = (s != MainFormState.NONE);
             FormState = s;
         }
 
@@ -546,17 +546,7 @@ namespace com.jds.AWLauncher.classes.forms
 
         public void CloseS()
         {
-            if (IsCanInvoke)
-            {
-                if (InvokeRequired)
-                {
-                    Invoke(new CloseDelegate(CloseUnsafe));
-                }
-                else
-                {
-                    CloseUnsafe();
-                }
-            }
+            Invoke(new DelegateCall(this, new CloseDelegate(CloseUnsafe)));
         }
 
         private void CloseUnsafe()
@@ -567,7 +557,6 @@ namespace com.jds.AWLauncher.classes.forms
         #endregion
 
         #region Helper Methods
-
 
         public bool CheckInstalled(bool btm)
         {

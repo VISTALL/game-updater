@@ -74,7 +74,7 @@ namespace com.jds.AWLauncher.classes.forms
 
         private void PropertyForm_Closing(object sender, FormClosingEventArgs e)
         {
-            MainForm.Instance.ChangeLanguage();
+            MainForm.Instance.ChangeLanguage(false);
             if (MainForm.Instance.FormState == MainFormState.NONE)
             {
                 MainForm.Instance.CheckInstalled(true);

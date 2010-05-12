@@ -31,7 +31,7 @@ namespace com.jds.AWLauncher.classes.task_manager
 
         public void Start()
         {
-            _mainThread = new Thread(threadMethod) {Name = "GUpdater - Task Thread"};
+            _mainThread = new Thread(threadMethod) {Name = "GUpdater - Task Thread", Priority = ThreadPriority.Lowest};
             _mainThread.Start();
         }
 

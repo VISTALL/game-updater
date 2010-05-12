@@ -59,7 +59,7 @@ namespace com.jds.AWLauncher.classes.events
                     switch(target)
                     {
                         case "ASSEMBLY":
-                            if (!MainForm.Instance.TabbedPane.IsSelectionDisabled)
+                            if (!MainForm.Instance._tabbedPane.IsSelectionDisabled)
                             {
                                 PropertyForm.Instance().ShowDialog(MainForm.Instance);
                             }

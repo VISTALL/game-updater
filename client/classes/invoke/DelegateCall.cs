@@ -5,33 +5,43 @@ namespace com.jds.AWLauncher.classes.invoke
 {
     public class DelegateCall
     {
-        private readonly WeakReference _form;
-        private readonly WeakReference _delegate;
+        private readonly ContainerControl _form;
+        private readonly Delegate _delegate;
         private readonly Object[] _objects;
+
+        private readonly object  _lock = new object();
 
         public DelegateCall(ContainerControl f, Delegate d, params Object[] p)
         {
-            _form = new WeakReference(f);
-            _delegate = new WeakReference(d);
+            _form = f;
+            _delegate = d;
             _objects = p;
         }
 
         public bool Invoke()
         {
-            var form = _form.IsAlive ? (ContainerControl)_form.Target : null;
-            var @delegate = _delegate.IsAlive ? (Delegate)_delegate.Target : null;
-
-            if(form != null && @delegate != null)
+            lock (_lock)
             {
-                if(form.Visible)
+                if (_form != null && _delegate != null)
                 {
-                    form.Invoke(@delegate, _objects);
+                    if (_form.Visible && !_form.IsDisposed && !_form.Disposing)
+                    {
+
+                        _form.Invoke(_delegate, _objects);
+                    }
+
+                    return _form.Visible;
                 }
 
-               return form.Visible;
+                return true;
             }
+        }
 
-            return true;
+        public override string ToString()
+        {
+            return "DelegateCall: Form: " + (_form != null
+                       ? _form.GetType().Name
+                       : "n/a") + "; Method: " + (_delegate != null ? _delegate.Method.Name : "n/a");
         }
     }
 }

@@ -50,7 +50,7 @@ namespace com.jds.AWLauncher.classes.forms
             this._fileProgressBar = new com.jds.AWLauncher.classes.gui.ColorProgressBar();
             this._totalProgress = new com.jds.AWLauncher.classes.gui.ColorProgressBar();
             this._closeBtn = new com.jds.AWLauncher.classes.gui.JImageButton();
-            this.TabbedPane = new com.jds.AWLauncher.classes.gui.JTabbedPane();
+            this._tabbedPane = new com.jds.AWLauncher.classes.gui.JTabbedPane();
             ((System.ComponentModel.ISupportInitialize)(this._minimizedButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._settingsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._fullCheck)).BeginInit();
@@ -336,15 +336,15 @@ namespace com.jds.AWLauncher.classes.forms
             // 
             // TabbedPane
             // 
-            this.TabbedPane.AutoSize = true;
-            this.TabbedPane.BackColor = System.Drawing.Color.Transparent;
-            this.TabbedPane.IsSelectionDisabled = false;
-            this.TabbedPane.Location = new System.Drawing.Point(50, 129);
-            this.TabbedPane.Name = "TabbedPane";
-            this.TabbedPane.SelectedTab = null;
-            this.TabbedPane.Size = new System.Drawing.Size(493, 377);
-            this.TabbedPane.TabIndex = 3;
-            this.TabbedPane.Visible = false;
+            this._tabbedPane.AutoSize = true;
+            this._tabbedPane.BackColor = System.Drawing.Color.Transparent;
+            this._tabbedPane.IsSelectionDisabled = false;
+            this._tabbedPane.Location = new System.Drawing.Point(50, 129);
+            this._tabbedPane.Name = "_tabbedPane";
+            this._tabbedPane.SelectedTab = null;
+            this._tabbedPane.Size = new System.Drawing.Size(493, 377);
+            this._tabbedPane.TabIndex = 3;
+            this._tabbedPane.Visible = false;
             // 
             // MainForm
             // 
@@ -372,7 +372,7 @@ namespace com.jds.AWLauncher.classes.forms
             this.Controls.Add(this._fileProgressBar);
             this.Controls.Add(this._totalProgress);
             this.Controls.Add(this._closeBtn);
-            this.Controls.Add(this.TabbedPane);
+            this.Controls.Add(this._tabbedPane);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -394,7 +394,7 @@ namespace com.jds.AWLauncher.classes.forms
 
 		#endregion
 
-        public JTabbedPane TabbedPane;
+        public JTabbedPane _tabbedPane;
         private JImageButton _closeBtn;
         private ColorProgressBar _totalProgress;
         private ColorProgressBar _fileProgressBar;

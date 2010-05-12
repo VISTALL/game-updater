@@ -1,7 +1,12 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
+using com.jds.AWLauncher.classes.config;
+using com.jds.AWLauncher.classes.games;
+using com.jds.AWLauncher.classes.games.propertyes;
 using com.jds.AWLauncher.classes.images;
 using com.jds.AWLauncher.classes.language;
 using com.jds.AWLauncher.classes.language.enums;
+using com.jds.AWLauncher.classes.listloader.enums;
 
 namespace com.jds.AWLauncher.classes.forms
 {
@@ -9,9 +14,22 @@ namespace com.jds.AWLauncher.classes.forms
     {
         public const int DIFF = 5;
 
-        public void ChangeLanguage()
+        public void ChangeLanguage(bool onStart)
         {
+            if (!onStart)
+            {
+                foreach (object p in Enum.GetValues(typeof (Game)))
+                {
+                    GameProperty gameProperty = RConfig.Instance.getGameProperty((Game) p);
+                    gameProperty.ListLoader.IsValid = false;
+
+                    gameProperty.ListLoader.Items[ListFileType.CRITICAL].Clear();
+                    gameProperty.ListLoader.Items[ListFileType.NORMAL].Clear();
+                }
+            }
+
             Text = LanguageHolder.Instance()[WordEnum.TITLE];
+
             _infoStart.Text = LanguageHolder.Instance()[WordEnum.START_INFO];
             _selectGameLabel.Text = LanguageHolder.Instance()[WordEnum.GAMES];
             _lastNews.Text = LanguageHolder.Instance()[WordEnum.LAST_NEWS];

@@ -26,18 +26,23 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
         private readonly LinkedList<ListFile> _temp = new LinkedList<ListFile>();
         private String _toString;
         private int _maxSize;
-        private const int BUFFER_SIZE = 8192;
+
+        private readonly WebClient _webClient = new WebClient();
 
         public AnalyzerTask(GameProperty property, ListFileType type)
         {
             ListType = type;
             CurrentProperty = property;
             Status = Status.FREE;
+
+            _webClient.DownloadFileCompleted += webClient_DownloadFileCompleted;
+            _webClient.DownloadProgressChanged += webClient_DownloadProgressChanged;
         }
 
         public override void Run()
         {
-            _toString = "Analize " + ListType + ";Game: " + CurrentProperty.GameEnum() + ":" + GetHashCode();
+            _toString = "Analize " + ListType + "; Game: " + CurrentProperty.GameEnum() + ":" + GetHashCode();
+
             var mainThead = new Thread(AnalizeToThread)
                                 {
                                     Name = _toString,
@@ -51,7 +56,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
         {
             if (!CurrentProperty.ListLoader.IsValid)
             {
-                GoEnd(null, true);
+                GoEnd((WordEnum?)null, true);
                 return;
             }
 
@@ -79,6 +84,24 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
             CheckNextFile();
         }
 
+        #region GoEnd
+        private void GoEnd(String word, bool free, params Object[] aa)
+        {
+            if (free)
+            {
+                Status = Status.FREE;
+            }
+
+            MainForm.Instance.SetMainFormState(MainFormState.NONE);
+
+            MainForm.Instance.UpdateStatusLabel(String.Format(word, aa));
+
+            MainForm.Instance.UpdateProgressBar(0, false);
+            MainForm.Instance.UpdateProgressBar(0, true);
+
+            OnEnd();
+        }
+
         private void GoEnd(WordEnum? word, bool free, params Object[] aa)
         {
             if (free)
@@ -103,10 +126,15 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
 
             OnEnd();
         }
+        #endregion
 
         public override void Cancel()
         {
             Status = Status.CANCEL;
+            if(_webClient.IsBusy)
+            {
+                _webClient.CancelAsync();
+            }
         }
 
         public void CheckNextFile()
@@ -130,6 +158,8 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
                 GoEnd(WordEnum.UPDATE_DONE, true);
                 return;
             }
+
+            Thread.Sleep(100);
 
             int currentCount = _maxSize - _temp.Count;
             var persent = (int) ((100F*(currentCount))/_maxSize);
@@ -187,7 +217,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
                     {
                         DownloadFile(file); //грузим   
                     }
-                    else
+                    else if(checkSum.Equals(file.md5Checksum))
                     {
                         _temp.Remove(file);
 
@@ -208,13 +238,20 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
             return _temp.Count == 0 ? null : _temp.First.Value;
         }
 
-        [MethodImpl(MethodImplOptions.Synchronized)]
         public void DownloadFile(ListFile file)
         {
             if (Status == Status.CANCEL)
             {
                 GoEnd(WordEnum.CANCEL_BY_USER, true);
                 return;
+            }
+
+            if(_webClient.IsBusy)
+            {
+                while (_webClient.IsBusy)
+                {
+                    Thread.Sleep(3000);
+                }
             }
 
             string path = CurrentProperty.Path;
@@ -229,98 +266,46 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
                 {
                     info.Directory.Create();
                 }
-            }
-
-            var request = (HttpWebRequest) WebRequest.Create(url);
-            var response = (HttpWebResponse) request.GetResponse();
-            response.Close();
-
-            long iSize = response.ContentLength;
-            int iRunningByteTotal = 0;
-
-            var client = new WebClient();
-
-            Stream remoteStream;
-            try
-            {
-                remoteStream = client.OpenRead(url);
-            }
-            catch (WebException e)
-            {
-                if (_log.IsDebugEnabled)
-                {
-                    _log.Info("Exception[241]: " + e, e);
-                }
-                GoEnd(WordEnum.PROBLEM_WITH_INTERNET, true);
-                return;
-            }
-            catch (Exception e)
-            {
-                if (_log.IsDebugEnabled)
-                {
-                    _log.Info("Exception[251]: " + e, e);
-                }
-                GoEnd(WordEnum.PROBLEM_WITH_SERVER, true);
-                return;
-            }
-
-            var fileStream = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None);
-            var byteBuffer = new byte[BUFFER_SIZE];
+            }    
 
             string word = LanguageHolder.Instance()[WordEnum.DOWNLOADING_S1];
+
             MainForm.Instance.UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
 
-            bool exception = false;
-            try
+            _webClient.DownloadFileAsync(url, fileName, file);
+        }
+
+
+        void webClient_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            if (Status == Status.CANCEL || e.Cancelled)
             {
-                int oldPersent = 0;
-                int iByteSize;
-
-                while ((iByteSize = remoteStream.Read(byteBuffer, 0, byteBuffer.Length)) > 0)
-                {
-                    if (Status == Status.CANCEL)
-                    {
-                        GoEnd(WordEnum.CANCEL_BY_USER, false);
-                        break;
-                    }
-
-                    fileStream.Write(byteBuffer, 0, iByteSize);
-                    iRunningByteTotal += iByteSize;
-
-                    var persent = (int) ((100F*iRunningByteTotal)/iSize);
-                    if (persent != oldPersent)
-                    {
-                        oldPersent = persent;
-                        MainForm.Instance.UpdateProgressBar(persent, false);
-                    }
-                }
+                GoEnd(WordEnum.CANCEL_BY_USER, false);
+                return;
             }
-            catch (WebException e)
+
+            if (e.Error != null)
             {
                 if (_log.IsDebugEnabled)
                 {
-                    _log.Info("Exception[302]: " + e, e);
+                    _log.Info("Exception[241]: " + e.Error, e.Error);
                 }
-                exception = true;
-                GoEnd(WordEnum.PROBLEM_WITH_INTERNET, true);
-            }
-            catch (Exception e)
-            {
-                if (_log.IsDebugEnabled)
-                {
-                    _log.Info("Exception[311]: " + e, e);
-                } 
-                exception = true;
-                GoEnd(WordEnum.PROBLEM_WITH_SERVER, true);
+                GoEnd(e.Error.Message, true);
+                return;
             }
 
-            remoteStream.Close();
-            fileStream.Close();
-
-            if (!exception)
+            if(!(e.UserState is ListFile))
             {
-                UnpackFile(file);
+                GoEnd("Unknown error", true);
+                return;     
             }
+
+            UnpackFile((ListFile)e.UserState);
+        }
+       
+        static void webClient_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            MainForm.Instance.UpdateProgressBar(e.ProgressPercentage, false);      
         }
 
         public void UnpackFile(ListFile file)

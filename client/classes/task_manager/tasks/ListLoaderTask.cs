@@ -43,6 +43,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
             _list.Add(ListFileType.NORMAL, new LinkedList<ListFile>());
 
             _webClient.DownloadDataCompleted += client_DownloadDataCompleted;
+            _webClient.DownloadProgressChanged += _webClient_DownloadProgressChanged;
         }
 
         #endregion
@@ -98,6 +99,11 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
                 if (e.Error is WebException)
                 {
                     GoEnd(WordEnum.PROBLEM_WITH_INTERNET);
+
+                    if(_log.IsDebugEnabled)
+                    {
+                        _log.Info("Exception: while downloading list: " + e.Error.Message, e.Error);
+                    }
                     return;
                 }
                 else
@@ -116,6 +122,12 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
             }
 
             GoNextStep(e.Result);
+        }
+
+
+        void _webClient_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            MainForm.Instance.UpdateProgressBar(e.ProgressPercentage, false);
         }
 
         /// <summary>
@@ -209,6 +221,9 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
             {
                 IsValid = true;    
             }
+
+            MainForm.Instance.UpdateProgressBar(0, true);
+            MainForm.Instance.UpdateProgressBar(0, false);
 
             if (!(TaskManager.Instance.NextTask is AnalyzerTask))
             {
