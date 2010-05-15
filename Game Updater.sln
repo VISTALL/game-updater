@@ -6,11 +6,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zlib", "zlib\Zlib.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWLauncher", "client\AWLauncher.csproj", "{AC55F2C3-A13E-447F-887B-7114C0F956A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Builder", "server\Builder.csproj", "{622FF39E-D970-43F4-88F0-1143A2AE8684}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Premaker", "Premaker\Premaker.csproj", "{4BC86361-ACDC-4C85-82D6-8C655CA3388F}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup_", "Setup\Setup.vdproj", "{ACF2F463-FED9-47C2-B96F-BB57567A0E4C}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{ACF2F463-FED9-47C2-B96F-BB57567A0E4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,12 +36,6 @@ Global
 		{AC55F2C3-A13E-447F-887B-7114C0F956A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC55F2C3-A13E-447F-887B-7114C0F956A8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AC55F2C3-A13E-447F-887B-7114C0F956A8}.Release|x64.ActiveCfg = Release|Any CPU
-		{622FF39E-D970-43F4-88F0-1143A2AE8684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{622FF39E-D970-43F4-88F0-1143A2AE8684}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{622FF39E-D970-43F4-88F0-1143A2AE8684}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{622FF39E-D970-43F4-88F0-1143A2AE8684}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{622FF39E-D970-43F4-88F0-1143A2AE8684}.Release|Any CPU.Build.0 = Release|Any CPU
-		{622FF39E-D970-43F4-88F0-1143A2AE8684}.Release|x64.ActiveCfg = Release|Any CPU
 		{4BC86361-ACDC-4C85-82D6-8C655CA3388F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4BC86361-ACDC-4C85-82D6-8C655CA3388F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BC86361-ACDC-4C85-82D6-8C655CA3388F}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -54,6 +46,7 @@ Global
 		{ACF2F463-FED9-47C2-B96F-BB57567A0E4C}.Debug|x64.ActiveCfg = Debug
 		{ACF2F463-FED9-47C2-B96F-BB57567A0E4C}.Release|Any CPU.ActiveCfg = Release
 		{ACF2F463-FED9-47C2-B96F-BB57567A0E4C}.Release|x64.ActiveCfg = Release
+		{ACF2F463-FED9-47C2-B96F-BB57567A0E4C}.Release|x64.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

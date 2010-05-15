@@ -3,71 +3,74 @@
     <string />
     <integer />
     <boolean>
-      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="livetemplates.csharp.usevar">False</setting>
       <setting name="SolutionAnalysisEnabled">False</setting>
     </boolean>
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GUFilesForm.cs" caret="1625" fromTop="23" />
-      <File id="F6A02431-167E-4347-BC43-65532C31CDB7/d:ObjectRenderer/f:DefaultRenderer.cs" caret="6382" fromTop="10" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/f:TaskManager.cs" caret="905" fromTop="19" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:PropertyForm.cs" caret="2598" fromTop="23" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.resx" caret="0" fromTop="0" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.lang.cs" caret="556" fromTop="16" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AbstractTask.cs" caret="173" fromTop="4" />
-      <File id="F6A02431-167E-4347-BC43-65532C31CDB7/d:Core/f:DefaultRepositorySelector.cs" caret="5411" fromTop="11" />
-      <File id="F6A02431-167E-4347-BC43-65532C31CDB7/d:Core/f:LoggerManager.cs" caret="8585" fromTop="11" />
-      <File id="F6A02431-167E-4347-BC43-65532C31CDB7/f:LogManager.cs" caret="20094" fromTop="12" />
-      <File id="F6A02431-167E-4347-BC43-65532C31CDB7/d:Repository/f:LoggerRepositorySkeleton.cs" caret="3366" fromTop="10" />
-      <File id="F6A02431-167E-4347-BC43-65532C31CDB7/d:Util/f:LogLog.cs" caret="6574" fromTop="14" />
-      <File id="F6A02431-167E-4347-BC43-65532C31CDB7/d:Repository/d:Hierarchy/f:Hierarchy.cs" caret="17495" fromTop="11" />
-      <File id="F6A02431-167E-4347-BC43-65532C31CDB7/d:Config/f:XmlConfigurator.cs" caret="11331" fromTop="10" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/f:LogService.cs" caret="602" fromTop="21" />
-      <File id="F6A02431-167E-4347-BC43-65532C31CDB7/d:Repository/d:Hierarchy/f:XmlHierarchyConfigurator.cs" caret="5380" fromTop="10" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GameStartTask.cs" caret="0" fromTop="0" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:ListLoaderTask.cs" caret="6984" fromTop="22" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.Designer.cs" caret="19366" fromTop="22" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="649" fromTop="19" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:InvokeManager.cs" caret="1551" fromTop="22" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/f:Program.cs" caret="1403" fromTop="30" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="2605" fromTop="14" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:events/f:EventHandlers.cs" caret="0" fromTop="0" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:utils/f:FileUtils.cs" caret="337" fromTop="14" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="6853" fromTop="25" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:listloader/f:DTHasher.cs" caret="456" fromTop="10" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/d:clistview/f:CQuickSort.cs" caret="538" fromTop="20" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/d:clistview/f:CEmbeddedControl.cs" caret="0" fromTop="0" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/d:clistview/f:ThemeRoutines.cs" caret="3334" fromTop="40" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/d:clistview/f:ItemCollection.cs" caret="23342" fromTop="7" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/f:CComboBox.cs" caret="0" fromTop="0" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/f:CDateTimePicker.cs" caret="1777" fromTop="23" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/f:ManagedVScrollBar.cs" caret="2230" fromTop="18" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/f:CTextBox.cs" caret="302" fromTop="10" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/d:clistview/f:ColumnCollection.cs" caret="3468" fromTop="15" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/d:clistview/f:CMergeSort.cs" caret="1471" fromTop="18" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/f:CListView.cs" caret="44901" fromTop="18" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GameFilesForm.Designer.cs" caret="14281" fromTop="6" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:windows/d:windows7/f:Windows7Taskbar.cs" caret="151" fromTop="4" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:ChooseForm.cs" caret="340" fromTop="3" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:ChooseForm.Designer.cs" caret="3848" fromTop="27" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/f:LogService.cs" caret="610" fromTop="23" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/f:LogServer.cs" caret="273" fromTop="11" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/f:Program.cs" caret="637" fromTop="23" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GameFilesForm.cs" caret="4600" fromTop="8" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:ListFileType.cs" caret="150" fromTop="6" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:ListFile.cs" caret="0" fromTop="0" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:listloader/f:ListFile.cs" caret="629" fromTop="23" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:Maker.cs" caret="471" fromTop="13" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:listloader/d:enums/f:ListFileType.cs" caret="0" fromTop="0" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:ListLoaderTask.cs" caret="0" fromTop="0" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/d:enums/f:WordEnum.cs" caret="1612" fromTop="39" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="544" fromTop="15" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="1039" fromTop="31" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="15011" fromTop="20" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:propertyes/d:impl/f:AionProperty.cs" caret="1571" fromTop="18" />
     </RecentFiles>
     <RecentEdits>
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:ListLoaderTask.cs" caret="1541" fromTop="10" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:ListLoaderTask.cs" caret="4085" fromTop="21" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:ListLoaderTask.cs" caret="4070" fromTop="23" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="300" fromTop="10" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="778" fromTop="19" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="1248" fromTop="25" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="473" fromTop="15" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="173" fromTop="6" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="897" fromTop="32" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="1177" fromTop="21" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="557" fromTop="11" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/f:TaskManager.cs" caret="905" fromTop="10" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="14705" fromTop="24" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="14843" fromTop="29" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="16572" fromTop="13" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="16721" fromTop="3" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="2521" fromTop="18" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:PropertyForm.cs" caret="2598" fromTop="18" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.lang.cs" caret="1108" fromTop="25" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.lang.cs" caret="1041" fromTop="27" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.lang.cs" caret="575" fromTop="17" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="928" fromTop="10" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="1457" fromTop="24" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="2798" fromTop="6" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="4040" fromTop="20" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:ListLoaderTask.cs" caret="7094" fromTop="23" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="4801" fromTop="26" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/f:Program.cs" caret="1403" fromTop="30" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="2865" fromTop="21" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="6853" fromTop="25" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GameFilesForm.cs" caret="6915" fromTop="30" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GameFilesForm.cs" caret="6748" fromTop="23" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:ChooseForm.Designer.cs" caret="3848" fromTop="17" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GameFilesForm.cs" caret="6908" fromTop="29" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/f:LogServer.cs" caret="138" fromTop="1" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/f:LogServer.cs" caret="609" fromTop="23" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/f:Program.cs" caret="281" fromTop="9" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/f:Program.cs" caret="784" fromTop="24" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/f:Program.cs" caret="637" fromTop="23" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GameFilesForm.cs" caret="5311" fromTop="28" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:Maker.cs" caret="1209" fromTop="16" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:Maker.cs" caret="5578" fromTop="21" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GameFilesForm.cs" caret="4600" fromTop="8" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:listloader/d:enums/f:ListFileType.cs" caret="145" fromTop="5" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:listloader/f:ListFile.cs" caret="629" fromTop="15" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:ListLoaderTask.cs" caret="1403" fromTop="25" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="5146" fromTop="11" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="5820" fromTop="16" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="6197" fromTop="22" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="6500" fromTop="28" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:Maker.cs" caret="4812" fromTop="28" />
+      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:Maker.cs" caret="2986" fromTop="13" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/d:enums/f:WordEnum.cs" caret="1612" fromTop="12" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="2551" fromTop="27" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="2727" fromTop="33" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="6892" fromTop="26" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="6896" fromTop="24" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="3343" fromTop="5" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="14518" fromTop="24" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:propertyes/d:impl/f:AionProperty.cs" caret="1571" fromTop="18" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -85,89 +88,89 @@
     <ItemStatistics item="Default">
       <Item value="OutIsBusy" priority="1" />
       <Item value="IsBusy" priority="1" />
-      <Item value="public" priority="79" />
-      <Item value="override" priority="17" />
-      <Item value="return" priority="53" />
-      <Item value="true" priority="24" />
+      <Item value="public" priority="88" />
+      <Item value="override" priority="18" />
+      <Item value="return" priority="59" />
+      <Item value="true" priority="29" />
       <Item value="SHA1CryptoServiceProvider" priority="0" />
       <Item value="task" priority="2" />
-      <Item value="void" priority="31" />
+      <Item value="void" priority="33" />
       <Item value="AbstractTask`0" priority="2" />
       <Item value="_activeTasks" priority="1" />
       <Item value="TaskManager`0" priority="5" />
-      <Item value="this" priority="4" />
+      <Item value="this" priority="5" />
       <Item value="MethodCodeType" priority="0" />
       <Item value="MethodImplOptions`0" priority="2" />
-      <Item value="enum" priority="2" />
-      <Item value="string" priority="9" />
-      <Item value="WordEnum`0" priority="32" />
+      <Item value="enum" priority="3" />
+      <Item value="string" priority="11" />
+      <Item value="WordEnum`0" priority="37" />
       <Item value="wordEnum" priority="6" />
-      <Item value="switch" priority="3" />
+      <Item value="switch" priority="4" />
       <Item value="case" priority="8" />
-      <Item value="break" priority="10" />
-      <Item value="null" priority="29" />
-      <Item value="if" priority="94" />
+      <Item value="break" priority="11" />
+      <Item value="null" priority="30" />
+      <Item value="if" priority="107" />
       <Item value="InvokeRequired" priority="2" />
-      <Item value="else" priority="11" />
+      <Item value="else" priority="12" />
       <Item value="UpdateStatusLabelUnsafe`0" priority="1" />
       <Item value="UpdateStatusLabel`0" priority="1" />
       <Item value="Language" priority="1" />
-      <Item value="private" priority="46" />
+      <Item value="private" priority="54" />
       <Item value="static" priority="16" />
       <Item value="LanguageHolder`0" priority="22" />
-      <Item value="_instance" priority="12" />
-      <Item value="new" priority="68" />
+      <Item value="_instance" priority="14" />
+      <Item value="new" priority="71" />
       <Item value="LanguageHolder" priority="0" />
       <Item value="language" priority="10" />
       <Item value="Dictionary" priority="1" />
       <Item value="Dictionary&lt;Language,Dictionary&lt;WordEnum,string&gt;&gt;" priority="0" />
       <Item value="object" priority="22" />
-      <Item value="typeof" priority="12" />
+      <Item value="typeof" priority="14" />
       <Item value="Language`0" priority="12" />
-      <Item value="foreach" priority="11" />
+      <Item value="foreach" priority="15" />
       <Item value="_words" priority="4" />
-      <Item value="String`0" priority="35" />
-      <Item value="as" priority="4" />
+      <Item value="String`0" priority="39" />
+      <Item value="as" priority="5" />
       <Item value="v" priority="4" />
       <Item value="data" priority="2" />
-      <Item value="var" priority="20" />
+      <Item value="var" priority="21" />
       <Item value="client" priority="2" />
       <Item value="virtual" priority="0" />
-      <Item value="bool" priority="18" />
+      <Item value="bool" priority="19" />
       <Item value="_thread" priority="0" />
       <Item value="_property" priority="2" />
       <Item value="try" priority="5" />
-      <Item value="catch" priority="6" />
-      <Item value="WebException`0" priority="0" />
+      <Item value="catch" priority="8" />
+      <Item value="WebException`0" priority="1" />
       <Item value="false" priority="21" />
       <Item value="IsValid" priority="2" />
-      <Item value="GoEnd`0" priority="5" />
-      <Item value="MainForm`0" priority="20" />
-      <Item value="MainFormState`0" priority="5" />
+      <Item value="GoEnd`0" priority="9" />
+      <Item value="MainForm`0" priority="22" />
+      <Item value="MainFormState`0" priority="6" />
       <Item value="OnEnd`0" priority="4" />
       <Item value="NullReferenceException`0" priority="0" />
-      <Item value="byte" priority="9" />
+      <Item value="byte" priority="11" />
       <Item value="array" priority="0" />
       <Item value="Uri" priority="1" />
-      <Item value="e" priority="25" />
+      <Item value="e" priority="32" />
       <Item value="CurrentProperty" priority="1" />
       <Item value="protected" priority="3" />
-      <Item value="readonly" priority="14" />
+      <Item value="readonly" priority="15" />
       <Item value="Statuses`0" priority="1" />
       <Item value="_statuses" priority="4" />
       <Item value="Statuses" priority="0" />
       <Item value="ListLoaderTask`0" priority="1" />
-      <Item value="type" priority="5" />
+      <Item value="type" priority="8" />
       <Item value="value" priority="24" />
       <Item value="RichTextBoxWordPunctuations`0" priority="1" />
       <Item value="_languages" priority="4" />
-      <Item value="in" priority="8" />
+      <Item value="in" priority="10" />
       <Item value="lb" priority="0" />
       <Item value="lang" priority="10" />
       <Item value="UITypeEditorEditStyle`0" priority="0" />
       <Item value="has" priority="4" />
       <Item value="context" priority="1" />
-      <Item value="Console`0" priority="22" />
+      <Item value="Console`0" priority="24" />
       <Item value="CultureInfoConverter`0" priority="0" />
       <Item value="PropertyValueUIItem`0" priority="1" />
       <Item value="TypeConverter`0" priority="0" />
@@ -187,26 +190,26 @@
       <Item value="_joinNowLabel" priority="1" />
       <Item value="_separator1" priority="2" />
       <Item value="Point" priority="3" />
-      <Item value="const" priority="2" />
-      <Item value="int" priority="22" />
+      <Item value="const" priority="4" />
+      <Item value="int" priority="35" />
       <Item value="DIFF" priority="0" />
       <Item value="_separator2" priority="0" />
       <Item value="word" priority="3" />
       <Item value="ListType" priority="0" />
       <Item value="ProcessStartInfo`0" priority="4" />
       <Item value="isEnable`0" priority="0" />
-      <Item value="info" priority="1" />
+      <Item value="info" priority="3" />
       <Item value="_loader" priority="1" />
       <Item value="_process" priority="1" />
       <Item value="p" priority="9" />
       <Item value="GameStartTask`0" priority="0" />
       <Item value="MTAThread" priority="0" />
       <Item value="_maxSize" priority="0" />
-      <Item value="_temp" priority="0" />
-      <Item value="Thread`0" priority="9" />
+      <Item value="_temp" priority="5" />
+      <Item value="Thread`0" priority="10" />
       <Item value="thread" priority="2" />
       <Item value="tryf" priority="0" />
-      <Item value="Exception`0" priority="4" />
+      <Item value="Exception`0" priority="5" />
       <Item value="Message`0" priority="0" />
       <Item value="TabbedPane" priority="2" />
       <Item value="IsSelectionDisabled" priority="1" />
@@ -216,7 +219,7 @@
       <Item value="_queue" priority="1" />
       <Item value="_shutdown" priority="0" />
       <Item value="AnalyzerTask`0" priority="2" />
-      <Item value="delegate" priority="9" />
+      <Item value="delegate" priority="10" />
       <Item value="float" priority="2" />
       <Item value="Opacity" priority="1" />
       <Item value="IsDisposed" priority="4" />
@@ -226,18 +229,18 @@
       <Item value="setOpacity`0" priority="0" />
       <Item value="f" priority="7" />
       <Item value="checkSum" priority="1" />
-      <Item value="Object`0" priority="4" />
+      <Item value="Object`0" priority="6" />
       <Item value="IsCanInvoke" priority="6" />
-      <Item value="Close`0" priority="1" />
+      <Item value="Close`0" priority="3" />
       <Item value="invoke" priority="1" />
       <Item value="CloseDelegate`0" priority="0" />
       <Item value="CloseUnsafe`0" priority="0" />
       <Item value="LanguageDescription`0" priority="2" />
       <Item value="Word" priority="0" />
-      <Item value="a" priority="10" />
+      <Item value="a" priority="11" />
       <Item value="_gameProperty" priority="1" />
       <Item value="Description" priority="0" />
-      <Item value="obj" priority="2" />
+      <Item value="obj" priority="6" />
       <Item value="property" priority="3" />
       <Item value="Length" priority="6" />
       <Item value="b" priority="0" />
@@ -255,7 +258,7 @@
       <Item value="ShortName" priority="0" />
       <Item value="shortNameLang" priority="0" />
       <Item value="OrdinalIgnoreCase" priority="0" />
-      <Item value="Enabled" priority="1" />
+      <Item value="Enabled" priority="3" />
       <Item value="gp" priority="0" />
       <Item value="_startButton" priority="0" />
       <Item value="_fullCheck" priority="0" />
@@ -292,7 +295,7 @@
       <Item value="ImageHolder`0" priority="5" />
       <Item value="ImageHolder" priority="0" />
       <Item value="Dictionary&lt;PictureName,Image&gt;" priority="0" />
-      <Item value="for" priority="5" />
+      <Item value="for" priority="6" />
       <Item value="enu" priority="1" />
       <Item value="ImageInfo" priority="0" />
       <Item value="_closeBtn" priority="0" />
@@ -301,8 +304,8 @@
       <Item value="SelectedGridItemChangedEventArgs`0" priority="0" />
       <Item value="_filesList" priority="5" />
       <Item value="_allFiles" priority="1" />
-      <Item value="fileName" priority="7" />
-      <Item value="SelectedPath" priority="1" />
+      <Item value="fileName" priority="11" />
+      <Item value="SelectedPath" priority="4" />
       <Item value="label2" priority="0" />
       <Item value="DialogResult" priority="0" />
       <Item value="SavePath" priority="1" />
@@ -313,13 +316,13 @@
       <Item value="tarInputStream" priority="2" />
       <Item value="TarInputStream" priority="0" />
       <Item value="list" priority="0" />
-      <Item value="File`0" priority="10" />
+      <Item value="File`0" priority="11" />
       <Item value="listPath" priority="0" />
       <Item value="TarEntry`0" priority="2" />
       <Item value="tarEntry" priority="1" />
       <Item value="TarEntry" priority="2" />
       <Item value="TarHeader`0" priority="1" />
-      <Item value="ListFile`0" priority="2" />
+      <Item value="ListFile`0" priority="9" />
       <Item value="TarHeader" priority="3" />
       <Item value="bZip2OutputStream" priority="4" />
       <Item value="BZip2OutputStream" priority="2" />
@@ -330,21 +333,21 @@
       <Item value="TarArchive`0" priority="0" />
       <Item value="stream" priority="1" />
       <Item value="ParamArrayAttribute`0" priority="1" />
-      <Item value="Stream`0" priority="0" />
+      <Item value="Stream`0" priority="1" />
       <Item value="zip2OutputStream" priority="0" />
       <Item value="fStream" priority="0" />
       <Item value="outStream" priority="0" />
-      <Item value="file" priority="1" />
-      <Item value="Size" priority="0" />
+      <Item value="file" priority="7" />
+      <Item value="Size" priority="2" />
       <Item value="IO" priority="0" />
       <Item value="FileInfo" priority="3" />
       <Item value="thr" priority="0" />
       <Item value="IOException`0" priority="0" />
       <Item value="listStream" priority="3" />
       <Item value="_progressBar" priority="4" />
-      <Item value="CheckForIllegalCrossThreadCalls" priority="0" />
+      <Item value="CheckForIllegalCrossThreadCalls" priority="1" />
       <Item value="onStart`0" priority="0" />
-      <Item value="MessageBox`0" priority="0" />
+      <Item value="MessageBox`0" priority="1" />
       <Item value="setValue`0" priority="0" />
       <Item value="Version" priority="7" />
       <Item value="webClient" priority="5" />
@@ -372,9 +375,9 @@
       <Item value="ListBindableAttribute`0" priority="0" />
       <Item value="LinkedList&lt;ListFile&gt;" priority="0" />
       <Item value="_items" priority="0" />
-      <Item value="continue" priority="0" />
-      <Item value="_statusLabel" priority="1" />
-      <Item value="ThreadStaticAttribute`0" priority="3" />
+      <Item value="continue" priority="3" />
+      <Item value="_statusLabel" priority="2" />
+      <Item value="ThreadStaticAttribute`0" priority="4" />
       <Item value="GUListLoaderTask" priority="0" />
       <Item value="VersionType`0" priority="21" />
       <Item value="VersionType" priority="0" />
@@ -405,14 +408,14 @@
       <Item value="StringBuilder" priority="1" />
       <Item value="unsafe" priority="0" />
       <Item value="UPDATE_DONE" priority="0" />
-      <Item value="Application`0" priority="0" />
+      <Item value="Application`0" priority="1" />
       <Item value="bat" priority="0" />
       <Item value="filename" priority="0" />
       <Item value="proc" priority="0" />
       <Item value="Directory`0" priority="0" />
       <Item value="newFileName" priority="0" />
-      <Item value="Handle" priority="0" />
-      <Item value="pe" priority="0" />
+      <Item value="Handle" priority="2" />
+      <Item value="pe" priority="3" />
       <Item value="partial" priority="0" />
       <Item value="ChangeLanguage`0" priority="0" />
       <Item value="_versionControl" priority="0" />
@@ -421,9 +424,9 @@
       <Item value="Refresh`0" priority="0" />
       <Item value="TabPage`0" priority="0" />
       <Item value="_generalPage" priority="0" />
-      <Item value="Boolean`0" priority="0" />
-      <Item value="Visible" priority="2" />
-      <Item value="Delegate`0" priority="4" />
+      <Item value="Boolean`0" priority="1" />
+      <Item value="Visible" priority="3" />
+      <Item value="Delegate`0" priority="6" />
       <Item value="LinkedList&lt;Delegate&gt;" priority="0" />
       <Item value="DeledateCall`0" priority="1" />
       <Item value="DeledateCall" priority="0" />
@@ -434,7 +437,7 @@
       <Item value="delegateCall" priority="12" />
       <Item value="log4net" priority="0" />
       <Item value="_versionType" priority="0" />
-      <Item value="ThreadStart`0" priority="1" />
+      <Item value="ThreadStart`0" priority="2" />
       <Item value="_infoVersion" priority="1" />
       <Item value="_infoPictureBox" priority="0" />
       <Item value="Color`0" priority="2" />
@@ -456,15 +459,15 @@
       <Item value="T`0" priority="3" />
       <Item value="_list" priority="9" />
       <Item value="IEnumerable" priority="0" />
-      <Item value="_log" priority="5" />
+      <Item value="_log" priority="9" />
       <Item value="_lock" priority="4" />
       <Item value="index" priority="0" />
-      <Item value="Queue" priority="2" />
+      <Item value="Queue" priority="3" />
       <Item value="LinkedListNode" priority="0" />
       <Item value="_run" priority="1" />
       <Item value="AccessedThroughPropertyAttribute`0" priority="1" />
       <Item value="STARTING_DOWNLOAD_LIST" priority="0" />
-      <Item value="_toString" priority="2" />
+      <Item value="_toString" priority="3" />
       <Item value="GetHashCode`0" priority="2" />
       <Item value="ActiveTask" priority="0" />
       <Item value="ListLoader" priority="0" />
@@ -485,7 +488,7 @@
       <Item value="InvokeManager`0" priority="4" />
       <Item value="InvokeManager" priority="4" />
       <Item value="_mainThread" priority="4" />
-      <Item value="Thread" priority="2" />
+      <Item value="Thread" priority="3" />
       <Item value="Lowest" priority="0" />
       <Item value="finally" priority="0" />
       <Item value="INTERVAL" priority="0" />
@@ -494,8 +497,8 @@
       <Item value="Next" priority="1" />
       <Item value="class" priority="0" />
       <Item value="WeakReference`0" priority="1" />
-      <Item value="Form`0" priority="1" />
-      <Item value="params" priority="0" />
+      <Item value="Form`0" priority="2" />
+      <Item value="params" priority="1" />
       <Item value="_form" priority="3" />
       <Item value="WeakReference" priority="1" />
       <Item value="@delegate" priority="0" />
@@ -503,7 +506,7 @@
       <Item value="_objects" priority="0" />
       <Item value="c" priority="1" />
       <Item value="AddInvoke`0" priority="0" />
-      <Item value="persent" priority="0" />
+      <Item value="persent" priority="3" />
       <Item value="total" priority="0" />
       <Item value="BitArray`0" priority="0" />
       <Item value="Void`0" priority="0" />
@@ -526,7 +529,7 @@
       <Item value="StandardValuesCollection" priority="0" />
       <Item value="_language" priority="0" />
       <Item value="NONE" priority="0" />
-      <Item value="label" priority="0" />
+      <Item value="label" priority="3" />
       <Item value="EventHandler`0" priority="1" />
       <Item value="ProcessR`0" priority="0" />
       <Item value="threadStart" priority="2" />
@@ -536,23 +539,23 @@
       <Item value="WebClient`0" priority="1" />
       <Item value="_client" priority="0" />
       <Item value="remoteStream" priority="0" />
-      <Item value="request" priority="5" />
-      <Item value="WebRequest`0" priority="0" />
+      <Item value="request" priority="6" />
+      <Item value="WebRequest`0" priority="1" />
       <Item value="iSize" priority="0" />
       <Item value="ServicePoint`0" priority="0" />
       <Item value="servicePoint" priority="1" />
       <Item value="ServicePoint" priority="0" />
       <Item value="AsyncCallback`0" priority="0" />
-      <Item value="using" priority="2" />
+      <Item value="using" priority="5" />
       <Item value="WebResponse`0" priority="0" />
-      <Item value="response" priority="1" />
+      <Item value="response" priority="4" />
       <Item value="webResponse" priority="1" />
       <Item value="long" priority="0" />
       <Item value="_time" priority="1" />
       <Item value="DateTime`0" priority="1" />
-      <Item value="UnpackFile`0" priority="0" />
-      <Item value="_webClient" priority="5" />
-      <Item value="url" priority="0" />
+      <Item value="UnpackFile`0" priority="3" />
+      <Item value="_webClient" priority="6" />
+      <Item value="url" priority="1" />
       <Item value="MethodImplAttribute`0" priority="0" />
       <Item value="struct" priority="0" />
       <Item value="delegateT" priority="1" />
@@ -560,6 +563,70 @@
       <Item value="gameProperty" priority="2" />
       <Item value="onStart" priority="0" />
       <Item value="StackOverflowException`0" priority="0" />
+      <Item value="_downloadTemp" priority="7" />
+      <Item value="count" priority="1" />
+      <Item value="CompressedStack`0" priority="0" />
+      <Item value="CurrentFile" priority="0" />
+      <Item value="Next`0" priority="0" />
+      <Item value="DoDownloadFiles`0" priority="1" />
+      <Item value="descFile" priority="0" />
+      <Item value="UpdateLabel" priority="1" />
+      <Item value="DownloadFile" priority="0" />
+      <Item value="System" priority="0" />
+      <Item value="ExceptionForm`0" priority="0" />
+      <Item value="arg" priority="0" />
+      <Item value="FileUtils`0" priority="0" />
+      <Item value="zipFileName" priority="0" />
+      <Item value="oldTotalPersent" priority="0" />
+      <Item value="ConsoleTraceListener`0" priority="0" />
+      <Item value="status" priority="0" />
+      <Item value="DwmApi`0" priority="1" />
+      <Item value="RenderMode`0" priority="0" />
+      <Item value="OnPaint`0" priority="0" />
+      <Item value="CListItem" priority="0" />
+      <Item value="CListSubItem`0" priority="0" />
+      <Item value="CListSubItem" priority="0" />
+      <Item value="RadioButton`0" priority="0" />
+      <Item value="ListFileType`0" priority="6" />
+      <Item value="box" priority="1" />
+      <Item value="item" priority="8" />
+      <Item value="DropDownList" priority="0" />
+      <Item value="Label" priority="0" />
+      <Item value="_selectItem" priority="0" />
+      <Item value="MenuStrip`0" priority="0" />
+      <Item value="MenuStrip" priority="0" />
+      <Item value="_toolBox" priority="0" />
+      <Item value="ToolStripItem" priority="0" />
+      <Item value="sender" priority="0" />
+      <Item value="ToolStripMenuItem`0" priority="0" />
+      <Item value="_listFiles" priority="1" />
+      <Item value="_rightClick" priority="0" />
+      <Item value="Sitem" priority="1" />
+      <Item value="CListItem`0" priority="0" />
+      <Item value="selected_item" priority="1" />
+      <Item value="ComboBox`0" priority="1" />
+      <Item value="addFile`0" priority="1" />
+      <Item value="ArrayList&lt;string&gt;" priority="0" />
+      <Item value="dir" priority="0" />
+      <Item value="Indeterminate" priority="0" />
+      <Item value="ChooseForm`0" priority="3" />
+      <Item value="_makeTo" priority="0" />
+      <Item value="IGNORED" priority="0" />
+      <Item value="Path" priority="0" />
+      <Item value="MakeTo" priority="1" />
+      <Item value="ChooseForm" priority="0" />
+      <Item value="GameFilesForm`0" priority="1" />
+      <Item value="_chooseForm" priority="0" />
+      <Item value="Windows7Taskbar`0" priority="0" />
+      <Item value="NoProgress" priority="0" />
+      <Item value="ThumbnailProgressState`0" priority="0" />
+      <Item value="OK" priority="1" />
+      <Item value="Information" priority="0" />
+      <Item value="Program`0" priority="0" />
+      <Item value="Asterisk" priority="0" />
+      <Item value="args" priority="0" />
+      <Item value="DELETE" priority="0" />
+      <Item value="DeleteFile" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@client.forms.MainForm">
       <Item value="Instance" priority="0" />
@@ -568,10 +635,11 @@
       <Item value="updateAllRSS`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
-      <Item value="Add`0" priority="2" />
+      <Item value="Add`0" priority="3" />
       <Item value="Remove`0" priority="1" />
       <Item value="Contains`0" priority="0" />
-      <Item value="Count" priority="0" />
+      <Item value="Count" priority="1" />
+      <Item value="Clear`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.task_manager.TaskManager">
       <Item value="Instance" priority="5" />
@@ -611,9 +679,9 @@
       <Item value="Validate`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Enum">
-      <Item value="GetValues`0" priority="2" />
+      <Item value="GetValues`0" priority="3" />
       <Item value="IsDefined`0" priority="0" />
-      <Item value="Parse`0" priority="1" />
+      <Item value="Parse`0" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
       <Item value="Add`0" priority="4" />
@@ -660,17 +728,18 @@
       <Item value="canParale`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Net.WebClient">
-      <Item value="DownloadDataAsync`0" priority="2" />
+      <Item value="DownloadDataAsync`0" priority="4" />
       <Item value="DownloadDataCompleted" priority="1" />
-      <Item value="DownloadFileCompleted" priority="0" />
+      <Item value="DownloadFileCompleted" priority="1" />
       <Item value="DownloadProgressChanged" priority="1" />
       <Item value="IsBusy" priority="1" />
-      <Item value="DownloadFileAsync`0" priority="0" />
-      <Item value="CancelAsync`0" priority="0" />
+      <Item value="DownloadFileAsync`0" priority="1" />
+      <Item value="CancelAsync`0" priority="1" />
+      <Item value="DownloadFile`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Net.DownloadDataCompletedEventArgs">
       <Item value="Cancelled" priority="1" />
-      <Item value="Error" priority="1" />
+      <Item value="Error" priority="2" />
       <Item value="Result" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:com.jds.GUpdater.classes.task_manager.tasks.ListLoaderTask">
@@ -729,7 +798,7 @@
       <Item value="Instance" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Console">
-      <Item value="WriteLine`0" priority="31" />
+      <Item value="WriteLine`0" priority="34" />
       <Item value="Write`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Drawing.Design.UITypeEditorEditStyle">
@@ -737,7 +806,7 @@
       <Item value="DropDown" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Forms.Label">
-      <Item value="Text" priority="18" />
+      <Item value="Text" priority="19" />
       <Item value="Location" priority="8" />
       <Item value="Width" priority="1" />
       <Item value="Layout" priority="0" />
@@ -764,28 +833,28 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.LinkedList`1">
       <Item value="Contains`0" priority="0" />
-      <Item value="Count" priority="1" />
-      <Item value="AddLast`0" priority="4" />
+      <Item value="Count" priority="3" />
+      <Item value="AddLast`0" priority="5" />
       <Item value="GetEnumerator`0" priority="2" />
       <Item value="GetObjectData`0" priority="0" />
       <Item value="First" priority="0" />
       <Item value="RemoveFirst`0" priority="0" />
-      <Item value="Clear`0" priority="0" />
+      <Item value="Clear`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Threading.Thread">
-      <Item value="CurrentThread" priority="1" />
+      <Item value="CurrentThread" priority="2" />
       <Item value="SetData`0" priority="0" />
-      <Item value="Sleep`0" priority="4" />
+      <Item value="Sleep`0" priority="5" />
       <Item value="SpinWait`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Threading.Thread">
       <Item value="Name" priority="0" />
       <Item value="CurrentUICulture" priority="0" />
-      <Item value="Start`0" priority="2" />
+      <Item value="Start`0" priority="3" />
       <Item value="Priority" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBox">
-      <Item value="Show`0" priority="1" />
+      <Item value="Show`0" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:com.jds.GUpdater.classes.gui.JTabbedPane">
       <Item value="ChangeSelectedTabEvent" priority="0" />
@@ -797,35 +866,37 @@
       <Item value="DONE" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.Queue`1">
-      <Item value="Count" priority="5" />
+      <Item value="Count" priority="9" />
       <Item value="Peek`0" priority="1" />
-      <Item value="Enqueue`0" priority="4" />
+      <Item value="Enqueue`0" priority="5" />
       <Item value="ToArray`0" priority="0" />
       <Item value="Clear`0" priority="0" />
-      <Item value="Dequeue`0" priority="3" />
+      <Item value="Dequeue`0" priority="4" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.IO.FileInfo">
-      <Item value="Exists" priority="1" />
+      <Item value="Exists" priority="3" />
       <Item value="OpenRead`0" priority="0" />
       <Item value="Create`0" priority="2" />
       <Item value="Length" priority="0" />
       <Item value="LastAccessTimeUtc" priority="0" />
-      <Item value="Delete`0" priority="2" />
+      <Item value="Delete`0" priority="3" />
       <Item value="MoveTo`0" priority="0" />
       <Item value="FullName" priority="0" />
+      <Item value="Name" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.String">
-      <Item value="Format`0" priority="1" />
+      <Item value="Format`0" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.AttributeTargets">
       <Item value="Property" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Object">
-      <Item value="GetType`0" priority="1" />
+      <Item value="GetType`0" priority="2" />
+      <Item value="ToString`0" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Type">
       <Item value="GetProperties`0" priority="0" />
-      <Item value="Name" priority="4" />
+      <Item value="Name" priority="5" />
       <Item value="FullName" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Reflection.PropertyInfo">
@@ -908,7 +979,7 @@
       <Item value="Instance" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
-      <Item value="Text" priority="0" />
+      <Item value="Text" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Forms.FolderBrowserDialog">
       <Item value="SelectedPath" priority="2" />
@@ -1023,7 +1094,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Windows.Forms.Application">
       <Item value="Restart`0" priority="1" />
-      <Item value="Run`0" priority="0" />
+      <Item value="Run`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@com.jds.GUpdater.classes.assembly.gui.AssemblyPage">
       <Item value="Instance" priority="8" />
@@ -1077,14 +1148,15 @@
       <Item value="NewLine" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@log4net.LogManager">
-      <Item value="GetLogger`0" priority="1" />
+      <Item value="GetLogger`0" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:log4net.ILog">
-      <Item value="Info`0" priority="2" />
-      <Item value="IsDebugEnabled" priority="4" />
+      <Item value="Info`0" priority="5" />
+      <Item value="IsDebugEnabled" priority="5" />
+      <Item value="Debug`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Exception">
-      <Item value="Message" priority="2" />
+      <Item value="Message" priority="5" />
       <Item value="StackTrace" priority="1" />
       <Item value="GetType`0" priority="0" />
       <Item value="TargetSite" priority="1" />
@@ -1117,7 +1189,7 @@
       <Item value="NormalImage`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Drawing.Color">
-      <Item value="FromArgb`0" priority="0" />
+      <Item value="FromArgb`0" priority="1" />
       <Item value="Red" priority="1" />
       <Item value="Orange" priority="0" />
       <Item value="DarkGoldenrod" priority="0" />
@@ -1174,6 +1246,7 @@
     <ItemStatistics item="Qualified:System.Windows.Forms.Form">
       <Item value="Invoke`0" priority="1" />
       <Item value="Visible" priority="2" />
+      <Item value="Handle" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.WeakReference">
       <Item value="IsAlive" priority="0" />
@@ -1232,11 +1305,12 @@
       <Item value="Timeout" priority="0" />
       <Item value="BeginGetRequestStream`0" priority="0" />
       <Item value="GetRequestStream`0" priority="1" />
+      <Item value="GetResponse`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Net.WebException">
       <Item value="StackTrace" priority="0" />
       <Item value="ToString`0" priority="0" />
-      <Item value="Message" priority="0" />
+      <Item value="Message" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Net.HttpWebRequest">
       <Item value="HaveResponse" priority="0" />
@@ -1245,7 +1319,7 @@
       <Item value="AbsolutePath" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Net.WebRequest">
-      <Item value="Create`0" priority="0" />
+      <Item value="Create`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.DateTime">
       <Item value="Now" priority="1" />
@@ -1254,24 +1328,26 @@
       <Item value="Ticks" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Net.WebResponse">
-      <Item value="GetResponseStream`0" priority="0" />
+      <Item value="GetResponseStream`0" priority="1" />
+      <Item value="ContentLength" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@com.jds.AWLauncher.classes.utils.WebR">
       <Item value="GetStream`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.ComponentModel.AsyncCompletedEventArgs">
-      <Item value="Cancelled" priority="0" />
-      <Item value="Error" priority="3" />
-      <Item value="UserState" priority="1" />
+      <Item value="Cancelled" priority="1" />
+      <Item value="Error" priority="5" />
+      <Item value="UserState" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Net.DownloadProgressChangedEventArgs">
       <Item value="ProgressPercentage" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@com.jds.AWLauncher.classes.forms.MainForm">
-      <Item value="Instance" priority="1" />
+      <Item value="Instance" priority="4" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:com.jds.AWLauncher.classes.forms.MainForm">
-      <Item value="UpdateProgressBar`0" priority="1" />
+      <Item value="UpdateProgressBar`0" priority="2" />
+      <Item value="UpdateStatusLabel`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Delegate">
       <Item value="Method" priority="0" />
@@ -1294,6 +1370,104 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@com.jds.AWLauncher.classes.listloader.enums.ListFileType">
       <Item value="CRITICAL" priority="0" />
+      <Item value="DELETE" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.AWLauncher.classes.language.enums.WordEnum">
+      <Item value="CANCEL_BY_USER" priority="0" />
+      <Item value="UPDATE_DONE" priority="1" />
+      <Item value="PROBLEM_WITH_SERVER" priority="0" />
+      <Item value="DOWNLOADING_S1" priority="0" />
+      <Item value="DELETE_S1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.AWLauncher.classes.utils.FileUtils">
+      <Item value="IsFileOpen`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.FileShare">
+      <Item value="Write" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.FormBorderStyle">
+      <Item value="FixedToolWindow" priority="1" />
+      <Item value="SizableToolWindow" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.Premaker.classes.windows.DwmApi">
+      <Item value="MARGINS`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.Premaker.classes.forms.ChooseForm">
+      <Item value="ActiveForm" priority="1" />
+      <Item value="Instance" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Brushes">
+      <Item value="Lime" priority="1" />
+      <Item value="Black" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.Premaker.classes.gui.clistview.CListItem">
+      <Item value="SubItems" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.Premaker.classes.gui.clistview.GLSubItemCollection">
+      <Item value="Add`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.Premaker.classes.gui.clistview.CListSubItem">
+      <Item value="Control" priority="3" />
+      <Item value="Text" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox">
+      <Item value="Items" priority="0" />
+      <Item value="DropDownStyle" priority="0" />
+      <Item value="SelectedIndex" priority="0" />
+      <Item value="SelectedItem" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox+ObjectCollection">
+      <Item value="Add`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.Premaker.classes.gui.CListView">
+      <Item value="Items" priority="0" />
+      <Item value="SelectedItems" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.Premaker.classes.gui.clistview.GLItemCollection">
+      <Item value="Add`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.MenuStrip">
+      <Item value="Show`0" priority="1" />
+      <Item value="ItemRemoved" priority="0" />
+      <Item value="Items" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ToolStripItemCollection">
+      <Item value="Add`0" priority="1" />
+      <Item value="AddRange`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ContextMenuStrip">
+      <Item value="Show`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ToolStripMenuItem">
+      <Item value="DropDownItems" priority="0" />
+      <Item value="Name" priority="0" />
+      <Item value="Text" priority="1" />
+      <Item value="Tag" priority="1" />
+      <Item value="Click" priority="0" />
+      <Item value="Enabled" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.Premaker.classes.windows.windows7.Windows7Taskbar">
+      <Item value="SetProgressState`0" priority="1" />
+      <Item value="SetProgressValue`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.Premaker.classes.windows.windows7.ThumbnailProgressState">
+      <Item value="NoProgress" priority="1" />
+      <Item value="Normal" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.Premaker.classes.files.ListFile">
+      <Item value="FileType" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.Premaker.classes.forms.ChooseForm">
+      <Item value="FormAsGameFiles" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.Premaker.classes.forms.GameFilesForm">
+      <Item value="setStatus`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.AWLauncher.classes.listloader.ListFile">
+      <Item value="Type" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.Premaker.classes.files.ListFileType">
+      <Item value="DELETE" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

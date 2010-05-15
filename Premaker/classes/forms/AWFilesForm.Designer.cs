@@ -1,6 +1,6 @@
 ﻿namespace com.jds.Premaker.classes.forms
 {
-    partial class GUFilesForm
+    partial class AWFilesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AWFilesForm));
             this._filesList = new System.Windows.Forms.ListBox();
             this._openFolder = new System.Windows.Forms.Button();
             this._allFiles = new System.Windows.Forms.ListBox();
@@ -199,7 +200,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // GUFilesForm
+            // AWFilesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -220,7 +221,8 @@
             this.Controls.Add(this._openFolder);
             this.Controls.Add(this._filesList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "GUFilesForm";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "AWFilesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AWLauncher files";
             this.statusStrip1.ResumeLayout(false);

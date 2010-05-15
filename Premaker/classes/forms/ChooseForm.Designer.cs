@@ -1,4 +1,6 @@
-﻿namespace com.jds.Premaker.classes.forms
+﻿using System.Windows.Forms;
+
+namespace com.jds.Premaker.classes.forms
 {
     partial class ChooseForm
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChooseForm));
             this._gameFiles = new System.Windows.Forms.RadioButton();
             this._gupdateFiles = new System.Windows.Forms.RadioButton();
             this._goButton = new System.Windows.Forms.Button();
@@ -43,7 +46,7 @@
             this._gameFiles.TabIndex = 0;
             this._gameFiles.TabStop = true;
             this._gameFiles.Text = "Create file of game";
-            this._gameFiles.UseVisualStyleBackColor = true;
+            this._gameFiles.UseVisualStyleBackColor = false;
             // 
             // _gupdateFiles
             // 
@@ -58,23 +61,25 @@
             // 
             // _goButton
             // 
-            this._goButton.Location = new System.Drawing.Point(156, 12);
+            this._goButton.Location = new System.Drawing.Point(205, 12);
+            this._goButton.Margin = new System.Windows.Forms.Padding(0);
             this._goButton.Name = "_goButton";
             this._goButton.Size = new System.Drawing.Size(122, 40);
             this._goButton.TabIndex = 2;
             this._goButton.Text = "GO";
-            this._goButton.UseVisualStyleBackColor = true;
+            this._goButton.UseVisualStyleBackColor = false;
             this._goButton.Click += new System.EventHandler(this._goButton_Click);
             // 
             // ChooseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 61);
+            this.ClientSize = new System.Drawing.Size(335, 61);
             this.Controls.Add(this._goButton);
             this.Controls.Add(this._gupdateFiles);
             this.Controls.Add(this._gameFiles);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChooseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Premaker";
@@ -85,8 +90,8 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton _gameFiles;
-        private System.Windows.Forms.RadioButton _gupdateFiles;
+        private RadioButton _gameFiles;
+        private RadioButton _gupdateFiles;
         private System.Windows.Forms.Button _goButton;
     }
 }

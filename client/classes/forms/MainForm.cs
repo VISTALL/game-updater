@@ -393,14 +393,14 @@ namespace com.jds.AWLauncher.classes.forms
 
         #region Status Label
 
-        public void UpdateStatusLabel(WordEnum wordEnum)
+        public void UpdateStatusLabel(WordEnum wordEnum, params Object[] arg)
         {
-            UpdateStatusLabel(LanguageHolder.Instance()[wordEnum]);
+            UpdateStatusLabel(LanguageHolder.Instance()[wordEnum], arg);
         }
 
-        public void UpdateStatusLabel(String a)
+        public void UpdateStatusLabel(String a, params Object[] arg)
         {
-            Invoke(new DelegateCall(this, new UpdateStatusLabelDelegate(UpdateStatusLabelUnsafe), a));
+            Invoke(new DelegateCall(this, new UpdateStatusLabelDelegate(UpdateStatusLabelUnsafe), String.Format(a, arg)));
         }
 
         private void UpdateStatusLabelUnsafe(String s)
@@ -469,6 +469,16 @@ namespace com.jds.AWLauncher.classes.forms
 
         private void updateProgressBarUnsafe(int pe, bool total)
         {
+            if(pe < 0)
+            {
+                pe = 0;
+            }
+
+            if(pe > 100)
+            {
+                pe = 100;
+            }
+
             if (total)
             {
                 if (pe == 0)

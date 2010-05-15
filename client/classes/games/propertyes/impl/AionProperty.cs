@@ -1,6 +1,9 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
+using com.jds.AWLauncher.classes.forms;
 using com.jds.AWLauncher.classes.language;
+using com.jds.AWLauncher.classes.language.enums;
 using com.jds.AWLauncher.classes.listloader.enums;
 
 namespace com.jds.AWLauncher.classes.games.propertyes.impl
@@ -8,7 +11,7 @@ namespace com.jds.AWLauncher.classes.games.propertyes.impl
     /**
      * Author: VISTALL
      * На заметку PasswordPropertyTextAttribute
-     */
+     */   
 
     public class AionProperty : GameProperty
     {
@@ -27,7 +30,10 @@ namespace com.jds.AWLauncher.classes.games.propertyes.impl
             string path = Path + "\\bin32\\aion.exe";
 
             if (!File.Exists(path))
+            {
+                MainForm.Instance.UpdateStatusLabel(WordEnum.S1_NOT_EXISTS_PLEASE_RECHECK, "aion.exe");
                 return null;
+            }
 
             var info = new ProcessStartInfo(path)
                            {
@@ -44,6 +50,8 @@ namespace com.jds.AWLauncher.classes.games.propertyes.impl
             {
                 lang = LanguageHolder.Instance().Language.ShortName;
             }
+            
+            //TODO debug return "http://localhost/aion/" + lang + "/";
             return "http://ru.aionwars.com/aion/" + lang + "/";
         }
 

@@ -1,7 +1,8 @@
-﻿namespace com.jds.AWLauncher.classes.listloader.enums
+﻿namespace com.jds.Premaker.classes.files
 {
     public enum ListFileType
     {
+        IGNORED,
         NORMAL,
         CRITICAL,
         DELETE

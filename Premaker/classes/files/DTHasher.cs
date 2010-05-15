@@ -2,7 +2,7 @@
 
 namespace com.jds.Premaker.classes.files
 {
-    public sealed class DTHasher
+    public class DTHasher
     {
         private DTHasher() { }
 

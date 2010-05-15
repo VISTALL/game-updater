@@ -12,12 +12,13 @@
     <AssemblyName>Premaker</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\exe_premaker\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -34,48 +35,98 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\files\DTHasher.cs" />
     <Compile Include="classes\files\ListFile.cs" />
+    <Compile Include="classes\files\ListFileType.cs" />
     <Compile Include="classes\forms\ChooseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="classes\forms\ChooseForm.Designer.cs">
       <DependentUpon>ChooseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="classes\forms\GFilesForm.cs">
+    <Compile Include="classes\forms\GameFilesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="classes\forms\GFilesForm.Designer.cs">
-      <DependentUpon>GFilesForm.cs</DependentUpon>
+    <Compile Include="classes\forms\GameFilesForm.Designer.cs">
+      <DependentUpon>GameFilesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="classes\forms\GUFilesForm.cs">
+    <Compile Include="classes\forms\AWFilesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="classes\forms\GUFilesForm.Designer.cs">
-      <DependentUpon>GUFilesForm.cs</DependentUpon>
+    <Compile Include="classes\forms\AWFilesForm.Designer.cs">
+      <DependentUpon>AWFilesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\gui\CListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\gui\clistview\BorderStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\gui\ManagedHScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\gui\ManagedVScrollBar.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="classes\utiles\StringUtil.cs" />
+    <Compile Include="classes\windows\DwmApi.cs" />
+    <Compile Include="classes\windows\windows7\ITaskbarList3.cs" />
+    <Compile Include="classes\windows\windows7\ThumbnailProgressState.cs" />
+    <Compile Include="classes\windows\windows7\Windows7Taskbar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="classes\forms\ChooseForm.resx">
       <DependentUpon>ChooseForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="classes\forms\GUFilesForm.resx">
-      <DependentUpon>GUFilesForm.cs</DependentUpon>
+    <EmbeddedResource Include="classes\forms\AWFilesForm.resx">
+      <DependentUpon>AWFilesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\forms\GameFilesForm.resx">
+      <DependentUpon>GameFilesForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\log4net\Log4 .NET.csproj">
+      <Project>{F6A02431-167E-4347-BC43-65532C31CDB7}</Project>
+      <Name>Log4 .NET</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zlib\Zlib.csproj">
       <Project>{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}</Project>
       <Name>Zlib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="classes\files\Maker.cs" />
+    <Compile Include="classes\gui\CComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\gui\CDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\gui\clistview\CEmbeddedControl.cs" />
+    <Compile Include="classes\gui\clistview\CMergeSort.cs" />
+    <Compile Include="classes\gui\clistview\ColumnCollection.cs" />
+    <Compile Include="classes\gui\clistview\CQuickSort.cs" />
+    <Compile Include="classes\gui\clistview\HelperFunctions.cs" />
+    <Compile Include="classes\gui\clistview\ItemCollection.cs" />
+    <Compile Include="classes\gui\clistview\ThemeRoutines.cs" />
+    <Compile Include="classes\gui\CTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\LogServer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />

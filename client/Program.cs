@@ -27,7 +27,7 @@ namespace com.jds.AWLauncher
             try
             {
                 var thread = Thread.CurrentThread;
-                thread.Name = "GUpdater - MainThread";
+                thread.Name = "AWLauncher - MainThread";
 
                 LogService.Init();
 

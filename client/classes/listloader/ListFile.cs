@@ -5,26 +5,13 @@ namespace com.jds.AWLauncher.classes.listloader
 {
     public class ListFile
     {
-        private String _fileName;
-        private String _md5;
-        private ListFileType _type;
-
         #region Property
 
-        public String md5Checksum
-        {
-            get { return _md5; }
-        }
+        public string md5Checksum { get; private set; }
 
-        public String FileName
-        {
-            get { return _fileName; }
-        }
+        public string FileName { get; private set; }
 
-        public ListFileType Type
-        {
-            get { return _type; }
-        }
+        public ListFileType Type { get; private set; }
 
         #endregion
 
@@ -34,9 +21,9 @@ namespace com.jds.AWLauncher.classes.listloader
         {
             var file = new ListFile();
             String[] args = line.Split('\t');
-            file._fileName = args[0];
-            file._type = Boolean.Parse(args[1]) ? ListFileType.CRITICAL : ListFileType.NORMAL;
-            file._md5 = args[2];
+            file.FileName = args[0];
+            file.Type = (ListFileType)Enum.Parse(typeof(ListFileType), args[1]);
+            file.md5Checksum = args[2];
             return file;
         }
         
@@ -44,8 +31,8 @@ namespace com.jds.AWLauncher.classes.listloader
         {
             var file = new ListFile();
             String[] args = line.Split('\t');
-            file._fileName = args[0];
-            file._md5 = args[1];
+            file.FileName = args[0];
+            file.md5Checksum = args[1];
             return file;
         }
         #endregion

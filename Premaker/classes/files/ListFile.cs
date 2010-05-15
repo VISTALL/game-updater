@@ -84,7 +84,7 @@ namespace com.jds.Premaker.classes.files
             set;
         }
 
-        public bool IsCritical
+        public ListFileType FileType
         {
             get;
             set;

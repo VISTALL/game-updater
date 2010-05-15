@@ -1,5 +1,8 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using com.jds.AWLauncher.classes.forms;
+using com.jds.AWLauncher.classes.language.enums;
+using com.jds.AWLauncher.classes.listloader.enums;
 
 namespace com.jds.AWLauncher.classes.games.propertyes.impl
 {
@@ -12,7 +15,7 @@ namespace com.jds.AWLauncher.classes.games.propertyes.impl
 
         public override ProcessStartInfo GetStartInfo()
         {
-            if (!Installed || !isEnable() || !_loader.IsValid)
+            if (!Installed || !isEnable() || !_loader.IsValid || !this[ListFileType.CRITICAL])
             {
                 return null;
             }
@@ -20,7 +23,10 @@ namespace com.jds.AWLauncher.classes.games.propertyes.impl
             string path = Path + "\\system_my\\l2.exe";
 
             if (!File.Exists(path))
+            {
+                MainForm.Instance.UpdateStatusLabel(WordEnum.S1_NOT_EXISTS_PLEASE_RECHECK, "l2.exe");
                 return null;
+            }
 
             var info = new ProcessStartInfo(path);
 

@@ -41,6 +41,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
 
             _list.Add(ListFileType.CRITICAL, new LinkedList<ListFile>());
             _list.Add(ListFileType.NORMAL, new LinkedList<ListFile>());
+            _list.Add(ListFileType.DELETE, new LinkedList<ListFile>());
 
             _webClient.DownloadDataCompleted += client_DownloadDataCompleted;
             _webClient.DownloadProgressChanged += _webClient_DownloadProgressChanged;
@@ -98,7 +99,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
             {
                 if (e.Error is WebException)
                 {
-                    GoEnd(WordEnum.PROBLEM_WITH_INTERNET);
+                    GoEnd(e.Error.Message);
 
                     if(_log.IsDebugEnabled)
                     {
@@ -210,6 +211,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
             }
         }
 
+        #region Go End
         [MethodImpl(MethodImplOptions.Synchronized)]
         private void GoEnd(WordEnum word)
         {
@@ -232,6 +234,24 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
 
             OnEnd();
         }
+
+        private void GoEnd(String word)
+        {
+            Status = Status.FREE;
+
+            MainForm.Instance.UpdateStatusLabel(word);
+
+            MainForm.Instance.UpdateProgressBar(0, true);
+            MainForm.Instance.UpdateProgressBar(0, false);
+
+            if (!(TaskManager.Instance.NextTask is AnalyzerTask))
+            {
+                MainForm.Instance.SetMainFormState(MainFormState.NONE);
+            }
+
+            OnEnd();
+        }
+#endregion
 
         public override void Cancel()
         {

@@ -12,11 +12,11 @@ using zlib.Zip;
 
 namespace com.jds.Premaker.classes.forms
 {
-    public partial class GUFilesForm : Form
+    public partial class AWFilesForm : Form
     {
         private readonly List<ListFile> _files = new List<ListFile>();
 
-        public GUFilesForm()
+        public AWFilesForm()
         {
             InitializeComponent();
 
@@ -216,7 +216,7 @@ namespace com.jds.Premaker.classes.forms
         {
             var webClient = new WebClient();
             webClient.DownloadDataCompleted += webClient_DownloadDataCompleted;
-            webClient.DownloadDataAsync(new Uri("http://jdevelopstation.com/gupdater/list.zip"));
+            webClient.DownloadDataAsync(new Uri("http://jdevelopstation.com/awlauncher/list.zip"));
         }
 
         void webClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)
