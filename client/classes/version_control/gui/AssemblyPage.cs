@@ -24,7 +24,6 @@ namespace com.jds.AWLauncher.classes.version_control.gui
 
         private readonly GUListLoaderTask _listLoaderTask = new GUListLoaderTask();
         private readonly ILog _log = LogManager.GetLogger(typeof (AssemblyPage));
-        public readonly InvokeManager InvokeManager = new InvokeManager(typeof(AssemblyPage));
 
         private static AssemblyPage _instance;
        
@@ -111,16 +110,20 @@ namespace com.jds.AWLauncher.classes.version_control.gui
             _statusLabel.Text = a;
         }
         
-        public void UpdateStatusLabel(WordEnum a)
+        public void UpdateStatusLabel(WordEnum a, bool onlyVisible)
         {
-            UpdateStatusLabel(LanguageHolder.Instance()[a]);
+            if (Visible)
+            {
+                UpdateStatusLabel(LanguageHolder.Instance()[a], onlyVisible);
+            }
         }
 
-        public void UpdateStatusLabel(String a)
+        public void UpdateStatusLabel(String a, bool onlyVisible)
         {
-            var delegateCall = new DelegateCall(this, new MainForm.UpdateStatusLabelDelegate(UpdateStatusLabelUnsafe), a);
-
-            Invoke(delegateCall);    
+            if (Visible && onlyVisible || !onlyVisible)
+            {
+                Invoke(new DelegateCall(this, new MainForm.UpdateStatusLabelDelegate(UpdateStatusLabelUnsafe), a));
+            }
         }
         #endregion
 
@@ -129,8 +132,14 @@ namespace com.jds.AWLauncher.classes.version_control.gui
 
         public void SetState(MainFormState type)
         {
-            var d = new DelegateCall(this, new MainForm.SetFormStateDelegate(SetStateUnsafe), type);
-            Invoke(d);
+            if (Visible)
+            {
+                Invoke(new DelegateCall(this, new MainForm.SetFormStateDelegate(SetStateUnsafe), type));
+            }
+            else
+            {
+                FState = type;
+            }
         }
 
         private void SetStateUnsafe(MainFormState s)
@@ -139,7 +148,6 @@ namespace com.jds.AWLauncher.classes.version_control.gui
             {
                 case MainFormState.NONE:
                     _checkButton.Text = LanguageHolder.Instance()[WordEnum.CHECK];
-                    //_updateBtn.Enabled = trueInstance()
                     _updateBtn.Text = LanguageHolder.Instance()[WordEnum.UPDATE];  
                     break;
                 case MainFormState.CHECKING:
@@ -308,7 +316,7 @@ namespace com.jds.AWLauncher.classes.version_control.gui
         {
             if (!IsDisposed)
             {
-                InvokeManager.AddInvoke(a);
+                InvokeManager.Instance.AddInvoke(a);
             }
         }
 

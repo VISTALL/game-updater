@@ -77,7 +77,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
                 AssemblyPage.Instance().SetState(MainFormState.NONE);
             }
 
-            AssemblyPage.Instance().UpdateStatusLabel(String.Format(LanguageHolder.Instance()[word], aa));
+            AssemblyPage.Instance().UpdateStatusLabel(String.Format(LanguageHolder.Instance()[word], aa), false);
             AssemblyPage.Instance().UpdateProgressBar(0, false);
             AssemblyPage.Instance().UpdateProgressBar(0, true);
 
@@ -117,7 +117,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
 
             string word = LanguageHolder.Instance()[WordEnum.CHECKING_S1];
 
-            AssemblyPage.Instance().UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
+            AssemblyPage.Instance().UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")), true);
 
            /* if (FileUtils.IsFileOpen(info))
             {
@@ -222,7 +222,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
             var byteBuffer = new byte[8192];
 
             string word = LanguageHolder.Instance()[WordEnum.DOWNLOADING_S1];
-            AssemblyPage.Instance().UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")));
+            AssemblyPage.Instance().UpdateStatusLabel(String.Format(word, info.Name.Replace(".zip", "")), true);
 
             bool exception = false;
             try
@@ -285,7 +285,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
 
             string word = LanguageHolder.Instance()[WordEnum.UNPACKING_S1];
 
-            AssemblyPage.Instance().UpdateStatusLabel(String.Format(word, newFile.Name.Replace(".new", "")));
+            AssemblyPage.Instance().UpdateStatusLabel(String.Format(word, newFile.Name.Replace(".new", "")), true);
             AssemblyPage.Instance().UpdateProgressBar(0, false);
 
             var zipStream = new ZipInputStream(newFile.OpenRead());

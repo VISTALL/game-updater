@@ -11,7 +11,17 @@ namespace com.jds.AWLauncher.classes.invoke
         private readonly Thread _mainThread;
         private const int INTERVAL = 10;
 
-        public InvokeManager(Type t)
+        private volatile static InvokeManager _instance;
+
+        public static InvokeManager Instance
+        {
+           get 
+           {
+               return _instance ?? (_instance = new InvokeManager()); 
+           }
+        }
+              
+        private InvokeManager()
         {
             ThreadStart d = delegate
             {
@@ -43,7 +53,7 @@ namespace com.jds.AWLauncher.classes.invoke
                 }
             }; 
             
-            _mainThread = new Thread(d) {Name = "Invoke Manager Thread:  " + t.Name, Priority = ThreadPriority.Highest};
+            _mainThread = new Thread(d) {Name = "AWLauncher - Invoke Manager ", Priority = ThreadPriority.Highest};
             _mainThread.Start();
         }
 

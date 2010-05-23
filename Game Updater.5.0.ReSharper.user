@@ -9,13 +9,6 @@
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/d:clistview/f:CQuickSort.cs" caret="538" fromTop="20" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/d:clistview/f:CEmbeddedControl.cs" caret="0" fromTop="0" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/d:clistview/f:ThemeRoutines.cs" caret="3334" fromTop="40" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/d:clistview/f:ItemCollection.cs" caret="23342" fromTop="7" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/f:CComboBox.cs" caret="0" fromTop="0" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/f:CDateTimePicker.cs" caret="1777" fromTop="23" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/f:ManagedVScrollBar.cs" caret="2230" fromTop="18" />
       <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/f:CTextBox.cs" caret="302" fromTop="10" />
       <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/d:clistview/f:ColumnCollection.cs" caret="3468" fromTop="15" />
       <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/d:clistview/f:CMergeSort.cs" caret="1471" fromTop="18" />
@@ -35,42 +28,49 @@
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:listloader/d:enums/f:ListFileType.cs" caret="0" fromTop="0" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:ListLoaderTask.cs" caret="0" fromTop="0" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/d:enums/f:WordEnum.cs" caret="1612" fromTop="39" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="544" fromTop="15" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="1039" fromTop="31" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="15011" fromTop="20" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:propertyes/d:impl/f:AionProperty.cs" caret="1571" fromTop="18" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:registry/f:RegistryProperty.cs" caret="0" fromTop="0" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="1104" fromTop="11" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="271" fromTop="4" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:InvokeManager.cs" caret="619" fromTop="21" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="15415" fromTop="0" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="1911" fromTop="13" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUListLoaderTask.cs" caret="1643" fromTop="4" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="4904" fromTop="19" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUAnalyzerTask.cs" caret="8900" fromTop="15" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AbstractTask.cs" caret="0" fromTop="0" />
     </RecentFiles>
     <RecentEdits>
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GameFilesForm.cs" caret="6915" fromTop="30" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GameFilesForm.cs" caret="6748" fromTop="23" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:ChooseForm.Designer.cs" caret="3848" fromTop="17" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GameFilesForm.cs" caret="6908" fromTop="29" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/f:LogServer.cs" caret="138" fromTop="1" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/f:LogServer.cs" caret="609" fromTop="23" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/f:Program.cs" caret="281" fromTop="9" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/f:Program.cs" caret="784" fromTop="24" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/f:Program.cs" caret="637" fromTop="23" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GameFilesForm.cs" caret="5311" fromTop="28" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:Maker.cs" caret="1209" fromTop="16" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:Maker.cs" caret="5578" fromTop="21" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GameFilesForm.cs" caret="4600" fromTop="8" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:listloader/d:enums/f:ListFileType.cs" caret="145" fromTop="5" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:listloader/f:ListFile.cs" caret="629" fromTop="15" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:ListLoaderTask.cs" caret="1403" fromTop="25" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="5146" fromTop="11" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="5820" fromTop="16" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="6197" fromTop="22" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="6500" fromTop="28" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:Maker.cs" caret="4812" fromTop="28" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:Maker.cs" caret="2986" fromTop="13" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/d:enums/f:WordEnum.cs" caret="1612" fromTop="12" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="2551" fromTop="27" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="2727" fromTop="33" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="6892" fromTop="26" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="6896" fromTop="24" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="3343" fromTop="5" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="14518" fromTop="24" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="14364" fromTop="24" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:propertyes/d:impl/f:AionProperty.cs" caret="1571" fromTop="18" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="10572" fromTop="23" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="933" fromTop="19" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:InvokeManager.cs" caret="1663" fromTop="15" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:InvokeManager.cs" caret="619" fromTop="21" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="1100" fromTop="4" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="883" fromTop="2" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="5863" fromTop="18" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="18053" fromTop="18" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="9984" fromTop="18" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="4646" fromTop="9" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="15681" fromTop="22" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="3807" fromTop="7" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="3937" fromTop="11" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUListLoaderTask.cs" caret="5496" fromTop="14" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUListLoaderTask.cs" caret="1804" fromTop="9" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUAnalyzerTask.cs" caret="2379" fromTop="18" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUAnalyzerTask.cs" caret="3607" fromTop="7" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUAnalyzerTask.cs" caret="6842" fromTop="7" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUAnalyzerTask.cs" caret="8900" fromTop="15" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="4101" fromTop="9" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="4249" fromTop="12" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="4462" fromTop="23" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="4904" fromTop="19" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -88,7 +88,7 @@
     <ItemStatistics item="Default">
       <Item value="OutIsBusy" priority="1" />
       <Item value="IsBusy" priority="1" />
-      <Item value="public" priority="88" />
+      <Item value="public" priority="89" />
       <Item value="override" priority="18" />
       <Item value="return" priority="59" />
       <Item value="true" priority="29" />
@@ -109,17 +109,17 @@
       <Item value="case" priority="8" />
       <Item value="break" priority="11" />
       <Item value="null" priority="30" />
-      <Item value="if" priority="107" />
+      <Item value="if" priority="109" />
       <Item value="InvokeRequired" priority="2" />
       <Item value="else" priority="12" />
       <Item value="UpdateStatusLabelUnsafe`0" priority="1" />
       <Item value="UpdateStatusLabel`0" priority="1" />
       <Item value="Language" priority="1" />
-      <Item value="private" priority="54" />
-      <Item value="static" priority="16" />
+      <Item value="private" priority="56" />
+      <Item value="static" priority="18" />
       <Item value="LanguageHolder`0" priority="22" />
       <Item value="_instance" priority="14" />
-      <Item value="new" priority="71" />
+      <Item value="new" priority="72" />
       <Item value="LanguageHolder" priority="0" />
       <Item value="language" priority="10" />
       <Item value="Dictionary" priority="1" />
@@ -136,13 +136,13 @@
       <Item value="var" priority="21" />
       <Item value="client" priority="2" />
       <Item value="virtual" priority="0" />
-      <Item value="bool" priority="19" />
+      <Item value="bool" priority="20" />
       <Item value="_thread" priority="0" />
       <Item value="_property" priority="2" />
       <Item value="try" priority="5" />
       <Item value="catch" priority="8" />
       <Item value="WebException`0" priority="1" />
-      <Item value="false" priority="21" />
+      <Item value="false" priority="22" />
       <Item value="IsValid" priority="2" />
       <Item value="GoEnd`0" priority="9" />
       <Item value="MainForm`0" priority="22" />
@@ -160,7 +160,7 @@
       <Item value="_statuses" priority="4" />
       <Item value="Statuses" priority="0" />
       <Item value="ListLoaderTask`0" priority="1" />
-      <Item value="type" priority="8" />
+      <Item value="type" priority="9" />
       <Item value="value" priority="24" />
       <Item value="RichTextBoxWordPunctuations`0" priority="1" />
       <Item value="_languages" priority="4" />
@@ -425,7 +425,7 @@
       <Item value="TabPage`0" priority="0" />
       <Item value="_generalPage" priority="0" />
       <Item value="Boolean`0" priority="1" />
-      <Item value="Visible" priority="3" />
+      <Item value="Visible" priority="7" />
       <Item value="Delegate`0" priority="6" />
       <Item value="LinkedList&lt;Delegate&gt;" priority="0" />
       <Item value="DeledateCall`0" priority="1" />
@@ -485,8 +485,8 @@
       <Item value="Return" priority="0" />
       <Item value="DONE" priority="0" />
       <Item value="items" priority="0" />
-      <Item value="InvokeManager`0" priority="4" />
-      <Item value="InvokeManager" priority="4" />
+      <Item value="InvokeManager`0" priority="6" />
+      <Item value="InvokeManager" priority="5" />
       <Item value="_mainThread" priority="4" />
       <Item value="Thread" priority="3" />
       <Item value="Lowest" priority="0" />
@@ -627,6 +627,9 @@
       <Item value="args" priority="0" />
       <Item value="DELETE" priority="0" />
       <Item value="DeleteFile" priority="0" />
+      <Item value="FState" priority="0" />
+      <Item value="FormState" priority="0" />
+      <Item value="onlyVisible" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@client.forms.MainForm">
       <Item value="Instance" priority="0" />
@@ -1468,6 +1471,12 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@com.jds.Premaker.classes.files.ListFileType">
       <Item value="DELETE" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.AWLauncher.classes.invoke.InvokeManager">
+      <Item value="Instance" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.AWLauncher.classes.language.enums.WordEnum">
+      <Item value="CompareTo`0" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

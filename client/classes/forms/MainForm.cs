@@ -30,8 +30,6 @@ namespace com.jds.AWLauncher.classes.forms
 {
     public sealed partial class MainForm : Form
     {
-        private readonly InvokeManager InvokeManager = new InvokeManager(typeof(MainForm));
-
         #region Nested type: CloseDelegate
 
         private delegate void CloseDelegate();
@@ -192,8 +190,7 @@ namespace com.jds.AWLauncher.classes.forms
             }
 
             TaskManager.Instance.Close(true);
-            InvokeManager.Shutdown = true;
-            AssemblyPage.Instance().InvokeManager.Shutdown = true;
+            InvokeManager.Instance.Shutdown = true;
 
 
             RConfig.Instance.X = Location.X;
@@ -522,7 +519,14 @@ namespace com.jds.AWLauncher.classes.forms
 
         public void SetMainFormState(MainFormState type)
         {
-            Invoke(new DelegateCall(this, new SetFormStateDelegate(SetMainFormUnsafe), type));
+            if (Visible)
+            {
+                Invoke(new DelegateCall(this, new SetFormStateDelegate(SetMainFormUnsafe), type));
+            }
+            else
+            {
+                FormState = type;
+            }
         }
 
         /**
@@ -610,7 +614,7 @@ namespace com.jds.AWLauncher.classes.forms
         {
             if(IsCanInvoke)
             {
-                InvokeManager.AddInvoke(delegateCall);
+                InvokeManager.Instance.AddInvoke(delegateCall);
             }
         }
         #endregion

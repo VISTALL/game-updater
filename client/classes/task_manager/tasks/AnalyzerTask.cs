@@ -309,7 +309,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
                     }
                 }
 
-                Thread.Sleep(SLEEP_TIME);
+                //Thread.Sleep(SLEEP_TIME);
             }
 
             GoEnd(WordEnum.UPDATE_DONE, true);

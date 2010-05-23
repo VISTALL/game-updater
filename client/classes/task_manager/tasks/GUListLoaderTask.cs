@@ -60,7 +60,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
                 return;
             }
 
-            AssemblyPage.Instance().UpdateStatusLabel(WordEnum.STARTING_DOWNLOAD_LIST);
+            AssemblyPage.Instance().UpdateStatusLabel(WordEnum.STARTING_DOWNLOAD_LIST, true);
 
             AssemblyPage.Instance().SetState(MainFormState.CHECKING);
             MainForm.Instance.SetMainFormState(MainFormState.CHECKING);
@@ -182,7 +182,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
         {
             Status = Status.FREE;
 
-            AssemblyPage.Instance().UpdateStatusLabel(word);
+            AssemblyPage.Instance().UpdateStatusLabel(word, false);
 
            // if (!(TaskManager.Instance.NextTask() is AnalyzerTask))
             {
