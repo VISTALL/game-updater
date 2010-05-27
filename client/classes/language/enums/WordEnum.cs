@@ -71,6 +71,9 @@
         S1_NOT_EXISTS_PLEASE_RECHECK,
         TEMPORAL_IS_NOT_AVALIABLE,
 
-        DELETE_S1
+        DELETE_S1,
+
+        //url's
+
     }
 }

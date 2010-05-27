@@ -16,6 +16,7 @@ using com.jds.AWLauncher.classes.registry;
 using com.jds.AWLauncher.classes.registry.attributes;
 using com.jds.AWLauncher.classes.version_control.gui;
 using log4net;
+using Microsoft.Win32;
 
 #endregion
 
@@ -25,7 +26,8 @@ namespace com.jds.AWLauncher.classes.config
     {
         #region Variables
 
-        private const String KEY = "Software\\J Develop Station\\GUpdater";
+        private const String KEY_NEW = "Software\\AWars.net\\AWLauncher";
+
         private static readonly ILog _log = LogManager.GetLogger(typeof (RConfig));
 
         private readonly Dictionary<Game, GameProperty> _games = new Dictionary<Game, GameProperty>();
@@ -67,6 +69,16 @@ namespace com.jds.AWLauncher.classes.config
             }
 
             select();
+
+            //TODO убрать
+            try
+            {
+                RegistryKey key = Registry.CurrentUser;
+                key.DeleteSubKeyTree("Software\\J Develop Station\\GUpdater");
+            }
+            catch
+            {
+            }
         }
 
         public void save()
@@ -92,7 +104,7 @@ namespace com.jds.AWLauncher.classes.config
 
         #region Properties
 
-        [RegistryPropertyKey("Language", "English")]
+        [RegistryPropertyKey("Language", null)]
         [LanguageDisplayName(WordEnum.LANGUAGE)]
         [LanguageDescription(WordEnum.LANGUAGE_DESCRIPTION)]
         [TypeConverter(typeof (LanguagePropertyConventer))]
@@ -118,13 +130,13 @@ namespace com.jds.AWLauncher.classes.config
         [LanguageDescription(WordEnum.CHECK_CRITICAL_ON_START_DESCRIPTION)]
         public bool CheckCriticalOnStart { get; set; }
 
-        [RegistryPropertyKey("CheckVersionOnStart", false)]
+        [RegistryPropertyKey("CheckVersionOnStart", true)]
         [LanguageDisplayName(WordEnum.CHECK_VERSION_ON_START)]
         [LanguageDescription(WordEnum.CHECK_VERSION_ON_START_DESCRIPTION)]
         public bool CheckVersionOnStart { get; set; }
 
         [Browsable(false)]
-        [RegistryPropertyKey("ActiveGame", Game.LINEAGE2)]
+        [RegistryPropertyKey("ActiveGame", Game.AION)]
         public Game ActiveGame { get; set; }
 
         [Browsable(false)]
@@ -137,13 +149,9 @@ namespace com.jds.AWLauncher.classes.config
 
         #endregion
 
-        #region Члены RegistryProperty
-
         public override string getKey()
         {
-            return KEY;
+            return KEY_NEW;
         }
-
-        #endregion
     }
 }

@@ -9,10 +9,6 @@
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/f:CTextBox.cs" caret="302" fromTop="10" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/d:clistview/f:ColumnCollection.cs" caret="3468" fromTop="15" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/d:clistview/f:CMergeSort.cs" caret="1471" fromTop="18" />
-      <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:gui/f:CListView.cs" caret="44901" fromTop="18" />
       <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:GameFilesForm.Designer.cs" caret="14281" fromTop="6" />
       <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:windows/d:windows7/f:Windows7Taskbar.cs" caret="151" fromTop="4" />
       <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:forms/f:ChooseForm.cs" caret="340" fromTop="3" />
@@ -27,50 +23,54 @@
       <File id="4BC86361-ACDC-4C85-82D6-8C655CA3388F/d:classes/d:files/f:Maker.cs" caret="471" fromTop="13" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:listloader/d:enums/f:ListFileType.cs" caret="0" fromTop="0" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:ListLoaderTask.cs" caret="0" fromTop="0" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/d:enums/f:WordEnum.cs" caret="1612" fromTop="39" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:propertyes/d:impl/f:AionProperty.cs" caret="1571" fromTop="18" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:registry/f:RegistryProperty.cs" caret="0" fromTop="0" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="1104" fromTop="11" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="271" fromTop="4" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:InvokeManager.cs" caret="619" fromTop="21" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="15415" fromTop="0" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="1911" fromTop="13" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUListLoaderTask.cs" caret="1643" fromTop="4" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="4904" fromTop="19" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUAnalyzerTask.cs" caret="8900" fromTop="15" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AbstractTask.cs" caret="0" fromTop="0" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:gui/f:RSSPanel.cs" caret="763" fromTop="24" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/d:enums/f:WordEnum.cs" caret="1634" fromTop="39" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.lang.cs" caret="3203" fromTop="34" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="10109" fromTop="294" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="15961" fromTop="13" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:registry/f:RegistryProperty.cs" caret="2537" fromTop="3" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:propertyes/f:GameProperty.cs" caret="0" fromTop="0" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:propertyes/d:impl/f:Lineage2Property.cs" caret="1293" fromTop="9" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:propertyes/d:impl/f:AionProperty.cs" caret="1768" fromTop="31" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="2240" fromTop="12" />
     </RecentFiles>
     <RecentEdits>
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="2551" fromTop="27" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="2727" fromTop="33" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="6892" fromTop="26" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="6896" fromTop="24" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="3343" fromTop="5" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="14364" fromTop="24" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:propertyes/d:impl/f:AionProperty.cs" caret="1571" fromTop="18" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="10572" fromTop="23" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="933" fromTop="19" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:InvokeManager.cs" caret="1663" fromTop="15" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:InvokeManager.cs" caret="619" fromTop="21" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="1100" fromTop="4" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="883" fromTop="2" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="5863" fromTop="18" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="18053" fromTop="18" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="9984" fromTop="18" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="4646" fromTop="9" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="15681" fromTop="22" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="3807" fromTop="7" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="3937" fromTop="11" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUListLoaderTask.cs" caret="5496" fromTop="14" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUListLoaderTask.cs" caret="1804" fromTop="9" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUAnalyzerTask.cs" caret="2379" fromTop="18" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUAnalyzerTask.cs" caret="3607" fromTop="7" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUAnalyzerTask.cs" caret="6842" fromTop="7" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUAnalyzerTask.cs" caret="8900" fromTop="15" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="4101" fromTop="9" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="4249" fromTop="12" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="4462" fromTop="23" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/d:gui/f:AssemblyPage.cs" caret="4904" fromTop="19" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:registry/f:RegistryProperty.cs" caret="2682" fromTop="8" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:registry/f:RegistryProperty.cs" caret="149" fromTop="2" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="2946" fromTop="11" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:registry/f:RegistryProperty.cs" caret="955" fromTop="11" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:registry/f:RegistryProperty.cs" caret="2439" fromTop="23" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:registry/f:RegistryProperty.cs" caret="1430" fromTop="2" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="3651" fromTop="32" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="4653" fromTop="8" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="17644" fromTop="25" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="4739" fromTop="4" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="5450" fromTop="26" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="15768" fromTop="14" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="16728" fromTop="32" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="4474" fromTop="38" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="4474" fromTop="16" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="4474" fromTop="14" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="4474" fromTop="12" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="4474" fromTop="16" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="4474" fromTop="27" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="4474" fromTop="23" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="4474" fromTop="24" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="827" fromTop="7" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:registry/f:RegistryProperty.cs" caret="325" fromTop="9" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:registry/f:RegistryProperty.cs" caret="2537" fromTop="3" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="775" fromTop="3" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="4557" fromTop="15" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:propertyes/d:impl/f:AionProperty.cs" caret="1801" fromTop="31" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:games/d:propertyes/d:impl/f:Lineage2Property.cs" caret="1293" fromTop="9" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="2473" fromTop="25" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="2240" fromTop="12" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -89,9 +89,9 @@
       <Item value="OutIsBusy" priority="1" />
       <Item value="IsBusy" priority="1" />
       <Item value="public" priority="89" />
-      <Item value="override" priority="18" />
-      <Item value="return" priority="59" />
-      <Item value="true" priority="29" />
+      <Item value="override" priority="19" />
+      <Item value="return" priority="60" />
+      <Item value="true" priority="31" />
       <Item value="SHA1CryptoServiceProvider" priority="0" />
       <Item value="task" priority="2" />
       <Item value="void" priority="33" />
@@ -105,19 +105,19 @@
       <Item value="string" priority="11" />
       <Item value="WordEnum`0" priority="37" />
       <Item value="wordEnum" priority="6" />
-      <Item value="switch" priority="4" />
-      <Item value="case" priority="8" />
-      <Item value="break" priority="11" />
-      <Item value="null" priority="30" />
-      <Item value="if" priority="109" />
+      <Item value="switch" priority="5" />
+      <Item value="case" priority="9" />
+      <Item value="break" priority="13" />
+      <Item value="null" priority="32" />
+      <Item value="if" priority="113" />
       <Item value="InvokeRequired" priority="2" />
-      <Item value="else" priority="12" />
+      <Item value="else" priority="13" />
       <Item value="UpdateStatusLabelUnsafe`0" priority="1" />
       <Item value="UpdateStatusLabel`0" priority="1" />
       <Item value="Language" priority="1" />
       <Item value="private" priority="56" />
       <Item value="static" priority="18" />
-      <Item value="LanguageHolder`0" priority="22" />
+      <Item value="LanguageHolder`0" priority="23" />
       <Item value="_instance" priority="14" />
       <Item value="new" priority="72" />
       <Item value="LanguageHolder" priority="0" />
@@ -125,24 +125,24 @@
       <Item value="Dictionary" priority="1" />
       <Item value="Dictionary&lt;Language,Dictionary&lt;WordEnum,string&gt;&gt;" priority="0" />
       <Item value="object" priority="22" />
-      <Item value="typeof" priority="14" />
+      <Item value="typeof" priority="16" />
       <Item value="Language`0" priority="12" />
       <Item value="foreach" priority="15" />
       <Item value="_words" priority="4" />
-      <Item value="String`0" priority="39" />
+      <Item value="String`0" priority="41" />
       <Item value="as" priority="5" />
       <Item value="v" priority="4" />
       <Item value="data" priority="2" />
       <Item value="var" priority="21" />
       <Item value="client" priority="2" />
-      <Item value="virtual" priority="0" />
-      <Item value="bool" priority="20" />
+      <Item value="virtual" priority="1" />
+      <Item value="bool" priority="22" />
       <Item value="_thread" priority="0" />
       <Item value="_property" priority="2" />
       <Item value="try" priority="5" />
-      <Item value="catch" priority="8" />
+      <Item value="catch" priority="9" />
       <Item value="WebException`0" priority="1" />
-      <Item value="false" priority="22" />
+      <Item value="false" priority="23" />
       <Item value="IsValid" priority="2" />
       <Item value="GoEnd`0" priority="9" />
       <Item value="MainForm`0" priority="22" />
@@ -170,14 +170,14 @@
       <Item value="UITypeEditorEditStyle`0" priority="0" />
       <Item value="has" priority="4" />
       <Item value="context" priority="1" />
-      <Item value="Console`0" priority="24" />
+      <Item value="Console`0" priority="26" />
       <Item value="CultureInfoConverter`0" priority="0" />
       <Item value="PropertyValueUIItem`0" priority="1" />
       <Item value="TypeConverter`0" priority="0" />
-      <Item value="is" priority="2" />
+      <Item value="is" priority="4" />
       <Item value="l" priority="3" />
       <Item value="hal" priority="0" />
-      <Item value="_forumLabel" priority="1" />
+      <Item value="_forumLabel" priority="3" />
       <Item value="_homePage" priority="2" />
       <Item value="NameTable`0" priority="0" />
       <Item value="node" priority="0" />
@@ -186,8 +186,8 @@
       <Item value="Name" priority="3" />
       <Item value="xmlTextReader" priority="0" />
       <Item value="xmlDocument" priority="0" />
-      <Item value="_faqLabel" priority="2" />
-      <Item value="_joinNowLabel" priority="1" />
+      <Item value="_faqLabel" priority="4" />
+      <Item value="_joinNowLabel" priority="2" />
       <Item value="_separator1" priority="2" />
       <Item value="Point" priority="3" />
       <Item value="const" priority="4" />
@@ -215,7 +215,7 @@
       <Item value="IsSelectionDisabled" priority="1" />
       <Item value="s" priority="0" />
       <Item value="GameProperty`0" priority="2" />
-      <Item value="CheckInstalled`0" priority="0" />
+      <Item value="CheckInstalled`0" priority="1" />
       <Item value="_queue" priority="1" />
       <Item value="_shutdown" priority="0" />
       <Item value="AnalyzerTask`0" priority="2" />
@@ -229,7 +229,7 @@
       <Item value="setOpacity`0" priority="0" />
       <Item value="f" priority="7" />
       <Item value="checkSum" priority="1" />
-      <Item value="Object`0" priority="6" />
+      <Item value="Object`0" priority="7" />
       <Item value="IsCanInvoke" priority="6" />
       <Item value="Close`0" priority="3" />
       <Item value="invoke" priority="1" />
@@ -241,7 +241,7 @@
       <Item value="_gameProperty" priority="1" />
       <Item value="Description" priority="0" />
       <Item value="obj" priority="6" />
-      <Item value="property" priority="3" />
+      <Item value="property" priority="5" />
       <Item value="Length" priority="6" />
       <Item value="b" priority="0" />
       <Item value="attribute" priority="0" />
@@ -424,7 +424,7 @@
       <Item value="Refresh`0" priority="0" />
       <Item value="TabPage`0" priority="0" />
       <Item value="_generalPage" priority="0" />
-      <Item value="Boolean`0" priority="1" />
+      <Item value="Boolean`0" priority="3" />
       <Item value="Visible" priority="7" />
       <Item value="Delegate`0" priority="6" />
       <Item value="LinkedList&lt;Delegate&gt;" priority="0" />
@@ -530,7 +530,7 @@
       <Item value="_language" priority="0" />
       <Item value="NONE" priority="0" />
       <Item value="label" priority="3" />
-      <Item value="EventHandler`0" priority="1" />
+      <Item value="EventHandler`0" priority="2" />
       <Item value="ProcessR`0" priority="0" />
       <Item value="threadStart" priority="2" />
       <Item value="Show`0" priority="0" />
@@ -630,6 +630,15 @@
       <Item value="FState" priority="0" />
       <Item value="FormState" priority="0" />
       <Item value="onlyVisible" priority="2" />
+      <Item value="default" priority="0" />
+      <Item value="registryPropertyKey" priority="3" />
+      <Item value="Int32`0" priority="2" />
+      <Item value="val" priority="1" />
+      <Item value="key" priority="6" />
+      <Item value="KEY_NEW" priority="2" />
+      <Item value="RegistryKey`0" priority="2" />
+      <Item value="KEY_OLD" priority="2" />
+      <Item value="delete" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@client.forms.MainForm">
       <Item value="Instance" priority="0" />
@@ -801,7 +810,7 @@
       <Item value="Instance" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Console">
-      <Item value="WriteLine`0" priority="34" />
+      <Item value="WriteLine`0" priority="36" />
       <Item value="Write`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Drawing.Design.UITypeEditorEditStyle">
@@ -809,7 +818,7 @@
       <Item value="DropDown" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Forms.Label">
-      <Item value="Text" priority="19" />
+      <Item value="Text" priority="23" />
       <Item value="Location" priority="8" />
       <Item value="Width" priority="1" />
       <Item value="Layout" priority="0" />
@@ -894,17 +903,18 @@
       <Item value="Property" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Object">
-      <Item value="GetType`0" priority="2" />
-      <Item value="ToString`0" priority="2" />
+      <Item value="GetType`0" priority="4" />
+      <Item value="ToString`0" priority="3" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Type">
       <Item value="GetProperties`0" priority="0" />
-      <Item value="Name" priority="5" />
+      <Item value="Name" priority="6" />
       <Item value="FullName" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Reflection.PropertyInfo">
       <Item value="Attributes" priority="1" />
-      <Item value="GetCustomAttributes`0" priority="0" />
+      <Item value="GetCustomAttributes`0" priority="1" />
+      <Item value="IsDefined`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.ComponentModel.DescriptionAttribute">
       <Item value="Description" priority="1" />
@@ -1477,6 +1487,29 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:com.jds.AWLauncher.classes.language.enums.WordEnum">
       <Item value="CompareTo`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.AWLauncher.classes.events.EventHandlers">
+      <Item value="Register`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.AWLauncher.classes.language.LanguageHolder">
+      <Item value="Language" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.AWLauncher.classes.language.Language">
+      <Item value="ShortName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:com.jds.AWLauncher.classes.registry.attributes.RegistryPropertyKey">
+      <Item value="Default" priority="1" />
+      <Item value="Root" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@com.jds.AWLauncher.classes.games.Game">
+      <Item value="AION" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.Win32.RegistryKey">
+      <Item value="OpenSubKey`0" priority="0" />
+      <Item value="DeleteSubKeyTree`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.Win32.Registry">
+      <Item value="CurrentUser" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

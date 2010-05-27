@@ -108,7 +108,7 @@ namespace com.jds.AWLauncher.classes.forms
             this._homePage.Name = "_homePage";
             this._homePage.Size = new System.Drawing.Size(69, 16);
             this._homePage.TabIndex = 13;
-            this._homePage.Tag = "http://aionwars.com";
+            this._homePage.Tag = "http://awars.net";
             this._homePage.Text = "Homepage";
             this._homePage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this._homePage.Visible = false;
@@ -140,7 +140,7 @@ namespace com.jds.AWLauncher.classes.forms
             this._faqLabel.Name = "_faqLabel";
             this._faqLabel.Size = new System.Drawing.Size(32, 16);
             this._faqLabel.TabIndex = 15;
-            this._faqLabel.Tag = "http://forum.aionwars.com/showthread.php?t=1173";
+            this._faqLabel.Tag = "http://awars.net/bystryy_start.html ";
             this._faqLabel.Text = "FAQ";
             this._faqLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this._faqLabel.Visible = false;
@@ -202,6 +202,7 @@ namespace com.jds.AWLauncher.classes.forms
             this._joinNowLabel.Name = "_joinNowLabel";
             this._joinNowLabel.Size = new System.Drawing.Size(59, 16);
             this._joinNowLabel.TabIndex = 19;
+            this._joinNowLabel.Tag = "http://awars.net/autoreg.html ";
             this._joinNowLabel.Text = "Join Now";
             this._joinNowLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._joinNowLabel.Visible = false;
@@ -334,7 +335,7 @@ namespace com.jds.AWLauncher.classes.forms
             this._closeBtn.TabStop = false;
             this._closeBtn.Visible = false;
             // 
-            // TabbedPane
+            // _tabbedPane
             // 
             this._tabbedPane.AutoSize = true;
             this._tabbedPane.BackColor = System.Drawing.Color.Transparent;

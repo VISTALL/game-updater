@@ -23,7 +23,7 @@ namespace com.jds.AWLauncher.classes.gui
         public RSSPanel()
         {
             InitializeComponent();
-            URL = "http://ru.aionwars.com/rss.xml";
+            URL = "http://awars.net/news/rss.xml ";
 
             //CheckForIllegalCrossThreadCalls = false;
         }

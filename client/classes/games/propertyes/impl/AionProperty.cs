@@ -57,7 +57,7 @@ namespace com.jds.AWLauncher.classes.games.propertyes.impl
 
         public override string getKey()
         {
-            return "Software\\J Develop Station\\GUpdater\\Aion";
+            return "Software\\AWars.net\\AWLauncher\\Aion";
         }
     }
 }

@@ -1,56 +1,60 @@
 ﻿using System;
+using System.Reflection;
 using com.jds.AWLauncher.classes.language.properties;
 using com.jds.AWLauncher.classes.registry.attributes;
-using log4net;
 using Microsoft.Win32;
 
 namespace com.jds.AWLauncher.classes.registry
 {
     public abstract class RegistryProperty : LanguageCustomTypeDescription
     {
-        private static readonly ILog _log = LogManager.GetLogger(typeof (RegistryProperty));
-
         public void select()
         {
             var key = Registry.CurrentUser;
             key = key.OpenSubKey(getKey());
 
-            if (key != null)
-            {
-                var pps = GetType().GetProperties();
-                foreach (var property in pps)
-                {
-                    foreach (Attribute a in property.GetCustomAttributes(true))
-                    {
-                        try
-                        {
-                            if (a is RegistryPropertyKey)
-                            {
-                                var attribute = a as RegistryPropertyKey;
-                                var val = key.GetValue(attribute.Root, attribute.Default == null ? null : attribute.Default.ToString());
+            PropertyInfo[] pps = GetType().GetProperties();
 
-                                if (attribute.Default is Boolean)
-                                {
-                                    property.SetValue(this, Boolean.Parse((String) val), null);
-                                }
-                                else if (attribute.Default is Enum)
-                                {
-                                    property.SetValue(this, Enum.Parse(attribute.Default.GetType(), (String) val), null);
-                                }
-                                else if (attribute.Default is Int32)
-                                {
-                                    property.SetValue(this, Int32.Parse((String) val), null);
-                                }
-                                else
-                                {
-                                    property.SetValue(this, val, null);
-                                }
-                            }
-                        }
-                        catch (Exception e)
+            foreach (PropertyInfo property in pps)
+            {
+                if (property.IsDefined(typeof (RegistryPropertyKey), true))
+                {
+                    RegistryPropertyKey registryPropertyKey =
+                        (RegistryPropertyKey) property.GetCustomAttributes(typeof (RegistryPropertyKey), true)[0];
+
+                    String val = registryPropertyKey.Default == null ? null : registryPropertyKey.Default.ToString();
+                    
+                    if(key != null)
+                    {
+                        val = (String)key.GetValue(registryPropertyKey.Root,
+                                              registryPropertyKey.Default == null
+                                                  ? null
+                                                  : registryPropertyKey.Default.ToString());  
+                    }
+                   
+                    if (val != null)
+                    {
+                        if (registryPropertyKey.Default is Boolean)
                         {
-                            _log.Info("Exception: " + e, e);
+                            property.SetValue(this, Boolean.Parse(val), null);
                         }
+                        else if (registryPropertyKey.Default is Enum)
+                        {
+                            property.SetValue(this, Enum.Parse(registryPropertyKey.Default.GetType(), val),
+                                              null);
+                        }
+                        else if (registryPropertyKey.Default is Int32)
+                        {
+                            property.SetValue(this, Int32.Parse(val), null);
+                        }
+                        else
+                        {
+                            property.SetValue(this, val, null);
+                        }
+                    }
+                    else
+                    {
+                        property.SetValue(this, null, null);   
                     }
                 }
             }
@@ -61,22 +65,18 @@ namespace com.jds.AWLauncher.classes.registry
             var key = Registry.CurrentUser;
             key = key.CreateSubKey(getKey());
 
-            var pps = GetType().GetProperties();
-            foreach (var property in pps)
+            PropertyInfo[] pps = GetType().GetProperties();
+           
+            foreach (PropertyInfo property in pps)
             {
-                foreach (Attribute a in property.GetCustomAttributes(true))
+                if (property.IsDefined(typeof(RegistryPropertyKey), true))
                 {
-                    try
+                    RegistryPropertyKey registryPropertyKey =
+                        (RegistryPropertyKey) property.GetCustomAttributes(typeof (RegistryPropertyKey), true)[0];
+
+                    if (key != null)
                     {
-                        if (a is RegistryPropertyKey)
-                        {
-                            var attribute = a as RegistryPropertyKey;
-                            if (key != null) key.SetValue(attribute.Root, property.GetValue(this, null).ToString());
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        _log.Info("Exception: " + e, e);
+                        key.SetValue(registryPropertyKey.Root, property.GetValue(this, null).ToString());
                     }
                 }
             }

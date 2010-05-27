@@ -60,6 +60,18 @@ namespace com.jds.AWLauncher.classes.forms
             _joinNowLabel.Location = new Point(sepDiff + _separator3.Location.X + DIFF, Y);
             _joinNowLabel.Text = LanguageHolder.Instance()[WordEnum.JOIN_NOW];
 
+            switch (LanguageHolder.Instance().Language.ShortName)
+            {
+                case "en":
+                    _faqLabel.Tag = "http://forum.aionwars.com/forumdisplay.php?f=45 ";
+                    _forumLabel.Tag = "http://forum.aionwars.com/forumdisplay.php?f=16 ";
+                    break;
+                default:
+                    _faqLabel.Tag = "http://awars.net/bystryy_start.html ";
+                    _forumLabel.Tag = "http://forum.aionwars.com ";
+                    break;
+            }
+
             SetVersionType(Version, VersionType);
         }
     }

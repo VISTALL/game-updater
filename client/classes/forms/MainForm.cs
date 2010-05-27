@@ -101,8 +101,9 @@ namespace com.jds.AWLauncher.classes.forms
             EventHandlers.Register(_versionInfo);
             EventHandlers.Register(_faqLabel);
             EventHandlers.Register(_forumLabel);
+            EventHandlers.Register(_joinNowLabel);
 
-            //добавляем все игры в вкладки
+            //добавляем все игры в вкладки);
             foreach (object enu in Enum.GetValues(typeof (Game)))
             {
                 var game = (Game) enu;
@@ -151,10 +152,10 @@ namespace com.jds.AWLauncher.classes.forms
 
             UpdateStatusLabel("");
 
+            ShowAllItems(false, false, true);
+
             CheckInstalled(true);
 
-            ShowAllItems(false, false, true);
-           
             if (RConfig.Instance.CheckVersionOnStart)
             {
                 TaskManager.Instance.AddTask(AssemblyPage.Instance().ListLoader);
@@ -526,6 +527,7 @@ namespace com.jds.AWLauncher.classes.forms
             else
             {
                 FormState = type;
+                CheckInstalled(true);
             }
         }
 
@@ -552,6 +554,7 @@ namespace com.jds.AWLauncher.classes.forms
 
             _tabbedPane.IsSelectionDisabled = (s != MainFormState.NONE);
             FormState = s;
+            CheckInstalled(true);
         }
 
         #endregion
@@ -589,8 +592,8 @@ namespace com.jds.AWLauncher.classes.forms
 
             if (btm)
             {
-                _startButton.Enable = p.Installed && p.isEnable();
-                _fullCheck.Enable = p.Installed && p.isEnable();
+                _startButton.Enable = can;
+                _fullCheck.Enable = can;
             }
 
             if (can)

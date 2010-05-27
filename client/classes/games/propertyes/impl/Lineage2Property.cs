@@ -45,7 +45,7 @@ namespace com.jds.AWLauncher.classes.games.propertyes.impl
 
         public override string getKey()
         {
-            return "Software\\J Develop Station\\GUpdater\\Lineage 2";
+            return "Software\\AWars.net\\AWLauncher\\Lineage 2";
         }
     }
 }

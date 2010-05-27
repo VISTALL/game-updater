@@ -30,7 +30,7 @@ namespace com.jds.AWLauncher.classes.games.gui
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.rssPanel1 = new RSSPanel();
+            this.rssPanel1 = new com.jds.AWLauncher.classes.gui.RSSPanel();
             this.StatusRSS = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -41,7 +41,7 @@ namespace com.jds.AWLauncher.classes.games.gui
             this.rssPanel1.Name = "rssPanel1";
             this.rssPanel1.Size = new System.Drawing.Size(353, 167);
             this.rssPanel1.TabIndex = 6;
-            this.rssPanel1.URL = "http://ru.aionwars.com/rss.xml";
+            this.rssPanel1.URL = "http://awars.net/news/rss.xml ";
             // 
             // StatusRSS
             // 
