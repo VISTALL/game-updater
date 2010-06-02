@@ -87,6 +87,9 @@ namespace com.jds.AWLauncher.classes.forms
             ChangeLanguage(true);
 
             Opacity = 0F;
+            _startButton.Enable = false;
+            _fullCheck.Enable = false;
+
             SetVersionTypeUnsafe("0.0.0.0", VersionType.UNKNOWN);
 
             Shown += MainForm_Shown;
@@ -527,7 +530,6 @@ namespace com.jds.AWLauncher.classes.forms
             else
             {
                 FormState = type;
-                CheckInstalled(true);
             }
         }
 
@@ -554,7 +556,6 @@ namespace com.jds.AWLauncher.classes.forms
 
             _tabbedPane.IsSelectionDisabled = (s != MainFormState.NONE);
             FormState = s;
-            CheckInstalled(true);
         }
 
         #endregion

@@ -26,7 +26,7 @@ namespace com.jds.AWLauncher.classes.invoke
                 {
                     if (_form.Visible && !_form.IsDisposed && !_form.Disposing)
                     {
-                        _form.Invoke(_delegate, _objects);
+                        try{_form.Invoke(_delegate, _objects);}catch{}
                         return true;
                     }
 

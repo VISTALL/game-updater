@@ -18,6 +18,7 @@
     <TargetZone>LocalIntranet</TargetZone>
     <SignManifests>false</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>iconpsc.ico</ApplicationIcon>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -32,7 +33,7 @@
     <ApplicationVersion>1.0.0.2</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <ApplicationIcon>iconpsc.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -188,11 +189,6 @@
       <DependentUpon>PropertyForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\log4net\Log4 .NET.csproj">
@@ -238,11 +234,6 @@
     <Compile Include="classes\windows\windows7\ThumbnailProgressState.cs" />
     <Compile Include="classes\windows\windows7\Windows7Taskbar.cs" />
     <Compile Include="classes\windows\WindowStyles.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
@@ -297,6 +288,7 @@
     <Compile Include="classes\zip\ZipHelperStream.cs" />
     <Compile Include="classes\zip\ZipInputStream.cs" />
     <Compile Include="classes\zip\ZipOutputStream.cs" />
+    <None Include="app.manifest" />
     <None Include="Resources\%24this.BackgroundImage.jpg" />
   </ItemGroup>
   <ItemGroup>

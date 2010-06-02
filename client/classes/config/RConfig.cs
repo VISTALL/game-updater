@@ -74,7 +74,8 @@ namespace com.jds.AWLauncher.classes.config
             try
             {
                 RegistryKey key = Registry.CurrentUser;
-                key.DeleteSubKeyTree("Software\\J Develop Station\\GUpdater");
+                if (key.OpenSubKey("Software\\J Develop Station\\GUpdater") != null)
+                    key.DeleteSubKeyTree("Software\\J Develop Station\\GUpdater");
             }
             catch
             {
