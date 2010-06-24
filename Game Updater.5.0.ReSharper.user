@@ -20,7 +20,6 @@
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:listloader/d:enums/f:ListFileType.cs" caret="0" fromTop="0" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:ListLoaderTask.cs" caret="0" fromTop="0" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:InvokeManager.cs" caret="619" fromTop="21" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="1911" fromTop="13" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AbstractTask.cs" caret="0" fromTop="0" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:gui/f:RSSPanel.cs" caret="763" fromTop="24" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:language/d:enums/f:WordEnum.cs" caret="1634" fromTop="39" />
@@ -35,14 +34,13 @@
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:invoke/f:DelegateCall.cs" caret="351" fromTop="6" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="3305" fromTop="0" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/f:Program.cs" caret="81" fromTop="3" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUAnalyzerTask.cs" caret="0" fromTop="0" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:version_control/f:AssemblyInfo.cs" caret="219" fromTop="8" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:Properties/f:AssemblyInfo.cs" caret="0" fromTop="0" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/f:app.manifest" caret="477" fromTop="5" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/f:app.manifest" caret="1128" fromTop="16" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:GUAnalyzerTask.cs" caret="0" fromTop="0" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="2280" fromTop="14" />
     </RecentFiles>
     <RecentEdits>
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:registry/f:RegistryProperty.cs" caret="2439" fromTop="23" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:registry/f:RegistryProperty.cs" caret="1430" fromTop="2" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:config/f:RConfig.cs" caret="3741" fromTop="32" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="4737" fromTop="8" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="17654" fromTop="25" />
@@ -69,8 +67,10 @@
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="16738" fromTop="30" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="15813" fromTop="3" />
       <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:forms/f:MainForm.cs" caret="2541" fromTop="13" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/f:app.manifest" caret="477" fromTop="5" />
-      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/f:app.manifest" caret="477" fromTop="5" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/f:app.manifest" caret="1128" fromTop="16" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="2566" fromTop="19" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="2282" fromTop="12" />
+      <File id="AC55F2C3-A13E-447F-887B-7114C0F956A8/d:classes/d:task_manager/d:tasks/f:AnalyzerTask.cs" caret="2280" fromTop="14" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>

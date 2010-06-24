@@ -64,16 +64,16 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
 
             Status = Status.DOWNLOAD;
 
+            foreach (ListFile deleteFile in CurrentProperty.ListLoader.Items[ListFileType.DELETE])
+            {
+                _temp.AddLast(deleteFile);
+            }
+
             if (ListType == ListFileType.NORMAL)
             {
                 foreach (ListFile listFile in CurrentProperty.ListLoader.Items[ListFileType.CRITICAL])
                 {
                     _temp.AddLast(listFile);
-                }
-
-                foreach (ListFile deleteFile in CurrentProperty.ListLoader.Items[ListFileType.DELETE])
-                {
-                    _temp.AddLast(deleteFile);
                 }
             }
 
