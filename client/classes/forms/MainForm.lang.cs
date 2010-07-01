@@ -60,19 +60,31 @@ namespace com.jds.AWLauncher.classes.forms
             _joinNowLabel.Location = new Point(sepDiff + _separator3.Location.X + DIFF, Y);
             _joinNowLabel.Text = LanguageHolder.Instance()[WordEnum.JOIN_NOW];
 
+            _separator4.Location = new Point(_joinNowLabel.Width + _joinNowLabel.Location.X + DIFF - sepDiff, Y);
+
+            _rulesLabel.Location = new Point(sepDiff + _separator4.Location.X + DIFF, Y);
+            _rulesLabel.Text = LanguageHolder.Instance()[WordEnum.RULES];
+
             switch (LanguageHolder.Instance().Language.ShortName)
             {
                 case "en":
-                    _faqLabel.Tag = "http://forum.aionwars.com/forumdisplay.php?f=45 ";
-                    _forumLabel.Tag = "http://forum.aionwars.com/forumdisplay.php?f=16 ";
+                    _homePage.Tag = "http://aionwars.com";
+                    _faqLabel.Tag = "http://aionwars.com/how_connect_to_server_aionwars.html";
+                    _forumLabel.Tag = "http://forum.aionwars.com/forumdisplay.php?f=16";
+                    _joinNowLabel.Tag = "http://aionwars.com/autoregen.html";
+                    _rulesLabel.Tag = "http://aionwars.com/rules_of_aion_wars.html";
                     break;
                 default:
-                    _faqLabel.Tag = "http://awars.net/bystryy_start.html ";
-                    _forumLabel.Tag = "http://forum.aionwars.com ";
+                    _homePage.Tag = "http://awars.net";
+                    _faqLabel.Tag = "http://awars.net/bystryy_start.html";
+                    _forumLabel.Tag = "http://forum.aionwars.com";
+                    _joinNowLabel.Tag = "http://awars.net/autoreg.html";
+                    _rulesLabel.Tag = "http://awars.net/pravila_servera.html";
                     break;
             }
 
             SetVersionType(Version, VersionType);
+            UpdateAllRSS();
         }
     }
 }

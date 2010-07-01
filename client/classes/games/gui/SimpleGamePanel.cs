@@ -16,13 +16,13 @@ namespace com.jds.AWLauncher.classes.games.gui
             _property.Panel = this;
 
             InitializeComponent();
-            InitializeLanguage();
         }
 
         #region IGamePanel Members
 
         public void refreshNews()
         {
+            InitializeLanguage();
             rssPanel1.RefreshNews(StatusRSS);
         }
 

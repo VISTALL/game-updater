@@ -21,6 +21,7 @@
         TITLE,
         FAQ,
         JOIN_NOW,
+        RULES,
 
         //settings
         LANGUAGE,

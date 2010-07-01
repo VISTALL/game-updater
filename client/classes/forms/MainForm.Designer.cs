@@ -51,6 +51,8 @@ namespace com.jds.AWLauncher.classes.forms
             this._totalProgress = new com.jds.AWLauncher.classes.gui.ColorProgressBar();
             this._closeBtn = new com.jds.AWLauncher.classes.gui.JImageButton();
             this._tabbedPane = new com.jds.AWLauncher.classes.gui.JTabbedPane();
+            this._separator4 = new System.Windows.Forms.Label();
+            this._rulesLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._minimizedButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._settingsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._fullCheck)).BeginInit();
@@ -347,6 +349,37 @@ namespace com.jds.AWLauncher.classes.forms
             this._tabbedPane.TabIndex = 3;
             this._tabbedPane.Visible = false;
             // 
+            // _separator4
+            // 
+            this._separator4.AutoSize = true;
+            this._separator4.BackColor = System.Drawing.Color.Transparent;
+            this._separator4.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this._separator4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(137)))), ((int)(((byte)(113)))));
+            this._separator4.Location = new System.Drawing.Point(251, 7);
+            this._separator4.Margin = new System.Windows.Forms.Padding(0);
+            this._separator4.Name = "_separator4";
+            this._separator4.Size = new System.Drawing.Size(14, 16);
+            this._separator4.TabIndex = 26;
+            this._separator4.Text = "|";
+            this._separator4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._separator4.Visible = false;
+            // 
+            // _rulesLabel
+            // 
+            this._rulesLabel.AutoSize = true;
+            this._rulesLabel.BackColor = System.Drawing.Color.Transparent;
+            this._rulesLabel.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this._rulesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(137)))), ((int)(((byte)(113)))));
+            this._rulesLabel.Location = new System.Drawing.Point(265, 7);
+            this._rulesLabel.Margin = new System.Windows.Forms.Padding(0);
+            this._rulesLabel.Name = "_rulesLabel";
+            this._rulesLabel.Size = new System.Drawing.Size(39, 16);
+            this._rulesLabel.TabIndex = 27;
+            this._rulesLabel.Tag = "http://awars.net/pravila_servera.html";
+            this._rulesLabel.Text = "Rules";
+            this._rulesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this._rulesLabel.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +387,8 @@ namespace com.jds.AWLauncher.classes.forms
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(600, 578);
+            this.Controls.Add(this._rulesLabel);
+            this.Controls.Add(this._separator4);
             this.Controls.Add(this._versionInfo);
             this.Controls.Add(this._separator3);
             this.Controls.Add(this._separator2);
@@ -415,6 +450,8 @@ namespace com.jds.AWLauncher.classes.forms
         private System.Windows.Forms.Label _statusLabel;
         private JImageButton _minimizedButton;
         private System.Windows.Forms.Label _versionInfo;
+        private System.Windows.Forms.Label _separator4;
+        private System.Windows.Forms.Label _rulesLabel;
         
 	}
 }

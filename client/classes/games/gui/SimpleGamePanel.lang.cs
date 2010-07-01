@@ -1,20 +1,20 @@
-﻿namespace com.jds.AWLauncher.classes.games.gui
+﻿using com.jds.AWLauncher.classes.language;
+
+namespace com.jds.AWLauncher.classes.games.gui
 {
     public partial class SimpleGamePanel
     {
         public void InitializeLanguage()
         {
-            /* Language l = getGame() == Game.AION ? Language.English : Language.Russian;
-
-            switch (l)
+            switch (LanguageHolder.Instance().Language.ShortName)
             {
-                case Language.Russian:
-                    rssPanel1.URL = "http://ru.aionwars.com/rss.xml";
+                case "en":
+                    rssPanel1.URL = "http://aionwars.com/news-and-updates/rss.xml";
                     break;
-                case Language.English:
-                    rssPanel1.URL = "http://en.aionwars.com/rss.xml";
+                default:
+                    rssPanel1.URL = "http://awars.net/news/rss.xml";
                     break;
-            }*/
+            }
         }
     }
 }

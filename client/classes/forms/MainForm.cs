@@ -84,8 +84,10 @@ namespace com.jds.AWLauncher.classes.forms
         public MainForm()
         {
             InitializeComponent();
-            ChangeLanguage(true);
+            SetStyle(ControlStyles.FixedWidth, true);
 
+            ChangeLanguage(true);
+                                 
             Opacity = 0F;
             _startButton.Enable = false;
             _fullCheck.Enable = false;
@@ -105,6 +107,7 @@ namespace com.jds.AWLauncher.classes.forms
             EventHandlers.Register(_faqLabel);
             EventHandlers.Register(_forumLabel);
             EventHandlers.Register(_joinNowLabel);
+            EventHandlers.Register(_rulesLabel);
 
             //добавляем все игры в вкладки);
             foreach (object enu in Enum.GetValues(typeof (Game)))
@@ -231,9 +234,11 @@ namespace com.jds.AWLauncher.classes.forms
                 _settingsButton.Visible = visible;
                 _minimizedButton.Visible = visible;
                 _closeBtn.Visible = visible;
+                _rulesLabel.Visible = visible;
                 _separator1.Visible = visible;
                 _separator2.Visible = visible;
                 _separator3.Visible = visible;
+                _separator4.Visible = visible;
             }
 
             if (trans)
@@ -622,6 +627,5 @@ namespace com.jds.AWLauncher.classes.forms
             }
         }
         #endregion
-
     }
 }

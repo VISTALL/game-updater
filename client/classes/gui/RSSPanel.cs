@@ -23,7 +23,7 @@ namespace com.jds.AWLauncher.classes.gui
         public RSSPanel()
         {
             InitializeComponent();
-            URL = "http://awars.net/news/rss.xml ";
+            URL = "http://awars.net/news/rss.xml";
 
             //CheckForIllegalCrossThreadCalls = false;
         }
@@ -37,6 +37,17 @@ namespace com.jds.AWLauncher.classes.gui
 
         public void RefreshNews(Label l)
         {
+            foreach(RSSItem item in _items)
+            {
+                Controls.Remove(item); 
+            }
+
+            _items.Clear();
+
+            Console.WriteLine(URL);
+
+            Refresh();
+
             l.Text = LanguageHolder.Instance()[WordEnum.PLEASE_WAIT];
             l.ForeColor = Color.FromArgb(157, 138, 113);
             l.Visible = true;
@@ -107,7 +118,7 @@ namespace com.jds.AWLauncher.classes.gui
                     break;
 
                 // находим итем новости
-                if (nodeChannel.ChildNodes[i].Name == "item")
+                if (nodeChannel.ChildNodes[i] != null && nodeChannel.ChildNodes[i].Name == "item")
                 {
                     nodeItem = nodeChannel.ChildNodes[i];
 
@@ -131,9 +142,11 @@ namespace com.jds.AWLauncher.classes.gui
             {
                 i.Visible = true;
             }
-
+           
             l.Text = LanguageHolder.Instance()[WordEnum.PLEASE_WAIT];
             l.Visible = false;
+
+            Invalidate();
         }
 
         private int getNextY(int l)

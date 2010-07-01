@@ -37,7 +37,7 @@ namespace com.jds.AWLauncher.classes.games.propertyes.impl
 
             var info = new ProcessStartInfo(path)
                            {
-                               Arguments = "сс:2 -ip:213.186.118.75 -port:2109 -ng -noweb"
+                               Arguments = "сс:2 -ip:213.186.118.75 -port:2109 -ng -noauthgg -ls -charnamemenu -noweb"
                            };
 
             return info;
