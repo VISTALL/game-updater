@@ -177,7 +177,7 @@ namespace com.jds.AWLauncher.classes.zip
 		public ZipEntry GetNextEntry()
 		{
 			if (crc == null) {
-				throw new InvalidOperationException("Closed.");
+                return null;
 			}
 			
 			if (entry != null) {
@@ -202,8 +202,10 @@ namespace com.jds.AWLauncher.classes.zip
 				header = inputBuffer.ReadLeInt();
 			}
 			
-			if (header != ZipConstants.LocalHeaderSignature) {
-				throw new ZipException("Wrong Local header signature: 0x" + String.Format("{0:X}", header));
+			if (header != ZipConstants.LocalHeaderSignature) 
+            {
+				//throw new ZipException("Wrong Local header signature: 0x" + String.Format("{0:X}", header));
+                return null;
 			}
 			
 			short versionRequiredToExtract = (short)inputBuffer.ReadLeShort();
@@ -212,7 +214,7 @@ namespace com.jds.AWLauncher.classes.zip
 			method         = inputBuffer.ReadLeShort();
 			uint dostime   = (uint)inputBuffer.ReadLeInt();
 			int crc2       = inputBuffer.ReadLeInt();
-			csize          = inputBuffer.ReadLeInt();
+		    csize = inputBuffer.ReadLeInt();
 			size           = inputBuffer.ReadLeInt();
 			int nameLen    = inputBuffer.ReadLeShort();
 			int extraLen   = inputBuffer.ReadLeShort();
@@ -277,7 +279,8 @@ namespace com.jds.AWLauncher.classes.zip
 			}
 			
 			if (method == (int)CompressionMethod.Stored && (!isCrypted && csize != size || (isCrypted && csize - ZipConstants.CryptoHeaderSize != size))) {
-				throw new ZipException("Stored, but compressed != uncompressed");
+				//throw new ZipException("Stored, but compressed != uncompressed");
+                return null;
 			}
 
 			// Determine how to handle reading of data if this is attempted.

@@ -8,26 +8,8 @@ namespace com.jds.AWLauncher.classes.utils
     {
         public static void Start(String a)
         {
-            ThreadStart threadStart = delegate
-                                          {
-                                              try { Process.Start(a); }
-                                              catch
-                                              {
-                                              }
-                                          };
+            ThreadStart threadStart = () => Process.Start(a);
             
-            Start(threadStart);
-        }
-
-        public static void Start(ProcessStartInfo a)
-        {
-            ThreadStart threadStart = delegate
-            {
-                try{Process.Start(a);}
-                catch
-                {
-                }
-            };
             Start(threadStart);
         }
 

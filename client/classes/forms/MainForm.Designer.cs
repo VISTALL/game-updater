@@ -43,21 +43,16 @@ namespace com.jds.AWLauncher.classes.forms
             this._joinNowLabel = new System.Windows.Forms.Label();
             this._statusLabel = new System.Windows.Forms.Label();
             this._versionInfo = new System.Windows.Forms.Label();
-            this._minimizedButton = new com.jds.AWLauncher.classes.gui.JImageButton();
-            this._settingsButton = new com.jds.AWLauncher.classes.gui.JImageButton();
-            this._fullCheck = new com.jds.AWLauncher.classes.gui.JImageButton();
-            this._startButton = new com.jds.AWLauncher.classes.gui.JImageButton();
+            this._minimizedButton = new com.jds.AWLauncher.classes.gui.VButton();
+            this._settingsButton = new com.jds.AWLauncher.classes.gui.VButton();
+            this._fullCheck = new com.jds.AWLauncher.classes.gui.VButton();
+            this._startButton = new com.jds.AWLauncher.classes.gui.VButton();
             this._fileProgressBar = new com.jds.AWLauncher.classes.gui.ColorProgressBar();
             this._totalProgress = new com.jds.AWLauncher.classes.gui.ColorProgressBar();
-            this._closeBtn = new com.jds.AWLauncher.classes.gui.JImageButton();
+            this._closeBtn = new com.jds.AWLauncher.classes.gui.VButton();
             this._tabbedPane = new com.jds.AWLauncher.classes.gui.JTabbedPane();
             this._separator4 = new System.Windows.Forms.Label();
             this._rulesLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this._minimizedButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._settingsButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._fullCheck)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._startButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._closeBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // _infoStart
@@ -238,7 +233,7 @@ namespace com.jds.AWLauncher.classes.forms
             // _minimizedButton
             // 
             this._minimizedButton.BackColor = System.Drawing.Color.Transparent;
-            this._minimizedButton.Enable = true;
+            this._minimizedButton.Enabled = true;
             this._minimizedButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this._minimizedButton.Info = null;
             this._minimizedButton.Location = new System.Drawing.Point(550, 8);
@@ -253,7 +248,7 @@ namespace com.jds.AWLauncher.classes.forms
             // _settingsButton
             // 
             this._settingsButton.BackColor = System.Drawing.Color.Transparent;
-            this._settingsButton.Enable = true;
+            this._settingsButton.Enabled = true;
             this._settingsButton.Info = null;
             this._settingsButton.Location = new System.Drawing.Point(468, 5);
             this._settingsButton.Margin = new System.Windows.Forms.Padding(0);
@@ -267,7 +262,7 @@ namespace com.jds.AWLauncher.classes.forms
             // _fullCheck
             // 
             this._fullCheck.BackColor = System.Drawing.Color.Transparent;
-            this._fullCheck.Enable = true;
+            this._fullCheck.Enabled = true;
             this._fullCheck.Info = null;
             this._fullCheck.Location = new System.Drawing.Point(470, 496);
             this._fullCheck.Margin = new System.Windows.Forms.Padding(0);
@@ -281,7 +276,7 @@ namespace com.jds.AWLauncher.classes.forms
             // _startButton
             // 
             this._startButton.BackColor = System.Drawing.Color.Transparent;
-            this._startButton.Enable = true;
+            this._startButton.Enabled = true;
             this._startButton.Info = null;
             this._startButton.Location = new System.Drawing.Point(468, 459);
             this._startButton.Margin = new System.Windows.Forms.Padding(0);
@@ -326,7 +321,7 @@ namespace com.jds.AWLauncher.classes.forms
             // _closeBtn
             // 
             this._closeBtn.BackColor = System.Drawing.Color.Transparent;
-            this._closeBtn.Enable = true;
+            this._closeBtn.Enabled = true;
             this._closeBtn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this._closeBtn.Info = null;
             this._closeBtn.Location = new System.Drawing.Point(570, 8);
@@ -415,14 +410,9 @@ namespace com.jds.AWLauncher.classes.forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AWLauncher";
             this.TransparencyKey = System.Drawing.Color.Lime;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_Closing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.SizeChanged += new System.EventHandler(this.Form_SizeChanged);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_Closing);
-            ((System.ComponentModel.ISupportInitialize)(this._minimizedButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._settingsButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._fullCheck)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._startButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._closeBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,14 +421,14 @@ namespace com.jds.AWLauncher.classes.forms
 		#endregion
 
         public JTabbedPane _tabbedPane;
-        private JImageButton _closeBtn;
+        private VButton _closeBtn;
         private ColorProgressBar _totalProgress;
         private ColorProgressBar _fileProgressBar;
-        private JImageButton _startButton;
+        private VButton _startButton;
         private System.Windows.Forms.Label _infoStart;
         private System.Windows.Forms.Label _selectGameLabel;
         private System.Windows.Forms.Label _lastNews;
-        private JImageButton _fullCheck;
+        private VButton _fullCheck;
         private System.Windows.Forms.Label _homePage;
         private System.Windows.Forms.Label _separator1;
         private System.Windows.Forms.Label _faqLabel;
@@ -446,9 +436,9 @@ namespace com.jds.AWLauncher.classes.forms
         private System.Windows.Forms.Label _forumLabel;
         private System.Windows.Forms.Label _separator3;
         private System.Windows.Forms.Label _joinNowLabel;
-        private JImageButton _settingsButton;
+        private VButton _settingsButton;
         private System.Windows.Forms.Label _statusLabel;
-        private JImageButton _minimizedButton;
+        private VButton _minimizedButton;
         private System.Windows.Forms.Label _versionInfo;
         private System.Windows.Forms.Label _separator4;
         private System.Windows.Forms.Label _rulesLabel;

@@ -13,11 +13,11 @@
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
 		protected override void Dispose(bool disposing)
 		{
-		//	if (disposing && (components != null))
-	//		{
-//				components.Dispose();
-//			}
-//			base.Dispose(disposing);
+            if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
 		}
 
 		#region Windows Form Designer generated code
@@ -68,6 +68,7 @@
             this.Name = "PropertyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Settings";
+            this.TransparencyKey = System.Drawing.Color.Lime;
             this.Load += new System.EventHandler(this.PropertyForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PropertyForm_Closing);
             this.ResumeLayout(false);

@@ -20,7 +20,7 @@ namespace com.jds.AWLauncher.classes.games.propertyes.impl
                 return null;
             }
 
-            string path = Path + "\\system_my\\l2.exe";
+            string path = Path + "\\system\\l2.exe";
 
             if (!File.Exists(path))
             {
@@ -28,14 +28,14 @@ namespace com.jds.AWLauncher.classes.games.propertyes.impl
                 return null;
             }
 
-            var info = new ProcessStartInfo(path);
+            ProcessStartInfo info = new ProcessStartInfo(path);
 
             return info;
         }
 
         public override string listURL()
         {
-            return "http://localhost";
+            return "http://localhost/l2";
         }
 
         public override bool isEnable()

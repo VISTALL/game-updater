@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Net;
@@ -10,9 +9,21 @@ using com.jds.AWLauncher.classes.language.enums;
 
 namespace com.jds.AWLauncher.classes.gui
 {
+    public struct RSSItem2
+    {
+        internal String date;
+        internal String news;
+        internal String link;
+        internal int x;
+        internal int y;
+        internal int width;
+        internal int height;
+    }
+
     public class RSSPanel : UserControl
     {
-        private readonly List<RSSItem> _items = new List<RSSItem>();
+        private readonly RSSItem2?[] _items = new RSSItem2?[8];
+
         private WebClient client;
         private XmlNode nodeChannel;
         private XmlNode nodeItem;
@@ -22,10 +33,16 @@ namespace com.jds.AWLauncher.classes.gui
 
         public RSSPanel()
         {
-            InitializeComponent();
+            SetStyle(ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+
             URL = "http://awars.net/news/rss.xml";
 
-            //CheckForIllegalCrossThreadCalls = false;
+            MouseMove += RSSPanel_MouseMove;
+        }
+
+        void RSSPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            
         }
 
         //[Browsable(false)]
@@ -33,20 +50,14 @@ namespace com.jds.AWLauncher.classes.gui
 
         #region RefreshNews
 
-        private const int SIZE = 8;
-
         public void RefreshNews(Label l)
         {
-            foreach(RSSItem item in _items)
+            for (int i = 0; i < _items.Length; i ++ )
             {
-                Controls.Remove(item); 
+                _items[i] = null;
             }
 
-            _items.Clear();
-
-            Console.WriteLine(URL);
-
-            Refresh();
+           Invalidate();
 
             l.Text = LanguageHolder.Instance()[WordEnum.PLEASE_WAIT];
             l.ForeColor = Color.FromArgb(157, 138, 113);
@@ -111,10 +122,12 @@ namespace com.jds.AWLauncher.classes.gui
                 }
             }
 
+            int readed = 0;
+
             // листаем
             for (int i = 1; i <= nodeChannel.ChildNodes.Count; i++)
             {
-                if (_items.Count == SIZE) //list size
+                if (readed == _items.Length) //list size
                     break;
 
                 // находим итем новости
@@ -122,25 +135,15 @@ namespace com.jds.AWLauncher.classes.gui
                 {
                     nodeItem = nodeChannel.ChildNodes[i];
 
-                    var item = new RSSItem {Visible = false, BackColor = Color.Black};
+                    RSSItem2 item = new RSSItem2();
 
-                    item.setDate(nodeItem["pubDate"].InnerText);
-                    item.setNews(nodeItem["title"].InnerText);
-                    item.setLink(nodeItem["link"].InnerText);
+                    item.date = nodeItem["pubDate"].InnerText;
+                    item.news = nodeItem["title"].InnerText;
+                    item.link = nodeItem["link"].InnerText;
 
-                    int y = getNextY(item.Height);
-
-                    item.doSize(new Size(Size.Width, item.Height));
-                    item.Location = new Point(0, y);
-
-                    _items.Add(item);
-                    Controls.Add(item);
+                    _items[readed] = item;
+                    readed++;
                 }
-            }
-
-            foreach (RSSItem i in _items)
-            {
-                i.Visible = true;
             }
            
             l.Text = LanguageHolder.Instance()[WordEnum.PLEASE_WAIT];
@@ -149,12 +152,43 @@ namespace com.jds.AWLauncher.classes.gui
             Invalidate();
         }
 
-        private int getNextY(int l)
+        protected override void OnPaint(PaintEventArgs e)
         {
-            if (_items.Count == 0)
-                return 0;
+            SolidBrush b = new SolidBrush(BackColor);
+            e.Graphics.FillRectangle(b, e.ClipRectangle); //заливаем фон
 
-            return _items.Count*l;
+            int paintCount = 0;
+            for(int i = 0; i < _items.Length; i ++)
+            {
+                RSSItem2? itemv = _items[i];
+                if(itemv == null)
+                {
+                    continue;
+                }
+                
+                const int height = 20;
+                const int diff = 3;
+                String formatDate = "[{0}]";
+                Font f = new Font("Tahoma", 8.25F, FontStyle.Regular, GraphicsUnit.Point, (204));
+                ;
+
+                RSSItem2 item = itemv.Value;
+                item.x = 0;
+                item.y = paintCount * height + diff;
+                item.width = Width;
+                item.height = height;
+
+                RectangleF t = new RectangleF(item.x, item.y, item.width, item.height);
+                e.Graphics.FillRectangle(b, t);
+
+                e.Graphics.DrawString(String.Format(formatDate, item.date),  f, new SolidBrush(Color.White), t);
+                paintCount++;
+            }
+        }
+       
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            //base.OnPaintBackground(e);
         }
 
         #endregion
@@ -163,20 +197,5 @@ namespace com.jds.AWLauncher.classes.gui
         {
             client.CancelAsync();
         }
-
-        #region InitializeComponent
-
-        private void InitializeComponent()
-        {
-            SuspendLayout();
-            // 
-            // RSSPanel
-            // 
-            Name = "RSSPanel";
-            Size = new Size(591, 347);
-            ResumeLayout(false);
-        }
-
-        #endregion
     }
 }

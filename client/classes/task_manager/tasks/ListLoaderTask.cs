@@ -139,12 +139,12 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
         {
             try
             {
-                var zipStream = new ZipInputStream(new MemoryStream(zipArray))
-                                    {
-                                        Password = "afsf325cf6y34g6a5frs4cf5"
-                                    };
-
                 byte[] array = null;
+
+                ZipInputStream zipStream = new ZipInputStream(new MemoryStream(zipArray))
+                                               {
+                                                   Password = "afsf325cf6y34g6a5frs4cf5"
+                                               };
 
                 if ((zipStream.GetNextEntry()) != null)
                 {
@@ -153,7 +153,7 @@ namespace com.jds.AWLauncher.classes.task_manager.tasks
                 }
 
                 zipStream.Close();
-
+            
                 if (array == null)
                 {
                     if (_log.IsDebugEnabled)

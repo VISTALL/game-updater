@@ -32,7 +32,7 @@ namespace com.jds.AWLauncher.classes.forms
     {
         #region Nested type: CloseDelegate
 
-        private delegate void CloseDelegate();
+        private delegate void CloseDelegate(int timeout);
 
         #endregion
       
@@ -84,13 +84,14 @@ namespace com.jds.AWLauncher.classes.forms
         public MainForm()
         {
             InitializeComponent();
+            //SetStyle(ControlStyles.UserPaint, false);
             SetStyle(ControlStyles.FixedWidth, true);
 
             ChangeLanguage(true);
                                  
             Opacity = 0F;
-            _startButton.Enable = false;
-            _fullCheck.Enable = false;
+            _startButton.Enabled = false;
+            _fullCheck.Enabled = false;
 
             SetVersionTypeUnsafe("0.0.0.0", VersionType.UNKNOWN);
 
@@ -100,7 +101,6 @@ namespace com.jds.AWLauncher.classes.forms
             MouseUp += JPanelTab_MouseUp;
             MouseMove += JPanelTab_MouseMove;
             _tabbedPane.ChangeSelectedTabEvent += jTabbedPane1_ChangeSelectedTabEvent;
-
 
             EventHandlers.Register(_homePage);
             EventHandlers.Register(_versionInfo);
@@ -129,14 +129,68 @@ namespace com.jds.AWLauncher.classes.forms
             }
         }
 
+        const int CS_VREDRAW = 1;
+        const int CS_HREDRAW = 2;
+
+     /**   protected override void WndProc(ref Message m)
+        {
+            WM_MESSAGE wm = (WM_MESSAGE) m.Msg;
+            Console.Write(wm);
+            switch(wm)
+            {
+                case WM_MESSAGE.WM_ONE:
+                case WM_MESSAGE.WM_PAINT:
+                case WM_MESSAGE.WM_MOUSEMOVE:
+                case WM_MESSAGE.WM_NCCREATE:
+                case WM_MESSAGE.WM_SETICON:
+                case WM_MESSAGE.WM_STYLECHANGING:
+                case WM_MESSAGE.WM_STYLECHANGED:
+                case WM_MESSAGE.WM_SHOWWINDOW:
+                case WM_MESSAGE.WM_ACTIVATE:
+                case WM_MESSAGE.WM_SYSCOMMAND:
+                case WM_MESSAGE.WM_WINDOWPOSCHANGED:
+                case WM_MESSAGE.WM_SIZE:
+                case WM_MESSAGE.WM_CLOSE:
+                case WM_MESSAGE.WM_DESTROY:
+                case WM_MESSAGE.WM_DRAWITEM:
+                case WM_MESSAGE.WM_PARENTNOTIFY:
+                case WM_MESSAGE.WM_MOVE:
+                case WM_MESSAGE.WM_ERASEBKGND:
+                case WM_MESSAGE.WM_NCHITTEST:
+                case WM_MESSAGE.WM_WINDOWPOSCHANGING:
+                case WM_MESSAGE.WM_ACTIVATEAPP:
+                case WM_MESSAGE.WM_NCACTIVATE:
+                case WM_MESSAGE.WM_SETFOCUS:
+                case WM_MESSAGE.WM_NCPAINT:
+                case WM_MESSAGE.WM_QUERYOPEN:
+                case WM_MESSAGE.WM_GETICON:
+                case WM_MESSAGE.WM_IME_SETCONTEXT:
+                case WM_MESSAGE.WM_IME_NOTIFY:
+                case WM_MESSAGE.WM_KILLFOCUS:
+                case WM_MESSAGE.WM_GETTEXT:
+                case WM_MESSAGE.WM_GETTEXTLENGTH:
+                case WM_MESSAGE.WM_NCCALCSIZE:
+                case 0xc323:
+                    Console.WriteLine(" ----jjj-");
+                    base.WndProc(ref m);
+                    return;
+            }
+            Console.WriteLine();
+        }        */
+       
+        public WM_MESSAGE valueOf(int id)
+        {
+            return (WM_MESSAGE) id;
+        }
+
         protected override CreateParams CreateParams
         {
             get
             {
                 CreateParams cp = base.CreateParams;
 
-                cp.Style = (int) WindowStyles.MinimizeBox;
-                cp.ClassStyle = 8;
+                cp.Style |= (int) WindowStyles.MinimizeBox;
+                cp.ClassStyle = CS_VREDRAW | CS_HREDRAW;
 
                 return cp;
             }
@@ -252,11 +306,11 @@ namespace com.jds.AWLauncher.classes.forms
             }
         }
 
-        public void CloseWithout()
+        public void CloseWithout(int timeout)
         {
             _notTransperty = true;
 
-            CloseS();
+            CloseS(timeout);
         }
 
         private void Form_SizeChanged(object sender, EventArgs e)
@@ -309,7 +363,7 @@ namespace com.jds.AWLauncher.classes.forms
 
         private void _closeBtn_Click(object sender, EventArgs e)
         {
-            CloseS();
+            CloseS(0);
         }
 
         private void _startButton_Click(object sender, EventArgs e)
@@ -549,13 +603,13 @@ namespace com.jds.AWLauncher.classes.forms
             {
                 case MainFormState.NONE:
                     _fullCheck.Info = ImageHolder.Instance()[PictureName.FULLCHECK];
-                    _fullCheck.Enable = true;
-                    _startButton.Enable = true;
+                    _fullCheck.Enabled = true;
+                    _startButton.Enabled = true;
                     break;
                 case MainFormState.CHECKING:
                     _fullCheck.Info = ImageHolder.Instance()[PictureName.CANCEL];
-                    _startButton.Enable = false;
-                    _fullCheck.Enable = true;
+                    _startButton.Enabled = false;
+                    _fullCheck.Enabled = true;
                     break;
             }
 
@@ -567,13 +621,19 @@ namespace com.jds.AWLauncher.classes.forms
 
         #region Close Form
 
-        public void CloseS()
+        public void CloseS(int timeout)
         {
-            Invoke(new DelegateCall(this, new CloseDelegate(CloseUnsafe)));
+            Invoke(new DelegateCall(this, new CloseDelegate(CloseUnsafe), timeout));
         }
 
-        private void CloseUnsafe()
+        private void CloseUnsafe(int timeout)
         {
+            if (timeout > 0)
+            {
+                Visible = false;
+                Thread.Sleep(timeout);
+            }
+
             Close();
         }
 
@@ -598,8 +658,8 @@ namespace com.jds.AWLauncher.classes.forms
 
             if (btm)
             {
-                _startButton.Enable = can;
-                _fullCheck.Enable = can;
+                _startButton.Enabled = can;
+                _fullCheck.Enabled = can;
             }
 
             if (can)

@@ -25,17 +25,6 @@ namespace com.jds.AWLauncher.classes.windows.windows7
             }
         }
 
-        static readonly OperatingSystem osInfo = Environment.OSVersion;
-
-        internal static bool Windows7OrGreater
-        {
-            get
-            {
-                return (osInfo.Version.Major == 6 && osInfo.Version.Minor >= 1)
-                    || (osInfo.Version.Major > 6);
-            }
-        }
-
         /// <summary>
         /// Sets the progress state of the specified window's
         /// taskbar button.
@@ -44,7 +33,7 @@ namespace com.jds.AWLauncher.classes.windows.windows7
         /// <param name="state">The progress state.</param>
         public static void SetProgressState(IntPtr hwnd, ThumbnailProgressState state)
         {
-            if (Windows7OrGreater)
+            if (SystemInfo.Instance.Windows7OrGreater)
                 TaskbarList.SetProgressState(hwnd, state);
         }
         /// <summary>
@@ -56,12 +45,12 @@ namespace com.jds.AWLauncher.classes.windows.windows7
         /// <param name="maximum">The maximum value.</param>
         public static void SetProgressValue(IntPtr hwnd, int current, int maximum)
         {
-            if (Windows7OrGreater)
+            if (SystemInfo.Instance.Windows7OrGreater)
                 TaskbarList.SetProgressValue(hwnd, (ulong)current, (ulong)maximum);
         }
 
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        internal static extern int SendMessage(IntPtr hWnd, int wMsg, int wParam, int lParam);
+        //[DllImport("user32.dll", CharSet = CharSet.Auto)]
+        //internal static extern int SendMessage(IntPtr hWnd, int wMsg, int wParam, int lParam);
     }
 }
